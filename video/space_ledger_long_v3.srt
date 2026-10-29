@@ -1,0 +1,1811 @@
+1
+00:00:00,000 --> 00:00:06,214
+This is a technical walkthrough of a white paper by Edmond Ying, titled The Quantized Space-Ledger:
+
+2
+00:00:06,214 --> 00:00:10,231
+Locating Quantum Non-Locality in a Discrete Spacetime Substrate.
+
+3
+00:00:10,231 --> 00:00:15,252
+This video follows the current, revised seventy-three page version of the paper.
+
+4
+00:00:15,252 --> 00:00:18,077
+The paper is explicit that it is speculative.
+
+5
+00:00:18,077 --> 00:00:23,789
+It offers a potential candidate hypothesis, not an established result, and this video keeps
+
+6
+00:00:23,789 --> 00:00:25,295
+that framing throughout.
+
+7
+00:00:25,995 --> 00:00:31,009
+Because the audience here may be skeptical, we will separate two things carefully.
+
+8
+00:00:31,009 --> 00:00:36,451
+Standard physics, meaning results that are measured or derived in mainstream theory, will
+
+9
+00:00:36,451 --> 00:00:42,321
+be labeled as such. The ledger proposal, meaning the paper's own reinterpretation or hypothesis,
+
+10
+00:00:42,321 --> 00:00:47,763
+will be labeled as a proposal. Where the paper says something is an open problem, we will
+
+11
+00:00:47,763 --> 00:00:48,435
+say so too.
+
+12
+00:00:49,135 --> 00:00:55,324
+We will cover twelve chapters: the client and server picture, now with a finiteness principle;
+
+13
+00:00:55,324 --> 00:01:00,525
+the photoelectric effect; mass as frequency, with a candidate hardware picture;
+
+14
+00:01:00,525 --> 00:01:05,463
+measurement as queries, with numerical tests of alternative read-out rules;
+
+15
+00:01:05,463 --> 00:01:09,018
+entanglement as a shared record, with a toy Bell test;
+
+16
+00:01:09,018 --> 00:01:13,561
+the information cap per node; the Higgs field versus the Higgs boson;
+
+17
+00:01:13,561 --> 00:01:16,326
+a toy lattice study of the critical point;
+
+18
+00:01:16,326 --> 00:01:20,144
+steps toward gravity, including light bending and Mercury;
+
+19
+00:01:20,144 --> 00:01:23,831
+black holes without singularities; testable predictions;
+
+20
+00:01:23,831 --> 00:01:25,280
+and the open problems.
+
+21
+00:01:25,979 --> 00:01:28,931
+Chapter one. The Client–Server Picture.
+
+22
+00:01:29,631 --> 00:01:32,594
+The paper's single organizing hypothesis is this:
+
+23
+00:01:32,594 --> 00:01:38,277
+spacetime itself is a discrete, entangled network of quantized nodes, called the Space-Ledger,
+
+24
+00:01:38,277 --> 00:01:40,877
+and that network carries the quantum state.
+
+25
+00:01:40,877 --> 00:01:46,076
+In other words, the wavefunction is assigned to spacetime rather than to the particle.
+
+26
+00:01:46,076 --> 00:01:51,336
+What we call a particle is the localized excitation that is rendered on the client side
+
+27
+00:01:51,336 --> 00:01:55,024
+when the ledger is queried by a measurement-like interaction.
+
+28
+00:01:55,723 --> 00:02:00,414
+The framework uses two layers. The server side is spacetime, the ledger.
+
+29
+00:02:00,414 --> 00:02:06,343
+It holds the global quantum state, the phases, the entanglement, and the Bell correlations,
+
+30
+00:02:06,343 --> 00:02:10,903
+and it operates at a scale approaching zero length, the Planck regime.
+
+31
+00:02:10,903 --> 00:02:13,705
+The client side is the observable universe:
+
+32
+00:02:13,705 --> 00:02:17,027
+matter, signals, detectors, records, and observers.
+
+33
+00:02:17,027 --> 00:02:22,825
+It is local. Nothing on the client side propagates faster than light, massive excitations
+
+34
+00:02:22,825 --> 00:02:26,865
+move slower than light, and massless ones move at light speed.
+
+35
+00:02:26,865 --> 00:02:32,012
+The paper stresses that this analogy is a guide to intuition, not a derivation.
+
+36
+00:02:32,711 --> 00:02:36,843
+Why assume discrete nodes at all? The paper cites three lines of standard physics that
+
+37
+00:02:36,843 --> 00:02:39,246
+hint in that direction. First, black-hole entropy:
+
+38
+00:02:39,246 --> 00:02:43,474
+the Bekenstein-Hawking result, S equals k A over four l P squared, read as a bound, caps
+
+39
+00:02:43,474 --> 00:02:45,828
+the information in a region by its boundary area.
+
+40
+00:02:45,828 --> 00:02:50,056
+Second, ultraviolet divergences in quantum field theory, which a physical minimum length
+
+41
+00:02:50,056 --> 00:02:52,602
+would cut off naturally. Third, an operational limit:
+
+42
+00:02:52,602 --> 00:02:56,734
+probing below roughly the Planck length would take so much energy in so small a region
+
+43
+00:02:56,734 --> 00:02:58,271
+that it would form a black hole.
+
+44
+00:02:58,971 --> 00:03:03,259
+The revised paper adds a working principle, labeled a hypothesis:
+
+45
+00:03:03,259 --> 00:03:08,337
+the finiteness principle. No physical quantity in the model becomes infinite.
+
+46
+00:03:08,337 --> 00:03:14,537
+First, nodes have a fixed size of about one Planck length, so no physical distance is shorter.
+
+47
+00:03:14,537 --> 00:03:21,132
+Second, each node carries a finite workload, capped, in the recommended form, by a frame-independent
+
+48
+00:03:21,132 --> 00:03:27,002
+limiting curvature. So curvature, density, and collision energy per node all have maximum
+
+49
+00:03:27,002 --> 00:03:32,872
+values. Candidate consequences: a finite core in place of the black-hole singularity, and
+
+50
+00:03:32,872 --> 00:03:35,840
+a natural cutoff for ultraviolet divergences.
+
+51
+00:03:35,840 --> 00:03:41,710
+The cap value is a placeholder, not derived, and a cutoff alone does not preserve Lorentz
+
+52
+00:03:41,710 --> 00:03:42,435
+invariance.
+
+53
+00:03:43,135 --> 00:03:46,156
+Here the revised paper changes its emphasis.
+
+54
+00:03:46,156 --> 00:03:50,482
+A regular grid picks out preferred directions and a rest frame.
+
+55
+00:03:50,482 --> 00:03:56,936
+The paper now keeps an organized, body-centred-cubic grid, and argues that sums over link-only
+
+56
+00:03:56,936 --> 00:04:03,253
+hop paths leave a direction dependence of the speed of light only at order E over the Planck
+
+57
+00:04:03,253 --> 00:04:08,402
+energy, squared. On this cubic test grid, the hop-path front becomes round:
+
+58
+00:04:08,402 --> 00:04:12,110
+a diagonal to axis radius ratio of 0.997 at 120 ticks.
+
+59
+00:04:12,110 --> 00:04:18,151
+A random, causal-set-like network is kept as a fallback if boost invariance requires it.
+
+60
+00:04:18,851 --> 00:04:24,079
+On the network, the ledger updates in discrete ticks of roughly the Planck time, on nodes
+
+61
+00:04:24,079 --> 00:04:29,307
+spaced roughly the Planck length apart. Because the update couples only neighboring nodes
+
+62
+00:04:29,307 --> 00:04:32,538
+per tick, nothing advances more than one node per tick.
+
+63
+00:04:32,538 --> 00:04:37,942
+That gives a client-side speed limit of c equals a over tau, which matches the Planck length
+
+64
+00:04:37,942 --> 00:04:40,115
+over the Planck time by construction.
+
+65
+00:04:40,815 --> 00:04:46,398
+Bell tests, which agree with quantum mechanics, show that any framework reproducing quantum
+
+66
+00:04:46,398 --> 00:04:49,834
+predictions must be non-local in Bell's sense somewhere.
+
+67
+00:04:49,834 --> 00:04:52,779
+The ledger does not eliminate that non-locality.
+
+68
+00:04:52,779 --> 00:04:56,337
+It locates it: an entangled pair is one server-side state.
+
+69
+00:04:56,337 --> 00:05:01,736
+Each client-side read looks locally random, so the no-signaling condition holds, and the
+
+70
+00:05:01,736 --> 00:05:07,319
+correlation becomes visible only when records are compared over an ordinary channel limited
+
+71
+00:05:07,319 --> 00:05:09,895
+by c. The paper notes a remaining tension:
+
+72
+00:05:09,895 --> 00:05:15,294
+if the read-out is a physical update, it needs an ordering of spacelike-separated events
+
+73
+00:05:15,294 --> 00:05:17,871
+that clients cannot observe. That is open.
+
+74
+00:05:17,871 --> 00:05:20,631
+Chapter five returns to this with a toy test.
+
+75
+00:05:21,331 --> 00:05:24,235
+Chapter two. Light in Quantized Packets.
+
+76
+00:05:24,935 --> 00:05:27,701
+This chapter is standard physics background.
+
+77
+00:05:27,701 --> 00:05:31,033
+When light strikes a metal, electrons can be ejected.
+
+78
+00:05:31,033 --> 00:05:36,815
+The classic observation is that whether electrons come out depends on the light's frequency,
+
+79
+00:05:36,815 --> 00:05:42,221
+not on its brightness. Below a threshold frequency, no electrons are emitted no matter
+
+80
+00:05:42,221 --> 00:05:47,815
+how intense the light. Above it, electrons appear immediately, even at low intensity, and
+
+81
+00:05:47,815 --> 00:05:51,335
+brighter light produces more electrons, not faster ones.
+
+82
+00:05:52,036 --> 00:05:57,517
+How does this connect to the ledger? In the paper, a particle is not an autonomous object
+
+83
+00:05:57,517 --> 00:06:02,383
+sliding across a continuous plane; it is a localized excitation of the network.
+
+84
+00:06:02,383 --> 00:06:07,679
+On that reading, a photon arriving at the metal is an excitation of the ledger that is
+
+85
+00:06:07,679 --> 00:06:13,222
+registered, or rendered, as a single localized quantum when it interacts with an electron.
+
+86
+00:06:13,222 --> 00:06:17,410
+To be clear, this is an interpretation of the same standard physics.
+
+87
+00:06:17,410 --> 00:06:20,860
+It changes no prediction about the photoelectric effect.
+
+88
+00:06:21,560 --> 00:06:24,055
+Chapter three. Mass as Frequency.
+
+89
+00:06:24,756 --> 00:06:31,069
+Combine two standard relations. Rest energy is E equals m c squared, and quantum energy
+
+90
+00:06:31,069 --> 00:06:37,672
+is E equals h f. Setting them equal gives each massive particle a characteristic frequency,
+
+91
+00:06:37,672 --> 00:06:41,518
+the Compton frequency, f C equals m c squared over h.
+
+92
+00:06:41,518 --> 00:06:47,759
+This is standard physics. The paper's step is to read rest mass, in ledger terms, as a
+
+93
+00:06:47,759 --> 00:06:52,475
+characteristic frequency of an excitation pattern on the network.
+
+94
+00:06:53,176 --> 00:06:56,382
+The paper also gives mass a role in propagation.
+
+95
+00:06:56,382 --> 00:07:00,390
+In client-server language, mass is extra per-hop processing.
+
+96
+00:07:00,390 --> 00:07:06,202
+At every tick, a massive excitation has some amplitude to flip its direction of travel,
+
+97
+00:07:06,202 --> 00:07:09,075
+its chirality, instead of simply moving on.
+
+98
+00:07:09,075 --> 00:07:15,087
+This follows Feynman's checkerboard model and the Dirac quantum walks and quantum cellular
+
+99
+00:07:15,087 --> 00:07:20,899
+automata in the literature. A massless excitation hops one node per tick and travels at
+
+100
+00:07:20,899 --> 00:07:27,112
+exactly c. A massive one zigzags, so each hop is still at c, but the average drift is slower.
+
+101
+00:07:27,812 --> 00:07:33,972
+In one spatial dimension, the excitation is a two-component amplitude, right-moving and
+
+102
+00:07:33,972 --> 00:07:40,275
+left-moving. One tick mixes them with an angle theta, where sine theta equals m c squared
+
+103
+00:07:40,275 --> 00:07:46,436
+tau over h-bar. The exact lattice dispersion relation is cosine omega tau equals cosine
+
+104
+00:07:46,436 --> 00:07:52,526
+theta times cosine k a. In the continuum limit this becomes the Dirac equation, with E
+
+105
+00:07:52,526 --> 00:07:58,828
+squared equals p squared c squared plus m squared c to the fourth, and the group velocity
+
+106
+00:07:58,828 --> 00:08:03,644
+is c times the square root of one minus m c squared over E, squared.
+
+107
+00:08:04,344 --> 00:08:10,395
+The revised paper also offers one candidate hardware picture, explicitly not a claim about
+
+108
+00:08:10,395 --> 00:08:16,177
+how the server is built. Each node is an identical core, fixed on a body-centred-cubic
+
+109
+00:08:16,177 --> 00:08:22,094
+lattice with eight neighbours. At every tick, cores act at once on non-overlapping pairs
+
+110
+00:08:22,094 --> 00:08:28,078
+in a checkerboard, or Margolus, pattern, so an amplitude moves at most one core per tick.
+
+111
+00:08:28,078 --> 00:08:34,196
+In a one-dimensional run of 300 ticks, probability outside the light cone was exactly zero,
+
+112
+00:08:34,196 --> 00:08:40,315
+packet speeds matched the dispersion formula to within 0.013, and probability was conserved
+
+113
+00:08:40,315 --> 00:08:46,232
+to about ten to the minus thirteen. Naive in-place updates, by contrast, wipe data, leak
+
+114
+00:08:46,232 --> 00:08:48,720
+probability, or break the light cone.
+
+115
+00:08:49,420 --> 00:08:50,072
+So speed depends on mass relative to energy, not on mass alone.
+
+116
+00:08:50,072 --> 00:08:50,797
+The more of an excitation's energy is rest energy, the slower it runs.
+
+117
+00:08:50,797 --> 00:08:51,719
+As energy greatly exceeds m c squared, speed approaches c, and when E equals m c squared,
+
+118
+00:08:51,719 --> 00:08:52,610
+the excitation is at rest. Special relativity then emerges at low energies, but is not
+
+119
+00:08:52,610 --> 00:08:53,501
+built in exactly; deviations would appear at order E over the Planck energy or higher,
+
+120
+00:08:53,501 --> 00:08:53,740
+depending on the graph.
+
+121
+00:08:54,440 --> 00:08:57,731
+The paper then raises a speculative hypothesis.
+
+122
+00:08:57,731 --> 00:09:03,895
+Matter fermions come in three generations that share charges and interactions and differ
+
+123
+00:09:03,895 --> 00:09:09,919
+only in mass. The paper proposes that the generations may be three resonance modes, or
+
+124
+00:09:09,919 --> 00:09:16,082
+harmonics, of one excitation pattern. For the charged leptons, the muon-to-electron mass
+
+125
+00:09:16,082 --> 00:09:22,736
+ratio is about 206.77, and the tau-to-electron ratio about 3477.2, so their Compton frequencies
+
+126
+00:09:22,736 --> 00:09:28,760
+stand in the same ratios. The empirical Koide relation is an example of a pattern such
+
+127
+00:09:28,760 --> 00:09:34,784
+a model would need to reproduce. Neither the Standard Model nor the paper explains it.
+
+128
+00:09:35,484 --> 00:09:38,423
+Neutrinos show frequency structure directly.
+
+129
+00:09:38,423 --> 00:09:44,036
+Each flavor state is a superposition of three mass states, mixed by the PMNS matrix.
+
+130
+00:09:44,036 --> 00:09:50,450
+The phases of the mass components advance at rates that differ in proportion to the mass-squared
+
+131
+00:09:50,450 --> 00:09:56,463
+differences, so the flavor composition oscillates with distance L and energy E, with phase
+
+132
+00:09:56,463 --> 00:09:59,537
+proportional to delta m squared L over four E.
+
+133
+00:09:59,537 --> 00:10:05,483
+This was established by Super-Kamiokande and SNO, and recognized by the 2015 Nobel Prize.
+
+134
+00:10:05,483 --> 00:10:10,427
+The curve on screen is an illustrative two-flavor sketch, not fitted data.
+
+135
+00:10:11,128 --> 00:10:15,383
+Everything about neutrino oscillation just described is standard physics.
+
+136
+00:10:15,383 --> 00:10:18,881
+The harmonic picture reinterprets it and does not derive it.
+
+137
+00:10:18,881 --> 00:10:23,953
+The model does not currently predict the mass-squared splittings, the mixing angles, or
+
+138
+00:10:23,953 --> 00:10:29,141
+the absolute neutrino mass scale, and it would gain real support only if those quantities
+
+139
+00:10:29,141 --> 00:10:31,648
+followed from the network's mode structure.
+
+140
+00:10:32,348 --> 00:10:34,988
+Chapter four. Measurement as Queries.
+
+141
+00:10:35,688 --> 00:10:40,778
+Start with the double slit. A which-way detector at one slit couples detector states to
+
+142
+00:10:40,778 --> 00:10:46,221
+the paths. Because the detector states are orthogonal, the cross term at the screen vanishes,
+
+143
+00:10:46,221 --> 00:10:51,312
+and the fringes disappear. This is standard quantum mechanics written in node language.
+
+144
+00:10:52,012 --> 00:10:57,499
+The paper splits collapse into two steps, and is explicit about which is explained and
+
+145
+00:10:57,499 --> 00:11:00,370
+which is postulated. Step one is decoherence.
+
+146
+00:11:00,370 --> 00:11:06,049
+The detector quickly entangles with many environment nodes, and the reduced state becomes
+
+147
+00:11:06,049 --> 00:11:11,217
+effectively diagonal. In ledger language, the phase correlation is not destroyed.
+
+148
+00:11:11,217 --> 00:11:17,024
+It is spread into a huge number of environment nodes, where no local client can practically
+
+149
+00:11:17,024 --> 00:11:20,980
+gather it back. This is standard decoherence theory, restated.
+
+150
+00:11:21,680 --> 00:11:24,790
+Step two is the read-out, and it is a postulate.
+
+151
+00:11:24,790 --> 00:11:30,492
+Decoherence explains why alternatives stop interfering, but not why one definite outcome
+
+152
+00:11:30,492 --> 00:11:36,323
+occurs. The read-out postulate states: when a client-side system extracts information from
+
+153
+00:11:36,323 --> 00:11:42,090
+the ledger, creating an irreversible, decohered record, exactly one outcome k is sampled,
+
+154
+00:11:42,090 --> 00:11:47,792
+locked, and returned to the client side, with probability equal to the squared magnitude
+
+155
+00:11:47,792 --> 00:11:52,328
+of c k. That is, the Born rule is taken as the ledger's read-out rule.
+
+156
+00:11:53,028 --> 00:11:58,377
+The paper stresses that this is a postulate, not a derivation, and calls deriving it the
+
+157
+00:11:58,377 --> 00:12:02,025
+main open problem. The revised version narrows that problem.
+
+158
+00:12:02,025 --> 00:12:07,374
+Gleason's theorem shows that, given a Hilbert-space structure and additive outcomes, the
+
+159
+00:12:07,374 --> 00:12:12,967
+square is the only consistent read-out. The remaining question is why server-side amplitudes
+
+160
+00:12:12,967 --> 00:12:18,985
+behave like rotatable arrows, that is, why the ledger's state space carries a complex Hilbert-space
+
+161
+00:12:18,985 --> 00:12:24,821
+structure with unitary evolution. It is also open whether the read-out is a physical server-side
+
+162
+00:12:24,821 --> 00:12:27,132
+update or only a client-relative fact.
+
+163
+00:12:27,831 --> 00:12:32,656
+The paper also tests alternatives numerically, with illustrative parameters:
+
+164
+00:12:32,656 --> 00:12:38,624
+Sorkin's three-slit parameter kappa against measured bounds, merging detectors, and signalling
+
+165
+00:12:38,624 --> 00:12:44,084
+through an entangled pair. Power rules give kappa of about five times ten to the minus
+
+166
+00:12:44,084 --> 00:12:48,147
+three to four times ten to the minus two, exceeding both bounds.
+
+167
+00:12:48,147 --> 00:12:51,385
+Softmax and exponential rules fail all three tests.
+
+168
+00:12:51,385 --> 00:12:54,178
+Only the squared amplitude passes all three.
+
+169
+00:12:54,178 --> 00:12:59,701
+This assumes additivity of the read-out, which a concrete ledger model would still have
+
+170
+00:12:59,701 --> 00:13:00,399
+to justify.
+
+171
+00:13:01,100 --> 00:13:05,027
+In this model, measurement does not require a conscious observer.
+
+172
+00:13:05,027 --> 00:13:10,223
+Any physical interaction whose cascade of effects records information about a state in
+
+173
+00:13:10,223 --> 00:13:15,600
+its environment acts as a query to the server, and yields a definite client-side outcome.
+
+174
+00:13:15,600 --> 00:13:21,460
+Stated more carefully, client-observable events correspond to measurement outcomes of server-side
+
+175
+00:13:21,460 --> 00:13:27,139
+quantum evolution. This is the ledger reading of decoherence and of Zurek's quantum Darwinism.
+
+176
+00:13:27,840 --> 00:13:30,637
+The paper uses an example from Abraham Pais.
+
+177
+00:13:30,637 --> 00:13:35,024
+Einstein asked whether the Moon exists only when someone looks at it.
+
+178
+00:13:35,024 --> 00:13:40,556
+The Moon is continuously scattered by sunlight, by cosmic microwave background photons,
+
+179
+00:13:40,556 --> 00:13:46,342
+and by other particles. So in ledger terms it is queried continuously, and remains definite
+
+180
+00:13:46,342 --> 00:13:48,504
+whether or not anyone observes it.
+
+181
+00:13:49,204 --> 00:13:54,833
+The caveat matters. Decoherence accounts for the suppression of observable superpositions,
+
+182
+00:13:54,833 --> 00:14:00,212
+but it does not by itself select a single outcome, and the paper remains neutral among
+
+183
+00:14:00,212 --> 00:14:05,779
+interpretations, such as Copenhagen and many-worlds, on how that selection is understood.
+
+184
+00:14:05,779 --> 00:14:11,221
+A related example is the quantum Zeno effect, observed by Itano and colleagues in 1990:
+
+185
+00:14:11,221 --> 00:14:15,850
+frequent queries keep re-committing the same state and suppress evolution.
+
+186
+00:14:15,850 --> 00:14:21,292
+The paper calls this a reinterpretation that leaves the standard calculation unchanged.
+
+187
+00:14:21,992 --> 00:14:27,684
+The revision adds query-rate limits. Signals and records travel no faster than light.
+
+188
+00:14:27,684 --> 00:14:33,778
+The Margolus–Levitin bound allows at most two E over pi h-bar orthogonal states per second.
+
+189
+00:14:33,778 --> 00:14:39,806
+And, as a model assumption with no direct experimental support, each node performs at most
+
+190
+00:14:39,806 --> 00:14:44,360
+one update per Planck time, about ten to the forty-three per second.
+
+191
+00:14:45,060 --> 00:14:48,372
+Chapter five. Entanglement as a Shared Record.
+
+192
+00:14:49,072 --> 00:14:53,696
+Section 5.5 writes the server-side picture as a minimal interface.
+
+193
+00:14:53,696 --> 00:14:56,639
+A call, entangle, opens one shared record;
+
+194
+00:14:56,639 --> 00:15:02,875
+each daughter packet carries only a pointer to it, plus its conserved share of energy and
+
+195
+00:15:02,875 --> 00:15:07,078
+momentum. Relays forward the packets as ordinary link phase.
+
+196
+00:15:07,078 --> 00:15:13,314
+A call, read, runs on the server: it computes the odds, locks the attribute for the whole
+
+197
+00:15:13,314 --> 00:15:18,079
+set, and returns plus or minus one. No outcome is stored in advance;
+
+198
+00:15:18,079 --> 00:15:22,984
+a pre-stored value would be a local hidden variable, capping S at two.
+
+199
+00:15:23,683 --> 00:15:30,438
+With standard CHSH angles, the shared record gives S equals 2.822 plus or minus 0.007,
+
+200
+00:15:30,438 --> 00:15:34,915
+against the quantum maximum of two root two, about 2.828.
+
+201
+00:15:34,915 --> 00:15:41,826
+With eighty percent detector efficiency and one percent dark counts, it gives 2.800 plus
+
+202
+00:15:41,826 --> 00:15:48,738
+or minus 0.009. A control that gives each daughter its own copied record gives 0.01 plus
+
+203
+00:15:48,738 --> 00:15:55,807
+or minus 0.01. Each side alone is fifty-fifty, and the near side's statistics do not shift
+
+204
+00:15:55,807 --> 00:16:02,718
+with the far side's setting. The record is non-local, but no message travels faster than
+
+205
+00:16:02,718 --> 00:16:02,875
+c.
+
+206
+00:16:03,576 --> 00:16:09,073
+The caveat is central. The read inserts the cosine-squared odds by hand, so this toy checks
+
+207
+00:16:09,073 --> 00:16:13,120
+that the interface is consistent; it does not derive the Born rule.
+
+208
+00:16:13,120 --> 00:16:18,315
+Deriving those odds from the node rules is listed as an open problem, as is how a grid
+
+209
+00:16:18,315 --> 00:16:23,087
+of local cores carries out the joint read without client-detectable signalling.
+
+210
+00:16:23,788 --> 00:16:27,724
+Chapter six. Entangled Space and the Information Cap.
+
+211
+00:16:28,423 --> 00:16:33,907
+Formally, the paper models spacetime as a graph whose vertices are nodes and whose edges
+
+212
+00:16:33,907 --> 00:16:39,578
+are entanglement bonds. Each node carries a finite-dimensional Hilbert space, and the state
+
+213
+00:16:39,578 --> 00:16:44,563
+of a region is a network tensor, in the spirit of matrix product states or MERA.
+
+214
+00:16:44,563 --> 00:16:48,489
+The mathematics is standard quantum mechanics in node language;
+
+215
+00:16:48,489 --> 00:16:52,975
+the novel content is the interpretation and the discreteness hypothesis.
+
+216
+00:16:53,675 --> 00:16:59,873
+Now the information cap. The Bekenstein-Hawking entropy of a black hole is A over four
+
+217
+00:16:59,873 --> 00:17:06,215
+l P squared, in natural units. Converted to bits, that is about one bit per four ln two,
+
+218
+00:17:06,215 --> 00:17:10,684
+roughly 2.77 Planck areas, or about 0.36 bits per Planck area.
+
+219
+00:17:10,684 --> 00:17:16,882
+Under the holographic principle, no region can hold more information than a black hole
+
+220
+00:17:16,882 --> 00:17:18,755
+of the same boundary area.
+
+221
+00:17:19,455 --> 00:17:24,308
+The paper applies this to cubic Planck nodes carrying one qubit each.
+
+222
+00:17:24,308 --> 00:17:30,708
+A single cube has six faces of one Planck area, so its cap is about 2.2 bits, and one qubit
+
+223
+00:17:30,708 --> 00:17:37,038
+fits. But for a block N nodes on a side, independent qubits would give N cubed bits, while
+
+224
+00:17:37,038 --> 00:17:40,132
+the surface cap is only about 2.2 N squared.
+
+225
+00:17:40,132 --> 00:17:44,703
+The volume count exceeds the cap once N is larger than about 2.2.
+
+226
+00:17:45,403 --> 00:17:51,895
+So inside a block N nodes wide, each node can carry at most about 2.2 over N independent
+
+227
+00:17:51,895 --> 00:17:58,238
+bits: about 0.2 for N equals ten, and about ten to the minus twenty for a proton-sized
+
+228
+00:17:58,238 --> 00:18:01,483
+region, where N is around ten to the twenty.
+
+229
+00:18:02,183 --> 00:18:07,910
+The interpretation is that each node can still hold a qubit, but node states within a region
+
+230
+00:18:07,910 --> 00:18:13,263
+cannot all be independent. Nearly all must be entangled with one another or determined
+
+231
+00:18:13,263 --> 00:18:18,679
+by the boundary, so free degrees of freedom scale with surface area rather than volume.
+
+232
+00:18:18,679 --> 00:18:24,156
+In ledger terms, the server stores a region largely through its boundary, with a tightly
+
+233
+00:18:24,156 --> 00:18:29,883
+correlated interior. This is consistent with holography and with proposals, by Van Raamsdonk
+
+234
+00:18:29,883 --> 00:18:35,112
+and by Maldacena and Susskind, that spacetime connectivity arises from entanglement.
+
+235
+00:18:35,811 --> 00:18:41,372
+The caveats: the argument assumes the holographic bound applies to the lattice, which has
+
+236
+00:18:41,372 --> 00:18:47,121
+not been proven for a discrete network. A simple cubic lattice is anisotropic, so the factor
+
+237
+00:18:47,121 --> 00:18:52,244
+2.2 depends on node shape, although the N squared versus N cubed scaling does not.
+
+238
+00:18:52,244 --> 00:18:57,555
+And the model does not yet supply an update rule that produces area-law entanglement.
+
+239
+00:18:58,255 --> 00:19:01,639
+Chapter seven. Higgs Field versus Higgs Boson.
+
+240
+00:19:02,339 --> 00:19:09,405
+In ledger language, the Higgs vacuum value, v, about 246 GeV, is a property of the network's
+
+241
+00:19:09,405 --> 00:19:12,861
+ground state, held server-side at every node.
+
+242
+00:19:12,861 --> 00:19:19,466
+The Higgs boson, observed at the LHC in 2012 and now measured at about 125.2 GeV, is a
+
+243
+00:19:19,466 --> 00:19:24,611
+client-side excitation of that state: a ripple on the ground state.
+
+244
+00:19:24,611 --> 00:19:27,760
+The measured values are standard physics;
+
+245
+00:19:27,760 --> 00:19:31,523
+the server and client assignment is the proposal.
+
+246
+00:19:32,223 --> 00:19:38,000
+At tree level, the Higgs mass equals the square root of two lambda, times v.
+
+247
+00:19:38,000 --> 00:19:43,319
+That gives lambda of about 0.13, and a ratio m H over v of about 0.51.
+
+248
+00:19:43,319 --> 00:19:49,855
+The paper reads this ratio as a measure of how stiff the ground state is against small
+
+249
+00:19:49,855 --> 00:19:50,919
+displacements.
+
+250
+00:19:51,619 --> 00:19:56,885
+The hierarchy problem: radiative corrections to the Higgs mass parameter grow with the
+
+251
+00:19:56,885 --> 00:20:02,395
+square of the cutoff, while the Higgs mass over the Planck mass is around ten to the minus
+
+252
+00:20:02,395 --> 00:20:07,538
+seventeen. A discrete network supplies a physical cutoff, so corrections are finite.
+
+253
+00:20:07,538 --> 00:20:13,170
+But the paper is clear that this is shared by any lattice regularization and does not remove
+
+254
+00:20:13,170 --> 00:20:18,435
+the fine-tuning. The model offers no explanation of this hierarchy, or of the weakness
+
+255
+00:20:18,435 --> 00:20:19,843
+of gravity, at present.
+
+256
+00:20:20,543 --> 00:20:24,234
+There is published precedent for near-criticality.
+
+257
+00:20:24,234 --> 00:20:30,656
+Froggatt and Nielsen in 1996 proposed two degenerate minima of the effective potential,
+
+258
+00:20:30,656 --> 00:20:37,300
+one near the Planck scale, and predicted a top mass of 173 plus or minus 5 GeV and a Higgs
+
+259
+00:20:37,300 --> 00:20:44,239
+mass of 135 plus or minus 9 GeV. Shaposhnikov and Wetterich in 2010 argued that asymptotically
+
+260
+00:20:44,239 --> 00:20:50,366
+safe gravity drives lambda toward zero near the Planck scale, giving about 126 GeV.
+
+261
+00:20:50,366 --> 00:20:56,862
+Buttazzo and colleagues in 2013 showed the measured parameters place the vacuum close to
+
+262
+00:20:56,862 --> 00:20:58,559
+the stability boundary.
+
+263
+00:20:59,259 --> 00:21:05,947
+The paper reports an independent rerun using two-loop Standard Model running with Buttazzo
+
+264
+00:21:05,947 --> 00:21:12,337
+matching conditions. Imposing lambda at the Planck mass equals zero gives a Higgs mass
+
+265
+00:21:12,337 --> 00:21:18,653
+of about 128.8 GeV, against the measured 125.2, agreement within about three percent.
+
+266
+00:21:18,653 --> 00:21:25,191
+Exact agreement would need a top mass near 171 GeV versus a measured 172.6, with roughly
+
+267
+00:21:25,191 --> 00:21:30,021
+one GeV of interpretive uncertainty in the pole-mass translation.
+
+268
+00:21:30,021 --> 00:21:37,080
+With current inputs, lambda reaches a minimum of about minus 0.011 between ten to the seventeen
+
+269
+00:21:37,080 --> 00:21:43,395
+and ten to the nineteen GeV: the vacuum sits near a critical point and is metastable.
+
+270
+00:21:44,095 --> 00:21:49,048
+In ledger terms, this is a candidate statement that the network's ground state sits near
+
+271
+00:21:49,048 --> 00:21:51,581
+a critical point. It is not yet a derivation.
+
+272
+00:21:51,581 --> 00:21:56,477
+And the paper notes that the near-zero lambda at the Planck scale is the strongest part
+
+273
+00:21:56,477 --> 00:22:01,374
+of this discussion, but it was established in the earlier literature, not by the ledger
+
+274
+00:22:01,374 --> 00:22:01,711
+model.
+
+275
+00:22:02,411 --> 00:22:04,619
+Chapter eight. A Toy Lattice.
+
+276
+00:22:05,319 --> 00:22:11,017
+To see what near-criticality means on a discrete substrate, the paper studies a four-dimensional
+
+277
+00:22:11,017 --> 00:22:16,477
+hypercubic lattice at Planck spacing, with eight nearest neighbours per node and one complex
+
+278
+00:22:16,477 --> 00:22:22,056
+doublet per node. The doublet has four real components, the same content as the Higgs doublet,
+
+279
+00:22:22,056 --> 00:22:24,786
+and matching a qubit's two complex amplitudes.
+
+280
+00:22:24,786 --> 00:22:29,415
+The action has a hopping parameter kappa and a lattice self-coupling lambda L.
+
+281
+00:22:30,115 --> 00:22:36,160
+In the free theory, the critical point is exactly kappa c equals one eighth, the inverse
+
+282
+00:22:36,160 --> 00:22:42,342
+of the number of neighbours. This mean-field figure from the study shows m H over v versus
+
+283
+00:22:42,342 --> 00:22:48,524
+kappa for several couplings, with kappa c equals one eighth marked, the value 0.49 marked,
+
+284
+00:22:48,524 --> 00:22:50,515
+and the target ratio of 0.51.
+
+285
+00:22:51,215 --> 00:22:58,925
+Monte Carlo runs on lattices of size eight, twelve and sixteen locate the critical point
+
+286
+00:22:58,925 --> 00:23:04,707
+from Binder-cumulant crossings. Self-interaction shifts it upward:
+
+287
+00:23:04,707 --> 00:23:10,051
+kappa c of 0.1259 plus or minus 0.0005 for lambda L of 0.001;
+
+288
+00:23:10,051 --> 00:23:16,972
+0.1288 plus or minus 0.0009 for 0.01; and 0.1442 plus or minus 0.0014 for 0.05.
+
+289
+00:23:16,972 --> 00:23:23,280
+In this figure from the paper, the Binder curves cross above one eighth.
+
+290
+00:23:23,280 --> 00:23:31,340
+Mean-field theory places the critical point below one eighth for these couplings, and misses
+
+291
+00:23:31,340 --> 00:23:32,303
+this shift.
+
+292
+00:23:33,003 --> 00:23:38,663
+Just past criticality, the measured vacuum value follows v squared proportional to kappa
+
+293
+00:23:38,663 --> 00:23:41,814
+minus kappa c, as expected near a critical point.
+
+294
+00:23:41,814 --> 00:23:47,344
+This figure shows the order parameter versus distance past the critical point, and the
+
+295
+00:23:47,344 --> 00:23:49,659
+Monte Carlo estimates of m H over v.
+
+296
+00:23:50,359 --> 00:23:53,439
+The revision adds a toy-tested hypothesis:
+
+297
+00:23:53,439 --> 00:23:59,744
+self-tuning the knob by homing. A local rule can bring kappa near kappa c without hand
+
+298
+00:23:59,744 --> 00:24:04,802
+tuning, if it has a signal that peaks there, here an anisotropy cost.
+
+299
+00:24:04,802 --> 00:24:11,107
+Like CNC homing to a limit switch, the knob is dithered, steps at full rate toward the
+
+300
+00:24:11,107 --> 00:24:15,800
+better side, and shrinks its step only on a confirmed sign flip.
+
+301
+00:24:15,800 --> 00:24:22,105
+On an O four toy on an eight-link BCC grid, with kappa c about 0.1495, all twelve runs
+
+302
+00:24:22,105 --> 00:24:26,503
+locked, from hot and cold starts, about 0.006 above kappa c.
+
+303
+00:24:27,203 --> 00:24:33,097
+Here is the sobering number. To obtain v equals 246 GeV with Planck spacing requires kappa
+
+304
+00:24:33,097 --> 00:24:36,503
+minus kappa c of order ten to the minus thirty-four.
+
+305
+00:24:36,503 --> 00:24:42,200
+The paper is explicit that this is the hierarchy problem restated on the lattice, not a
+
+306
+00:24:42,200 --> 00:24:48,291
+solution. In the pure Standard Model, radiative symmetry breaking does not supply the offset,
+
+307
+00:24:48,291 --> 00:24:52,547
+because the top quark contribution dominates with the wrong sign.
+
+308
+00:24:53,247 --> 00:24:58,302
+The caveats are substantial. The lattices are small and the error bars sizable.
+
+309
+00:24:58,302 --> 00:25:01,374
+Gauge fields and the top quark are not included.
+
+310
+00:25:01,374 --> 00:25:05,213
+A hypercubic lattice breaks rotational and Lorentz symmetry.
+
+311
+00:25:05,213 --> 00:25:10,971
+Mean-field and Monte Carlo disagree on the direction of the shift, and the conversion from
+
+312
+00:25:10,971 --> 00:25:16,602
+lattice units to GeV is schematic. For the homing rule, the residual bias of about 0.006
+
+313
+00:25:16,602 --> 00:25:22,297
+does not shrink from lattice size eight to twelve, the rule still has hand-set constants,
+
+314
+00:25:22,297 --> 00:25:28,311
+and getting from ten to the minus three down to ten to the minus thirty-four is not addressed.
+
+315
+00:25:29,011 --> 00:25:31,939
+Chapter nine. Steps Toward Gravity.
+
+316
+00:25:32,639 --> 00:25:36,145
+None of what follows is derived from a node rule yet;
+
+317
+00:25:36,145 --> 00:25:39,188
+these are candidate paths and worked examples.
+
+318
+00:25:39,188 --> 00:25:42,628
+The nodes are rigid. Mass-energy does not bend them;
+
+319
+00:25:42,628 --> 00:25:48,516
+it changes the workload of nearby nodes, and so the cost of routing a signal and the rate
+
+320
+00:25:48,516 --> 00:25:54,403
+of local clocks. In weak-field general relativity, the metric can be read as a refractive
+
+321
+00:25:54,403 --> 00:26:00,158
+index, n of r, about one plus two G M over r c squared, an optical-metric picture going
+
+322
+00:26:00,158 --> 00:26:01,679
+back to Gordon in 1923.
+
+323
+00:26:02,379 --> 00:26:08,731
+The key identity: G M over r c squared equals mass in Planck masses times inverse distance
+
+324
+00:26:08,731 --> 00:26:14,801
+in Planck lengths. The Sun holds about 3.3 times ten to the 131 Planck-scale nodes, so
+
+325
+00:26:14,801 --> 00:26:21,082
+its mean workload is about 2.7 times ten to the minus ninety-four Planck masses per node.
+
+326
+00:26:21,082 --> 00:26:24,963
+Each share is tiny; the effect comes only from the sum.
+
+327
+00:26:25,663 --> 00:26:31,873
+The Sun was coarse-grained into up to about a million cells, with masses following Eddington's
+
+328
+00:26:31,873 --> 00:26:37,554
+standard polytrope model, and the deflection of a ray grazing the limb was summed cell
+
+329
+00:26:37,554 --> 00:26:43,235
+by cell. It converges to four G M over R c squared, 1.751 arc seconds, with a relative
+
+330
+00:26:43,235 --> 00:26:46,010
+difference of about ten to the minus nine.
+
+331
+00:26:46,010 --> 00:26:49,974
+The paper is explicit that this is expected by construction.
+
+332
+00:26:49,974 --> 00:26:56,183
+The factor of two, equal time and space contributions, is still to be derived from an explicit
+
+333
+00:26:56,183 --> 00:26:58,759
+node rule; that is open problem twenty.
+
+334
+00:26:59,459 --> 00:27:04,324
+Section 6.14 applies the same node-summed solar field to Mercury's orbit.
+
+335
+00:27:04,324 --> 00:27:10,587
+This figure shows the perihelion direction drifting over two hundred orbits, and the simulated
+
+336
+00:27:10,587 --> 00:27:16,251
+advance against the post-Newtonian factor, two plus two gamma minus beta, over three;
+
+337
+00:27:16,251 --> 00:27:20,715
+the dashed line is 42.98 arc seconds per century times that factor.
+
+338
+00:27:20,715 --> 00:27:26,579
+The paper's caveat for this figure: gamma and beta were borrowed from the post-Newtonian
+
+339
+00:27:26,579 --> 00:27:30,443
+equations of general relativity and inserted, not derived.
+
+340
+00:27:31,143 --> 00:27:34,273
+Section 6.18 goes further, without a figure.
+
+341
+00:27:34,273 --> 00:27:40,602
+If a node's clock rate is relayed between neighbours, and each hop compounds the slowdown
+
+342
+00:27:40,602 --> 00:27:47,002
+rather than adding to it, the time part of the metric becomes e to the minus two U, giving
+
+343
+00:27:47,002 --> 00:27:53,473
+beta equal to one. In simulation, the compounding relay gave 42.91 arc seconds per century,
+
+344
+00:27:53,473 --> 00:27:59,234
+against about 43 observed. An additive relay gave 50.1, which the paper excludes.
+
+345
+00:27:59,234 --> 00:28:05,349
+A strictly neighbour-relayed clock produced compounding without it being imposed, with
+
+346
+00:28:05,349 --> 00:28:11,607
+beta reaching 0.9992 on the finest grid. Gamma equals one is still assumed, not derived.
+
+347
+00:28:12,307 --> 00:28:18,543
+A rigid grid defines a rest frame. Following the Lorentz–Poincaré reading presented by
+
+348
+00:28:18,543 --> 00:28:23,111
+Bell, a preferred server frame may exist yet stay undetectable.
+
+349
+00:28:23,111 --> 00:28:29,636
+Two toys test this. Waves on a cubic lattice slow by a direction-dependent amount of order
+
+350
+00:28:29,636 --> 00:28:35,872
+k a squared. And here, sine-Gordon kinks re-plotted on fixed nodes contract by exactly
+
+351
+00:28:35,872 --> 00:28:42,107
+one over gamma, with energy gamma m within 0.04 percent up to 0.95 c, while much wider
+
+352
+00:28:42,107 --> 00:28:46,747
+than the spacing. Near the spacing, they radiate, slow, and pin.
+
+353
+00:28:47,447 --> 00:28:53,007
+The conclusion, for these update rules: direction dependence and departures from Lorentz
+
+354
+00:28:53,007 --> 00:28:58,124
+contraction both fall off as the pattern size over the spacing, to the minus two.
+
+355
+00:28:58,124 --> 00:29:03,368
+That yields a new constraint: physical particles must be much larger than one node.
+
+356
+00:29:03,368 --> 00:29:09,370
+A proton spans about five times ten to the nineteen Planck lengths, so for accessible particles
+
+357
+00:29:09,370 --> 00:29:12,529
+the effect is below about ten to the minus thirty.
+
+358
+00:29:12,529 --> 00:29:18,278
+The paper flags the remaining challenge: radiative corrections in virtual loops could carry
+
+359
+00:29:18,278 --> 00:29:20,615
+grid anisotropy down to low energies.
+
+360
+00:29:21,315 --> 00:29:24,723
+Chapter ten. Black Holes Without Singularities.
+
+361
+00:29:25,423 --> 00:29:31,066
+Far from the core, the network is assumed to reduce to general relativity, so horizons,
+
+362
+00:29:31,066 --> 00:29:35,994
+Event Horizon Telescope shadows, and LIGO and Virgo ringdowns are unchanged.
+
+363
+00:29:35,994 --> 00:29:41,961
+Inside, with a minimum node size, curvature is bounded at roughly one over the Planck length
+
+364
+00:29:41,961 --> 00:29:47,797
+squared, and density at roughly the Planck density, about five times ten to the ninety-six
+
+365
+00:29:47,797 --> 00:29:53,958
+kilograms per cubic metre. The singularity is a candidate to be replaced by a finite, maximally
+
+366
+00:29:53,958 --> 00:29:59,600
+loaded core. Precedents include the big bounce of loop quantum cosmology, regular black
+
+367
+00:29:59,600 --> 00:30:04,399
+holes of Bardeen and Hayward, Planck stars, and Markov's limiting density.
+
+368
+00:30:05,099 --> 00:30:10,995
+Section 6.17 turns this into a rough numerical estimate, using a placeholder rule that
+
+369
+00:30:10,995 --> 00:30:14,286
+no node carries more than about one Planck mass.
+
+370
+00:30:14,286 --> 00:30:18,468
+A mass M then cannot be packed below a minimum radius, R min.
+
+371
+00:30:18,468 --> 00:30:24,707
+General relativity's Kretschmann curvature grows as one over R to the sixth, without limit.
+
+372
+00:30:24,707 --> 00:30:30,602
+With the cap it levels off at about 842 over the Planck length to the fourth, the same
+
+373
+00:30:30,602 --> 00:30:36,155
+for every mass, because the saturated density is always about the Planck density.
+
+374
+00:30:36,855 --> 00:30:42,436
+This figure shows the levelling-off for the Sun, one kilogram, and one Planck mass.
+
+375
+00:30:42,436 --> 00:30:48,421
+The saturated radius is about 4.5 times ten to the minus twenty-three metres for the Sun,
+
+376
+00:30:48,421 --> 00:30:54,876
+far inside its three-kilometre horizon. For the Sun as it is, the change from general relativity
+
+377
+00:30:54,876 --> 00:31:00,658
+is around ten to the minus ninety-three, so the light-bending and Mercury examples are
+
+378
+00:31:00,658 --> 00:31:06,508
+unchanged. In this toy, a horizon forms only above about 0.17 Planck masses, about four
+
+379
+00:31:06,508 --> 00:31:09,063
+times ten to the minus nine kilograms.
+
+380
+00:31:09,763 --> 00:31:14,702
+The caveats: the cap value is a placeholder, not derived from the node rules;
+
+381
+00:31:14,702 --> 00:31:17,588
+the minimum black-hole mass is toy-dependent;
+
+382
+00:31:17,588 --> 00:31:23,425
+and the fate of a fully loaded core, including bounce or white-hole outcomes, is left open,
+
+383
+00:31:23,425 --> 00:31:28,363
+as is how information escapes in Hawking radiation, following the Page curve.
+
+384
+00:31:29,063 --> 00:31:31,727
+Chapter eleven. Testable Predictions.
+
+385
+00:31:32,427 --> 00:31:36,731
+A framework that only restates quantum mechanics cannot be tested.
+
+386
+00:31:36,731 --> 00:31:42,014
+The ledger's distinct physical claim is discreteness at roughly the Planck scale.
+
+387
+00:31:42,014 --> 00:31:47,752
+On a regular lattice, high-energy waves feel the grid, and a generic linear modification
+
+388
+00:31:47,752 --> 00:31:53,556
+makes photon speed depend on energy. Two photons emitted together a distance D away, with
+
+389
+00:31:53,556 --> 00:31:59,164
+energy difference delta E, would arrive separated by delta t of about xi times delta E
+
+390
+00:31:59,164 --> 00:32:01,707
+over the Planck energy, times D over c.
+
+391
+00:32:02,407 --> 00:32:10,439
+Observations already constrain this. From GRB 090510, Fermi found no evidence of Lorentz-invariance
+
+392
+00:32:10,439 --> 00:32:17,172
+violation, with a lower limit above 1.2 times the Planck energy on a linear effect.
+
+393
+00:32:17,172 --> 00:32:24,311
+From GRB 221009A, the brightest burst ever recorded, LHAASO set limits around ten to the
+
+394
+00:32:24,311 --> 00:32:28,205
+twenty GeV, roughly ten times the Planck energy.
+
+395
+00:32:28,205 --> 00:32:34,289
+A naive regular grid with an order-one coefficient is therefore disfavored;
+
+396
+00:32:34,289 --> 00:32:37,615
+the data require xi of about 0.1 or less.
+
+397
+00:32:38,315 --> 00:32:41,422
+The revised paper's response has two parts.
+
+398
+00:32:41,422 --> 00:32:45,611
+First, the lattice rule it tested produces no linear term;
+
+399
+00:32:45,611 --> 00:32:52,040
+its leading effect is quadratic. At Planck spacing, the fractional speed shortfall is one
+
+400
+00:32:52,040 --> 00:32:57,096
+eighth of E over the Planck energy, squared, times a direction factor.
+
+401
+00:32:57,096 --> 00:33:03,308
+For a 31 GeV photon, like the highest-energy photon from GRB 090510, that is about 8.1
+
+402
+00:33:03,308 --> 00:33:06,920
+times ten to the minus thirty-seven along an axis.
+
+403
+00:33:06,920 --> 00:33:13,854
+Second, a random, causal-set-like network remains a fallback, under which first-order dispersion
+
+404
+00:33:13,854 --> 00:33:15,443
+is expected to vanish.
+
+405
+00:33:16,143 --> 00:33:22,165
+The revision names an accessible test: gravity-mediated entanglement, as proposed by Bose
+
+406
+00:33:22,165 --> 00:33:25,548
+and colleagues and by Marletto and Vedral in 2017.
+
+407
+00:33:25,548 --> 00:33:31,637
+Two small masses, each in a superposition of two locations, interact only through gravity.
+
+408
+00:33:31,637 --> 00:33:37,793
+In the ledger, each branch loads nodes differently, so the expectation is that entanglement
+
+409
+00:33:37,793 --> 00:33:43,950
+would be observed. A null result, with a working experiment, would count against the model.
+
+410
+00:33:43,950 --> 00:33:50,242
+The caveat: this is an expectation, not a derivation, and it matches other quantum treatments
+
+411
+00:33:50,242 --> 00:33:54,639
+of gravity, so a positive result would not single out this model.
+
+412
+00:33:55,339 --> 00:33:59,720
+Relativistic effects of laboratory-scale sources have not been measured.
+
+413
+00:33:59,720 --> 00:34:02,398
+The paper estimates fractional clock shifts:
+
+414
+00:34:02,398 --> 00:34:07,691
+about 3.2 times ten to the minus twenty-four near a one-tonne tungsten block, and about
+
+415
+00:34:07,691 --> 00:34:12,924
+four times ten to the minus twenty at the apex of the Great Pyramid from its own mass.
+
+416
+00:34:12,924 --> 00:34:18,035
+Both lie below the roughly ten to the minus eighteen reached by today's best clocks.
+
+417
+00:34:18,035 --> 00:34:23,390
+The node sum reproduces general relativity here, so such a test would check consistency,
+
+418
+00:34:23,390 --> 00:34:24,667
+not separate the two.
+
+419
+00:34:25,367 --> 00:34:31,079
+Two more commitments. One update per Planck time gives a clock rate of about 1.85 times
+
+420
+00:34:31,079 --> 00:34:36,790
+ten to the forty-three hertz, and a ceiling near nine times ten to the forty-two hertz,
+
+421
+00:34:36,790 --> 00:34:42,238
+energies of order the Planck energy. No physical wave or particle should exceed it.
+
+422
+00:34:42,238 --> 00:34:48,081
+And the flat per-node vacuum cost predicts dark energy with w equal to minus one exactly.
+
+423
+00:34:48,081 --> 00:34:54,186
+The paper states that a confirmed time-varying dark energy, as hinted by recent DESI results,
+
+424
+00:34:54,186 --> 00:34:55,367
+would rule it out.
+
+425
+00:34:56,067 --> 00:34:58,467
+Chapter twelve. Open Problems.
+
+426
+00:34:59,167 --> 00:35:02,325
+The list of open problems has grown to twenty-seven.
+
+427
+00:35:02,325 --> 00:35:07,912
+Among the most central: derive the Born read-out rule rather than postulate it, now narrowed
+
+428
+00:35:07,912 --> 00:35:11,556
+to why the ledger carries a complex Hilbert-space structure;
+
+429
+00:35:11,556 --> 00:35:17,082
+specify a concrete network tensor and update rule that reproduce relativistic quantum field
+
+430
+00:35:17,082 --> 00:35:21,940
+theory; show that server-side ordering of updates stays unobservable to clients;
+
+431
+00:35:21,940 --> 00:35:27,466
+and make the mass-loads-the-server idea quantitative, recovering Einstein's field equations
+
+432
+00:35:27,466 --> 00:35:29,287
+and the equivalence principle.
+
+433
+00:35:29,987 --> 00:35:35,547
+New items include: deriving the factor of two in light bending, and beta and gamma for
+
+434
+00:35:35,547 --> 00:35:41,042
+Mercury, from one node rule; deriving the saturation cap and minimum black-hole mass;
+
+435
+00:35:41,042 --> 00:35:44,015
+coupling chiral modes to the weak gauge field;
+
+436
+00:35:44,015 --> 00:35:47,765
+and deriving the cosine-squared odds of the shared record.
+
+437
+00:35:47,765 --> 00:35:53,583
+Section 8 adds framework objectives: a Born rule from local projection, Lorentz invariance
+
+438
+00:35:53,583 --> 00:35:58,043
+under radiative corrections, and an anomaly-free chiral gauge sector.
+
+439
+00:35:58,743 --> 00:36:01,395
+The paper closes with a methodological note.
+
+440
+00:36:01,395 --> 00:36:06,819
+To stay falsifiable, server-side explanations are reserved for regimes where known physics
+
+441
+00:36:06,819 --> 00:36:12,604
+fails or is silent: quantum correlations and measurement, Planck-scale structure, and black-hole
+
+442
+00:36:12,604 --> 00:36:18,027
+interiors. Where established client-side physics already explains a phenomenon, the ledger
+
+443
+00:36:18,027 --> 00:36:23,632
+reinterprets it but does not replace it. As the paper puts it, a framework that can attribute
+
+444
+00:36:23,632 --> 00:36:26,343
+anything to the server would predict nothing.
+
+445
+00:36:27,043 --> 00:36:31,226
+To summarize. The Space-Ledger is a potential candidate hypothesis:
+
+446
+00:36:31,226 --> 00:36:36,845
+spacetime as a discrete, entangled network that holds the quantum state, with non-locality
+
+447
+00:36:36,845 --> 00:36:40,965
+located server-side and a local, light-speed-limited client world.
+
+448
+00:36:40,965 --> 00:36:47,083
+The revised paper adds a finiteness principle, toy checks of read-out rules and of a shared-record
+
+449
+00:36:47,083 --> 00:36:53,201
+Bell test, worked examples toward gravity, a finite black-hole core, and new testable commitments.
+
+450
+00:36:53,201 --> 00:36:58,757
+Much of it reorganizes standard physics; its distinct claims are discreteness, a read-out
+
+451
+00:36:58,757 --> 00:37:01,379
+postulate, and those concrete commitments.
+
+452
+00:37:01,379 --> 00:37:05,624
+Whether it survives depends on the open problems and on future data.
+
+453
+00:37:05,624 --> 00:37:08,683
+The paper is by Edmond Ying. Thanks for watching.

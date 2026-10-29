@@ -12,6 +12,7 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 **Explainer**
 - [Narrated explainer video (3:25)](video/space_ledger_explainer_v2.mp4)
 - [Explainer script](video/space_ledger_script_v2.pdf)
+- [Long explainer (37:09)](video/space_ledger_long_v3.mp4) · [script](video/space_ledger_long_v3_script.pdf) · [subtitles](video/space_ledger_long_v3.srt)
 
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
