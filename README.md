@@ -17,6 +17,8 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 **Illustration**
 - [BCC lattice photon illustration (38 s)](video/bcc_photon_illustration.mp4): a 3D illustrative BCC lattice with light shown as phase on lattice links, a wave packet advancing one cell per tick, and gentle bending near a loaded region (bend exaggerated; real ~1.75 arcsec at the Sun's edge). Illustration of a proposed model.
 - Stills: [20 s](video/bcc_photon_stills/bcc_v6_20.png) · [26 s](video/bcc_photon_stills/bcc_v6_26.png) · [30 s](video/bcc_photon_stills/bcc_v6_30.png) · [34 s](video/bcc_photon_stills/bcc_v6_34.png) · [37 s](video/bcc_photon_stills/bcc_v6_37.png)
+- [Expansion between galaxies (32 s)](video/expansion_between_galaxies.mp4): new nodes appear only in the empty space between two bound galaxies, which stay the same size; the hop count between them grows (more nodes = more hops = more distance). Insertion is a server-side event; mechanism open. Illustration of a proposed model.
+- Stills: [2 s](video/expansion_stills/exp2_2.png) · [11 s](video/expansion_stills/exp2_11.png) · [20 s](video/expansion_stills/exp2_20.png) · [30 s](video/expansion_stills/exp2_30.png)
 
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
