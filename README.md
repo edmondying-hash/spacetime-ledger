@@ -14,6 +14,10 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 - [Explainer script](video/space_ledger_script_v2.pdf)
 - [Long explainer (37:09)](video/space_ledger_long_v3.mp4) · [script](video/space_ledger_long_v3_script.pdf) · [subtitles](video/space_ledger_long_v3.srt)
 
+**Illustration**
+- [BCC lattice photon illustration (38 s)](video/bcc_photon_illustration.mp4): a 3D illustrative BCC lattice with light shown as phase on lattice links, a wave packet advancing one cell per tick, and gentle bending near a loaded region (bend exaggerated; real ~1.75 arcsec at the Sun's edge). Illustration of a proposed model.
+- Stills: [20 s](video/bcc_photon_stills/bcc_v6_20.png) · [26 s](video/bcc_photon_stills/bcc_v6_26.png) · [30 s](video/bcc_photon_stills/bcc_v6_30.png) · [34 s](video/bcc_photon_stills/bcc_v6_34.png) · [37 s](video/bcc_photon_stills/bcc_v6_37.png)
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.
