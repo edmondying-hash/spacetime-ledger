@@ -820,6 +820,8 @@ with hopping parameter $\kappa$ and lattice self-coupling $\lambda_L$. The main 
 
 **Caveats.** The lattices are small and the error bars are sizable. Gauge fields and the top quark are not included on the lattice. A hypercubic lattice breaks rotational and Lorentz symmetry (see Sec. 7.3). The mean-field and Monte Carlo results disagree on the direction of the shift, and the conversion from lattice units to GeV is schematic. The near-zero $\lambda(M_{\text{Pl}})$ result is the strongest part of this subsection, and it was established in the earlier literature, not by the ledger model.
 
+**Higgs value as a cooled state (Hypothesis).** The server's Higgs rule, meaning the shape of its potential, is fixed and never changes. What changes is the network's temperature. Above about 160 GeV the stable average value of the field is zero, and elementary particles carry no Higgs mass. As the network cooled past that threshold, about 10⁻¹² s after the Big Bang, the zero state stopped being stable, and the field relaxed into its present value of 246 GeV. This is a phase transition, like molten metal setting into shape as it cools below its freezing point: the rules stay the same, and only the stable state they allow depends on temperature. No setting was changed and no change was intended. The present value came from the fixed rule acting under falling temperature, and that value is what later fixed the neutron–proton ratio and the light-element yields of Big Bang nucleosynthesis. On the same reasoning, reheating any region above about 160 GeV would return the field there to zero. The model doesn't yet derive why the potential settles at 246 GeV in particular; that remains an input.
+
 ### 6B. Gravity
 
 #### 6.11 General Relativity (Open Work)
