@@ -780,6 +780,8 @@ The bending of light near a mass, with deflection angle $4GM/(c^2 b)$ for impact
 
 In standard quantum mechanics, a particle's wavefunction does not stop at a barrier it classically cannot cross. Inside the barrier the amplitude decays exponentially, and if the barrier is thin enough, some amplitude survives on the far side. In ledger terms, the server-side wavefunction extends through and past the barrier with exponentially decaying amplitude, so a client render on the far side has a small but nonzero probability. This is a reinterpretation of well-established results: Gamow (1928) explained alpha decay as tunneling out of the nucleus, and the scanning tunneling microscope (Binnig, Rohrer, Gerber and Weibel, 1982) images surfaces atom by atom using the tunneling current. The ledger adds no new prediction here.
 
+**Measurement suppresses tunnelling (Hypothesis).** Repeated measurement suppresses tunnelling (the quantum Zeno effect; Misra & Sudarshan 1977; observed with trapped ions by Itano et al. 1990). In ledger terms, each decohere() on the barrier region commits 'not here' and restarts the move() chain from the near side, so amplitude can't build up past the barrier. Frequent enough reads push the far-side probability below its free value (about 1 in 2 million for a 1 eV electron and a 3 eV, 1 nm barrier), toward zero in the limit of continuous reads.
+
 #### 6.10 The Higgs Sector and a Toy Network (Hypothesis)
 
 *This subsection reports exploratory calculations. The numbers are first-pass estimates, not a derivation of the Higgs sector.*
