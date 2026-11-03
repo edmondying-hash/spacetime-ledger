@@ -25,6 +25,8 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 - Stills: [3 s](video/delayed_choice_stills/v2_1.png) · [11 s](video/delayed_choice_stills/v2_2.png) · [17 s](video/delayed_choice_stills/v2_3.png) · [23 s](video/delayed_choice_stills/v2_4.png) · [33 s](video/delayed_choice_stills/v2_5.png) · [40 s](video/delayed_choice_stills/v2_6.png)
 - [Bell inequality (56 s)](video/bell_inequality.mp4): 25% vs the 33% local hidden-variable limit (0/120/240 degree polarizers). Illustration of a proposed model.
 - Stills: [0 s](video/bell_inequality_stills/v2_1.png) · [8 s](video/bell_inequality_stills/v2_2.png) · [16 s](video/bell_inequality_stills/v2_3.png) · [26 s](video/bell_inequality_stills/v2_4.png) · [36 s](video/bell_inequality_stills/v2_5.png) · [48 s](video/bell_inequality_stills/v2_6.png)
+- [Double Slit, One Photon at a Time: When the Fringes Fade (82 s)](video/double_slit.mp4): single-photon fringes building up dot by dot, a single slit compared with a double slit, which-path detection, and the coherence cutoff at d = λz/w = 115. Illustration of a proposed model.
+- Stills: [5 s](video/double_slit_stills/v1_1.png) · [12 s](video/double_slit_stills/v1_2.png) · [15 s](video/double_slit_stills/v1_3.png) · [30 s](video/double_slit_stills/v1_4.png) · [40 s](video/double_slit_stills/v1_5.png) · [50 s](video/double_slit_stills/v1_6.png) · [59 s](video/double_slit_stills/v1_7.png) · [67 s](video/double_slit_stills/v1_8.png) · [74 s](video/double_slit_stills/v1_9.png) · [80 s](video/double_slit_stills/v1_10.png)
 
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
