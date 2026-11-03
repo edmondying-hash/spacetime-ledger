@@ -28,6 +28,16 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 - [Double Slit, One Photon at a Time: When the Fringes Fade (82 s)](video/double_slit.mp4): single-photon fringes building up dot by dot, a single slit compared with a double slit, which-path detection, and the coherence cutoff at d = λz/w = 115. Illustration of a proposed model.
 - Stills: [5 s](video/double_slit_stills/v1_1.png) · [12 s](video/double_slit_stills/v1_2.png) · [15 s](video/double_slit_stills/v1_3.png) · [30 s](video/double_slit_stills/v1_4.png) · [40 s](video/double_slit_stills/v1_5.png) · [50 s](video/double_slit_stills/v1_6.png) · [59 s](video/double_slit_stills/v1_7.png) · [67 s](video/double_slit_stills/v1_8.png) · [74 s](video/double_slit_stills/v1_9.png) · [80 s](video/double_slit_stills/v1_10.png)
 
+### Three Bodies on the Ledger Grid: Figure-8 vs Newton — `video/threebody.mp4` (90 s)
+
+*Illustration of a proposed model. Values real; only motion and timing exaggerated.*
+
+Gravity modelled as load that spreads over the 8-link BCC grid, with no pairwise forces: each body moves up the gradient of the other bodies' load. The grid runs are compared with a Newtonian reference.
+
+- **Figure-8, 12 cells per unit:** a stable figure-8 for 4 periods (t = 25.3), ending 0.063 units off Newton (the orbit is ~2 units across). A zoomed inset shows the gap.
+- **Pythagorean 3-4-5, 10 cells per unit:** tracks Newton to 0.017 at t = 1.80. At t ≈ 1.9 two bodies pass 0.021 units apart, inside the 0.15-unit load smoothing. This is a grid-resolution limit at a close pass; after it the paths stay apart (1.96 units off at t = 10). The mass-3 body has close passes at t = 2.8, 5.6 and 9.0.
+- **Caveat:** the video shows the load spread instantly; in the model it travels at c.
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.
