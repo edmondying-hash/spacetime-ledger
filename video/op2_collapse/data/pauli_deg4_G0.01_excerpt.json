@@ -1,0 +1,44 @@
+{
+  "source": "pauli_deg4/results4_G0.01.json",
+  "params": {
+    "RMAX": 40,
+    "LCAP": 7,
+    "G": 0.01
+  },
+  "collapse_N": 4738,
+  "post_collapse_monotone_shrink": true,
+  "selected_rows_near_A_B_threshold_C": [
+    {
+      "N": 141,
+      "R_half": 2.0600017448421357,
+      "R_out": 3.0,
+      "overflow_frac": 0.0,
+      "center_density": 1.9999962875768156,
+      "iters": 37
+    },
+    {
+      "N": 3853,
+      "R_half": 3.8489282103277196,
+      "R_out": 8.0,
+      "overflow_frac": 0.0,
+      "center_density": 11.9999710461734,
+      "iters": 44
+    },
+    {
+      "N": 4738,
+      "R_half": 1.0,
+      "R_out": 6.0,
+      "overflow_frac": 0.9881806669480794,
+      "center_density": 1184.4991028473912,
+      "iters": 73
+    },
+    {
+      "N": 46127,
+      "R_half": 1.0,
+      "R_out": 18.0,
+      "overflow_frac": 0.9987859605003577,
+      "center_density": 11531.741806332826,
+      "iters": 43
+    }
+  ]
+}

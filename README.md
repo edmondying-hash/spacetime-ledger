@@ -39,6 +39,16 @@ Gravity modelled as load that spreads over the 8-link BCC grid, with no pairwise
 - **Pythagorean 3-4-5, 10 cells per unit:** tracks Newton to 0.017 at t = 1.80. At t ≈ 1.9 two bodies pass 0.021 units apart, inside the 0.15-unit load smoothing. This is a grid-resolution limit at a close pass; after it the paths stay apart (1.96 units off at t = 10). The mass-3 body has close passes at t = 2.8, 5.6 and 9.0.
 - **Caveat:** the video shows the load spread instantly; in the model it travels at c.
 
+### OP2 star collapse — [video/op2_collapse/op2_collapse_v2.mp4](video/op2_collapse/op2_collapse_v2.mp4) (38 s)
+
+*Illustration of a proposed model. Radial-shell mean-field toy at G = 0.01 (model units).*
+
+Separate added-mass states, bridged on screen by adding mass. Timing and radii are interpolated for the illustration. Supported lump N = 141 (half-mass density ≈ 1.93); denser core N = 3853 (≈ 8.1, about 4×); chosen support cap N ≈ 4738; then a grid-floor core with an extended halo, N ≈ 46,127 (half-mass density ≈ 5,500).
+
+Blast-spill is the load-packing rule for the outer extent. Supernova, ejecta, bounce, black hole, and empirical stellar validation are outside this illustration.
+
+- [Notes, excerpts, and renderer](video/op2_collapse/README.md) · [thumbnail at 29 s](video/op2_collapse/thumbnail.png) · [storyboard](video/op2_collapse/storyboard.md)
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.
