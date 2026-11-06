@@ -1,21 +1,43 @@
 # OP2 star collapse — Quantized Space-Ledger toy model (educational video)
 
-Release for The Quantized Space-Ledger explainer series. Illustration of a proposed model.
+Illustration of a proposed model for The Quantized Space-Ledger explainer series.
 
-## Release artifact
+## Latest approved release: v3
 
-[`op2_collapse_v2.mp4`](op2_collapse_v2.mp4) is the reviewed 38 s animation (silent). This commit stores that file unchanged. A later local re-encode is optional and is not the reviewed bytes.
+[`op2_collapse_v3.mp4`](op2_collapse_v3.mp4) is the approved release (Intuition, 6 Nov 2026, 9:08 AM ET: "looks good, please go ahead and commit and publish"). This commit stores that file unchanged. It is the release, not a preview.
+
+Two changes from v2, and nothing else:
+
+1. The dashed outer halo ring stays visible, drawn last at the same scene `r_out`. That ring is the illustrative blast-extent boundary, not a new fitted radius. Grid motion and advection match v2.
+2. Captions state that the smooth motion is an illustrative interpolation between separate mass states, not measured collapse dynamics (`Illustrative transitions between separate mass states.` / `Not measured collapse dynamics.`).
+
+Timing stays 38 s. The numeric states, 8-direction inward beads, and model caveats are the same as v2.
 
 | File | Role |
 |---|---|
-| [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4) | Release video |
-| [`op2_collapse_v2.mp4.sha256`](op2_collapse_v2.mp4.sha256) | SHA-256 of that file |
-| [`thumbnail.png`](thumbnail.png) | Frame at t = 29 s, taken from the release MP4 (inward-collapse scene) |
-| [`storyboard.md`](storyboard.md) / [`storyboard.pdf`](storyboard.pdf) | Approved board and approval history. The release file is v2 |
-| [`render_op2_v2.py`](render_op2_v2.py) | Portable renderer for a local regeneration |
-| [`make_storyboard.py`](make_storyboard.py) | Board stills and PDF only; does not encode the MP4 |
+| [`op2_collapse_v3.mp4`](op2_collapse_v3.mp4) | Approved release video |
+| [`op2_collapse_v3.mp4.sha256`](op2_collapse_v3.mp4.sha256) | SHA-256 of that file |
+| [`thumbnail_v3.png`](thumbnail_v3.png) | Frame at t = 29 s from the v3 MP4 (inward-collapse scene) |
+| [`render_op2_v3.py`](render_op2_v3.py) | Portable renderer for a local regeneration |
 
 Check the stored video from this directory:
+
+```bash
+sha256sum -c op2_collapse_v3.mp4.sha256
+```
+
+## Earlier release: v2
+
+v2 stays in this folder. v3 does not replace those bytes.
+
+| File | Role |
+|---|---|
+| [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4) | Reviewed v2 video |
+| [`op2_collapse_v2.mp4.sha256`](op2_collapse_v2.mp4.sha256) | SHA-256 of that file |
+| [`thumbnail.png`](thumbnail.png) | Frame at t = 29 s from the v2 MP4 |
+| [`storyboard.md`](storyboard.md) / [`storyboard.pdf`](storyboard.pdf) | Approved v2 board and approval history |
+| [`render_op2_v2.py`](render_op2_v2.py) | v2 renderer |
+| [`make_storyboard.py`](make_storyboard.py) | Board stills and PDF only; does not encode either MP4 |
 
 ```bash
 sha256sum -c op2_collapse_v2.mp4.sha256
@@ -72,19 +94,21 @@ Python 3 dependencies:
 - `matplotlib`
 - `ffmpeg` on `PATH` (H.264 encode)
 
-From this directory:
+From this directory, the v3 renderer:
 
 ```bash
-python3 render_op2_v2.py
+python3 render_op2_v3.py
 ```
 
-That writes `./op2_collapse_v2.mp4`, `./frames_v2/`, and `./qa_stills_v2/`. Set `OP2_OUT` to write somewhere else:
+That writes `./op2_collapse_v3.mp4`, `./frames_v3/`, and `./qa_stills_v3/`. Set `OP2_OUT` to write somewhere else:
 
 ```bash
-OP2_OUT=/path/to/dir python3 render_op2_v2.py
+OP2_OUT=/path/to/dir python3 render_op2_v3.py
 ```
 
-Re-running replaces a local MP4. It does not reproduce the reviewed file byte for byte. The committed MP4 and the `.sha256` sidecar are the release.
+The v2 renderer is the same command with [`render_op2_v2.py`](render_op2_v2.py). It writes `./op2_collapse_v2.mp4`, `./frames_v2/`, and `./qa_stills_v2/`.
+
+Re-running replaces a local MP4. It does not reproduce the reviewed file byte for byte. The committed MP4 and its `.sha256` sidecar are the release.
 
 Storyboard stills and PDF only (no video). Also needs `pillow` (imported as `PIL`) to check that each still is 1920×1080:
 

@@ -1,8 +1,8 @@
 # OP2 star collapse — approved storyboard (38 s)
 
-This file records the approved board: canvas, captions, and scene times. It is the approval record, not a stand-in for the release. The release artifact is [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4), rendered by [`render_op2_v2.py`](render_op2_v2.py).
+This file records the approved v2 board: canvas, captions, and scene times. The v2 artifact is [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4), rendered by [`render_op2_v2.py`](render_op2_v2.py). The latest approved release is [`op2_collapse_v3.mp4`](op2_collapse_v3.mp4). v3 keeps this timing and these mass states. It leaves the dashed outer halo visible and states on screen that the motion is an illustrative interpolation between separate mass states, not measured collapse dynamics. The scene table below is the v2 board text.
 
-[`storyboard.pdf`](storyboard.pdf) and the stills below are written by [`make_storyboard.py`](make_storyboard.py). That generator draws the board. It does not encode the release MP4. The release renderer uses balanced 8-direction inward inflow; the board stills keep the simpler mass-added arrows from the approved layout.
+[`storyboard.pdf`](storyboard.pdf) and the stills below are written by [`make_storyboard.py`](make_storyboard.py). That generator draws the v2 board. It does not encode v2 or v3. Both video renderers use balanced 8-direction inward inflow; the board stills keep the simpler mass-added arrows from the approved layout.
 
 **Canvas:** 1920×1080. **All on-screen text ≥38 px** (~28 pt at 100 dpi).  
 **Layout bands:** header (corner row → 2-line gold framing → title) / illustration / 1–2 captions. No overlap. No tiny radius labels.
@@ -39,4 +39,5 @@ Local copies: [`data/pauli_massdens_G0.01_excerpt.json`](data/pauli_massdens_G0.
 
 - Board approved (spacetime): "Yes, render this 38-second storyboard."
 - An earlier render used the filenames `op2_collapse.mp4` and `render_op2.py`. Those names are history, not the file in this folder.
-- Release artifact: reviewed [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4) (1920×1080, H.264, yuv420p, 30 fps, 38.000 s, silent). Commit and publish approved: "Let's commit and publish on YouTube."
+- v2 release: reviewed [`op2_collapse_v2.mp4`](op2_collapse_v2.mp4) (1920×1080, H.264, yuv420p, 30 fps, 38.000 s, silent). Commit and publish approved: "Let's commit and publish on YouTube."
+- v3 release: reviewed [`op2_collapse_v3.mp4`](op2_collapse_v3.mp4), same spec. Approved 6 Nov 2026, 9:08 AM ET (Intuition): "looks good, please go ahead and commit and publish."
