@@ -50,6 +50,14 @@ Blast-spill is the load-packing rule for the outer extent. Supernova, ejecta, bo
 - [Notes, excerpts, and renderers](video/op2_collapse/README.md) · [v3 thumbnail at 29 s](video/op2_collapse/thumbnail_v3.png) · [storyboard](video/op2_collapse/storyboard.md)
 - Earlier release: [v2](video/op2_collapse/op2_collapse_v2.mp4) · [v2 thumbnail](video/op2_collapse/thumbnail.png)
 
+### GR geometry vs proposed fixed-BCC lensing — [video/gr_vs_bcc_lensing/lensing_comparison_v2.mp4](video/gr_vs_bcc_lensing/lensing_comparison_v2.mp4) (38 s)
+
+*Conceptual side-by-side. Approved release v2. A v1 preview was not released.*
+
+LEFT illustrates established GR geometric lensing. It is not a newly integrated geodesic. RIGHT is the proposed fixed-BCC congestion hypothesis on a rigid body-centred-cubic network (nearest-eight links only; 91 nodes, 216 links). Its dashed path is a hypothetical deflection, not a calculated prediction. Equivalence is not demonstrated. No quantitative validation or accuracy claim.
+
+- [Notes](video/gr_vs_bcc_lensing/README.md) · [thumbnail at 30 s](video/gr_vs_bcc_lensing/thumbnail.png) · [storyboard](video/gr_vs_bcc_lensing/storyboard.md) · [scientific notes](video/gr_vs_bcc_lensing/SCIENTIFIC_NOTES_v2.md)
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.

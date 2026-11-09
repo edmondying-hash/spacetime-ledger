@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "mp4": "lensing_comparison_v2.mp4",
+  "sha256": "16c053263f9daa2219062fc60256374d4dbb5319cea1414dbe4ec0eb293b4536",
+  "v1_preserved": "not released (lensing_comparison_preview.mp4)",
+  "spec": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_target_s": 38.0,
+    "n_frames": 1140,
+    "codec": "libx264",
+    "pix_fmt": "yuv420p",
+    "audio": null
+  },
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "30/1",
+        "duration": "38.000000",
+        "nb_frames": "1140"
+      }
+    ],
+    "format": {
+      "duration": "38.000000",
+      "size": "1284831",
+      "bit_rate": "270490"
+    }
+  },
+  "decode_ok": true,
+  "decode_stderr": "",
+  "text_oob_count": 0,
+  "text_oob_samples": [],
+  "bcc_geom_hash": "459fc54d85f93625d5d3ce4762c6671da86af758e94a8dd74fc8f34ff46741b3",
+  "bcc_n_nodes": 91,
+  "bcc_n_links": 216,
+  "bcc_static_checks_failed": [],
+  "path_analysis": {
+    "GR": {
+      "initial_tangent_xy": [
+        690.0,
+        0.0
+      ],
+      "initial_horizontal": true,
+      "outgoing_tangent_xy": [
+        1056.0,
+        150.0
+      ],
+      "outgoing_deflected_down": true,
+      "source_above_mass": true,
+      "impact_parameter_px": 170,
+      "min_dist_to_mass": 97.20693100298907,
+      "clear_of_mass_disk": true,
+      "monotonic_down_near_encounter": true,
+      "y_start": 330,
+      "y_end": 475,
+      "end_below_start": true
+    },
+    "BCC": {
+      "initial_tangent_xy": [
+        750.0,
+        0.0
+      ],
+      "initial_horizontal": true,
+      "outgoing_tangent_xy": [
+        1101.0,
+        180.0
+      ],
+      "outgoing_deflected_down": true,
+      "source_above_mass": true,
+      "impact_parameter_px": 170,
+      "min_dist_to_mass": 75.18035735591828,
+      "clear_of_mass_disk": true,
+      "monotonic_down_near_encounter": true,
+      "y_start": 330,
+      "y_end": 515,
+      "end_below_start": true
+    },
+    "paths_distinct": true,
+    "matched_initial_source": true
+  },
+  "paths_are_artist_beziers": true,
+  "physics_simulation": false,
+  "contact_sheet": "contact_sheet_v2.jpg",
+  "notes": "SCIENTIFIC_NOTES_v2.md",
+  "renderer": "render_lensing_comparison_v2.py"
+}
