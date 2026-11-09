@@ -405,7 +405,7 @@ For the nearest-neighbour wave equation on the BCC grid (continuous time, link l
 
 This corresponds to $E_{\text{QG},2} \approx 4.8$–$7.3\times10^{19}$ GeV, about $10^{8}$ times above the GRB 090510 quadratic bound, so the effect lies far below current sensitivity (Sec. 7.1).
 
-The leading coefficient depends on the layout. The axis-to-diagonal spread in units of $(ka)^2$ is about 0.083 for a simple cubic grid, 0.056 for body-centred cubic and diamond (the value used above), and 0.021 for face-centred cubic (close packing), which is the most isotropic of the simple nearest-neighbour layouts. A cubic grid whose links also include the 12 face diagonals (weights 1/3 on axis links and 1/6 on diagonal links) cancels the $(ka)^2$ direction dependence entirely, leaving only order $(ka)^4$. Both remain link-only and are potential candidates for the node layout.
+The leading coefficient depends on the layout. The axis-to-diagonal spread in units of $(k\ell)^2$, where $\ell$ is the link length, is about 0.083 for a simple cubic grid, 0.056 for body-centred cubic and diamond (the value used above), and 0.021 for face-centred cubic (close packing), which is the most isotropic of the simple nearest-neighbour layouts. A cubic grid whose links also include the 12 face diagonals (weights 1/3 on axis links and 1/6 on diagonal links) cancels the $(ka)^2$ direction dependence entirely, leaving only order $(ka)^4$. Both remain link-only and are potential candidates for the node layout.
 
 \begin{figure}[H]
 \centering
@@ -638,7 +638,7 @@ The Dirac equation recovered above is Lorentz invariant, so in this model specia
 - The measured packet speeds agree with the analytic formula to about $1\times10^{-4}$ at every wavenumber tested (see the table below and Figure \ref{fig:test1}).
 - The anisotropy between axis and body diagonal is $\approx (ka)^2/12$, independent of the timestep, and vanishes for long wavelengths ($ka \to 0$).
 - Timestep notes: a timestep equal to the spacing ($\lambda = 1$) makes propagation exact only on a 1D chain. In 3D the scheme is unstable for $\lambda > 1/\sqrt{3}$; at $\lambda = 1/\sqrt{3}$ the leading error cancels along [111] but not along the axes. No single choice makes all directions exact.
-- On the model's BCC grid the same calculation gives a coefficient of $(ka)^2/18$, with axis fastest and body diagonal slowest (Sec. 6.1).
+- On the model's BCC grid the same calculation gives a coefficient of $(k\ell)^2/18$ ($\ell$ the link length), with axis fastest and body diagonal slowest (Sec. 6.1).
 
 | $ka$ | $v_g/c$ [100] | $v_g/c$ [110] | $v_g/c$ [111] |
 |---|---|---|---|
