@@ -9,6 +9,8 @@ This paper is a speculative, information-theoretic framework. Its hypothesis is 
 - [Whitepaper, v2 (PDF, 73 pages)](space-ledger-v2.pdf)
 - [Markdown source](space-ledger-v2.md)
 
+`space-ledger-v2.md` is the source of record; `space-ledger-v2.pdf` is a build artifact and may lag the text.
+
 **Explainer**
 - [Narrated explainer video (3:25)](video/space_ledger_explainer_v4.mp4)
 - [Explainer script](video/space_ledger_script_v2.pdf)
