@@ -6,7 +6,7 @@ Edmond Ying · October 2026 · working hypothesis
 This paper is a speculative, information-theoretic framework. Its hypothesis is that spacetime is a discrete, entangled network of Planck-scale nodes (a "Space-Ledger") that carries the quantum state. The framework is organized as a client–server picture. The observable world of matter, signals and detectors is the local client side, limited by the speed of light. Spacetime is the server side, which holds the global state, including entanglement and Bell correlations. Non-locality is not removed; it is located in the substrate, while the client side keeps no-signaling.
 
 **Read the paper**
-- [Whitepaper, v2 (PDF, 73 pages)](space-ledger-v2.pdf)
+- [Whitepaper, v2 (PDF, 79 pages)](space-ledger-v2.pdf)
 - [Markdown source](space-ledger-v2.md)
 
 `space-ledger-v2.md` is the source of record; `space-ledger-v2.pdf` is a build artifact and may lag the text.
