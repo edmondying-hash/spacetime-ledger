@@ -22,7 +22,7 @@ D1  Load rule.      LOAD-FREE. L1.2 runs the section 6.2 vacuum symbol with no
                     load term, as L1.1 did, and result.json declares
                     "load rule: none, section 6.2 vacuum symbol". Step X3
                     (uniform-load invariance) is not run.
-D2  Species-        FAIL. If the end-mode speed differs from the unchained
+D2  Species-        FAIL (SUPERSEDED by section 3). If the end-mode speed differs from the unchained
     dependent c.    physical-mode speed by more than the design's 1e-6 relative
                     tolerance (R6), the L1.2 gate verdict is FAIL, with the
                     measured difference recorded. It is not recorded as
@@ -37,18 +37,43 @@ D4  Pre-registration.  YES. PREREGISTRATION.md (sha256 73375244...7239) governs
                     writes DESIGN_vs_PREREG.md before any run.
 
 ----------------------------------------------------------------
-3. CONSEQUENCE OF D2, STATED NOW SO IT IS NOT A SURPRISE LATER
+3. REVISION OF D2 (Edmond, 4:51 PM America/New_York, 21:51 UTC)
 ----------------------------------------------------------------
-The paper's own numbers are 0.98911 (unchained) and 0.9855 (chained end mode),
-a 0.365% difference (design R6). Under D2 the expected L1.2 verdict is FAIL on
-the species-dependent-c clause, while the Table dw cells may still pass. The
-plan's L1 exit gate requires "L1.2 reproduced", so an L1.2 FAIL keeps the L1
-exit gate open. This record does not edit the plan or the paper. Whether the
-paper's section 6.1 and 7.2 wording on the tick (tau = 0.9855 t_P with the
-chain) changes is a separate decision for after the data.
+Edmond's words: "Ok d2 pass when difference and record would serve better".
+This SUPERSEDES the D2 entry in section 2. The original D2 ("FAIL") is left in
+place above, unedited, as the earlier decision.
+
+D2 (revised)  PASS WHEN THE DIFFERENCE IS MEASURED AND RECORDED. The species-
+              dependent-c clause of L1.2 (design R6) passes when:
+              (a) the end-mode speed and the unchained physical-mode speed are
+                  both measured by the same code path, over the 13 directions,
+                  and reported to six significant figures with the difference
+                  and its relative size, and
+              (b) the end-mode speed reproduces the paper's 0.9855 within the
+                  plan's 5% rule.
+              A difference larger than 1e-6 relative is then stated in the
+              result as a measured species-dependent difference. It is a
+              recorded finding and does not by itself fail the gate. If (a) or
+              (b) does not hold, the clause does not pass.
+
+The design file is NOT changed by this revision. Its R6 text already says a
+difference above 1e-6 "is recorded as a measured species-dependent difference"
+and that the run "measures and reports" without deciding. Only the word FAIL in
+this record's earlier D2 is withdrawn. If the executing agent finds any
+conflict between design R6 and this revision, it stops and pings Edmond.
+
+Expected outcome, unchanged: the paper's own numbers are 0.98911 (unchained)
+and 0.9855 (chained end mode), a 0.365% difference. So the run is expected to
+pass this clause with a recorded species-dependent difference of about that
+size. The plan's L1 exit gate wording "L1.2 reproduced" is then met if the
+Table dw cells and the b <= 0.25 boundary also pass. This record does not edit
+the plan or the paper. Whether the paper's section 6.1 and 7.2 wording on the
+tick (tau = 0.9855 t_P with the chain) needs a sentence saying the unchained and
+chained speeds differ by 0.365% is a separate decision for after the data. That
+is a real consequence of recording the difference, so it is flagged here.
 
 ----------------------------------------------------------------
-4. NOT YET GIVEN
+5. NOT YET GIVEN
 ----------------------------------------------------------------
 The approval required by plan section 0.2 and design section 9 is a one-line
 approval naming the design's sha256. The four decisions above are not that
