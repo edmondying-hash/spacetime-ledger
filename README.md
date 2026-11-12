@@ -62,6 +62,8 @@ LEFT illustrates established GR geometric lensing. It is not a newly integrated 
 
 **Signed-off records (exact copies).** [Layered plan v3.3 r2](layered_plan_v3_3_r2_20261111/) is the live layered plan. [L1.1 repair spec r8](L1_1_repair_spec_r8_20261111/) is the L1.1 gate. The [sign-off sidecar](L1_1_repair_spec_r8_20261111_SIGNOFF.txt) sits beside the r8 folder; it is the sign-off record because r8's own status line is frozen inside its hash.
 
+**Draft, not signed off.** [L1.1 repair spec r9](L1_1_repair_spec_r9_20261112/) is an identification note drafted for Edmond's review; r8 above remains the signed-off L1.1 gate until r9 is signed off.
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.
