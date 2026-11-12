@@ -73,10 +73,28 @@ chained speeds differ by 0.365% is a separate decision for after the data. That
 is a real consequence of recording the difference, so it is flagged here.
 
 ----------------------------------------------------------------
-5. NOT YET GIVEN
+5. APPROVAL (plan section 0.2, design section 9)
 ----------------------------------------------------------------
-The approval required by plan section 0.2 and design section 9 is a one-line
-approval naming the design's sha256. The four decisions above are not that
-approval. NOTHING IS AUTHORISED TO RUN until Edmond approves, naming
-7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b (or its first
-8 characters, 7e09b7c4).
+Given: Edmond Ying, 2026-11-12, 4:56 PM America/New_York (21:56 UTC), in the
+words "Approve 7e09b7c4".
+
+Verified by the drafting agent at the time of recording: L1_2_RUN_DESIGN.md
+hashes to 7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b,
+which matches the approved prefix 7e09b7c4. The design was unchanged since it
+was hashed.
+
+AUTHORISED: steps S0 to S5 of the design, under the section 6 caps (soft
+ceilings: 96 GiB, 20 CPU threads, 8 h total and 2 h per step, 1 GiB output; hard
+rules: one attempt per step, stop on any failed pre-flight or mid-run check),
+with decisions D1 (load-free), D2 as REVISED in section 3, D3 and D4 above.
+
+NOT AUTHORISED: any step beyond S0 to S5; step X3; any edit to the paper, plan,
+repo or an archived record; regenerating domainwall.png; editing a frozen
+source to make a check pass; a second attempt of any step. A corrected re-run
+is a new run with its own id and its own approval. The executing agent pings
+Edmond if a ceiling must be raised, if design R6 and the D2 revision conflict,
+or if DESIGN_vs_PREREG.md finds a conflict it cannot resolve by D4.
+
+REQUIRED BEFORE THE FIRST COMPUTATION: P0 (every frozen hash matches), copy
+this design unchanged into runs/<date>_<id>/, write expected.json with the
+paper's values, and write DESIGN_vs_PREREG.md.
