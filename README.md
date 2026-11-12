@@ -60,6 +60,8 @@ LEFT illustrates established GR geometric lensing. It is not a newly integrated 
 
 - [Notes](video/gr_vs_bcc_lensing/README.md) · [thumbnail at 30 s](video/gr_vs_bcc_lensing/thumbnail.png) · [storyboard](video/gr_vs_bcc_lensing/storyboard.md) · [scientific notes](video/gr_vs_bcc_lensing/SCIENTIFIC_NOTES_v2.md)
 
+**Signed-off records (exact copies).** [Layered plan v3.3 r2](layered_plan_v3_3_r2_20261111/) is the live layered plan. [L1.1 repair spec r8](L1_1_repair_spec_r8_20261111/) is the L1.1 gate. The [sign-off sidecar](L1_1_repair_spec_r8_20261111_SIGNOFF.txt) sits beside the r8 folder; it is the sign-off record because r8's own status line is frozen inside its hash.
+
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
 **Open for comment.** This work is public instead of going through peer review. Anyone is welcome to read, share and comment. Please open an [issue](https://github.com/edmondying-hash/spacetime-ledger/issues) for questions, critiques or suggestions.

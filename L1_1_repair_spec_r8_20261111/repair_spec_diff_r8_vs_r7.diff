@@ -1,0 +1,74 @@
+--- REPAIR_SPEC_L1_1_r7.md	2026-11-11 22:18:26.730181300 -0500
++++ REPAIR_SPEC_L1_1_r8.md	2026-11-11 22:33:56.440358900 -0500
+@@ -1,7 +1,9 @@
+-# Repair specification for L1.1 — the three edge momenta — r7
++# Repair specification for L1.1 — the three edge momenta — r8
+ 
+ **Status: draft for Edmond's review. Not hashed, not approved, nothing run under it.**
+ 
++**r8 (2026-11-11):** r7 is kept unchanged as `REPAIR_SPEC_L1_1_r7.md` (sha256 `aeca56e4a60bf57a929bb48b1651a23863651e97b41ebeb1b87a06663380ebbb`). r8 replaces route 3 in §6: the chain + Wilson `r = 0.05` term is not missing. It is implemented in the frozen chain source and reproduces the paper's `2.663e−2` (`0.0266255` at `N_s = 32`, 41³, exactly unitary, Γ = 0, the twelve edge zeros lifted). The gate still rejects it: at `φ = 1.4` the repaired minimum is `32%` of the §3.4 floor, a factor `3.08` below it. §7 now records that no candidate passes §3, so L1.1 is blocked on a decision — find a repair that clears §3.4, or re-decide the floor — not on a missing term. §8 records the route 3 provenance. §3.4 is unchanged. This version changes no paper, repo, Sheet or production file; no new simulation was run, the route 3 numbers are read from the existing 2026-11-09 run and its frozen source.
++
+ **r7 (2026-11-11):** r6 is kept unchanged as `REPAIR_SPEC_L1_1_r6.md` (sha256 `b02fddd5e1848ed5202c6d2676395876340e2a718e6499280c453d1f461ba604`). r7 replaces one sentence in §4: the unitarity defect is not "0.12–0.84 depending on k" (those are the three probe-point values, and 0.84 was not measured); it is `0.12`, `0.42` and `0.72` at the probe point for the three rows, and across a 41³ sample the median is `1e1`–`1e2` with largest values `8×10²`, `6×10³` and `3×10⁴`. Nothing else is changed. This version changes no paper, repo, Sheet or production file, and no simulation was run to make it.
+ 
+ **r6 (2026-11-11):** r5 is kept unchanged as `REPAIR_SPEC_L1_1_r5.md` (sha256 `9dab86441c6236fd4d065bb11cdc8d65f41672acda23da00a51d4c26f18043cd`). r6 records that the §4 table — which reproduces — is the phase of a non-unitary operator: with `g` added to `u` and `n` untouched, the step is not unitary (R1). Exact unitarity forces `Δ ∈ {0, −2u}` at every k, which closes every additive potential on `u` before any floor, grid or census. §4 gains the unitarity column and the 27-point counts; §5 is rewritten as that branch condition, and the coefficient-exclusion list that stood in r5 is not restated as a constraint; §6 strikes route 1 and records that route 2 is closed by the same argument; §8 records that `periodS` was unmodified only for the baseline, that the candidates modified `A/E` and `Xh`, and that on bigbang `dirac4s.py` cannot be imported as it stands. A companion erratum to plan v3.2 line 391 is sent with this file. The §3.4 floor and the "no worse" rule are unchanged. This version changes no paper, repo, Sheet or production file, and no simulation was run to make it.
+@@ -211,10 +213,27 @@
+    (`Σ s_i²` and the rest): those are the same construction and are closed
+    by §5, before any floor.
+ 
+-3. **Chain + Wilson `r = 0.05`** — the paper's route. Blocked until the term is
+-   written down and implemented: nothing on disk takes an `r`, and `2.663e−2` cannot
+-   be regenerated. If it cannot be reproduced, the paper's adopted gap needs an
+-   erratum of its own.
++3. **Chain + Wilson `r = 0.05`** — the paper's route. **Implemented, and reproduced.**
++   The term is the Wilson mass in the *angle* form: the step's mass block uses
++   `t = arcsin m + r·Σ(1−cos k_i)`, which is unitary for any `t`. It is `S_step` in the
++   frozen chain source `chiral_rscan_20261109/src_readonly/dirac4.py` (sha256
++   `f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff`), driven by
++   `U_slab` in `run_chiral_wall_count.py` and `omega_abs_only` in `run_rscan.py`. The
++   chain is `W = R(N_s, b = 0.2)·(I ⊗ M(m₀ = 0))` on `4N_s` components, `N_s = 32`.
++   At `φ = 1.4`, `r = 0.05` the 41³ zone-interior minimum is `0.0266255`
++   (`results_low_r_followup.json`, `41_ns32_min_over_loci`), which is the paper's
++   `2.663e−2`; `r = 0.1` gives `2.004e−2`. Re-evaluated here from the same source:
++   `Γ = 0` exactly, `|λ| − 1 ≤ 1e−14`, and the 27 special points sit at `0.0504148`
++   at `(±π,±π,0)`, `0.1710678` at the faces and `0.2710391` at the corner. The twelve
++   edge zeros are lifted, so R1 and R2 are met. (The run's own JSON labels the
++   `(±π,±π,0)` part `faces` and calls a different locus `edges`; this document keeps
++   §1's naming.)
++
++   **It fails §3.4.** At `φ = 1.4` the unrepaired floor is `0.08212694658054251` and the
++   repaired minimum is `0.0266255` — `32%` of the floor, a factor `3.08` below it. The
++   repair buys the twelve edge zeros with the interior gap, `0.0821 → 0.0266`; the floor
++   exists to reject exactly that trade, and it does. The paper's own text calls the
++   adopted gap "one third ($1/3.0$) of the $0.08\,E_P$ reference".
+ 
+ A construction that stays inside SU(2) by composing the symbol with a
+ finite-hop unit quaternion — `a(k) → a(k)·b(k)` with `b` the symbol of an
+@@ -225,7 +244,11 @@
+ 
+ ## 7. What this blocks
+ 
+-- The L1.1 census pre-registration — it has nothing to census until a repair passes §3.
++- The L1.1 census pre-registration — nothing to census until a repair passes §3, and
++  no candidate currently does: the additive family is closed by R1 (§4–§5), and the
++  chain + Wilson `r = 0.05` clears R1 and R2 but lands at `32%` of the §3.4 floor at
++  `φ = 1.4` (§6, route 3). L1.1 is blocked on a decision — a repair that clears §3.4,
++  or a re-decision of the floor, which is a change to the gate and not to a candidate.
+ - L1.4 and L1.5 re-measurement — they are measured *on the repaired rule* (R7).
+ - The L1 exit gate, and with it L2.0 onward, per plan v3.2.
+ 
+@@ -254,5 +277,15 @@
+ spectral exponential that plan v3.2 line 391 sanctions, not a lift. The
+ companion erratum records this.
+ 
++The route 3 numbers are not from `periodS`. They are from the frozen chain source
++`chiral_rscan_20261109/src_readonly/dirac4.py` (sha256
++`f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff`), driven by
++`U_slab` in `run_chiral_wall_count.py` and `omega_abs_only` in `run_rscan.py`, with
++the Wilson mass in angle form `t = arcsin m + r Σ(1−cos k_i)` on `4N_s` components
++(`W = R(N_s, b = 0.2)·(I ⊗ M(m₀ = 0))`). The 41³ record is `results_low_r_followup.json`:
++`41_ns32_min_over_loci = 0.0266254779`, and `fits/0.05` gives `0.0304206`, `0.0295478`,
++`0.0292282` at `N_s = 16, 24, 32`. The three special-point values in §6 were
++re-evaluated from that source for this revision, not read from the run.
++
+ The interior gate is not measured by a scratch script; it is run through the
+ census code.
