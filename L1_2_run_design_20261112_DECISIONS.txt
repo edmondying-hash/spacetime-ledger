@@ -1,0 +1,57 @@
+L1.2 RUN DESIGN - DECISIONS RECORD
+================================================================
+
+Recorded: 2026-11-12, after Edmond Ying's message of 4:43 PM America/New_York
+(21:43 UTC), by the drafting agent (spacetime-ledger).
+
+This record sits OUTSIDE the design folder and is NOT listed in that folder's
+SHA256SUMS. The design is unchanged by this file.
+
+----------------------------------------------------------------
+1. THE DESIGN
+----------------------------------------------------------------
+File:     L1_2_run_design_20261112/L1_2_RUN_DESIGN.md
+sha256:   7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b
+Section 8 of that file lists decisions D1 to D4.
+
+----------------------------------------------------------------
+2. DECISIONS (Edmond's words: "D1 load free, d2 fail, d3 accept, d4 yes",
+   preceded at 4:32 PM by "3")
+----------------------------------------------------------------
+D1  Load rule.      LOAD-FREE. L1.2 runs the section 6.2 vacuum symbol with no
+                    load term, as L1.1 did, and result.json declares
+                    "load rule: none, section 6.2 vacuum symbol". Step X3
+                    (uniform-load invariance) is not run.
+D2  Species-        FAIL. If the end-mode speed differs from the unchained
+    dependent c.    physical-mode speed by more than the design's 1e-6 relative
+                    tolerance (R6), the L1.2 gate verdict is FAIL, with the
+                    measured difference recorded. It is not recorded as
+                    "pass, difference noted". The run still only measures; it
+                    states the verdict this rule gives.
+D3  R5 thresholds.  ACCEPTED as written: end-copy weight >= 0.5 for "survives";
+                    "allowed" if the fitted slope over N_s = 24, 32, 48 is
+                    > -0.05 per copy; "excluded" if <= -0.1 per copy; between
+                    is "unresolved".
+D4  Pre-registration.  YES. PREREGISTRATION.md (sha256 73375244...7239) governs
+                    where it conflicts with the design. The executing agent
+                    writes DESIGN_vs_PREREG.md before any run.
+
+----------------------------------------------------------------
+3. CONSEQUENCE OF D2, STATED NOW SO IT IS NOT A SURPRISE LATER
+----------------------------------------------------------------
+The paper's own numbers are 0.98911 (unchained) and 0.9855 (chained end mode),
+a 0.365% difference (design R6). Under D2 the expected L1.2 verdict is FAIL on
+the species-dependent-c clause, while the Table dw cells may still pass. The
+plan's L1 exit gate requires "L1.2 reproduced", so an L1.2 FAIL keeps the L1
+exit gate open. This record does not edit the plan or the paper. Whether the
+paper's section 6.1 and 7.2 wording on the tick (tau = 0.9855 t_P with the
+chain) changes is a separate decision for after the data.
+
+----------------------------------------------------------------
+4. NOT YET GIVEN
+----------------------------------------------------------------
+The approval required by plan section 0.2 and design section 9 is a one-line
+approval naming the design's sha256. The four decisions above are not that
+approval. NOTHING IS AUTHORISED TO RUN until Edmond approves, naming
+7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b (or its first
+8 characters, 7e09b7c4).
