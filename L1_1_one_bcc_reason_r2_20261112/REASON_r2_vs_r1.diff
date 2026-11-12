@@ -1,0 +1,93 @@
+--- REASON_L1_1_one_BCC.md
++++ REASON_L1_1_one_BCC_r2.md
+@@ -1,7 +1,9 @@
+-# L1.1 for the canonical `dirac4` rule: the physical lattice is one BCC orbit
++# L1.1 for the canonical `dirac4` rule: the physical lattice is one BCC orbit (r2)
+ 
+ Quantized Space-Ledger. Written 12 November 2026, America/New_York. This note records a lattice choice made by Edmond Ying and the reason that follows from it. It runs no new computation. Every number below is quoted from an existing record, named with its sha256 where one is known.
+ 
++This is r2 of `REASON_L1_1_one_BCC.md` (`/workspace/L1_1_one_bcc_reason_20261112/`, sha256 `82e58c43d17f7cafe1f5d6e43d8367e22aaa6fac88590bca5d1052ed018c117e`). That note quoted its paper lines from a stale box copy of the paper, not from main, and it called main's four-taste sentence unapplied, which is false. For every paper citation, this r2 note supersedes it. Every paper citation here refers to main: repository `edmondying-hash/spacetime-ledger`, commit `8251f96564a3394ce093a5260a0d307bb4e2f637`, `space-ledger-v2.md` sha256 `e86ef5c3f1ad9331d61c6033e300dfd37232f4836ce39a55b206bf3985335dc8`. The physics content of the earlier note is kept wherever it is still correct.
++
+ ## 1. The choice
+ 
+ In the chat of 12 November 2026, Edmond Ying wrote, in order:
+@@ -9,6 +11,7 @@
+ - t2542u: "ok, let's move the less is more approach to one bcc orbit"
+ - t2543u: "ok, changing this will fix L1.1"
+ - t2544u: "ok, go ahead and write the reason"
++- t2546u, on the paper edits: "yes, please go ahead and make all changes"
+ 
+ The choice is that the physical lattice of the ledger is **one** body-centred cubic (BCC) orbit, the one through the origin: the sites of the integer grid whose three coordinates are all even or all odd. The other three orbits of the integer grid are not part of the physical state space. This is a choice about what the lattice is. It is not a repair of the rule, it changes no symbol, and it is not a new run.
+ 
+@@ -22,8 +25,15 @@
+ | L0 canonical-rule verification, `VERIFY.md` | `/workspace/L0_canonical_20261109/` | `02945be65e529feb5d7cd10b70e566e3d49e3ab474dc0dec86098348be0ce179` |
+ | Official V5 v2 census, `results.json` | `/workspace/L0_V4V5_runs_20261111/v5v2_official/` | `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708` |
+ | V5 v2 census code, `v5_census.py` (as pinned in that `results.json`) | `/workspace/L0_V5v2_code_r2_20261111/` | `7c6f7ed5aaa6c8fbfe5c823170e1ef3e2c60b3771b9c1406d8bcda394f8f5850` |
+-| Live paper copy, `space-ledger-v2.md` | `/workspace/whitepaper/` | `53f5050660f3fe11e86e033c5618d82fe639d1b18ed70f0c1a703ec498497944` |
+-| Unapplied §6.2 text, `space-ledger-v2.md.v3.2` | `/workspace/paper_62_draft_20261109/` | `1c88f4a3baa756c2074c86a7ac369ef7c28d62682693088f2485eee076db4678` |
++| Paper on main, `space-ledger-v2.md` (commit `8251f96564a3394ce093a5260a0d307bb4e2f637`) | `edmondying-hash/spacetime-ledger`, main | `e86ef5c3f1ad9331d61c6033e300dfd37232f4836ce39a55b206bf3985335dc8` |
++| Stale box copy of the paper, not main (cited by the earlier note) | `/workspace/whitepaper/space-ledger-v2.md` | `53f5050660f3fe11e86e033c5618d82fe639d1b18ed70f0c1a703ec498497944` |
++| v3.2 §6.2 text, `space-ledger-v2.md.v3.2` (its line 518 is byte-identical to main's line 518) | `/workspace/paper_62_draft_20261109/` | `1c88f4a3baa756c2074c86a7ac369ef7c28d62682693088f2485eee076db4678` |
++| Paper edit set, `PAPER_EDITS_one_BCC.md` | `/workspace/paper_one_bcc_edits_20261112/` | `a6fa09accdae4e89f070a4bb863a4496278e74f096e4bda0f546576ce6c4a167` |
++| Its patched paper, `main_patched.md` | same folder | `8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70` |
++| Its diff, `main_vs_patched.diff` | same folder | `ab2f323d2e71c05c4efe9a06c6d69eb268e036e130eb8cb3b46072d9274430dd` |
++| Its `SHA256SUMS` | same folder | `05639f944b2f4a43fd79dc2b8c887f3297f51744a2f594cfb27fcac5ef6578f3` |
++| r = 0.05 chain operator, `run_chiral_wall_count.py` (`U_slab`) | `/workspace/chiral_wall_count_20261109/` | `aa5d0cf86a660594a04aa4157b2dff90fe7a0cac9341406d2bbdae30e1eb2c2c` |
++| r = 0.05 results, `results_low_r_followup.json` | `/workspace/chiral_rscan_20261109/` | `0f16b0811f88bb105ed299015b5d1d6864ecba2e0afb7697c56f00e0408533f4` |
+ | L1.1 repair specification r8, `REPAIR_SPEC_L1_1_r8.md` | `/workspace/L1_1_repair_spec_r8_20261111/` | `ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc` |
+ | r8 sign-off record, `L1_1_repair_spec_r8_20261111_SIGNOFF.txt` (bigbang `/home/eying/spacetime_files/`; box copy in `/workspace/` hashes the same) | see left | `00c9a8707c4d9880d06a92bd5bb432a8e651dcd4399aa0aa9ad0759813cdf154` |
+ | Generating stack, `qca/dirac4.py` (scan script with `dist_gamma`) | `/workspace/qca/` | `9f01ea8f10947eb6a30506e1499de22e373fc7e1a25fa2689e38c873e2b5aedd` |
+@@ -44,7 +54,7 @@
+ 
+ > **Pass.** For each rule, either no zero except Γ in the closure, or a documented statement that the extra zeros are excluded from the physical state space, and why. **The same decision rule applies to both findings below:** repair it, or give a reason it is unphysical that survives a finite lattice with even L.
+ 
+-The two findings it refers to are the twelve exact zeros of the §6.2 symbol at the face centres `(±π,±π,0)` and permutations, with U = I to 7e−16, and OP4's three extra nodes H = (π,0,0), P = (π/2,π/2,π/2) and P′ = −P. The plan's "Decision needed" paragraph says "one decision, applied to both rules". The L1 exit gate reads "L1.1 decision made and census re-run for the chosen rule". The plan names `dirac4` as the canonical rule and OP4 as a labelled diagnostic branch (plan, L0 status line).
++The two findings it refers to are the twelve exact zeros of the §6.2 symbol at the face centres `(±π,±π,0)` and permutations (the plan calls them face centres; main's §6.2 calls the same twelve labels "edges, with two components at ±π", line 518), with U = I to 7e−16, and OP4's three extra nodes H = (π,0,0), P = (π/2,π/2,π/2) and P′ = −P. The plan's "Decision needed" paragraph says "one decision, applied to both rules". The L1 exit gate reads "L1.1 decision made and census re-run for the chosen rule". The plan names `dirac4` as the canonical rule and OP4 as a labelled diagnostic branch (plan, L0 status line).
+ 
+ ## 4. Why the twelve face-centre labels are Γ
+ 
+@@ -86,17 +96,15 @@
+ 
+ ## 6. Wording in the paper
+ 
+-These are proposals only. The paper is not edited by this note.
+-
+-**§6.2 "Links" sentence** (live copy, line 524): "The 8 corner links are h∈{(±1,±1,±1)} in units of a/2, with T_h ψ(x) = ψ(x − h)." The sentence is right only if k is also read in radians per a/2. If k is read per a, the cubic cell, the hops become (±1,±1,±1)/2. That gives a 4π period, a zone of volume 16π³ that the cube only half covers, and makes (π,π,0) a zone-boundary point distinct from Γ. `VERIFY.md` refutes that reading, because the symbol is invariant under π(1,1,0) (residual 2.05e−15 for integer hops against 2.0 for half hops). The identification in Section 4 depends on the hops being integer in the units of k.
++These are proposals only. This note does not edit the paper. The exact line-by-line changes are in the paper edit set, `/workspace/paper_one_bcc_edits_20261112/` (`PAPER_EDITS_one_BCC.md`, sha256 `a6fa09accdae4e89f070a4bb863a4496278e74f096e4bda0f546576ce6c4a167`; `SHA256SUMS` sha256 `05639f944b2f4a43fd79dc2b8c887f3297f51744a2f594cfb27fcac5ef6578f3`). It changes 14 lines of main: 57, 518, 519, 520, 521, 523, 543, 552, 572, 581, 588, 590, 616 and 623.
+ 
+-Proposed replacement: "The 8 corner links are h∈{(±1,±1,±1)} in integer units of a/2, and k is measured in radians per a/2, so every symbol below is 2π-periodic in each kᵢ. The cores occupy one BCC orbit of this integer grid, the sites whose three coordinates are all even or all odd. Then π(1,1,0) and its permutations are reciprocal lattice vectors, the momenta (±π,±π,0) are the point Γ, and the cube [−π,π]³ covers the primitive zone, of volume 2π³, four times."
++**Main already carries the four-taste wording.** Main's §6.2 "Doublers" bullet, line 518, reads in part: "This is the four-taste cubic-grid rule: the grid is $\mathbb{Z}^3$, the diagonal hops $h=(\pm1,\pm1,\pm1)$ split it into four decoupled BCC orbits, at $r=0$ there are four cones — $\Gamma$ plus the three two-$\pi$ momenta, one per taste — and the cube $[-\pi,\pi]^3$ is four times the primitive $2\pi^3$ zone." This line is byte-identical to line 518 of `space-ledger-v2.md.v3.2` (`1c88f4a3…`), so that text is applied on main. The earlier note called it unapplied. That was wrong. The same reading appears on main at lines 543, 552, 572, 588 and 616. The edit set replaces all of them with the one-orbit reading.
+ 
+-**§1.2** (live copy, line 58) says "the body-centred cubic (BCC) grid with 8 links per node". That already agrees with the choice. A possible addition is "(one BCC orbit of the integer cubic grid, with corner links (±1,±1,±1))".
++**The units sentence** is on main **line 523**, not line 524 as the earlier note said: "*Links.* The 8 corner links are $h\in\{(\pm1,\pm1,\pm1)\}$ in units of $a/2$, with $T_h\psi(x)=\psi(x-h)$." The same "units of $a/2$" phrase opens line 518, which also writes the hop sum as $8\prod_i\cos(k_i a/2)$. The sentence is right only if k is also read in radians per a/2. If k is read per a, the cubic cell, the hops become (±1,±1,±1)/2. That gives a 4π period and a zone of volume 16π³ that the cube only half covers, and it makes (π,π,0) a zone-boundary point distinct from Γ. `VERIFY.md` refutes that reading, because the symbol is invariant under π(1,1,0) (residual 2.05e−15 for integer hops against 2.0 for half hops). The identification in Section 4 depends on the hops being integer in the units of k. With integer hops, the hop sum is $8\prod_i\cos k_i$, matching line 525 ($c_i=\cos k_i$). The edit set changes line 523 to the sentence proposed earlier: "The 8 corner links are h∈{(±1,±1,±1)} in integer units of a/2, and k is measured in radians per a/2, so every symbol below is 2π-periodic in each kᵢ. The cores occupy one BCC orbit of this integer grid, the sites whose three coordinates are all even or all odd. Then π(1,1,0) and its permutations are reciprocal lattice vectors, the momenta (±π,±π,0) are the point Γ, and the cube [−π,π]³ covers the primitive zone, of volume 2π³, four times." It keeps $T_h$ as well, and it rewrites line 518 to match.
+ 
+-**§6.2 low-energy limit** (live copy, line 544) says "For 0<φ<π/2 the only zero-frequency point is k=0." Under the choice this is correct when k = 0 is read up to reciprocal lattice vectors. A possible clarification is "k = 0 (up to reciprocal lattice vectors)".
++**§1.2** is main **line 57**, not line 58: "the body-centred cubic (BCC) grid with 8 links per node". This already agrees with the choice. The edit set adds "(one BCC orbit of the integer cubic grid: the sites whose three coordinates are all even or all odd, joined by the corner links $(\pm1,\pm1,\pm1)$)".
+ 
+-**The unapplied v3.2 four-taste sentence** (`space-ledger-v2.md.v3.2`, line 518) reads "This is the four-taste cubic-grid rule: the grid is ℤ³ …". It describes all four orbits as physical, so it is withdrawn and should not be applied.
++**§6.2 low-energy limit** is main **line 543**, not line 544. Main no longer says "the only zero-frequency point is k=0". It says: "Besides $\Gamma$, a census at $\varphi=1.4$ finds three distinct momenta (twelve sign labels), the edges with two components at $\pm\pi$ (see Doublers, above)." The edit set replaces this with: at the tabulated values 0.5 ≤ φ ≤ 1.5, a census finds no zero-frequency point other than k = 0 (up to reciprocal lattice vectors), because the twelve edge labels are Γ itself on the one-orbit lattice, and at φ = π/2 the doublers return.
+ 
+ **The frozen `dirac4.py` docstring** (`f71c782e…`, line 6) gives "hop vectors h = (+-1,+-1,+-1)/2". That is wrong for the code, which uses integer hops. The file is frozen and is not edited.
+ 
+@@ -104,10 +112,11 @@
+ 
+ ## 7. Consequences
+ 
+-- **Sum-form terms are off the table.** The standard Wilson term r Σᵢ(1 − cos kᵢ) and the face-centre patch g(k) = (1/3) Σᵢ(1 − cos kᵢ) (frozen `dirac4.py`, `_u_n` with `patch`, and `S_step` with `wilson`) are not periodic under π(1,1,0). Their axis hops of length 1 leave a BCC orbit. `VERIFY.md` measures this: at r = 0.05 the sum form gives t = 0.2 at the edge copies against 0 at Γ, and about 0.0022 of the norm leaks to each other orbit. On one orbit these terms are not lattice terms.
++- **Sum-form terms are off the table.** The standard Wilson term r Σᵢ(1 − cos kᵢ) and the face-centre patch g(k) = (1/3) Σᵢ(1 − cos kᵢ) (frozen `dirac4.py`, `_u_n` with `patch` at line 37, and `S_step` with `wilson` at line 66) are not periodic under π(1,1,0). Their axis hops of length 1 leave a BCC orbit. `VERIFY.md` measures this: at r = 0.05 the sum form gives t = 0.2 at the edge copies against 0 at Γ, and about 0.0022 of the norm leaks to each other orbit. On one orbit these terms are not lattice terms.
++- **Main's r = 0.05 repair uses the sum form.** Main lines 519 and 588 adopt a chain gap of 2.663×10⁻² E_P, with a Wilson term of mass r = 0.05, on the interior 41³ grid at N_s = 32. That number is `results/0.05/by_Ns/32/interior41/omega_min` = 0.026625477907575197 in `results_low_r_followup.json` (`0f16b081…`). It was computed through `U_slab` (`run_chiral_wall_count.py`, `aa5d0cf8…`, lines 184–195), which passes `wilson_mass` to frozen `dirac4.py` `S_step` line 66, `t = arcsin(m) + wilson·Σ(1 − cos kᵢ)`. `VERIFY.md` line 59 also names it "standard Wilson … the adopted 2.663×10⁻²". A check in the edit set's folder (`one_bcc_checks.py`, `f6418b41…`) gives a shift difference of 0.2998 under π(1,1,0) at r = 0.05, against 1.1×10⁻¹⁵ at r = 0. The edit set therefore withdraws the repair and every number derived from it from lines 519 and 588, without replacing them. It keeps the r = 0 numbers, which do not depend on it.
+ - **The product form stays.** r(1 − ∏cos kᵢ) uses only on-site and the eight corner hops, stays inside one BCC orbit, and keeps π(1,1,0) periodicity (largest Δt 2.78e−17).
+ - **Real-space packets.** The Gaussian packets in `dirac4_checks.py` sit on the full cubic grid and put 0.2500 of the norm on each of the four orbits (σ = 4 and σ = 8). Under the choice, such a run reads as four decoupled copies of the one-orbit rule at r = 0. A point source at the origin, as in the unitarity and light-cone tests and in `dw_real.py`, occupies one orbit already.
+-- **Table `dw` and the L1.2 pre-registration are unaffected.** The chain stack (`dw.py` → `dirac4s.py` → `dirac4.py` → `sym.py`) builds every layer from cos kᵢ and sin kᵢ of the corner hops, plus on-site and inter-copy mixing, so it is periodic under the BCC reciprocal vectors. Its exclusion (`dist_gamma`, used by `dw_gscan.py` and named in the L1.2 pre-registration as "even-parity Γ images, which include the face centres") already removes exactly the Γ images of one orbit. The doubler wall mode that survives for b ≥ 0.3 near (π/2,π/2,±π/2) is a genuine BCC point. It differs from Γ by a vector that is not a reciprocal vector, so the choice does not remove it, and the paper's requirement b ≤ 0.25 stands.
++- **Table `dw` and the L1.2 pre-registration are unaffected.** The chain stack (`dw.py` → `dirac4s.py` → `dirac4.py` → `sym.py`) builds every layer from cos kᵢ and sin kᵢ of the corner hops, plus on-site and inter-copy mixing, so it is periodic under the BCC reciprocal vectors. Its exclusion (`dist_gamma`, used by `dw_gscan.py` and named in the L1.2 pre-registration as "even-parity Γ images, which include the face centres") already removes exactly the Γ images of one orbit. So the r = 0 chain gaps on main line 588 (0.058, 0.046, 0.034 and 0.022 E_P at N_s = 16) and the table values on main lines 558–563 stay valid as doubler gaps of the one-orbit rule. Main's statement that they are "not a global minimum while r=0" falls away, and the edit set removes it. The doubler wall mode that survives for b ≥ 0.3 near (π/2,π/2,±π/2) is a genuine BCC point. It differs from Γ by a vector that is not a reciprocal vector, so the choice does not remove it, and the paper's requirement b ≤ 0.25 stands.
+ 
+ ## 8. Status of r7, r8 and the additive route
+ 
+@@ -125,6 +134,6 @@
+ 
+ ## 10. What remains for Edmond
+ 
+-1. Whether to apply the §1.2 and §6.2 wording in Section 6 to the paper, and the matching L1.1 line (and the frozen-conventions line) to the plan.
++1. Whether to apply the paper edit set (`/workspace/paper_one_bcc_edits_20261112/`, 14 lines of main) to the paper, and the matching L1.1 line (and the frozen-conventions line) to the plan. The edit set lists its own open items, including which length is ℓ_P (a or a√3/2) and the figure images, which are not regenerated.
+ 2. How the plan's "both rules" requirement is handled for OP4: a reason, a repair, or a change to the requirement.
+ 3. Whether the existing V5 v2 census is accepted as the census for the chosen rule under the L1 exit gate wording ("census re-run for the chosen rule"), or a new census is wanted. This note does not run one.
