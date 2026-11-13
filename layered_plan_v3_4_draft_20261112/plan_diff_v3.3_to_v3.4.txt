@@ -1,5 +1,5 @@
 --- ../layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md	2026-11-12 18:09:20.187845623 +0000
-+++ layered_plan_v3.4.md	2026-11-13 00:52:22.921237124 +0000
++++ layered_plan_v3.4.md	2026-11-13 00:58:03.572203144 +0000
 @@ -1,6 +1,8 @@
 -# Layered test program for the §9 open problems — v3.3
 +# Layered test program for the §9 open problems — v3.4 (DRAFT, not signed off)
@@ -20,7 +20,7 @@
  2. **Whole ticks only.** No fractional ticks and no sub-tick interpolation in the rule. Rounding, if needed, is to whole ticks and is declared in advance.
  3. **No self-load.** A packet never loads the nodes it is being propagated through by its own presence unless a written rule says so and Edmond has approved that rule.
  4. **No fitting.** No model parameter, exponent, coefficient or source profile is tuned to hit a target. Rules and coefficients are written down and hashed before any comparison. Fitting the *size of a measured effect* (e.g. a leak coefficient from a run) is allowed and must be labelled as such.
-@@ -78,6 +80,34 @@
+@@ -78,6 +80,35 @@
  
  "Congestion ON" in §0.1 means whichever of these load rules the test declares, always active including in vacuum. Each run must name its rule (paper load-first rule, OP4 local rule, or OP4 continuum bridge).
  
@@ -49,13 +49,14 @@
 +| 2026-11-12 | L1.2: D1 load-free; D2 revised (pass when the end-versus-bulk speed difference is measured and recorded); D3 thresholds accepted; D4 `PREREGISTRATION.md` governs; design `7e09b7c4` approved 4:56 PM | `L1_2_run_design_20261112_DECISIONS.txt` (sha256 `c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e`) |
 +| 2026-11-12 | L1.2 closed; paper wording "from b ≈ 0.35" | `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6) |
 +| 2026-11-12 | L1.3 design `9ccf4855` approved 7:33 PM, run by the Grok bot on bigbang; "layer weights" = two Wilson angles φ₂, φ₄; tolerance 1e-6; massless only; same pipeline for the paper edit | `L1_3_run_design_20261112_DECISIONS.txt` (sha256 `2dc1bb8e94e16c727bc2bc978d5ee904044e3e1a7566878d33a0c1960b158072`) |
++| 2026-11-12 | L1.3: R2 of run `9ccf4855` recorded as open as written; corrected L1.3b approved to be designed (7:55 PM); the run itself awaits approval of the L1.3b design hash | `L1_3b_run_design_20261112_DECISIONS.txt` (PR #10) |
 +| 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 all OP4-based results are to be redone; B3 load-free carve-out for L1.1–L1.3; B4 the V5 v2 census is accepted as the L1.1 census, no re-run | this document |
 +
 +
  ---
  
  ## 1. Layer map
-@@ -85,7 +115,7 @@
+@@ -85,7 +116,7 @@
  | Layer | Content | Open problems | Exit gate |
  |---|---|---|---|
  | **L0** | Substrate, conventions, exactness harness; **choice of canonical rule** | OP1 (foundation) | V1–V4 pass; V5 ran and its result is recorded (V5 cannot pass in full: table 6's N_s=24 cell sits below the generating script's own resolution cut (`qca/dw_final.py:9`, `r[:,1]>1e-15`), so it cannot reproduce by construction); units frozen; one canonical node rule named, the other a labelled diagnostic branch |
@@ -64,7 +65,7 @@
  | **L2** | Read-out and statistics | S1 (L2.0 derivation attempt), S7, OP2, S2, OP3 (shared records) | per item: L2.0 S1 attempt recorded as narrowed or open; S7 reproduction; κ bound; exchange phase −1; order independence |
  | **L3** | Gravity | OP4–OP11, OP17 | **per item** (§5): each of G1–G7 passes or fails on its own gate. G1 is open: the strong-field toy is 3% short in finite-screen steering, and a weak-field γ has not been measured |
  | **L4** | Matter spectrum | OP12–OP14 (OP18 moved to Appendix A) | κ_c scaling; OP12 needs a new mechanism with a stated reason (the existing-rule route is a recorded no-go) |
-@@ -97,9 +127,11 @@
+@@ -97,9 +128,11 @@
  
  ## 2. Layer 0 — substrate and harness
  
@@ -78,7 +79,7 @@
  
  **Tests.** V1 unitarity, reversal and light cone; V2 scalar dispersion; V3 independent dense BZ scan; V4 energy drift over 10⁵ ticks; V5 regenerate the paper's tables.
  
-@@ -111,19 +143,21 @@
+@@ -111,19 +144,21 @@
  
  ## 3. Layer 1 — free spectrum (OP3, OP15, OP16)
  
@@ -106,7 +107,7 @@
  
  **Link to OP12.** Using the four OP4 nodes as the three generations is a recorded no-go under existing rules (L4, M3).
  
-@@ -131,19 +165,30 @@
+@@ -131,19 +166,30 @@
  
  Reproduce Table `dw`: residual mass vs Ns, `|γ5|`, localisation length, smallest gap vs b. Pass: within 5%, and `b ≤ 0.25` boundary confirmed independently. Then test the *end-mode* dispersion against the physical-mode dispersion: the chiral mode's speed is 0.9855 of the hop rate; a difference would be a species-dependent `c`.
  
@@ -123,7 +124,7 @@
 +- **R2 FAIL.** All 42 pairs with φ₂ ≠ φ₄ miss the 1e-6 tolerance (worst 1.6e-4 at (0.5, π/2)). The design's printed formula had the wrong prefactor (¼, not ½); R2 fails either way, and the run fixed the reading before computing and recorded it (DEV-1).
 +- **S3 not run** (stop rule), so N1–N5 are unscored.
 +- **Unscored follow-ups.** The run's post-hoc note and an independent check (`/cursor/stores/bc-21e0a98b-ccd2-446a-a96d-b0210de6c87f/internal/l1-3-r2-diagnostic-unscored.md`) find that the factor-¼ closed form matches to about 1e-12 when odd powers of |k| are fitted, and that for φ₂ ≠ φ₄ there is a term linear in |k| along [110] and [111] (zero along [100]), which the design's κ² extrapolation could not remove. At φ₂ = φ₄ that term is zero to fit noise. These are observations, not results.
-+- **Next.** Edmond's decision is pending: record R2 as FAIL / OPEN as written, and whether to approve a corrected L1.3b (new design and hash).
++- **Next (Edmond, 2026-11-12, 7:55 PM).** R2 is recorded as open as written. A corrected L1.3b is approved to be designed; the design is `L1_3b_run_design_20261112/` (PR #10, sha256 `dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d`), **not yet approved to run**. It corrects the ¼ prefactor, extrapolates in κ with all powers, and runs the unscored N1–N5. If it passes, Edmond may record L1.3 closed on L1.3b with the original R2 failure kept.
 +
  ### L1.4 Dispersion and diffusion vs data — OP15
  
@@ -139,7 +140,7 @@
  
  **Measure.** Massless v_g(κ, direction) from the exact whole-tick evolution, congestion ON (uniform vacuum load) with OFF as a labelled diagnostic; fit only the leak coefficients ξ₁ (linear) and ξ₂ (quadratic) per direction, with the same uncertainty treatment as the data.
  
-@@ -151,11 +196,11 @@
+@@ -151,11 +197,11 @@
  
  **Falsifier.** A linear term that applies to photons and violates the limits. For scale: if the [111] leak of 0.385κ applied to photons at full size, LHAASO would require a ≲ ℓ_P/(0.385×10) ≈ 0.26 ℓ_P. That would conflict with the paper's Planck-scale spacing and with the Sec. 7.8 wording.
  
@@ -153,7 +154,7 @@
  
  ---
  
-@@ -235,6 +280,8 @@
+@@ -235,6 +281,8 @@
  
  Ordered by increasing difficulty; each item names what would count as failure. Each run names its load rule (§0.4); congestion ON; no self-load unless an approved rule supplies it. **L3 gates are per item:** each Gi passes or fails on its own row, and a downstream item may use only the items it depends on that have passed (or must carry the label "conditional on Gi open"). L3 as a whole is closed only when every row has passed; with G1 open it cannot close.
  
@@ -162,7 +163,7 @@
  **Entry rule.** An L3 item that uses the L1 3D node symbol may not start until L1's exit gate is met. Items whose harness does not use that symbol (G1's continuum ray solver, G3's 1D zigzag walk) may run earlier as labelled *pre-L1 pilots*; their results are reported but do not count toward the L3 gate until repeated on the canonical 3D rule.
  
  | Test | OP | Setup (rule) | Measured target | Gate (this item only) | Falsifier | Status (2026-11-09) |
-@@ -283,6 +330,8 @@
+@@ -283,6 +331,8 @@
  - Side result: per-generation masses can stay unitary if they enter through the tick budget (ν² + m² = 1), provided the electron's lattice mass is below about 3×10⁻⁴; heavier generations would then have a very slightly lower top speed.
  - The paper's Sec. 6.8 already records an earlier failed doubler-as-generation version (four species, Koide 0.33–0.50).
  
@@ -171,7 +172,7 @@
  **M3 entry gate (new).** A written mechanism with its physical reason ("each level costs X because of Y"), hashed before comparison, with no free coefficients chosen to hit the targets. **Koide** is used only as a test of the measured masses (Q = 0.666664 ± 0.000005 from PDG 2024), not as a separate target to be fitted. M3 is time-boxed; a further no-go is a valid result.
  
  M1 is the only one that is a normal simulation.
-@@ -319,7 +368,7 @@
+@@ -319,7 +369,7 @@
  |---|---|---|---|---|
  | 1 | all | freezes with L0–L2; L0 names the canonical rule | — | open |
  | 2 | L2 | exchange-phase toy | 1–2 wk | open |
@@ -180,7 +181,7 @@
  | 4 | L3 | EP composite (G3), pre-L1 pilot: readout fix | 3–5 d | PARTIAL (s = 8 floors) |
  | 5 | L3 | workload→metric map; start with G1 | 2 wk | open |
  | 6 | L3 | single-node m_P toy | 1 wk | open |
-@@ -385,19 +434,19 @@
+@@ -385,19 +435,19 @@
  | 1.4 | 0.082 | 0.084 |
  | 1.5 | 0.035 | 0.035 |
  
@@ -205,7 +206,7 @@
  
  **EP composites (2026-11-01).** G3 refinement to s = 8 completed: PARTIAL, floors ~6×10⁻⁴ and 5.8×10⁻³ set by the readout. Source: `/workspace/gpu/equalfall/SUMMARY.md`.
  
-@@ -409,14 +458,14 @@
+@@ -409,14 +459,14 @@
  
  Sprint (2 weeks):
  1. **L0 canonical-rule decision** (Edmond) — 0.5 d. Needed before L1.1 can close.
@@ -215,13 +216,13 @@
 -5. **L1.5 linear-term test** (OP16) — designed; runs only if Edmond approves the caps. If approved early, about 1 d of compute and analysis; if not, L1.5 stays open.
 +2. **L1.1 doubler census** (OP3). **Done 2026-11-12 (closed):** one-orbit reason decision plus the V5 v2 census accepted as the census (Edmond B4). The OP4 branch is a diagnostic finding only.
 +3. **L1.2 chirality chain reproduction** (Table `dw`) — 2–3 d. Required by the L1 exit gate; omitted in v2's sprint. **Done 2026-11-12 (closed).**
-+4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; the next step awaits Edmond's decision (see L1.3).
++4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; R2 recorded as open; the corrected L1.3b is designed (PR #10) and awaits approval of its hash to run.
 +5. **L1.5 linear-term test** (OP16). The held design is for the diagnostic OP4 rule; a `dirac4` hand derivation and design come first, then Edmond's approval of caps.
  6. **G3 pre-L1 pilot** — a readout fix (longer fit window or a different readout), since more refinement will not move the floors. Labelled pilot.
  7. **L2.0 design review** (no run) — Edmond reviews the theorem sketch, gaps G-1 to G-7 and the C5 audit (part (a), read-only).
  
 -**Realistic L1 close.** L1 cannot close inside this sprint. Earliest close is about **4–6 weeks**, and only if (a) Edmond approves the L1.5 run, and (b) the L1.1 decision does not change the low-energy dispersion. A repair that does (as the face-centre `g(k)` patch does) forces L1.4 and L1.5 to be re-measured on the repaired rule, adding about 1–2 weeks. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
-+**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs Edmond's decision and possibly a corrected L1.3b; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.1, L1.3b and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
++**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.1, L1.3b and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
  
  ---
  

@@ -105,6 +105,7 @@ Motivation: L1.2 R5 failed as written because its thresholds were guesses made w
 | 2026-11-12 | L1.2: D1 load-free; D2 revised (pass when the end-versus-bulk speed difference is measured and recorded); D3 thresholds accepted; D4 `PREREGISTRATION.md` governs; design `7e09b7c4` approved 4:56 PM | `L1_2_run_design_20261112_DECISIONS.txt` (sha256 `c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e`) |
 | 2026-11-12 | L1.2 closed; paper wording "from b ≈ 0.35" | `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6) |
 | 2026-11-12 | L1.3 design `9ccf4855` approved 7:33 PM, run by the Grok bot on bigbang; "layer weights" = two Wilson angles φ₂, φ₄; tolerance 1e-6; massless only; same pipeline for the paper edit | `L1_3_run_design_20261112_DECISIONS.txt` (sha256 `2dc1bb8e94e16c727bc2bc978d5ee904044e3e1a7566878d33a0c1960b158072`) |
+| 2026-11-12 | L1.3: R2 of run `9ccf4855` recorded as open as written; corrected L1.3b approved to be designed (7:55 PM); the run itself awaits approval of the L1.3b design hash | `L1_3b_run_design_20261112_DECISIONS.txt` (PR #10) |
 | 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 all OP4-based results are to be redone; B3 load-free carve-out for L1.1–L1.3; B4 the V5 v2 census is accepted as the L1.1 census, no re-run | this document |
 
 
@@ -178,7 +179,7 @@ The paper leaves open whether `ν = cτ/a = 0.989` is fixed by the rule or by φ
 - **R2 FAIL.** All 42 pairs with φ₂ ≠ φ₄ miss the 1e-6 tolerance (worst 1.6e-4 at (0.5, π/2)). The design's printed formula had the wrong prefactor (¼, not ½); R2 fails either way, and the run fixed the reading before computing and recorded it (DEV-1).
 - **S3 not run** (stop rule), so N1–N5 are unscored.
 - **Unscored follow-ups.** The run's post-hoc note and an independent check (`/cursor/stores/bc-21e0a98b-ccd2-446a-a96d-b0210de6c87f/internal/l1-3-r2-diagnostic-unscored.md`) find that the factor-¼ closed form matches to about 1e-12 when odd powers of |k| are fitted, and that for φ₂ ≠ φ₄ there is a term linear in |k| along [110] and [111] (zero along [100]), which the design's κ² extrapolation could not remove. At φ₂ = φ₄ that term is zero to fit noise. These are observations, not results.
-- **Next.** Edmond's decision is pending: record R2 as FAIL / OPEN as written, and whether to approve a corrected L1.3b (new design and hash).
+- **Next (Edmond, 2026-11-12, 7:55 PM).** R2 is recorded as open as written. A corrected L1.3b is approved to be designed; the design is `L1_3b_run_design_20261112/` (PR #10, sha256 `dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d`), **not yet approved to run**. It corrects the ¼ prefactor, extrapolates in κ with all powers, and runs the unscored N1–N5. If it passes, Edmond may record L1.3 closed on L1.3b with the original R2 failure kept.
 
 ### L1.4 Dispersion and diffusion vs data — OP15
 
@@ -460,12 +461,12 @@ Sprint (2 weeks):
 1. **L0 canonical-rule decision** (Edmond) — 0.5 d. Needed before L1.1 can close.
 2. **L1.1 doubler census** (OP3). **Done 2026-11-12 (closed):** one-orbit reason decision plus the V5 v2 census accepted as the census (Edmond B4). The OP4 branch is a diagnostic finding only.
 3. **L1.2 chirality chain reproduction** (Table `dw`) — 2–3 d. Required by the L1 exit gate; omitted in v2's sprint. **Done 2026-11-12 (closed).**
-4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; the next step awaits Edmond's decision (see L1.3).
+4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; R2 recorded as open; the corrected L1.3b is designed (PR #10) and awaits approval of its hash to run.
 5. **L1.5 linear-term test** (OP16). The held design is for the diagnostic OP4 rule; a `dirac4` hand derivation and design come first, then Edmond's approval of caps.
 6. **G3 pre-L1 pilot** — a readout fix (longer fit window or a different readout), since more refinement will not move the floors. Labelled pilot.
 7. **L2.0 design review** (no run) — Edmond reviews the theorem sketch, gaps G-1 to G-7 and the C5 audit (part (a), read-only).
 
-**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs Edmond's decision and possibly a corrected L1.3b; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.1, L1.3b and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
+**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.1, L1.3b and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
 
 ---
 

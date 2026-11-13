@@ -23,7 +23,7 @@ v3.3 r2 is unchanged at `../layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md` 
 ## Results recorded
 
 - L1.2: CLOSED (run `7e09b7c4`, PRs #5 and #6).
-- L1.3: OPEN. Run `9ccf4855`, PR #8: R1 PASS, R2 FAIL / OPEN, S3 not run. The design prefactor error, the unscored follow-ups, and the pending decision are stated. The naming difference between ν_S and ν = cτ/a is added.
+- L1.3: OPEN. Run `9ccf4855`, PR #8: R1 PASS, R2 FAIL / OPEN (recorded as open as written, Edmond 7:55 PM), S3 not run. The design prefactor error and the unscored follow-ups are stated. The corrected L1.3b is designed (PR #10) and awaits approval of its hash. The naming difference between ν_S and ν = cτ/a is added.
 - L1.5: the 0.385κ prediction is labelled as an OP4 analysis; a `dirac4` hypothesis is stated as a hypothesis, not a result.
 
 ## Added (new sections)
