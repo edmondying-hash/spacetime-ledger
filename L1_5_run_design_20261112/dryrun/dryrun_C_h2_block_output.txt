@@ -1,0 +1,5 @@
+U(0) = 1 check: max |U(0)-1| = 0.0e+00
+phi = 1.4, c0 = 0.9891073641
+   H_1 eigenvalues +-c0 (double) confirmed in 32 signed directions; max |eig(P+ H_2 P+)| = 2.65e-15
+phi = 0.8, c0 = 0.7974646204
+   H_1 eigenvalues +-c0 (double) confirmed in 32 signed directions; max |eig(P+ H_2 P+)| = 2.85e-15

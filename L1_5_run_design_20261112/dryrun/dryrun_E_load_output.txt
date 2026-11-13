@@ -1,0 +1,8 @@
+rule A  l0=0.5  s=0.81649658 : max|a0 - s c0| = 2.38e-25 ; max|xi1'| = 4.52e-22 ; max|a3/a0| = 1.08e-16 ; max|xi2'| = 0.26151199 ; max|xi2' - unloaded closed form| = 1.54e-17
+rule A  l0=2.0  s=0.57735027 : max|a0 - s c0| = 1.68e-25 ; max|xi1'| = 4.52e-22 ; max|a3/a0| = 1.08e-16 ; max|xi2'| = 0.26151199 ; max|xi2' - unloaded closed form| = 1.54e-17
+rule B  l0=0.5  s=0.81649658 : max|a0 - s c0| = 8.11e-26 ; max|xi1'| = 1.54e-22 ; max|a3/a0| = 3.67e-17 ; max|xi2'| = 0.25569128 ; max|xi2' - unloaded closed form| = 0.00582
+rule B  l0=2.0  s=0.57735027 : max|a0 - s c0| = 4.49e-27 ; max|xi1'| = 1.21e-23 ; max|a3/a0| = 2.87e-18 ; max|xi2'| = 0.24987057 ; max|xi2' - unloaded closed form| = 0.0116
+
+real	2m5.349s
+user	2m5.305s
+sys	0m0.032s

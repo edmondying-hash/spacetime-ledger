@@ -1,0 +1,39 @@
+Decisions sidecar for L1_5_run_design_20261112 (outside the hashed folder). Times America/New_York.
+This file is the only place that records who decided what, and from which source. The design file states proposals and facts only.
+
+SOURCES, by how the assistant (Cursor) knows them
+  [chat]   a message to the assistant in the Cursor chat, seen directly. These are not in Slack, which is why spacetime could not find the 9:47 PM message there.
+  [relay]  quoted by spacetime in a PR comment or message; the assistant has not seen the original.
+
+D1  load rule
+  9:47 PM [chat], Edmond, verbatim: "D1, L1.5 congestion is on"
+  [relay] (spacetime, 10:28 PM, PR #14): Edmond said "D1 should be ON for massive" (the L1.5b side); he has left D1 as is for now.
+  Status: congestion ON for L1.5a, decided. For the massive case (L1.5b): ON, as relayed; the design requires that L1.5b's loaded rule reduces at m = 0 to the L1.5a rules (design section 2).
+  D1b (which loaded rule or rules, which levels): OPEN. The two rules A and B are the assistant's declaration, not the paper's.
+
+D2  photon-like
+  9:53 PM [chat], Edmond, verbatim: "D2 massless "photon-like" has no vector or tensor field"
+  10:14 PM [chat], Edmond relayed spacetime's review (see below); spacetime: "D2, the photon stand-in: fine", citing paper line 708 ("Neither involves photons as vector fields").
+  Status: the massless dirac4 stand-in is the proxy. Decided on Edmond's own words.
+  The assistant's 9:53 PM additions were NOT Edmond's and are withdrawn as unconfirmed: that the vector/tensor wording is not carried to a separate item (now D2b, OPEN), and that L1.5 may be closed on the stand-in (no; see D4, D5).
+
+10:14 PM [chat], Edmond, the only words of his own in that message, verbatim: "after checking with grok bot on our old notes, here are the updates to D2-8..." followed by spacetime's text (10:02 PM). The positions on D3 to D8 below are spacetime's review, relayed by Edmond. They are recommendations, not Edmond's explicit decisions, unless a line says otherwise.
+  [relay] (spacetime, 10:28 PM, PR #14): Edmond's own words on D3 were "D3 I need you to check paper". The assistant has not seen that message.
+
+D3  energy convention
+  spacetime recommends E/E_P = kappa (s = 1). The assistant checked the paper (dry-run F): single-handed [111] xi1 = 0.192450 = 1/(3 sqrt 3), E_QG,1 = 2.598 E_P, slope 0.385, E_QG,2 ~ 1.8e19 GeV; paper lines 395/641 imply sqrt3 kappa and line 383 implies 2 kappa; Test 3 is section 6.4 (line 704), not 7.8; "|xi2| <= 0.23" holds for phi >= 1.275 only.
+  Status: s = 1 proposed, Edmond's explicit acceptance NOT yet recorded.
+
+D4  closure rule: spacetime says it matches L1.3b and plan 0.6. With the D5 split, a PASS of L1.5a alone closes nothing. Status: Edmond's acceptance not yet recorded.
+
+D5  clock fixtures and the split
+  10:26 PM [relay] (spacetime, PR #14), quoted as Edmond's words: "D5 (b): design L1.5b first and run both together"
+  Status: (b) recorded on that quotation. L1.5 splits into L1.5a (light speed, massless; this design) and L1.5b (clock fixtures, massive case; not yet designed). The split is a plan v3.4 change that nobody has made; offered as a plan edit. The assistant asks Edmond to confirm (b) in chat since it has not seen the message.
+
+D6  tolerances: changed after spacetime's review (plan line 93: separate pilot and gate grids; P1 to P4 at 1e-12; S4 pilot thresholds from two hashed pilots, (c) 5e-3 and (d) 5e-3). Edmond's acceptance not yet recorded.
+D7  disclosed order of events: executing agent named (spacetime on bigbang); frozen-module comparison relabelled a consistency check. Edmond's acceptance not yet recorded.
+D8  no paper edit authorised; candidate edits only after closure; line 1253 and the l_P item stay with Edmond.
+
+Design status: r4, sha256 of L1_5_RUN_DESIGN.md = d68bf51c0ee2428fc63d85b347f4352eee44f8dcda5b4965177aa87e609fa4a6.
+Earlier drafts r1 (eb166966c5ead6fe69966d3207b0282354b8b696095152f51a5c647a2880a1d1), r2 (ec55d22c1cdc147cd72ab0bb568f61023c1ca09e678f31673bac37378953fc2d) and r3 (79ef28b5c2989644dbb883634619a84a3fa2e70bf491543a2177d020ff4a1554) were never approved and are superseded.
+Not approved to run. Per D5 (b), L1.5a runs only together with L1.5b, after each has its own hash and Edmond's one-line approval naming it.
