@@ -1,5 +1,5 @@
 --- ../layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md	2026-11-12 18:09:20.187845623 +0000
-+++ layered_plan_v3.4.md	2026-11-13 01:09:04.196619699 +0000
++++ layered_plan_v3.4.md	2026-11-13 01:11:25.003370069 +0000
 @@ -1,13 +1,15 @@
 -# Layered test program for the §9 open problems — v3.3
 +# Layered test program for the §9 open problems — v3.4 (DRAFT, not signed off)
@@ -67,7 +67,7 @@
 +| 2026-11-12 | L1.2 closed; paper wording "from b ≈ 0.35" | `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6, not yet merged) |
 +| 2026-11-12 | L1.3 design `9ccf4855` approved 7:33 PM, run by the Grok bot on bigbang; "layer weights" = two Wilson angles φ₂, φ₄; tolerance 1e-6; massless only; same pipeline for the paper edit | `L1_3_run_design_20261112_DECISIONS.txt` (sha256 `2dc1bb8e94e16c727bc2bc978d5ee904044e3e1a7566878d33a0c1960b158072`) |
 +| 2026-11-12 | L1.3: R2 of run `9ccf4855` recorded as open as written; corrected L1.3b approved to be designed (7:55 PM); the run itself awaits approval of the L1.3b design hash | `L1_3b_run_design_20261112_DECISIONS.txt` (PR #10) |
-+| 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 "all to be redone" (scope read as OP4-rule and OP4-bridge results; reading pending confirmation); B3 load-free carve-out for L1.1–L1.3; **B4 pending confirmation** (chat said "yes rerun is needed" at 7:48 PM, then "understand, you accepted L1.1" at 7:51 PM) | `layered_plan_v3_4_draft_20261112_DECISIONS.txt` (verbatim words and times) |
++| 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 "all to be redone" (scope read as OP4-rule and OP4-bridge results; reading pending confirmation); B3 load-free carve-out for L1.1–L1.3; B4 the official V5 v2 census is accepted as the L1.1 census of `dirac4`, no re-run (Edmond, 8:11 PM: "B4 is accepted, no rerun"; his earlier words at 7:48 PM and 7:51 PM are in the sidecar) | `layered_plan_v3_4_draft_20261112_DECISIONS.txt` (verbatim words and times) |
 +
 +
  ---
@@ -78,7 +78,7 @@
  |---|---|---|---|
  | **L0** | Substrate, conventions, exactness harness; **choice of canonical rule** | OP1 (foundation) | V1–V4 pass; V5 ran and its result is recorded (V5 cannot pass in full: table 6's N_s=24 cell sits below the generating script's own resolution cut (`qca/dw_final.py:9`, `r[:,1]>1e-15`), so it cannot reproduce by construction); units frozen; one canonical node rule named, the other a labelled diagnostic branch |
 -| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes classified with a repair-or-reason decision; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
-+| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes of the canonical rule classified (reason: one BCC orbit; census per B4: accept V5 v2 or re-run); OP4's extra nodes recorded as a diagnostic finding; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
++| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes of the canonical rule classified (reason: one BCC orbit; the V5 v2 census accepted as the census of that rule); OP4's extra nodes recorded as a diagnostic finding; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
  | **L2** | Read-out and statistics | S1 (L2.0 derivation attempt), S7, OP2, S2, OP3 (shared records) | per item: L2.0 S1 attempt recorded as narrowed or open; S7 reproduction; κ bound; exchange phase −1; order independence |
  | **L3** | Gravity | OP4–OP11, OP17 | **per item** (§5): each of G1–G7 passes or fails on its own gate. G1 is open: the strong-field toy is 3% short in finite-screen steering, and a weak-field γ has not been measured |
 -| **L4** | Matter spectrum | OP12–OP14 (OP18 moved to Appendix A) | κ_c scaling; OP12 needs a new mechanism with a stated reason (the existing-rule route is a recorded no-go) |
@@ -108,7 +108,7 @@
 +### L1.1 Doubler census — OP3 (canonical rule gates; OP4 diagnostic)
  
 -**Setup.** For each rule in use, take the explicit symbols: the 4×4 symbols of §6.2, and the OP4 generator Q(k) = [[ν n·σ, −m], [−m, −ν n·σ]]. Scan the cube `[-π,π]³` densely (≥129³) and include every high-symmetry point. Refine candidates with a local minimiser. Report the minimum over the *interior* and over the *closure*, separately, and report each zero's location, chirality and tilt.
-+**Status (v3.4, 2026-11-12).** The reason decision is made: on one BCC orbit the twelve edge zeros are Γ images, and the sum-form repair is withdrawn (Edmond; paper commits `66ee62f`, `cc2cc5c`). **Census: pending Edmond's confirmation of B4.** In chat Edmond said "yes rerun is needed" and then "understand, you accepted L1.1"; this draft does not choose between (i) accepting the official V5 v2 census as the L1.1 census of `dirac4` (no re-run) and (ii) re-running it on `dirac4` under a new design. Until confirmed, L1.1 is not recorded closed. That census (`results.json` sha256 `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708`) is unrepaired `dirac4` at m = 0 on a 129³ boundary-inclusive grid with local minima refined, exclusion 0.3 around every Γ image, and it reproduced all 18 numeric cells of Table `dirac4`; the 9 November `scan_gap.py` evaluated the twelve edge points exactly and found ω = 0 there, which the one-orbit reason identifies as Γ. OP4's three extra nodes (H, P, P′) are a **diagnostic finding**, recorded here, with no repair required by the gate (Edmond B1). **r8 stays signed off; under one orbit it is no longer the required L1.1 path for `dirac4`; nothing in r8 is withdrawn.**
++**Status (v3.4, 2026-11-12).** The reason decision is made: on one BCC orbit the twelve edge zeros are Γ images, and the sum-form repair is withdrawn (Edmond; paper commits `66ee62f`, `cc2cc5c`). **L1.1 is CLOSED (Edmond B4, confirmed 2026-11-12, 8:11 PM: "B4 is accepted, no rerun"): the official V5 v2 census is accepted as the L1.1 census of the canonical rule `dirac4`, and no re-run is needed.** That census (`results.json` sha256 `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708`) is unrepaired `dirac4` at m = 0 on a 129³ boundary-inclusive grid with local minima refined, exclusion 0.3 around every Γ image, and it reproduced all 18 numeric cells of Table `dirac4`; the 9 November `scan_gap.py` evaluated the twelve edge points exactly and found ω = 0 there, which the one-orbit reason identifies as Γ. OP4's three extra nodes (H, P, P′) are a **diagnostic finding**, recorded here, with no repair required by the gate (Edmond B1). **r8 stays signed off; under one orbit it is no longer the required L1.1 path for `dirac4`; nothing in r8 is withdrawn.**
  
 -**Pass.** For each rule, either no zero except Γ in the closure, or a documented statement that the extra zeros are excluded from the physical state space, and why. **The same decision rule applies to both findings below:** repair it, or give a reason it is unphysical that survives a finite lattice with even L.
 +**Setup.** Take the explicit 4×4 symbols of §6.2 of the canonical rule on the one-orbit lattice (the OP4 generator Q(k) = [[ν n·σ, −m], [−m, −ν n·σ]] is scanned only as a labelled diagnostic). Scan the cube `[-π,π]³` densely (≥129³) and include every high-symmetry point. A zero at πg with g an integer triple of even coordinate sum is Γ on the one-orbit lattice and is reported as a Γ image, not as a doubler. Refine candidates with a local minimiser. Report the minimum over the *interior* and over the *closure*, separately, and report each zero's location, chirality and tilt.
@@ -124,7 +124,7 @@
  **Naive BCC operator and staggering.** The naive nearest-neighbour BCC Dirac operator has **zero lines** at k_i = k_j = π/2 (a count that grows with L). **Kogut–Susskind spin diagonalisation is frustrated on BCC**: the four body-diagonal hops cannot all anticommute for any U(1) phases, so exact KS staggering does not exist on this lattice, and staggering does **not** remove the zero lines. The best Z₂-flux pattern gives about 2 Dirac tastes but with over-tilted (type-II) cones.
  
 -**Decision needed (one decision, applied to both rules).** Either (a) show these points are not in the physical spectrum (hard: they are allowed k on an even finite lattice), or (b) repair the rule so that the extra zeros or nodes are lifted while Γ stays massless, and re-run the census. Candidate repairs: the face-centre `g(k)` patch (§10); a Wilson-type term on OP4's three isolated doublers; domain wall or overlap (exact chirality, highest cost). A design for one CPU-only free-spectrum check exists; it is **not approved or run**.
-+**Decision (Edmond, 2026-11-12).** Option (a), a reason: the single BCC orbit. The sum-form `g(k)` repair is withdrawn (it is not periodic under π(1,1,0)), and no repair of OP4's three extra nodes is required by the gate. The census question (B4) is pending Edmond's confirmation (see Status).
++**Decision (Edmond, 2026-11-12).** Option (a), a reason: the single BCC orbit. The sum-form `g(k)` repair is withdrawn (it is not periodic under π(1,1,0)), and no repair of OP4's three extra nodes is required by the gate. The V5 v2 census is accepted as the census (B4, confirmed 8:11 PM).
  
  **Link to OP12.** Using the four OP4 nodes as the three generations is a recorded no-go under existing rules (L4, M3).
  
@@ -172,7 +172,7 @@
  This closes the largest tree-level Lorentz hole and is a prerequisite for L3.
  
 -**L1 exit gate.** L1.1 decision made and census re-run for the chosen rule; L1.2 reproduced; L1.3 settled; L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs Edmond's approval of the tick-budget run; see §11 for a realistic timeline.)
-+**L1 exit gate.** L1.1 census of the canonical rule on one BCC orbit (V5 v2 accepted or re-run, per B4) with Γ images classified, OP4's nodes recorded as a diagnostic finding; L1.2 reproduced (closed 2026-11-12); L1.3 settled (status in L1.3); L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs a `dirac4` design first: the held tick-budget design is OP4-only and diagnostic; see §11.)
++**L1 exit gate.** L1.1 closed (V5 v2 census accepted for the canonical rule on one BCC orbit, Γ images classified, OP4's nodes recorded as a diagnostic finding); L1.2 reproduced (closed 2026-11-12); L1.3 settled (status in L1.3); L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs a `dirac4` design first: the held tick-budget design is OP4-only and diagnostic; see §11.)
  
  ---
  
@@ -208,7 +208,7 @@
  | 1 | all | freezes with L0–L2; L0 names the canonical rule | — | open |
  | 2 | L2 | exchange-phase toy | 1–2 wk | open |
 -| 3 | L1 | one repair-or-reason decision for the 12 face-centre zeros (§6.2) **and** OP4's 3 extra nodes; then rerun census | 3–5 d | open; design only |
-+| 3 | L1 | reason decision made (one BCC orbit; the 12 edge zeros are Γ images); OP4's 3 extra nodes recorded as a diagnostic finding; census per B4 (V5 v2 accepted, or re-run), pending Edmond's confirmation | — | L1.1 reason decided, census pending; L1.2 closed; L1.3 open |
++| 3 | L1 | reason decision made (one BCC orbit; the 12 edge zeros are Γ images); OP4's 3 extra nodes recorded as a diagnostic finding; V5 v2 census accepted as the `dirac4` census | — | L1.1 closed; L1.2 closed; L1.3 open |
  | 4 | L3 | EP composite (G3), pre-L1 pilot: readout fix | 3–5 d | PARTIAL (s = 8 floors) |
  | 5 | L3 | workload→metric map; start with G1 | 2 wk | open |
  | 6 | L3 | single-node m_P toy | 1 wk | open |
@@ -280,7 +280,7 @@
 -4. **L1.3 ν derivation** (OP3) — 2 d.
 -5. **L1.5 linear-term test** (OP16) — designed; runs only if Edmond approves the caps. If approved early, about 1 d of compute and analysis; if not, L1.5 stays open.
 +1. **L0 canonical-rule decision** (Edmond) — 0.5 d. **Done: `dirac4`.**
-+2. **L1.1 doubler census** (OP3). The one-orbit reason decision is done (2026-11-12). The census is pending Edmond's confirmation of B4 (accept V5 v2, or re-run under a new design). The OP4 branch is a diagnostic finding only.
++2. **L1.1 doubler census** (OP3). **Done 2026-11-12 (closed):** one-orbit reason decision plus the V5 v2 census accepted as the census (Edmond B4, 8:11 PM). The OP4 branch is a diagnostic finding only.
 +3. **L1.2 chirality chain reproduction** (Table `dw`) — 2–3 d. Required by the L1 exit gate; omitted in v2's sprint. **Done 2026-11-12 (closed).**
 +4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; R2 recorded as open; the corrected L1.3b is designed (PR #10) and awaits approval of its hash to run.
 +5. **L1.5 linear-term test** (OP16). The held design is for the diagnostic OP4 rule; a `dirac4` hand derivation and design come first, then Edmond's approval of caps.
@@ -288,7 +288,7 @@
  7. **L2.0 design review** (no run) — Edmond reviews the theorem sketch, gaps G-1 to G-7 and the C5 audit (part (a), read-only).
  
 -**Realistic L1 close.** L1 cannot close inside this sprint. Earliest close is about **4–6 weeks**, and only if (a) Edmond approves the L1.5 run, and (b) the L1.1 decision does not change the low-energy dispersion. A repair that does (as the face-centre `g(k)` patch does) forces L1.4 and L1.5 to be re-measured on the repaired rule, adding about 1–2 weeks. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
-+**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.3b run is done and the L1.4 and L1.5 designs (and an L1.1 re-run design, if B4 means a re-run) exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
++**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.3b run is done and the L1.4 and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
  
  ---
  

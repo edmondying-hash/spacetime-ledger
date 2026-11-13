@@ -9,6 +9,9 @@ Edmond Ying, 7:48 PM, verbatim:
 Edmond Ying, 7:51 PM, verbatim:
   "understand, you accepted L1.1"
 
+Edmond Ying, 8:11 PM, verbatim (settles B4):
+  "B4 is accepted, no rerun"
+
 Edmond Ying, 7:55 PM, verbatim (L1.3):
   "L1.3  record R2 as open, approve corrected L1.3b"
 
@@ -16,5 +19,5 @@ Status:
   B1  recorded as decided.
   B2  recorded as decided; the scope ("all" = results resting on the OP4 rule or bridge) is the assistant's reading and awaits confirmation.
   B3  recorded as decided.
-  B4  NOT settled. The 7:48 PM words say a re-run is needed; the 7:51 PM words can be read as accepting the V5 v2 census with no re-run. The draft marks L1.1 census pending until Edmond states which he means.
+  B4  SETTLED at 8:11 PM: the official V5 v2 census is accepted as the L1.1 census of dirac4; no re-run. (The 7:48 PM and 7:51 PM words were ambiguous; the 8:11 PM words govern.) L1.1 is recorded closed.
   L1.3  R2 recorded as open; corrected L1.3b approved to be designed (design in PR #10; running it awaits approval of its sha256).
