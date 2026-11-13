@@ -1,0 +1,214 @@
+L1.4 CLOSURE RECORD
+================================================================
+
+Recorded: 2026-11-13, after Edmond Ying's message of 1:30 PM America/New_York
+(2026-11-13 18:30 UTC), by the reviewing agent (spacetime).
+Edmond Ying: "I think we can close". He then asked that this file be written
+and pushed to main ("Write the L1.4 closure file and push it to main").
+
+This record sits outside the run folder and the design folder. It changes
+neither. It is a new file. L1.4 is closed on the r4 PASS by that message.
+
+----------------------------------------------------------------
+1. WHAT WAS CLOSED
+----------------------------------------------------------------
+Plan layered_plan_v3.4.md section 3, L1.4 (plan line 187): produce, from the
+rule, a sky-direction table of 1-v/c at 1 GeV, 1 TeV, 31 GeV, 100 TeV, 3e20 eV,
+both subluminal and superluminal signs. Compare with the measured limits in
+section 0.3: Fermi GRB 090510 (E_QG,1 > 7.6 E_Pl, Vasileiou 2013; conservative
+1.2 E_Pl, Abdo 2009), LHAASO GRB 221009A (E_QG,1 > 1.0e20 GeV subluminal;
+E_QG,2 > 6.9e11 GeV). Also compute a diffusion signature (arrival-time blur)
+for a random (Poisson) control, which the model excludes (Sec. 7.3). Pass: no
+bound violated; the anisotropic term is stated with its search template, not
+just its magnitude.
+
+Closed on run 20261113_l14r4_ee137a27, verdict PASS (gates P0-P7, G1-G5 and
+the D6a negative control). D7 is record-only under the design (E5) and is not
+a gate.
+
+Design:       L1_4_design_r4_spacetime_20261113/L1_4_RUN_DESIGN_r4.md
+              sha256 ee137a2787083f987ea31a4f928fb6e9e00dc22ad00fc43bff89691e9e5bbda1
+              design-folder SHA256SUMS sha256
+              ddfb4f852cdd17a89ad60b8cb80fe88e74540f43631f1c354810d0b3e11db200
+              (Edmond, 2026-11-13, widget answer to t2598s7676 at 10:58 AM ET:
+              "Run RK4 with the safe step and raise the caps to about 3.5 hours";
+              earlier t2598u: "please raise the cap and run it". Those messages
+              do not quote the design sha256; the hash was supplied with the
+              relayed instruction. The run records this as DEV-2.)
+Open items:   L1_4_OPEN_DECISIONS.md sha256
+              3bf82c8aff4f8b3dc8d31ae388d60edee79fb16171bdca2058246d398ab71c6e
+              Values taken: E1 default (B0.5 and B2 gate; A and OFF recorded);
+              E2 default (verdict at s=1, with s=sqrt(3) and s=2 reported);
+              E3, Edmond t2594u, gate at 10 E_P; E4, Edmond t2594u, default (i)
+              Poisson control; all other open items at the design defaults.
+              Caps under the r4 change: D7 11,400 s, total 12,600 s; 1 thread,
+              no GPU, 3 GiB peak RSS, unchanged.
+Code:         harness/l14_measure.py sha256
+              732257d97982cd1ff9341560c0cbb4df90f40cd13d97029afff82ed0edfe746a
+              (hashed before the run); l14_verdict.py sha256
+              5d9018848b71830cebce4768f700f3fdf6042aeedbe9a3e0eaebfb55fdfe072f
+Run:          20261113_l14r4_ee137a27/ on sparky (WSL Ubuntu-24.04, aarch64;
+              Python 3.12.3, numpy 2.5.4, scipy 1.18.1, mpmath 1.4.1), path
+              ~/spacetime_files/runs/20261113_l14r4_ee137a27/; box copy
+              /workspace/runs_l14/20261113_l14r4_ee137a27/. The run is not in
+              this repository. Run-folder SHA256SUMS sha256
+              69e1c4c12428e4d89a30304427e00a02d2a3217d6e6ab7afb0622292d4d358d4
+              Sealed tgz sha256
+              005dfc270d79e5c36c463834545312f7852c8cbb9f62f1ad0adda368155ef7f1
+              result_L1_4.json sha256
+              e5909d3e0fe2782688a243495abb30e41453c3782803a49e898f285767c055bb
+Paper base:   space-ledger-v2.md on main at
+              5a00f03e6dd0849a77f189ff3f4836d3dd216e16, sha256
+              ce22701ca6e5e2dfa143ab43a6062e80025c1afeba5137f7e271c239bc75555c
+
+The frozen inputs and harness files are published as hashes only. Everything
+in the run folder verifies against its SHA256SUMS.
+
+----------------------------------------------------------------
+2. WHAT THE RUN SHOWED (reviewed against the design's verdict rules)
+----------------------------------------------------------------
+Verdict PASS. Step status: S0 PASS, D1 PASS, D2 COMPLETED (record), D3 PASS,
+D4 PASS, D5 PASS, D6 PASS, D7 COMPLETED (record only). Gates P0, P1, P2, P3,
+P4, P5, P6, P7, G1, G2, G3, G4, G5 and D6a_negative_control_behaves all hold.
+No UNINFORMATIVE cells in D1 or D3. D5 is not UNINFORMATIVE.
+
+- P0-P7 (S0): all pass. P1 unitarity residual at most 1.554e-15. P3
+  mpmath-vs-double at most 6.280e-16. P4 vs the L1.5a library, 780 cells:
+  max |d xi2| = 8.893e-41. P6 Poisson graph N = 221,184, mean degree 9.301,
+  max degree 18. P7 projections sat under the r4 caps (D7 projected 8,161 s
+  against 11,400 s).
+- G1 (D1, odd terms): worst |xi1'| = 9.328e-22 and worst |a3|/a0 = 2.218e-16
+  (OFF and rule A); B0.5 1.544e-22 and 3.671e-17; B2 1.208e-23 and 2.874e-18.
+  Threshold 1e-12.
+- G2 (D3 vs even-only D2 series, 1e-6 relative): worst relative difference
+  1.759e-18 (OFF and rule A), 4.506e-19 (B0.5), 4.702e-20 (B2). Zero
+  UNINFORMATIVE cells.
+- G3 (D4 vs section 0.3 limits), gating conditions B0.5 and B2, all six phi,
+  s=1 for the verdict: 0 failing cells. E_QG,1 is a lower bound (no resolved
+  linear term): 6.100e38 GeV at s=1, a margin of 5.000e18 against the 10 E_P
+  gate (E_P = 1.22e19 GeV). Worst E_QG,2 is subluminal, at phi = 0.5 along
+  [111]; best E_QG,2 at phi = 1.5 along [100]. Values in GeV:
+
+    condition   s=1            s=sqrt(3)      s=2            margin vs T4 (s=1)
+    B0.5        1.706030828e19 2.954932074e19 3.412061656e19 2.472508447e7
+    B2          1.725787328e19 2.989151335e19 3.451574656e19 2.501141055e7
+    OFF and A   1.686937662e19 2.921861739e19 3.373875323e19 2.444837191e7
+
+  (OFF and A0.5/A2 agree with each other to the reported digits. T4 is the
+  LHAASO quadratic bound 6.9e11 GeV subluminal.) These E_QG,2 numbers, and
+  the E10 numbers below, are recorded; E2 and E10 are not decided by this
+  closure (section 3).
+- E10 (axis-minus-diagonal, recorded, not a gate): for dirac4, d xi2 = 2/9,
+  which is (2/3) per kappa^2 and (2/9) per (k ell)^2, stable across phi and
+  load to rounding. The ratio of that term to the paper's 1/18 is 12 in
+  kappa^2, 4 in (k ell)^2, and 3 at s=2 (l_P = a). At 3.2e20 eV the line-1253
+  number is 3.822150557e-17 in the paper (1/18); the dirac4 value is
+  1.146645167e-16 at s=2, 1.528860223e-16 at s=sqrt(3), and 4.586580668e-16
+  at s=1.
+- G4 (D5 search template): 30 of 30 cells pass. Condition number 243.56
+  (threshold 1e6). Maximum absolute residual 3.539e-16 (threshold 1e-10).
+  The fitted template has beta = 1/3 and gamma = delta = 0 to residual, on
+  every cell.
+- G5 (D6b, scalar BCC wave rule): C[100] = 1/24, C[110] = 1/12, C[111] = 7/72
+  and C[111]-C[100] = 1/18, each to about 3e-32 (threshold 1e-12).
+- D6a negative control (single-handed D'Ariano-Perinotti Weyl QCA):
+  |xi1'| along [111] = 0.19245008972987526 = 1/(3 sqrt(3)), and it fails the
+  G3 linear clause at E_QG,1 = 2.598076211353316 E_P = (3 sqrt(3)/2) E_P,
+  as required. behaves_as_required is true.
+
+D7, record only (RK4, dt = 0.00625, T = 70, 11,200 steps, 30 runs; energy-drift
+threshold 1e-8; blur-exponent fit only if every cell has a crossing):
+- Maximum energy drift 6.418097384248728e-11, over all 30 runs (Poisson,
+  k=1.2, seed 20261116).
+- BCC packets crossed d = 16, 32 and 48 at all three k, both translations,
+  with group speed 0.97801 (k=0.4), 0.91876-0.91902 (k=0.8) and
+  0.82282-0.82364 (k=1.2). Coherent fraction 0.99896 to 0.99962. Arrival-time
+  relative width sigma_t/<t> = 0 at every BCC cell (2.17e-16 at k=0.4, d=32,
+  a rounding residual).
+- Poisson-sprinkled control, k=0.4, all eight seeds, all three distances
+  labelled INFORMATIVE:
+      d    <t>      sigma_t/<t>  speed    coherent fraction
+     16  28.78955    0.014372    0.55576  0.96149
+     32  52.77071    0.024254    0.60640  0.76061
+     48  65.21034    0.007342    0.73608  0.62584
+- Poisson k=0.8 and k=1.2, every seed and every distance: NO CROSSING WITHIN T.
+  Packets did not reach d=16 inside T=70. Centroids at T were 22.533 to 22.918
+  at k=0.8 and 21.224 to 21.517 at k=1.2.
+- The blur-exponent fit is null, because the design fits only when every cell
+  has a crossing. The random-grid comparison on paper line 1036 therefore has
+  no exponent from this run.
+
+Resources, from result_L1_4.json: wall 6115.6246037483215 s (1 h 41 min 56 s),
+CPU 6114.297067 s (1 h 41 min 54 s), peak RSS 444.76171875 MiB (D7,
+ru_maxrss of the process tree). Start 11:01:14 EST, end 12:43:11 EST,
+both 2026-11-13 America/New_York. All steps exited 0; none hit a cap.
+
+----------------------------------------------------------------
+3. WHAT DID NOT PASS AS WRITTEN, AND WHAT WAS DISCLOSED, STATED PLAINLY
+----------------------------------------------------------------
+The first run, 20261113_l14_a15f82bc, under design L1_4_RUN_DESIGN.md sha256
+a15f82bcc1de3c2d2d7cf6a6fa601f66d6d62b35a4638352f290741ed23ad35c, ended
+FAIL / OPEN at D3 / G2 and stays on record unaltered. S0 and D1 (G1) passed,
+D2 completed, D3 failed (worst relative gap 0.021537 at OFF and rule A,
+0.005674 at B0.5, 0.000589 at B2, against the 1e-6 tolerance); D4-D7 were not
+run. Run-folder SHA256SUMS sha256
+ed81030544f030309c0a8f058d74f4953e0ae6cc5e0c7e9a92abc4358ec12654;
+sealed tgz sha256
+f5968f329e833a94a1ddf34918260f47e15f6faadb922b3d05889636c85f4bfa.
+The cause was in the design, not in the execution: the D2 series included the
+odd terms 2 xi1' x and 4 (a3/a0) x^3. Those coefficients sit at the D1 noise
+floor (G1 still passes), but at the physical energies the noise-floor linear
+term is comparable to the quadratic term, so the series no longer represented
+the quantity D3 evaluates directly. That verdict is not re-scored. Designs r2
+(L1_4_RUN_DESIGN_r2.md sha256
+ceeb45fe19bd535a4a856e21640d4051d9546781319e483f00e57885cf55d346,
+folder SHA256SUMS sha256
+bda9a47f8f5efeca73ffd9c01fc0ce43f2232fb1a768e96a4db512b87501b9a9) and r3
+(L1_4_RUN_DESIGN_r3.md sha256
+e3144187e4c0231c422b41b9bea9a15e2a10e1dd5c341e23243e7773680dba62,
+folder SHA256SUMS sha256
+7b02f9caf901afea32b7b86d5f4de388b3e6bbaa70e940893a066ac9c8c76413) were
+written and not run. r4 kept the r2 even-only series
+1-v/c = -(3 xi2' x^2 + 5 xi4' x^4) and changed only the D7 time step, the
+D7 and total wall caps, and the P7 cost model.
+
+Disclosures about the r4 run, none of which affects the verdict:
+  - DEV-2. Edmond's run authorisation did not quote the design sha256, a
+    departure from design section 10.1 (and of the same kind as the L1.3b
+    record). The hash ee137a27... was supplied with the relayed instruction.
+  - The Poisson control stalls at k >= 0.8 (no crossing of d=16 within T=70).
+    D7 is record-only, so this does not change the PASS. What to do about the
+    stall is not decided by this closure.
+  - E2 (the ell_P energy convention: s=1, sqrt(3) or 2) and E10 (paper line
+    1253, the scalar 1/18 versus dirac4's 2/9) remain open. The numbers in
+    section 2 are reported under the design defaults; this record does not
+    choose among them and authorises no paper edit.
+
+----------------------------------------------------------------
+4. PAPER EDIT AUTHORISED BY THIS CLOSURE
+----------------------------------------------------------------
+None. Edmond asked only that this closure file be written and pushed to main.
+No change to space-ledger-v2.md, the PDF, the README or the plan is made by
+this record. E2 and E10 stay open, so line 1253 and the ell_P convention are
+untouched.
+
+----------------------------------------------------------------
+5. DECLINED, NOT AUTHORISED
+----------------------------------------------------------------
+- Any edit to the paper, the README, the plan, the designs, the open-decisions
+  sidecar, or either run folder.
+- Re-scoring or altering the a15f82bc FAIL / OPEN record.
+- Rebuilding the PDF.
+- A decision on the Poisson stall, on E2, or on E10.
+
+----------------------------------------------------------------
+6. STATE OF THE L1 EXIT GATE
+----------------------------------------------------------------
+L1.1 closed (one BCC orbit; V5 v2 census taken as the census, no re-run).
+L1.2 closed (L1_2_CLOSURE_20261112.txt). L1.3 closed on L1.3b
+(L1_3_CLOSURE_20261112.txt). L1.4 closed by this record, on the r4 PASS.
+The plan's L1 exit gate still needs L1.5 measured against the section 0.3
+limits. L1.5's status is unchanged by this record: a run has been made, its
+results are not in this repository, the clock-factor question B9 is still
+open, and v3.4 still records L1.5 as open. This record decides none of E2,
+E10, B9, or the Poisson stall.
