@@ -1,0 +1,14 @@
+G   N=104 sigma=9 cycles=3 kappa0=0.6 phi=1.2 ; velocity in coordinates per cycle
+   (1, 0, 0)  measured [ 3.62261e+00 -1.27164e-04 -3.91964e-04]  predicted [ 3.62271e+00 -8.50984e-05 -2.86545e-04]  max|diff| 1.09e-04  norm-1 -2.2e-15  (10s)
+   (-1, 0, 0) measured [-3.62267e+00  1.27080e-04 -3.91964e-04]  predicted [-3.62272e+00  8.51035e-05 -2.91990e-04]  max|diff| 1.00e-04  norm-1 -3.3e-16  (10s)
+   (1, 1, 1)  measured [1.12665 1.12705 1.12665]  predicted [1.1269  1.12689 1.1269 ]  max|diff| 2.49e-04  norm-1 6.7e-16  (10s)
+   (-1, -1, -1) measured [-1.12665 -1.12706 -1.12665]  predicted [-1.1269 -1.1269 -1.1269]  max|diff| 2.50e-04  norm-1 -3.2e-15  (10s)
+   (1, -1, 1) measured [ 1.12665 -1.12706  1.12665]  predicted [ 1.1269 -1.1269  1.1269]  max|diff| 2.51e-04  norm-1 -1.2e-15  (10s)
+   (-1, 1, -1) measured [-1.12665  1.12705 -1.12665]  predicted [-1.1269   1.12689 -1.1269 ]  max|diff| 2.48e-04  norm-1 -1.4e-15  (10s)
+   (2, 1, 1)  measured [2.15618 0.59103 0.59098]  predicted [2.15634 0.59105 0.59107]  max|diff| 1.68e-04  norm-1 0.0e+00  (12s)
+   (3, 1, 1)  measured [2.72113 0.32636 0.3264 ]  predicted [2.72132 0.32654 0.32659]  max|diff| 1.91e-04  norm-1 -6.7e-16  (12s)
+G   direction-odd test, |v(n) + v(-n)|_max:
+   (1, 0, 0) vs (-1, 0, 0) : 7.84e-04
+   (1, 1, 1) vs (-1, -1, -1) : 7.51e-06
+G   worst |measured - predicted| over the 8 directions: 2.51e-04
+G   resources: CPU 82 s, wall 82 s, peak RSS 576 MiB
