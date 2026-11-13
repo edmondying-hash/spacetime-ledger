@@ -60,7 +60,11 @@ LEFT illustrates established GR geometric lensing. It is not a newly integrated 
 
 - [Notes](video/gr_vs_bcc_lensing/README.md) · [thumbnail at 30 s](video/gr_vs_bcc_lensing/thumbnail.png) · [storyboard](video/gr_vs_bcc_lensing/storyboard.md) · [scientific notes](video/gr_vs_bcc_lensing/SCIENTIFIC_NOTES_v2.md)
 
-**Signed-off records (exact copies).** [Layered plan v3.3 r2](layered_plan_v3_3_r2_20261111/) is the live layered plan. [L1.1 repair spec r8](L1_1_repair_spec_r8_20261111/) is the L1.1 gate. The [sign-off sidecar](L1_1_repair_spec_r8_20261111_SIGNOFF.txt) sits beside the r8 folder; it is the sign-off record because r8's own status line is frozen inside its hash.
+**Signed-off records (exact copies).** [Layered plan v3.3 r2](layered_plan_v3_3_r2_20261111/) is the live layered plan. [L1.1 repair spec r8](L1_1_repair_spec_r8_20261111/) stays signed off; it was the L1.1 gate before the one-BCC change (below). The [sign-off sidecar](L1_1_repair_spec_r8_20261111_SIGNOFF.txt) sits beside the r8 folder; it is the sign-off record because r8's own status line is frozen inside its hash.
+
+**One BCC orbit (2026-11-12).** The paper uses one BCC orbit of the integer grid. The twelve edge labels such as (±π,±π,0) are Γ images, and the sum-form Wilson repair is withdrawn ([reason note](L1_1_one_bcc_reason_r2_20261112/)). Under this choice r8 is no longer the required L1.1 path for `dirac4`; nothing in r8 is withdrawn.
+
+**Layer 1 runs.** L1.2: results in [PR #5](https://github.com/edmondying-hash/spacetime-ledger/pull/5); closed 2026-11-12; the closure record and the "from b ≈ 0.35" wording are in [PR #6](https://github.com/edmondying-hash/spacetime-ledger/pull/6) (not merged). L1.3: results in [PR #8](https://github.com/edmondying-hash/spacetime-ledger/pull/8), FAIL / OPEN (R1 passed, R2 failed, S3 not run); the corrected L1.3b design is in [PR #10](https://github.com/edmondying-hash/spacetime-ledger/pull/10) and is not approved to run.
 
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
