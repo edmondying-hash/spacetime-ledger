@@ -23,7 +23,7 @@ v3.3 r2 is unchanged at `../layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md` 
 ## Results recorded
 
 - L1.2: CLOSED (run `7e09b7c4`, PRs #5 and #6).
-- L1.3: OPEN. Run `9ccf4855`, PR #8: R1 PASS, R2 FAIL / OPEN (recorded as open as written, Edmond 7:55 PM), S3 not run. The design prefactor error and the unscored follow-ups are stated. The corrected L1.3b is designed (PR #10) and awaits approval of its hash. The naming difference between ν_S and ν = cτ/a is added.
+- L1.3: CLOSED on L1.3b (Edmond, 8:32 PM). Run `9ccf4855`, PR #8: R1 PASS, R2 FAIL / OPEN (kept as written), S3 not run; design prefactor and extrapolation errors stated. L1.3b design `dc90fd23` (PR #10), run `20261112_l13b_dc90fd23` (PR #12): PASS. Closure record `L1_3_CLOSURE_20261112.txt` and the prepared paper edit are PR #13 (not merged). The naming difference between ν_S and ν = cτ/a is added.
 - L1.5: the 0.385κ prediction is labelled as an OP4 analysis; a `dirac4` hypothesis is stated as a hypothesis, not a result.
 
 ## Added (new sections)
@@ -42,3 +42,5 @@ Applied, after checking each against its source: B4 no longer recorded as closed
 **Process (E).** The draft status line sits inside the hash, as with r8. A sign-off would use a sidecar, or a neutral status line before hashing.
 
 **Update, 8:11 PM.** Edmond confirmed B4 ("B4 is accepted, no rerun"). The L1.1 sentences that review round 1 had marked pending are restored to "closed", with the sidecar as the record.
+
+**Update, 8:32 PM (L1.3 closure).** Edmond: "let's close L1.3 on L1.3b. go ahead and prepare paper edit on D5 as noted in (2). go ahead approve (3) v3.4 as closed". Applied: the L1.3 status, exit gate, §8 row 3, §11 item 4 and realistic close, the §0.7 decision log (new row; L1.3b sidecar hash), and the L1.5 hypothesis sentence now citing L1.3b R2c. Added to §0.6 (still a proposal): the design dry-run also exercises record-keeping reads. "Approve (3)" is read as approving this L1.3-closed content of the draft, not as signing off v3.4 as a whole; §0.5, §0.6 and the B2 scope reading remain unconfirmed.

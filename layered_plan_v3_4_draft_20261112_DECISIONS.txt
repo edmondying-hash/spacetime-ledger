@@ -20,4 +20,9 @@ Status:
   B2  recorded as decided; the scope ("all" = results resting on the OP4 rule or bridge) is the assistant's reading and awaits confirmation.
   B3  recorded as decided.
   B4  SETTLED at 8:11 PM: the official V5 v2 census is accepted as the L1.1 census of dirac4; no re-run. (The 7:48 PM and 7:51 PM words were ambiguous; the 8:11 PM words govern.) L1.1 is recorded closed.
-  L1.3  R2 recorded as open; corrected L1.3b approved to be designed (design in PR #10; running it awaits approval of its sha256).
+  L1.3  R2 recorded as open; corrected L1.3b approved to be designed (7:55 PM), approved to run at 8:12 PM (see L1_3b_run_design_20261112_DECISIONS.txt), run PASS (PR #12); closed on L1.3b at 8:32 PM (below).
+
+Edmond Ying, 8:32 PM, verbatim (L1.3 closure, paper edit, draft):
+  "make sense, let's close L1.3 on L1.3b.  go ahead and prepare paper edit on D5 as noted in (2).  go ahead approve (3) v3.4 as closed"
+
+Reading (the assistant's; to be confirmed): "(3)" is the update of the v3.4 draft to show L1.3 closed, applied in the draft. It is not read as a sign-off of v3.4 as a whole: the proposals in sections 0.5 and 0.6 and the B2 scope reading are still unconfirmed, and README still names v3.3 r2 as the live plan.
