@@ -1,0 +1,173 @@
+L1.3 CLOSURE RECORD
+================================================================
+
+Recorded: 2026-11-12, after Edmond Ying's message of 8:32 PM America/New_York
+(2026-11-13 01:32 UTC), by the reviewing agent (spacetime-ledger).
+Approved by: Edmond Ying ("make sense, let's close L1.3 on L1.3b. go ahead and
+prepare paper edit on D5 as noted in (2). go ahead approve (3) v3.4 as closed").
+
+This record sits outside the run folders and the design folders. It changes
+none of them. It is a new file.
+
+----------------------------------------------------------------
+1. WHAT WAS CLOSED
+----------------------------------------------------------------
+Plan layered_plan_v3.3.md section 3, L1.3: "scan phi and the layer weights;
+determine whether any local normalisation forces nu = 0.98911. Pass: a
+derivation or a proof that phi is a genuine free parameter."
+
+Closed on the combination below (design D4 of L1.3b: a PASS lets Edmond record
+L1.3 closed on L1.3b, with the original R2 failure kept):
+
+(a) R1 of run 20261112_l13_9ccf4855 (PASS, recorded unaltered):
+    Design:   L1_3_run_design_20261112/L1_3_RUN_DESIGN.md
+              sha256 9ccf48559c099289b24af638164ca64b95195872b1e4a0d8966ed44ca800d098
+              (approved by Edmond, 2026-11-12 7:33 PM ET)
+    Decisions: L1_3_run_design_20261112_DECISIONS.txt
+              sha256 2dc1bb8e94e16c727bc2bc978d5ee904044e3e1a7566878d33a0c1960b158072
+    Run:      runs/20261112_l13_9ccf4855/ on branch grok/l1-3-run-20261112
+              (PR #8), commit f4e45728, SHA256SUMS sha256
+              17f5e19944dd36a7b257854951e5a4c594515d71dedd8e4a0d43da6f139e6157
+    Result:   R1 PASS (16 phi x 13 directions, max 4.3e-14); R2 FAIL; S3 not
+              run; verdict FAIL / OPEN as recorded.
+
+(b) R1', R2b, N1, N2, N3, N5 of run 20261112_l13b_dc90fd23 (PASS):
+    Design:   L1_3b_run_design_20261112/L1_3b_RUN_DESIGN.md
+              sha256 dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d
+              (branch cursor/l1-3b-run-design-a445, PR #10)
+    Decisions: L1_3b_run_design_20261112_DECISIONS.txt
+              sha256 c2081f1852847777e3acf931442890a1d80dcc7768b582af6da423029c995e9c
+              (Edmond, 8:12 PM ET: "L1.3b approved"; section 8 defaults D1 to
+              D5 recorded as accepted with it)
+    Run:      runs/20261112_l13b_dc90fd23/ on branch grok/l1-3b-run-20261112
+              (PR #12), commit 3d6075b791ce1bd089a1fbd95196ee31327911fb,
+              run-folder SHA256SUMS sha256
+              5ab7cdd2b7e5a4af7d0d385cff0cd2ffd5308775b7d9479938cc5fdfe27dbf0b
+              (42 of 42 entries verify)
+    Code:     measurement code harness/l13b_measure.py sha256
+              70fbfbf554e0477e029715c01957587aa96e2cdd4194a5e1fbada31f1d00b014
+              (hashed before any comparison); U-builder harness/l13_primary.py
+              sha256 5e606a0631b0124992d65f22dd15ffb90e9ad388706c73a9b7739cb388870d8e
+              (unchanged from 9ccf4855); frozen dirac4.py sha256
+              f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff
+              (S3 cross-check only)
+Paper base:   space-ledger-v2.md on main at cc2cc5c, sha256
+              8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70
+
+----------------------------------------------------------------
+2. WHAT THE RUN SHOWED (reviewed against the design's verdict rules)
+----------------------------------------------------------------
+Tolerance 1e-6 absolute throughout (L1.3 design D3, unchanged).
+- Pre-flight P0 to P5: all pass (residuals about 1e-15; the closed-form special
+  cases 1.1e-16).
+- R1' (phi = phi2 = phi4, 16 phi x 13 directions, degree-4 extrapolation in
+  kappa): max |v0 - c0(phi)| = 1.69e-13; direction spread 2.4e-13; v0 rounds to
+  the printed value of Table dirac4 at all seven tabulated phi. PASS.
+- R2b (49 angle pairs x 13 directions, against the factor-1/4 two-angle form
+  c0(phi2,phi4) = 1/4 sqrt((2 + sin^2 phi2 + sin^2 phi4)^2
+  + (sin phi2 cos phi2 + sin phi4 cos phi4)^2)): max difference 4.10e-13 at
+  (pi/2, 1.0); direction spread at most 4.3e-13; 49 of 49 pairs pass. PASS.
+- N1 (unitarity of A, S, V and U over dense phi grids and 200 random k): max
+  residual 3.0e-15. Holds: unitarity selects no phi.
+- N2 (is phi = 1.4 stationary?): finite-difference slope 0.12663 over
+  [1.3, 1.5] in every direction, equal to the closed form's own finite
+  difference to 7.9e-13 (closed-form derivative at 1.4 is 0.12700). Holds:
+  1.4 is not an extremum.
+- N3 (range): strictly monotone over the 18 sorted phi (0, 0.05, 0.1 ... pi/2)
+  with minimum gap 1.87e-3; endpoints within 1e-6 of 0.5 and 1. Holds: every
+  target value in [0.5, 1] is hit by exactly one phi.
+- N5 (search of the record for a statement that fixes phi = 1.4): 26 hits in
+  the paper section 6.2, plan v3.3 r2, the two L1.1 reason notes, the r8
+  repair spec and its sign-off; one keyword-flagged hit (paper line 576, about
+  the SI definition of c, not about phi). No derivation of phi = 1.4.
+- Verdict per design section 4: PASS.
+- R2c (record only): the linear coefficient b is at most 1.6e-10 on the three
+  [100] directions for every pair, and at most 1.7e-10 at every equal-angle
+  pair (the two replications Q1 and Q2 both pass); for phi2 != phi4 it is
+  nonzero on [110] and [111], up to 0.104.
+
+What this establishes: the low-energy light speed of dirac4 on one BCC orbit is
+c0(phi) = 1/2 sqrt(1 + 3 sin^2 phi) for equal Wilson angles, and phi is a free
+parameter of the rule. No local normalisation tested selects phi = 1.4. The
+paper's value is a choice of doubler gap against speed (c0 reaches 1 only at
+phi = pi/2, where the doublers return), and the tick tau = 0.989 t_P inherits it.
+
+----------------------------------------------------------------
+3. WHAT DID NOT PASS AS WRITTEN, AND WHAT WAS DISCLOSED, STATED PLAINLY
+----------------------------------------------------------------
+R2 of run 9ccf4855 FAILED as written and stays FAIL in the record, unaltered.
+Both causes were in the design, not in the run:
+  (a) the printed two-angle formula had a prefactor of 1/2 where 1/4 is
+      correct (it gave 2 c0 at phi2 = phi4, contradicting the design's own next
+      line); the run fixed the reading before computing and recorded it as DEV-1;
+  (b) the measurement extrapolated in kappa^2 and so assumed no term odd in
+      kappa; for phi2 != phi4 there is one, along [110] and [111], which that
+      protocol could not remove (worst miss 1.6e-4).
+L1.3b corrected both under its own hash and its own approval. The original
+verdict FAIL / OPEN of 9ccf4855 is not changed by this record.
+
+Disclosures about L1.3b, none of which affects the verdict:
+  - The design chose its kappa set, the degree-4 extrapolation and the two R2c
+    replications after an unscored diagnostic had shown the odd term. The closed
+    form was not adjusted to data. Edmond accepted this order of events (D3).
+  - Edmond's approval did not quote the design hash. The run's protocol notes
+    record the 8:12 PM message and a 8:14 PM DM to the Grok bot ("approved to
+    proceed with L1.3b"), and the bot reports that Edmond confirmed the hash in
+    DM. The DM is not visible to the reviewing agent.
+  - N4 record step: S3's N4 lookup indexed a dictionary with a number where the
+    file uses string keys and logged read_error KeyError(5). It was not re-run
+    (one attempt per step). The cited value was read after the run from the
+    hashed census file (ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708):
+    gap 1.37e-17 at phi = pi/2, speed cell 0.99993, in
+    post/N4_CITED_READ.json. N4 is record-only under the design.
+  - The run's SHA256SUMS was regenerated once to add two copied input-checksum
+    files.
+  - The S3 cross-check against the frozen dirac4 module differs by exactly 0.0
+    (same arithmetic order), so it confirms agreement of the two builders but is
+    not an independent check of rounding behaviour.
+
+----------------------------------------------------------------
+4. PAPER EDIT AUTHORISED BY THIS CLOSURE (design D5)
+----------------------------------------------------------------
+Edmond: "go ahead and prepare paper edit on D5". PREPARED in this pull request;
+it takes effect only if Edmond merges it. Exactly one paragraph of
+space-ledger-v2.md, section 6.2, line 543 ("Low-energy limit"). Text inserted
+after "... direction independent to $10^{-6}$ at this order.":
+
+  "With the two Wilson layers at the same angle, the speed has the closed form
+  $c_0(\varphi)=\tfrac12\sqrt{1+3\sin^2\varphi}$, which agrees with the exact
+  symbol to better than $10^{-12}$ at 16 values of $\varphi$ in 13 directions
+  and reproduces the tabulated speeds. The angle $\varphi$ is a free parameter
+  of the rule: unitarity, the $SU(2)$ structure of $A^{\epsilon}$ and $X^2=1$
+  select no value, and $c_0$ rises strictly monotonically from $0.5$ at
+  $\varphi=0$ to $1$ at $\varphi=\pi/2$. The value $\varphi=1.4$ is a choice of
+  gap against speed, and the tick $\tau\approx0.989\,t_P$ inherits it."
+
+Nothing else in the paragraph changes. The exact diff is paper_edit_L1_3_20261112.diff
+beside this file.
+space-ledger-v2.md sha256 before: 8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70
+space-ledger-v2.md sha256 after:  c3aa2282588ddf40caca6b368b0d24cbd713899a36767b08568a32d0635834f5
+space-ledger-v2.pdf is NOT rebuilt by this change. The README already says the
+markdown is the source of record and the PDF may lag.
+
+----------------------------------------------------------------
+5. DECLINED, NOT AUTHORISED
+----------------------------------------------------------------
+- The two-angle form c0(phi2,phi4), and any statement about the term linear in
+  kappa for unequal angles, in the paper. The paper's rule has one Wilson angle.
+  The linear term is an observation about a variant, not about the canonical
+  rule, and belongs to the L1.5 design.
+- Any edit to the plan beyond the v3.4 draft update Edmond approved (see
+  section 6), the L1.1 records, the designs, the decisions files or the run
+  folders.
+- Rebuilding the PDF.
+
+----------------------------------------------------------------
+6. STATE OF THE L1 EXIT GATE
+----------------------------------------------------------------
+L1.1 closed (one BCC orbit; V5 v2 census accepted, no re-run; Edmond B4, 8:11 PM).
+L1.2 closed (this record's sibling, L1_2_CLOSURE_20261112.txt, PR #6, not yet
+merged). L1.3 closed by this record. The gate still needs L1.4 and L1.5 measured
+against the section 0.3 limits; both need designs on the canonical rule (the
+held L1.5 tick-budget design is for the diagnostic OP4 rule). This record
+decides neither.
