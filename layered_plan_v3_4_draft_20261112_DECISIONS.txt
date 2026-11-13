@@ -1,0 +1,42 @@
+Layered plan v3.4 draft: decisions sidecar (outside the hashed folder)
+Recorded 2026-11-12 America/New_York. Sign-off of v3.4 itself has NOT been given.
+
+Plan-review items offered by the assistant: B1 (OP4 "both rules"), B2 (OP4-based results), B3 (load-free carve-out), B4 (L1.1 census re-run).
+
+Edmond Ying, 7:48 PM, verbatim:
+  "B1) let dirac4 gate L1.1 and record OP4s three extra nodes as diagnostic finding  B2) all to be redone  B3)  as you suggested is correct  B4)  yes rerun is needed"
+
+Edmond Ying, 7:51 PM, verbatim:
+  "understand, you accepted L1.1"
+
+Edmond Ying, 7:55 PM, verbatim (L1.3):
+  "L1.3  record R2 as open, approve corrected L1.3b"
+
+Edmond Ying, 8:11 PM, verbatim (settles B4):
+  "B4 is accepted, no rerun"
+
+Status:
+  B1  recorded as decided.
+  B2  recorded as decided; the scope ("all" = results resting on the OP4 rule or bridge) is the assistant's reading and awaits confirmation.
+  B3  recorded as decided.
+  B4  SETTLED at 8:11 PM: the official V5 v2 census is accepted as the L1.1 census of dirac4; no re-run. (The 7:48 PM and 7:51 PM words were ambiguous; the 8:11 PM words govern.) L1.1 is recorded closed.
+  L1.3  R2 recorded as open; corrected L1.3b approved to be designed (7:55 PM), approved to run at 8:12 PM (see L1_3b_run_design_20261112_DECISIONS.txt), run PASS (PR #12); closed on L1.3b at 8:32 PM (below).
+
+Edmond Ying, 8:32 PM, verbatim (L1.3 closure, paper edit, draft):
+  "make sense, let's close L1.3 on L1.3b.  go ahead and prepare paper edit on D5 as noted in (2).  go ahead approve (3) v3.4 as closed"
+
+Reading (the assistant's; to be confirmed): "(3)" is the update of the v3.4 draft to show L1.3 closed, applied in the draft. It is not read as a sign-off of v3.4 as a whole: the proposals in sections 0.5 and 0.6 and the B2 scope reading are still unconfirmed, and README still names v3.3 r2 as the live plan.
+
+Edmond Ying, 8:38 PM, verbatim (sign-off of v3.4):
+  "yes, sign off on v3.4, we'll proceed as plan in v3.4"
+
+Signed off document: layered_plan_v3_4_draft_20261112/layered_plan_v3.4.md
+  sha256 a50dd0a0d5c9304e782d8482905167d797f4973106d9a27326c69572a1e846cf
+  (branch cursor/layered-plan-v3-4-a445, PR #9, commit e4eb967). The plan text still carries its draft status line and the words "PROPOSED ... awaiting confirmation" on sections 0.5 and 0.6, because those sit inside the hashed file and are not edited after sign-off (as with r8). This sidecar is the record that overrides them.
+
+Reading (the assistant's; Edmond may correct it): sign-off of v3.4 as a whole includes
+  - the section 0.5 and 0.6 proposals, which therefore take effect as standing practice for L1.4 onward;
+  - the B2 scope reading (OP4-rule and OP4-bridge results to be redone on dirac4);
+  - L1.1, L1.2 and L1.3 recorded closed as written in v3.4.
+Not changed by the sign-off: the README still names v3.3 r2 as the live plan until PR #9 and a README pointer change are merged; PR #6 and PR #13 (closure records and paper edits) are not merged.
+
