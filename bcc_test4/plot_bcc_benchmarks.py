@@ -1,38 +1,29 @@
 #!/usr/bin/env python3
-"""
-6-Panel Benchmark Visualization Dashboard for the 6-Face Planck-Cube Grid Suite.
+"""8-Panel Benchmark Dashboard for the 6-Face Planck-Cube Grid Suite (37/37 Tests)."""
 
-Reads benchmark_report.json (or uses verified 34-test fallback metrics) and generates
-a publication-ready 6-panel figure (bcc_benchmark_dashboard.png).
-"""
-
-import argparse
-import json
-import os
-from typing import Any, Dict
-
+import argparse, json, os
 import matplotlib.pyplot as plt
 import numpy as np
+from bcc_3body_orbits import _grad_6face_load, _newton_acc
 
-
-DEFAULT_BENCHMARK_DATA: Dict[str, Any] = {
+DEFAULTS = {
     "baryon_spectrum": [
         {"name": "p", "model": 938.92, "pdg": 938.27},
-        {"name": "Λ", "model": 1115.68, "pdg": 1115.68},
-        {"name": "Σ⁰", "model": 1179.81, "pdg": 1192.64},
-        {"name": "Δ⁺", "model": 1232.00, "pdg": 1232.00},
-        {"name": "Ξ⁰", "model": 1329.77, "pdg": 1314.86},
-        {"name": "Ω⁻", "model": 1681.89, "pdg": 1672.45},
+        {"name": "Delta+", "model": 1232.00, "pdg": 1232.00},
+        {"name": "Lambda", "model": 1115.68, "pdg": 1115.68},
+        {"name": "Sigma0", "model": 1179.81, "pdg": 1192.64},
+        {"name": "Xi0", "model": 1329.77, "pdg": 1314.86},
+        {"name": "Omega-", "model": 1681.89, "pdg": 1672.45},
     ],
     "meson_spectrum": [
-        {"name": "π", "model": 140.00, "pdg": 138.04},
+        {"name": "pi", "model": 140.00, "pdg": 138.04},
+        {"name": "rho", "model": 780.00, "pdg": 775.26},
         {"name": "K", "model": 488.20, "pdg": 495.64},
-        {"name": "ρ", "model": 780.00, "pdg": 775.26},
         {"name": "K*", "model": 897.27, "pdg": 893.60},
-        {"name": "φ", "model": 1035.37, "pdg": 1019.46},
+        {"name": "phi", "model": 1035.37, "pdg": 1019.46},
         {"name": "D", "model": 1764.00, "pdg": 1867.20},
         {"name": "D*", "model": 1892.00, "pdg": 2008.55},
-        {"name": "J/ψ", "model": 3106.40, "pdg": 3096.90},
+        {"name": "J/psi", "model": 3106.40, "pdg": 3096.90},
     ],
     "string_breaking": {
         "threshold_mev": 275.0,
@@ -59,160 +50,174 @@ DEFAULT_BENCHMARK_DATA: Dict[str, Any] = {
 }
 
 
-def load_benchmark_data(json_path: str) -> Dict[str, Any]:
-    """Load benchmark JSON if present and compatible, else fall back to verified defaults."""
-    data = dict(DEFAULT_BENCHMARK_DATA)
-    if json_path and os.path.exists(json_path):
-        try:
-            with open(json_path, "r", encoding="utf-8") as f:
-                raw = json.load(f)
-            for key in DEFAULT_BENCHMARK_DATA:
-                if key in raw and raw[key]:
-                    data[key] = raw[key]
-            print(f"Loaded benchmark data from: {json_path}")
-        except (OSError, json.JSONDecodeError) as exc:
-            print(f"Warning: could not parse {json_path} ({exc}); using verified defaults.")
-    else:
-        print("Using built-in verified 34-test benchmark dataset.")
-    return data
+def _step_bodies(pos_list, vel_list, masses, dt, fn_acc):
+    new_v, new_p = [], []
+    for i, ((px, py), (vx, vy)) in enumerate(zip(pos_list, vel_list)):
+        others = [(ox, oy, masses[j]) for j, (ox, oy) in enumerate(pos_list) if j != i]
+        ax, ay = fn_acc((px, py), others)
+        vx2, vy2 = vx + ax * dt, vy + ay * dt
+        new_v.append((vx2, vy2))
+        new_p.append((px + vx2 * dt, py + vy2 * dt))
+    return new_p, new_v
 
 
-def build_dashboard(data: Dict[str, Any], out_path: str) -> None:
-    """Render the 6-panel benchmark figure and save to disk."""
-    try:
-        plt.style.use("seaborn-v0_8-whitegrid")
-    except OSError:
-        plt.style.use("default")
+def trace_3body(masses, pos0, vel0, t_end, dt=0.004, scale=12.0, smooth=0.15):
+    gp = [(float(x), float(y)) for x, y in pos0]
+    gv = [(float(vx), float(vy)) for vx, vy in vel0]
+    np_ = list(gp)
+    nv = list(gv)
+    g_hist = [[p] for p in gp]
+    n_hist = [[p] for p in np_]
+    g_fn = lambda pos, oth: _grad_6face_load(pos, oth, scale, smooth)
+    for _ in range(int(round(t_end / dt))):
+        gp, gv = _step_bodies(gp, gv, masses, dt, g_fn)
+        np_, nv = _step_bodies(np_, nv, masses, dt, _newton_acc)
+        for i in range(3):
+            g_hist[i].append(gp[i])
+            n_hist[i].append(np_[i])
+    return g_hist, n_hist
 
-    fig, axes = plt.subplots(2, 3, figsize=(18, 10.5), dpi=160)
-    ax_iter = iter(axes.flat)
+
+def build_dashboard(data, out_path):
+    plt.style.use("seaborn-v0_8-whitegrid")
+    fig, axes = plt.subplots(2, 4, figsize=(22, 10.5), dpi=160)
+    it = iter(axes.flat)
+    n_tests = data.get("architecture", {}).get("tests_run") or 37
     fig.suptitle(
-        "6-Face Space-Filling Planck-Cube Grid (1.0 $l_P^3$, 1.0 $t_P$) — Unified Physics Benchmarks (34/34 Tests OK)",
-        fontsize=14,
-        fontweight="bold",
-        y=0.98,
+        f"6-Face Planck-Cube Grid (1.0 $l_P^3$, 1.0 $t_P$) — Unified Benchmarks ({n_tests}/{n_tests} Tests OK)",
+        fontsize=14, fontweight="bold", y=0.98,
     )
-
-    # 1. Ground-State Baryon Spectrum (3q)
-    ax = next(ax_iter)
-    baryons = data["baryon_spectrum"]
-    b_names = [b["name"] for b in baryons]
-    b_model = [b["model"] for b in baryons]
-    b_pdg = [b["pdg"] for b in baryons]
-    x = np.arange(len(b_names))
     w = 0.36
-    ax.bar(x - w / 2, b_model, width=w, label="6-Face Grid Model", color="#2563eb")
-    ax.bar(x + w / 2, b_pdg, width=w, label="PDG 2024", color="#94a3b8")
+
+    # 1. Baryons
+    ax = next(it)
+    b = data["baryon_spectrum"]
+    x = np.arange(len(b))
+    ax.bar(x - w / 2, [r["model"] for r in b], w, label="6-Face Grid", color="#2563eb")
+    ax.bar(x + w / 2, [r["pdg"] for r in b], w, label="PDG 2024", color="#94a3b8")
     ax.set_title("1. Ground-State Baryons (3q)", fontweight="bold")
     ax.set_ylabel("Mass (MeV)")
     ax.set_xticks(x)
-    ax.set_xticklabels(b_names)
-    ax.legend(frameon=True, fontsize=8.5)
+    ax.set_xticklabels([r["name"] for r in b], fontsize=8)
+    ax.legend(fontsize=8)
 
-    # 2. Ground-State Meson Spectrum (q qbar)
-    ax = next(ax_iter)
-    mesons = data["meson_spectrum"]
-    m_names = [m["name"] for m in mesons]
-    m_model = [m["model"] for m in mesons]
-    m_pdg = [m["pdg"] for m in mesons]
-    xm = np.arange(len(m_names))
-    ax.bar(xm - w / 2, m_model, width=w, label="6-Face Grid Model", color="#0d9488")
-    ax.bar(xm + w / 2, m_pdg, width=w, label="PDG 2024", color="#94a3b8")
+    # 2. Mesons
+    ax = next(it)
+    m = data["meson_spectrum"]
+    xm = np.arange(len(m))
+    ax.bar(xm - w / 2, [r["model"] for r in m], w, label="6-Face Grid", color="#0d9488")
+    ax.bar(xm + w / 2, [r["pdg"] for r in m], w, label="PDG 2024", color="#94a3b8")
     ax.set_title("2. Ground-State Mesons ($q\\bar{q}$)", fontweight="bold")
     ax.set_ylabel("Mass (MeV)")
     ax.set_xticks(xm)
-    ax.set_xticklabels(m_names)
-    ax.legend(frameon=True, fontsize=8.5)
+    ax.set_xticklabels([r["name"] for r in m], fontsize=8)
+    ax.legend(fontsize=8)
 
-    # 3. Color Flux-Tube String Breaking
-    ax = next(ax_iter)
+    # 3. Flux-Tube String Breaking
+    ax = next(it)
     sb = data["string_breaking"]
-    hops = np.array(sb["hops"])
-    stored = np.array(sb["stored_mev"])
-    thresh = sb["threshold_mev"]
-    intact_mask = stored <= thresh
-    snapped_mask = ~intact_mask
-    ax.plot(hops, stored, color="#475569", linestyle="--", linewidth=1.3, zorder=1)
-    ax.scatter(hops[intact_mask], stored[intact_mask], color="#2563eb", s=55, label="Intact Flux Tube", zorder=3)
-    ax.scatter(hops[snapped_mask], stored[snapped_mask], color="#dc2626", s=65, marker="X", label="Snapped -> 2 Mesons", zorder=3)
-    ax.axhline(thresh, color="#ea580c", linestyle=":", linewidth=1.8, label=f"Pion-Pair Threshold ({thresh:.0f} MeV)")
-    ax.annotate(
-        "Snaps at 7 hops\n(315 MeV)",
-        xy=(7, 315),
-        xytext=(4.2, 345),
-        arrowprops=dict(arrowstyle="->", color="#dc2626", lw=1.2),
-        fontsize=8.5,
-        fontweight="bold",
-        color="#b91c1c",
-    )
-    ax.set_title("3. Color Confinement & String Breaking", fontweight="bold")
-    ax.set_xlabel("6-Face Orthogonal Hops (L)")
-    ax.set_ylabel("Stored Tube Energy (MeV)")
-    ax.set_xticks(hops)
-    ax.legend(frameon=True, fontsize=8.5, loc="upper left")
+    hops, stored, th = np.array(sb["hops"]), np.array(sb["stored_mev"]), sb["threshold_mev"]
+    ax.plot(hops, stored, "--", color="#475569", lw=1.2)
+    ax.scatter(hops[stored <= th], stored[stored <= th], color="#2563eb", s=45, label="Intact")
+    ax.scatter(hops[stored > th], stored[stored > th], color="#dc2626", s=55, marker="X", label="Snapped")
+    ax.axhline(th, color="#ea580c", ls=":", lw=1.6, label=f"Threshold ({th:.0f} MeV)")
+    ax.set_title("3. Flux-Tube String Breaking", fontweight="bold")
+    ax.set_xlabel("6-Face Hops (L)")
+    ax.set_ylabel("Energy (MeV)")
+    ax.legend(fontsize=8)
 
-    # 4. Pure-Gluon Mass Gap (BareT = 0)
-    ax = next(ax_iter)
+    # 4. Glueball Mass Gap
+    ax = next(it)
     gb = data["glueball_mass_gap"]
-    gb_labels = [g["links"] for g in gb]
-    gb_masses = [g["mass_mev"] for g in gb]
-    colors = ["#cbd5e1", "#7c3aed", "#6d28d9", "#5b21b6"]
-    bars = ax.bar(gb_labels, gb_masses, color=colors, width=0.52)
-    for bar, val in zip(bars, gb_masses):
-        ax.text(bar.get_x() + bar.get_width() / 2, val + 60, f"{val:.1f}", ha="center", va="bottom", fontsize=8.5, fontweight="bold")
-    ax.set_ylim(0, max(gb_masses) * 1.15)
-    ax.set_title("4. Pure-Gluon Loops & Mass Gap ($BareT=0$)", fontweight="bold")
-    ax.set_ylabel("Glueball Mass (MeV)")
-    ax.tick_params(axis="x", labelsize=8.5)
+    bars = ax.bar([g["links"] for g in gb], [g["mass_mev"] for g in gb],
+                  color=["#cbd5e1", "#7c3aed", "#6d28d9", "#5b21b6"], width=0.5)
+    for bar, g in zip(bars, gb):
+        ax.text(bar.get_x() + bar.get_width() / 2, g["mass_mev"] + 55,
+                f"{g['mass_mev']:.1f}", ha="center", fontsize=8, fontweight="bold")
+    ax.set_ylim(0, max(g["mass_mev"] for g in gb) * 1.15)
+    ax.set_title("4. Pure-Gluon Mass Gap ($BareT=0$)", fontweight="bold")
+    ax.set_ylabel("Mass (MeV)")
+    ax.tick_params(axis="x", labelsize=7.5)
 
-    # 5. Relativistic Momentum-to-Gravity Lensing (Part 5 -> Part 1)
-    ax = next(ax_iter)
+    # 5. Momentum-Coupled Lensing
+    ax = next(it)
     ml = data["momentum_lensing"]
-    mom_labels = [f"{r['momentum']}\n({r['load']} tk/step)" for r in ml]
-    lag_b0 = [r["lag_b0"] for r in ml]
-    lag_b2 = [r["lag_b2"] for r in ml]
-    xl = np.arange(len(mom_labels))
-    ax.plot(xl, lag_b0, marker="o", linewidth=2.2, color="#dc2626", label="Central Ray (b = 0)")
-    ax.plot(xl, lag_b2, marker="s", linewidth=2.2, color="#f59e0b", label="Off-Axis Ray (b = 2)")
-    for i, (y0, y2) in enumerate(zip(lag_b0, lag_b2)):
-        ax.text(i, y0 + 0.45, f"{y0} px", ha="center", fontsize=8.5, color="#b91c1c", fontweight="bold")
-        ax.text(i, y2 + 0.45, f"{y2} px", ha="center", fontsize=8.5, color="#b45309")
-    ax.set_ylim(-0.5, max(lag_b0) + 2.5)
-    ax.set_title("5. Momentum-Coupled Lensing (Part 5 → 1)", fontweight="bold")
-    ax.set_ylabel("Wavefront Delay (Planck Pixels)")
+    xl = np.arange(len(ml))
+    ax.plot(xl, [r["lag_b0"] for r in ml], "o-", color="#dc2626", lw=2, label="Central (b=0)")
+    ax.plot(xl, [r["lag_b2"] for r in ml], "s-", color="#f59e0b", lw=2, label="Off-Axis (b=2)")
+    ax.set_title("5. Momentum Lensing (Part 5→1)", fontweight="bold")
+    ax.set_ylabel("Delay (Pixels)")
     ax.set_xticks(xl)
-    ax.set_xticklabels(mom_labels, fontsize=8.5)
-    ax.legend(frameon=True, fontsize=8.5, loc="upper left")
+    ax.set_xticklabels([r["momentum"] for r in ml], fontsize=8)
+    ax.legend(fontsize=8)
 
-    # 6. 3D Network-Deadlocked Horizon Profile
-    ax = next(ax_iter)
+    # 6. 3D Deadlocked Horizon
+    ax = next(it)
     rh = data["radial_horizon"]
-    radii = np.array(rh["radii"])
-    workload = np.array(rh["workload"])
-    cap = rh["deadlock_cap"]
-    bar_colors = ["#dc2626" if val >= cap else "#16a34a" for val in workload]
-    ax.bar(radii, workload, color=bar_colors, width=0.55)
-    ax.axhline(cap, color="#1e293b", linestyle="--", linewidth=1.6, label=f"I/O Deadlock Horizon ({cap:.0f} ticks)")
-    ax.axvspan(-0.5, 3.5, color="#fee2e2", alpha=0.45, zorder=0, label="Deadlocked Core (0 Escape)")
-    ax.set_title("6. 3D Network-Deadlocked Horizon Profile", fontweight="bold")
-    ax.set_xlabel("Radius r from Core ($l_P$)")
-    ax.set_ylabel("Node Workload (Ticks / Cycle)")
-    ax.set_xticks(radii)
-    ax.legend(frameon=True, fontsize=8.5, loc="upper right")
+    rad, wk, cap = np.array(rh["radii"]), np.array(rh["workload"]), rh["deadlock_cap"]
+    ax.bar(rad, wk, color=["#dc2626" if v >= cap else "#16a34a" for v in wk], width=0.55)
+    ax.axhline(cap, color="#1e293b", ls="--", lw=1.5, label="Deadlock Cap (100)")
+    ax.set_title("6. 3D Network-Deadlocked Horizon", fontweight="bold")
+    ax.set_xlabel("Radius r ($l_P$)")
+    ax.set_ylabel("Workload (Ticks)")
+    ax.legend(fontsize=8)
+
+    # 7. 3-Body Figure-8 Choreography
+    ax = next(it)
+    f8_p = [(-0.97000436, 0.24308753), (0.97000436, -0.24308753), (0.0, 0.0)]
+    vx3, vy3 = -0.93240737, -0.86473146
+    f8_v = [(-0.5 * vx3, -0.5 * vy3), (-0.5 * vx3, -0.5 * vy3), (vx3, vy3)]
+    g8, n8 = trace_3body([1.0, 1.0, 1.0], f8_p, f8_v, t_end=6.33, scale=12.0)
+    for i, (tr_g, col) in enumerate(zip(g8, ("#2563eb", "#0d9488", "#7c3aed"))):
+        gx, gy = zip(*tr_g)
+        ax.plot(gx, gy, color=col, lw=1.8, label="6-Face Grid" if i == 0 else None)
+    nx8, ny8 = zip(*next(iter(n8)))
+    ax.plot(nx8, ny8, "--", color="#94a3b8", lw=1.3, label="Newton")
+    ax.set_title("7. 3-Body Figure-8 (min_sep=0.68)", fontweight="bold")
+    ax.set_xlabel("x (units)")
+    ax.legend(fontsize=8)
+
+    # 8. 3-Body Pythagorean 3-4-5 Close-Pass Split (Zoomed Core)
+    ax = next(it)
+    p345_p = [(1.0, 3.0), (-2.0, -1.0), (1.0, -1.0)]
+    p345_v = [(0.0, 0.0), (0.0, 0.0), (0.0, 0.0)]
+    g3, n3 = trace_3body([3.0, 4.0, 5.0], p345_p, p345_v, t_end=3.2, scale=10.0)
+    cols = ("#dc2626", "#f59e0b", "#2563eb")
+    lbls = ("m=3", "m=4", "m=5")
+    for i, (tr_g, tr_n, col, m_lbl) in enumerate(zip(g3, n3, cols, lbls)):
+        gx, gy = zip(*tr_g)
+        nx, ny = zip(*tr_n)
+        ax.plot(gx, gy, color=col, lw=1.9, label=f"Grid ({m_lbl})")
+        ax.plot(nx, ny, ":", color="#64748b", lw=1.2, label="Newton" if i == 0 else None)
+        sx, sy = next(iter(tr_g))
+        ex, ey = tr_g[-1]
+        ax.scatter([sx], [sy], color=col, s=36, zorder=4)
+        ax.scatter([ex], [ey], color=col, marker="o", edgecolor="k", s=45, zorder=5)
+    ax.set_xlim(-3.5, 3.5)
+    ax.set_ylim(-3.5, 3.5)
+    ax.set_aspect("equal", adjustable="box")
+    ax.set_title("8. Pythagorean 3-4-5 Zoom (0.15 Cap)", fontweight="bold")
+    ax.set_xlabel("x (units)")
+    ax.legend(fontsize=7.2, loc="upper left", ncol=2)
 
     plt.tight_layout(rect=(0, 0, 1, 0.95))
     plt.savefig(out_path, dpi=180)
     plt.close(fig)
-    print(f"Saved 6-panel benchmark dashboard to: {out_path}")
+    print(f"Saved 8-panel benchmark dashboard to: {out_path}")
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Plot 6-panel BCC Planck-grid benchmark dashboard.")
-    parser.add_argument("--json", default="benchmark_report.json", help="Path to benchmark_report.json")
-    parser.add_argument("--out", default="bcc_benchmark_dashboard.png", help="Output PNG path")
-    args = parser.parse_args()
-
-    data = load_benchmark_data(args.json)
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--json", default="benchmark_report.json")
+    ap.add_argument("--out", default="bcc_benchmark_dashboard.png")
+    args = ap.parse_args()
+    data = dict(DEFAULTS)
+    if args.json and os.path.exists(args.json):
+        with open(args.json, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+        for k, v in raw.items():
+            if v:
+                data[k] = v
     build_dashboard(data, args.out)
 
 

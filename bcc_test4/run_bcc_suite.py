@@ -3,13 +3,13 @@
 
 import argparse, io, json, os, subprocess, sys, time, unittest
 from contextlib import redirect_stdout
-import baryon_calculator, bcc_3d_gravity, bcc_born_pascal
+import baryon_calculator, bcc_3d_gravity, bcc_3body_orbits, bcc_born_pascal
 import bcc_em_wave_sim, bcc_meson_sim, bcc_unified_sim, bcc3dhorizonsim
 
 TESTS = [
     "test_baryon_calculator", "test_bcc_unified_sim", "test_bcc_meson_sim",
     "test_bcc_em_wave_sim", "test_bcc_born_pascal", "test_bcc_3d_gravity",
-    "test_bcc3dhorizonsim",
+    "test_bcc3dhorizonsim", "test_bcc_3body_orbits",
 ]
 
 
@@ -93,6 +93,8 @@ def parse_json(tests_run, tests_ok, outs):
             after_coord = line.split(")", 1)[1].split()
             work.append(float(after_coord[0]))
 
+    three_body = [ln.strip() for ln in outs["three_body"].splitlines() if ln.strip()]
+
     return {
         "architecture": {"grid": "6-face cubic", "tests_run": tests_run, "tests_ok": tests_ok},
         "baryon_spectrum": baryons,
@@ -101,6 +103,7 @@ def parse_json(tests_run, tests_ok, outs):
         "glueball_mass_gap": glue,
         "momentum_lensing": lensing,
         "radial_horizon": {"deadlock_cap": 100.0, "radii": radii, "workload": work},
+        "three_body_orbits": three_body,
     }
 
 
@@ -123,6 +126,7 @@ def main():
         "pascal": run_mod(bcc_born_pascal, "bcc_born_pascal.py", ("run_born_pascal_demo", "run_demo", "main")),
         "gravity": run_mod(bcc_3d_gravity, "bcc_3d_gravity.py", ("run_3d_gravity_demo", "run_demo", "main")),
         "horizon": run_mod(bcc3dhorizonsim, "bcc3dhorizonsim.py", ("run_3d_horizon_demo", "run_demo", "main")),
+        "three_body": run_mod(bcc_3body_orbits, "bcc_3body_orbits.py", ("run_3body_demo", "run_demo", "main")),
     }
     if args.json_out:
         with open(args.json_out, "w", encoding="utf-8") as f:
@@ -133,4 +137,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

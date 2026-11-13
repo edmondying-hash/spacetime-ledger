@@ -1,7 +1,7 @@
 {
   "architecture": {
     "grid": "6-face cubic",
-    "tests_run": 0,
+    "tests_run": 37,
     "tests_ok": true
   },
   "baryon_spectrum": [
@@ -121,24 +121,7 @@
       405.0
     ]
   },
-  "glueball_mass_gap": [
-    {
-      "links": "0 (Vacuum)",
-      "mass_mev": 0.0
-    },
-    {
-      "links": "4 (Mass Gap \u0394)",
-      "mass_mev": 2001.18
-    },
-    {
-      "links": "6 Links",
-      "mass_mev": 2851.75
-    },
-    {
-      "links": "8 Links",
-      "mass_mev": 3694.67
-    }
-  ],
+  "glueball_mass_gap": [],
   "momentum_lensing": [
     {
       "momentum": "(0,0,0)",
@@ -185,5 +168,11 @@
       19.32,
       12.61
     ]
-  }
+  },
+  "three_body_orbits": [
+    "=== 6-FACE LEDGER GRID: 3-BODY ORBITS VS. UNSOFTENED NEWTON ===",
+    "Figure-8 (1 period, 12 cells/u): min_sep=0.677 | drift(instant)=0.046 | drift(finite c=20)=2.884",
+    "Pythagorean 3-4-5 (t=1.80 pre-pass): min_sep=0.596 | drift=0.005",
+    "Pythagorean 3-4-5 (t=10.0 post-pass): min_sep=0.042 (< 0.15 cap) | drift=233.533"
+  ]
 }
