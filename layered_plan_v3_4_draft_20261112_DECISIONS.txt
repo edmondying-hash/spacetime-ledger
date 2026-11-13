@@ -9,11 +9,11 @@ Edmond Ying, 7:48 PM, verbatim:
 Edmond Ying, 7:51 PM, verbatim:
   "understand, you accepted L1.1"
 
-Edmond Ying, 8:11 PM, verbatim (settles B4):
-  "B4 is accepted, no rerun"
-
 Edmond Ying, 7:55 PM, verbatim (L1.3):
   "L1.3  record R2 as open, approve corrected L1.3b"
+
+Edmond Ying, 8:11 PM, verbatim (settles B4):
+  "B4 is accepted, no rerun"
 
 Status:
   B1  recorded as decided.
