@@ -1,0 +1,14 @@
+L1.3b run design: decisions sidecar (outside the hashed design folder)
+Recorded 2026-11-12 America/New_York.
+
+Design file: L1_3b_run_design_20261112/L1_3b_RUN_DESIGN.md
+sha256: dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d
+
+Edmond Ying, 2026-11-12 7:55 PM America/New_York (chat):
+  "L1.3 record R2 as open, approve corrected L1.3b"
+Recorded as:
+  - R2 of run 9ccf4855 is recorded as open (FAIL / OPEN as written). The run record is not altered.
+  - A corrected L1.3b is approved to be designed.
+
+NOT yet approved: running L1.3b. A run needs a one-line approval naming the sha256 above (design section 9).
+Open decisions D1 to D5 are in design section 8.
