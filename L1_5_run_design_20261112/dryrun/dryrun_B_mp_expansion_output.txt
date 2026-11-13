@@ -1,0 +1,36 @@
+convention: omega = c0 kappa (1 + xi1' kappa + xi2' kappa^2 + ...), kappa = |k| per a/2, E/E_P = kappa (paper Test 3 convention)
+phi=0.5  c0=0.649912790533813
+   max over 26 signed directions: |a0 - c0| = 9.5e-27 ; |xi1'| = 2.27e-23
+   xi2'[100]=-0.039289762871  xi2'[110]=-0.205956429538  xi2'[111]=-0.261511985093
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.372623096204 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+phi=0.8  c0=0.797464620445938
+   max over 26 signed directions: |a0 - c0| = 6.64e-26 ; |xi1'| = 1.29e-22
+   xi2'[100]=-0.0368229003855  xi2'[110]=-0.203489567052  xi2'[111]=-0.259045122608
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.370156233719 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+phi=1.0  c0=0.883773196982788
+   max over 26 signed directions: |a0 - c0| = 1.6e-25 ; |xi1'| = 2.82e-22
+   xi2'[100]=-0.0248108450767  xi2'[110]=-0.191477511743  xi2'[111]=-0.247033067299
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.35814417841 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+phi=1.2  c0=0.949485462410019
+   max over 26 signed directions: |a0 - c0| = 2.01e-25 ; |xi1'| = 3.29e-22
+   xi2'[100]=-0.0118614561342  xi2'[110]=-0.178528122801  xi2'[111]=-0.234083678356
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.345194789468 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+phi=1.4  c0=0.989107364117135
+   max over 26 signed directions: |a0 - c0| = 2.19e-25 ; |xi1'| = 3.43e-22
+   xi2'[100]=-0.00268833448906  xi2'[110]=-0.169355001156  xi2'[111]=-0.224910556711
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.336021667822 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+phi=1.5  c0=0.998121829350088
+   max over 26 signed directions: |a0 - c0| = 2.91e-25 ; |xi1'| = 4.52e-22
+   xi2'[100]=-0.000468512694209  xi2'[110]=-0.167135179361  xi2'[111]=-0.222690734916
+   template xi2' = A(phi) + q/3 (q = sum n_i^4): A(phi)=-0.333801846028 ; max template residual over 13 directions = 1.85e-17
+   xi2'[100] - xi2'[111] = 0.222222222222222  (2/9 = 0.222222222222222)
+band splitting (second lowest minus lowest positive frequency), phi=1.4:
+    (1, 0, 0) split at kappa=0.012: 5.638e-52 ; local exponent between kappa=0.006 and 0.012: degenerate
+    (1, 1, 0) split at kappa=0.012: 0.0 ; local exponent between kappa=0.006 and 0.012: degenerate
+    (1, 1, 1) split at kappa=0.012: 4.288e-12 ; local exponent between kappa=0.006 and 0.012: 5.0
+    (1, 2, 3) split at kappa=0.012: 2.282e-12 ; local exponent between kappa=0.006 and 0.012: 5.0
