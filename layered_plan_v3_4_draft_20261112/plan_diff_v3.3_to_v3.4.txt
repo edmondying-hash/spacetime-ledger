@@ -1,16 +1,24 @@
 --- ../layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md	2026-11-12 18:09:20.187845623 +0000
-+++ layered_plan_v3.4.md	2026-11-13 00:58:03.572203144 +0000
-@@ -1,6 +1,8 @@
++++ layered_plan_v3.4.md	2026-11-13 01:09:04.196619699 +0000
+@@ -1,13 +1,15 @@
 -# Layered test program for the §9 open problems — v3.3
 +# Layered test program for the §9 open problems — v3.4 (DRAFT, not signed off)
  
 -**Status (2026-11-11): v3.3 supersedes v3.2 for Layer 0's V3 status. This version changes no paper, repo, Sheet or production file, and no simulation was run to make it.**
 +**Status (2026-11-12): DRAFT v3.4, awaiting Edmond's sign-off. It supersedes v3.3 r2 only when signed off; until then `layered_plan_v3_3_r2_20261111/` stays the live plan. This draft changes no paper, Sheet or production file, and no simulation was run to make it.**
 +
-+**v3.4 (2026-11-12, after Edmond's answers B1–B4 to the plan review):** v3.3 r2 is kept unchanged at `layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md` (sha256 `89b3972a0af418bfcb260b978842e79dc73945c61ec2bd85fe3a5e7d1785aa39`). v3.4 (1) applies the one-orbit closure of L1.1 and removes the repair text it made stale; (2) records Edmond's decisions B1 (the canonical rule `dirac4` gates L1.1; OP4's three extra nodes are a diagnostic finding), B2 (every OP4-rule or OP4-bridge result is to be redone on `dirac4` before it counts), B3 (load-free carve-out for L1.1–L1.3) and B4 (the official V5 v2 census is accepted as the L1.1 census on the canonical rule; nothing is re-run); (3) records L1.2 closed and the L1.3 run result (R1 PASS, R2 FAIL / OPEN); (4) adds §0.5–§0.7, of which §0.5 and §0.6 are **proposals awaiting Edmond's confirmation** and §0.7 is a decision log. The full list of edits is `CHANGES_v3.4.md`; the exact diff is `plan_diff_v3.3_to_v3.4.txt`.
++**v3.4 (2026-11-12, after Edmond's answers B1–B4 to the plan review):** v3.3 r2 is kept unchanged at `layered_plan_v3_3_r2_20261111/layered_plan_v3.3.md` (sha256 `89b3972a0af418bfcb260b978842e79dc73945c61ec2bd85fe3a5e7d1785aa39`). Paths beginning `/workspace` refer to the earlier working machine and are not in this repository; paths without a leading slash are relative to the repository root. v3.4 (1) applies the one-orbit closure of L1.1 and removes the repair text it made stale; (2) records Edmond's decisions B1 (the canonical rule `dirac4` gates L1.1; OP4's three extra nodes are a diagnostic finding), B2 (every OP4-rule or OP4-bridge result is to be redone on `dirac4` before it counts), B3 (load-free carve-out for L1.1–L1.3) and B4 (the official V5 v2 census is accepted as the L1.1 census on the canonical rule; nothing is re-run); (3) records L1.2 closed and the L1.3 run result (R1 PASS, R2 FAIL / OPEN); (4) adds §0.5–§0.7, of which §0.5 and §0.6 are **proposals awaiting Edmond's confirmation** and §0.7 is a decision log. The full list of edits is `CHANGES_v3.4.md`; the exact diff is `plan_diff_v3.3_to_v3.4.txt`.
  
  **v3.3 (2026-11-11, after Edmond t2400u):** v3.2 is kept unchanged at `/workspace/layered_plan_v3_2b_20261111/layered_plan_v3.2.md` (sha256 `5e5891bb55fc5449965f7efba8482bfecd135c30172f770d7dc65564db4902dd`). v3.3 changes only the V3 clause of the §2 L0 status line: V3 is closed with a finding, citing the official V5 v2 census (`results.json` sha256 `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708`) and the 9 November `scan_gap.py` (script sha256 `821be234e6508aa9c6fe3cb3f8e996643697c66397b711f0fb0a7330b70dfd28`). To match, it also updates the title and the status line at the top. Relative paths in this document still refer to the v3.1 folder `/workspace/layered_open_problems_20261109/`.
  **v3.2 (2026-11-11, after Edmond pt2369u):** v3.1 is kept unchanged at `/workspace/layered_open_problems_20261109/layered_plan_v3.1.md` (sha256 `dac6a260659f0ed2c69c8440aa3e0a6585ddfcd587b02053071946008f11cbda`). v3.2 changes the L0 exit gate (§1 table row L0 and §2 **Exit gate**): V1–V4 must still pass, and V5's criterion becomes that V5 ran and its result is recorded; to match, it also updates the title, the status line at the top and the §2 L0 status line. Reason: table 6's N_s=24 cell sits below the generating script's own resolution cut (`qca/dw_final.py:9`, `r[:,1]>1e-15`), so it cannot reproduce by construction; see the erratum `ERRATUM_PAPER_V5.md` (sha256 `1f770a8680bdbf7f253c2065b9b00e1c0da16d76223bd9f5cdfa3643941bd5ce`) and the V5 r2 `results.json` (sha256 `f755182c0fedf92e904b7a3c54ee63834dccf46add931762f0528a4702c60771`); relative paths in this document refer to the v3.1 folder `/workspace/layered_open_problems_20261109/`. This file supersedes the withdrawn first cut of v3.2 (`/workspace/layered_plan_v3_2_20261111/layered_plan_v3.2.md`, sha256 `af01013537f980c23aa71f6c2f63ddc40bab30660bf76c32083aca69f11f0872`), which was never pinned.
+ **v3.1 (2026-11-09, after Edmond t1964u):** v3 is kept unchanged at `layered_plan_v3.md`. v3.1 changes only L2.0: a new gap **G-7 (the d = 2 loophole)**, a new check **L2.0-C5 (link-channel reads)**, and matching updates to the L2.0 exit gate, status, traceability row and sprint item. See `CHANGES_v3.1.md`, `born_fixes/D2_NOTE.md` and `born_fixes/PROPOSAL.md`.
+ Revision of v2 after Edmond's review (2026-11-09). v1 is kept unchanged at `ref/layered_plan_v1_original.md` and v2 at `layered_plan_v2.md`. v1→v2 edits are in `CHANGES.md`; v2→v3 edits are in `CHANGES_v3.md`. Nothing from v1 has been deleted: items moved out of the main line are in Appendix A, and targets that were not measured numbers are kept as labelled *reference values* (§0.3).
+ 
+-Paper checked against: `space-ledger-v2.md` / `.pdf` on `main` at commit `9d39338` (2026-11-09 08:50 EST), §8 and §9 (PDF pp. 68–71). Open-problem numbers **OP1–OP19** and server-side items **S1–S7** are the paper's own numbers and are not renumbered here.
++Paper checked against: `space-ledger-v2.md` / `.pdf` on `main` at commit `9d39338` (2026-11-09 08:50 EST), §8 and §9 (PDF pp. 68–71). (v3.4: the L1.1 to L1.3 items refer to `main` at `cc2cc5c`, paper sha256 `8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70`; §8 and §9 were not re-checked beyond the L1 items.) Open-problem numbers **OP1–OP19** and server-side items **S1–S7** are the paper's own numbers and are not renumbered here.
+ 
+ Target: open problems 1–19 and server-side items S1–S7, plus the three objectives in §8 (8.1 read-out, 8.2 radiative Lorentz invariance, 8.3 chiral gauge theory).
+ 
 @@ -19,7 +21,7 @@
  
  ### 0.1 Physics rules
@@ -20,6 +28,15 @@
  2. **Whole ticks only.** No fractional ticks and no sub-tick interpolation in the rule. Rounding, if needed, is to whole ticks and is declared in advance.
  3. **No self-load.** A packet never loads the nodes it is being propagated through by its own presence unless a written rule says so and Edmond has approved that rule.
  4. **No fitting.** No model parameter, exponent, coefficient or source profile is tuned to hit a target. Rules and coefficients are written down and hashed before any comparison. Fitting the *size of a measured effect* (e.g. a leak coefficient from a run) is allowed and must be labelled as such.
+@@ -68,7 +70,7 @@
+ | f | Paper, load-first link priority | light's free-tick share of a link, f = e^{−U} (Poisson tick claiming) | paper Sec. 6.12 and OP7; `/workspace/op15load/VERDICT.md` §2 |
+ | ρ | Paper, load-first link priority | load share of a link, ρ = 1 − e^{−U} | paper Sec. 6.12 |
+ | per-link light cost | Paper, load-first link priority | 1/(1−ρ)² = 1/f² = e^{2U} | paper Sec. 6.12, OP7 |
+-| ℓ | OP4 local rule | node load (dimensionless) | `prod/op4_local_gpu.py` lines 2–5 |
++| ℓ | OP4 local rule | node load (dimensionless; not the link length ℓ of §2) | `prod/op4_local_gpu.py` lines 2–5 |
+ | s | OP4 local rule | s = (1+ℓ)^{−1/2}; loaded generator H = √s Q_fwd √s, bond angle ∝ √s_i √s_j, on-site clock phase ∝ s | `prod/op4_local_gpu.py` lines 2–5, 51–64 (quoted in `/workspace/gpu/op4_bcc_local/curved_reference_design/congestion_history_audit_20261108/REPORT.md`) |
+ | V | OP4 photon continuum work (clock) | V = s | `.../photon_comparison_20261108/REPORT.md`; `.../photon_field_refinement_20261108/results.json` ("bridge") |
+ | f = s | OP4 photon continuum **bridge** (assumed, user-adopted) | identifies the old free-tick share with the OP4 clock factor | `.../photon_priority_comparison_20261108/REPORT.md`; `.../photon_field_refinement_20261108/METHOD.md` |
 @@ -78,6 +80,35 @@
  
  "Congestion ON" in §0.1 means whichever of these load rules the test declares, always active including in vacuum. Each run must name its rule (paper load-first rule, OP4 local rule, or OP4 continuum bridge).
@@ -47,35 +64,39 @@
 +| before 2026-11-12 (in v3.3) | Canonical rule: `dirac4`; OP4 a labelled diagnostic branch | §2 |
 +| 2026-11-12 | L1.1 closed by adopting a single BCC orbit of the integer cubic grid; the twelve edge zeros are Γ images; the sum-form r = 0.05 Wilson repair is withdrawn | paper commits `66ee62f`, `cc2cc5c`; `L1_1_one_bcc_reason_r2_20261112/` |
 +| 2026-11-12 | L1.2: D1 load-free; D2 revised (pass when the end-versus-bulk speed difference is measured and recorded); D3 thresholds accepted; D4 `PREREGISTRATION.md` governs; design `7e09b7c4` approved 4:56 PM | `L1_2_run_design_20261112_DECISIONS.txt` (sha256 `c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e`) |
-+| 2026-11-12 | L1.2 closed; paper wording "from b ≈ 0.35" | `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6) |
++| 2026-11-12 | L1.2 closed; paper wording "from b ≈ 0.35" | `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6, not yet merged) |
 +| 2026-11-12 | L1.3 design `9ccf4855` approved 7:33 PM, run by the Grok bot on bigbang; "layer weights" = two Wilson angles φ₂, φ₄; tolerance 1e-6; massless only; same pipeline for the paper edit | `L1_3_run_design_20261112_DECISIONS.txt` (sha256 `2dc1bb8e94e16c727bc2bc978d5ee904044e3e1a7566878d33a0c1960b158072`) |
 +| 2026-11-12 | L1.3: R2 of run `9ccf4855` recorded as open as written; corrected L1.3b approved to be designed (7:55 PM); the run itself awaits approval of the L1.3b design hash | `L1_3b_run_design_20261112_DECISIONS.txt` (PR #10) |
-+| 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 all OP4-based results are to be redone; B3 load-free carve-out for L1.1–L1.3; B4 the V5 v2 census is accepted as the L1.1 census, no re-run | this document |
++| 2026-11-12 | Plan review answers: B1 `dirac4` gates L1.1 and OP4's three extra nodes are a diagnostic finding; B2 "all to be redone" (scope read as OP4-rule and OP4-bridge results; reading pending confirmation); B3 load-free carve-out for L1.1–L1.3; **B4 pending confirmation** (chat said "yes rerun is needed" at 7:48 PM, then "understand, you accepted L1.1" at 7:51 PM) | `layered_plan_v3_4_draft_20261112_DECISIONS.txt` (verbatim words and times) |
 +
 +
  ---
  
  ## 1. Layer map
-@@ -85,7 +116,7 @@
+@@ -85,10 +116,10 @@
  | Layer | Content | Open problems | Exit gate |
  |---|---|---|---|
  | **L0** | Substrate, conventions, exactness harness; **choice of canonical rule** | OP1 (foundation) | V1–V4 pass; V5 ran and its result is recorded (V5 cannot pass in full: table 6's N_s=24 cell sits below the generating script's own resolution cut (`qca/dw_final.py:9`, `r[:,1]>1e-15`), so it cannot reproduce by construction); units frozen; one canonical node rule named, the other a labelled diagnostic branch |
 -| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes classified with a repair-or-reason decision; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
-+| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes of the canonical rule classified (reason: one BCC orbit; the V5 v2 census accepted as the census of that rule); OP4's extra nodes recorded as a diagnostic finding; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
++| **L1** | Free spectrum: doublers, chirality, dispersion, ν, **linear-term test** | OP3 (spectrum), OP15, OP16 | zero modes and extra nodes of the canonical rule classified (reason: one BCC orbit; census per B4: accept V5 v2 or re-run); OP4's extra nodes recorded as a diagnostic finding; gap table reproduced; linear term measured and compared with GRB limits; ν from the rule or declared free |
  | **L2** | Read-out and statistics | S1 (L2.0 derivation attempt), S7, OP2, S2, OP3 (shared records) | per item: L2.0 S1 attempt recorded as narrowed or open; S7 reproduction; κ bound; exchange phase −1; order independence |
  | **L3** | Gravity | OP4–OP11, OP17 | **per item** (§5): each of G1–G7 passes or fails on its own gate. G1 is open: the strong-field toy is 3% short in finite-screen steering, and a weak-field γ has not been measured |
- | **L4** | Matter spectrum | OP12–OP14 (OP18 moved to Appendix A) | κ_c scaling; OP12 needs a new mechanism with a stated reason (the existing-rule route is a recorded no-go) |
+-| **L4** | Matter spectrum | OP12–OP14 (OP18 moved to Appendix A) | κ_c scaling; OP12 needs a new mechanism with a stated reason (the existing-rule route is a recorded no-go) |
++| **L4** | Matter spectrum | OP12–OP14 (OP18 moved to Appendix A) | κ_c scaling; OP12 needs a new mechanism with a stated reason (the existing-rule route is a recorded no-go, established on the OP4 rule: diagnostic branch) |
+ | **L5** | Cosmology | OP19, S3, S5, S6 (S4 moved to Appendix A) | halo slope against a measured profile; n_s against Planck and r against the BK18 upper limit; vacuum-energy mechanism or no-go |
+ 
+ Parallel tracks: OP13 (Higgs) and OP19 (halo) do not depend on L2 and can start after L1.
 @@ -97,9 +128,11 @@
  
  ## 2. Layer 0 — substrate and harness
  
 -**Frozen conventions.** BCC links `h = (±1,±1,±1)/2`, `ℓ = a√3/2`, `c = ℏ = 1`, tick `τ = 0.989 t_P` (0.9855 with the chirality chain). Coefficients are quoted in `(kℓ)²`. Every result records code version, seed, grid, boundary condition, units and load rule (§0.4). The standing rules in §0 are part of the frozen conventions.
-+**Frozen conventions.** One BCC orbit of ℤ³ (all-even or all-odd integer coordinates); integer hops `h = (±1,±1,±1)` in units of a/2, so `ℓ = |h|·a/2 = a√3/2` and k is in radians per a/2; which of a and a√3/2 is identified with ℓ_P is an open paper item (`PAPER_EDITS_one_BCC.md`), not settled here; `c = ℏ = 1`, tick `τ = 0.989 t_P` (0.9855 with the chirality chain). Coefficients are quoted in `(kℓ)²`. Every result records code version, seed, grid, boundary condition, units and load rule (§0.4). The standing rules in §0 are part of the frozen conventions.
++**Frozen conventions.** One BCC orbit of ℤ³ (all-even or all-odd integer coordinates); integer hops `h = (±1,±1,±1)` in units of a/2, so `ℓ = |h|·a/2 = a√3/2` and k is in radians per a/2; which of a and a√3/2 is identified with ℓ_P is an open paper item (`PAPER_EDITS_one_BCC.md`), not settled here, and `τ = 0.989 t_P` assumes a ≈ ℓ_P; "hop rate" (one layer or one cycle, and which length) depends on the same item; κ is |k| in radians per a/2 in the L1.3 and L1.3b runs, whereas L1.5 and earlier plan text use κ = kℓ, so kℓ = √3 κ; `c = ℏ = 1`, tick `τ = 0.989 t_P` (0.9855 with the chirality chain). Coefficients are quoted in `(kℓ)²`. Every result records code version, seed, grid, boundary condition, units and load rule (§0.4). The standing rules in §0 are part of the frozen conventions.
 +
 +**Canonical rule (decision).** Two node rules are in use: the paper's §6.2 four-component rule with a Wilson layer (Table `dirac4`), and the OP4 local rule (`prod/op4_local_gpu.py`, a product of three 1D walks with ν² + m² = 1 per tick) used for the recent gravity, photon and spectrum work. They have different doubler content (L1.1) and possibly different linear terms (L1.5). **v3 picks one option: at the L0 exit, exactly one canonical rule is named; the other is kept as a labelled diagnostic branch** that may be run for comparison but never counts toward a gate. **Decision (Edmond): `dirac4` is canonical; OP4 is the diagnostic branch.**
  
 -**Canonical rule (decision).** Two node rules are in use: the paper's §6.2 four-component rule with a Wilson layer (Table `dirac4`), and the OP4 local rule (`prod/op4_local_gpu.py`, a product of three 1D walks with ν² + m² = 1 per tick) used for the recent gravity, photon and spectrum work. They have different doubler content (L1.1) and possibly different linear terms (L1.5). **v3 picks one option: at the L0 exit, exactly one canonical rule is named; the other is kept as a labelled diagnostic branch** that may be run for comparison but never counts toward a gate. Which rule is canonical is **Edmond's choice**.
-+**Consequence of the decision (v3.4, Edmond B1 and B2, 2026-11-12).** Every result whose harness uses the OP4 rule or its continuum bridge is a diagnostic-branch result and **is to be redone on `dirac4` before it counts toward a gate**. That covers: G1's finite-screen steering 0.970 and the photon-bending runs (§5, §10); the M3 generation split on OP4's nodes (§6); the OP4 node findings (L1.1, §10); and the held L1.5 tick-budget design (§3). Each redo needs its own design and Edmond's approval; none is designed yet. Items whose harness uses neither OP4 nor the §6.2 node symbol (G3's 1D zigzag walk with the paper's f = e^{−U} rule, M1, M2, C1–C4) are not changed by this decision, and the existing rule stays: anything that uses the L1 3D node symbol waits for L1's exit gate.
++**Consequence of the decision (v3.4, Edmond B1 and B2, 2026-11-12).** Every result whose harness uses the OP4 rule or its continuum bridge is a diagnostic-branch result and **is to be redone on `dirac4` before it counts toward a gate**. That covers: G1's finite-screen steering 0.970 and the photon-bending runs (§5, §10); the M3 generation split on OP4's nodes (§6); the OP4 node findings (L1.1, §10); and the held L1.5 tick-budget design (§3). **Scope reading pending Edmond's confirmation:** "all to be redone" is read as the results just listed, applied the same way in §1 (L4 row), §5 (G1, G7), §6, §8 (row 12) and Appendix A. Each redo needs its own design and Edmond's approval; none is designed yet. Items whose harness uses neither OP4 nor the §6.2 node symbol (G3's 1D zigzag walk with the paper's f = e^{−U} rule, M1, M2, C1–C4) are not changed by this decision, and the existing rule stays: anything that uses the L1 3D node symbol waits for L1's exit gate.
  
  **Tests.** V1 unitarity, reversal and light cone; V2 scalar dispersion; V3 independent dense BZ scan; V4 energy drift over 10⁵ ticks; V5 regenerate the paper's tables.
  
@@ -87,7 +108,7 @@
 +### L1.1 Doubler census — OP3 (canonical rule gates; OP4 diagnostic)
  
 -**Setup.** For each rule in use, take the explicit symbols: the 4×4 symbols of §6.2, and the OP4 generator Q(k) = [[ν n·σ, −m], [−m, −ν n·σ]]. Scan the cube `[-π,π]³` densely (≥129³) and include every high-symmetry point. Refine candidates with a local minimiser. Report the minimum over the *interior* and over the *closure*, separately, and report each zero's location, chirality and tilt.
-+**Status (v3.4, 2026-11-12).** The reason decision is made: on one BCC orbit the twelve edge zeros are Γ images, and the sum-form repair is withdrawn (Edmond; paper commits `66ee62f`, `cc2cc5c`). **L1.1 is CLOSED (Edmond B4): the official V5 v2 census is accepted as the L1.1 census of the canonical rule `dirac4`, and no re-run is needed.** That census (`results.json` sha256 `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708`) is unrepaired `dirac4` at m = 0 on a 129³ boundary-inclusive grid with local minima refined, exclusion 0.3 around every Γ image, and it reproduced all 18 numeric cells of Table `dirac4`; the 9 November `scan_gap.py` evaluated the twelve edge points exactly and found ω = 0 there, which the one-orbit reason identifies as Γ. OP4's three extra nodes (H, P, P′) are a **diagnostic finding**, recorded here, with no repair required by the gate (Edmond B1).
++**Status (v3.4, 2026-11-12).** The reason decision is made: on one BCC orbit the twelve edge zeros are Γ images, and the sum-form repair is withdrawn (Edmond; paper commits `66ee62f`, `cc2cc5c`). **Census: pending Edmond's confirmation of B4.** In chat Edmond said "yes rerun is needed" and then "understand, you accepted L1.1"; this draft does not choose between (i) accepting the official V5 v2 census as the L1.1 census of `dirac4` (no re-run) and (ii) re-running it on `dirac4` under a new design. Until confirmed, L1.1 is not recorded closed. That census (`results.json` sha256 `ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708`) is unrepaired `dirac4` at m = 0 on a 129³ boundary-inclusive grid with local minima refined, exclusion 0.3 around every Γ image, and it reproduced all 18 numeric cells of Table `dirac4`; the 9 November `scan_gap.py` evaluated the twelve edge points exactly and found ω = 0 there, which the one-orbit reason identifies as Γ. OP4's three extra nodes (H, P, P′) are a **diagnostic finding**, recorded here, with no repair required by the gate (Edmond B1). **r8 stays signed off; under one orbit it is no longer the required L1.1 path for `dirac4`; nothing in r8 is withdrawn.**
  
 -**Pass.** For each rule, either no zero except Γ in the closure, or a documented statement that the extra zeros are excluded from the physical state space, and why. **The same decision rule applies to both findings below:** repair it, or give a reason it is unphysical that survives a finite lattice with even L.
 +**Setup.** Take the explicit 4×4 symbols of §6.2 of the canonical rule on the one-orbit lattice (the OP4 generator Q(k) = [[ν n·σ, −m], [−m, −ν n·σ]] is scanned only as a labelled diagnostic). Scan the cube `[-π,π]³` densely (≥129³) and include every high-symmetry point. A zero at πg with g an integer triple of even coordinate sum is Γ on the one-orbit lattice and is reported as a Γ image, not as a doubler. Refine candidates with a local minimiser. Report the minimum over the *interior* and over the *closure*, separately, and report each zero's location, chirality and tilt.
@@ -96,22 +117,22 @@
 +**Pass.** For the canonical rule, no zero except Γ and its images in the closure (a Γ image being a reciprocal-lattice class on the one-orbit lattice), with the interior gap table reproduced (met by the V5 v2 census). OP4's nodes are reported but do not enter the gate.
  
 -**Current result, OP4 rule** (`/workspace/bcc_staggered_design_20261109/`, symbolic checks). OP4 has **4 isolated Weyl nodes per chirality block**: Γ, H = (π,0,0), P = (π/2,π/2,π/2) and P′ = −P, i.e. **3 extra nodes (doublers)**. Chiralities are (+,−,+,−) for (Γ,H,P,P′) and sum to zero (Nielsen–Ninomiya). They are isolated points, not lines. Uniform congestion load only rescales velocity and leaves the node count unchanged.
-+**[Superseded 2026-11-12 by the one-orbit decision; kept as history. The twelve points are Γ images, not defects.]** **Current result, §6.2 Wilson symbol.** Interior minima match Table `dirac4` (0.084 vs 0.082 at φ=1.4; 0.201 vs 0.217 at φ=0.5; coarse-grid error). But there are **12 exact massless zero modes** at the face centres `(±π,±π,0)` and permutations, independent of φ, with the Wilson layer present (U = I to 7e−16). They gap only when `m>0` (ω=0.050 at m=0.1). Random starts never hit them because they are measure-zero. See §10.
++**[Superseded 2026-11-12 by the one-orbit decision; kept as history. The twelve points are Γ images, not defects.]** **Current result, §6.2 Wilson symbol.** Interior minima match Table `dirac4` (0.084 vs 0.082 at φ=1.4; 0.201 vs 0.217 at φ=0.5; coarse-grid error). But there are **12 exact massless zero modes** at the edge labels `(±π,±π,0)` and permutations, independent of φ, with the Wilson layer present (U = I to 7e−16). They gap only when `m>0` (ω=0.050 at m=0.1). Random starts never hit them because they are measure-zero. See §10.
 +
 +**[Diagnostic branch; recorded finding, not a gate.]** **Current result, OP4 rule** (`/workspace/bcc_staggered_design_20261109/`, symbolic checks). OP4 has **4 isolated Weyl nodes per chirality block**: Γ, H = (π,0,0), P = (π/2,π/2,π/2) and P′ = −P, i.e. **3 extra nodes (doublers)**. Chiralities are (+,−,+,−) for (Γ,H,P,P′) and sum to zero (Nielsen–Ninomiya). They are isolated points, not lines. Uniform congestion load only rescales velocity and leaves the node count unchanged.
  
  **Naive BCC operator and staggering.** The naive nearest-neighbour BCC Dirac operator has **zero lines** at k_i = k_j = π/2 (a count that grows with L). **Kogut–Susskind spin diagonalisation is frustrated on BCC**: the four body-diagonal hops cannot all anticommute for any U(1) phases, so exact KS staggering does not exist on this lattice, and staggering does **not** remove the zero lines. The best Z₂-flux pattern gives about 2 Dirac tastes but with over-tilted (type-II) cones.
  
 -**Decision needed (one decision, applied to both rules).** Either (a) show these points are not in the physical spectrum (hard: they are allowed k on an even finite lattice), or (b) repair the rule so that the extra zeros or nodes are lifted while Γ stays massless, and re-run the census. Candidate repairs: the face-centre `g(k)` patch (§10); a Wilson-type term on OP4's three isolated doublers; domain wall or overlap (exact chirality, highest cost). A design for one CPU-only free-spectrum check exists; it is **not approved or run**.
-+**Decision (Edmond, 2026-11-12).** Option (a), a reason: the single BCC orbit. The sum-form `g(k)` repair is withdrawn (it is not periodic under π(1,1,0)), and no repair of OP4's three extra nodes is required by the gate. The V5 v2 census is accepted as the census (B4).
++**Decision (Edmond, 2026-11-12).** Option (a), a reason: the single BCC orbit. The sum-form `g(k)` repair is withdrawn (it is not periodic under π(1,1,0)), and no repair of OP4's three extra nodes is required by the gate. The census question (B4) is pending Edmond's confirmation (see Status).
  
  **Link to OP12.** Using the four OP4 nodes as the three generations is a recorded no-go under existing rules (L4, M3).
  
-@@ -131,19 +166,30 @@
+@@ -131,31 +166,42 @@
  
  Reproduce Table `dw`: residual mass vs Ns, `|γ5|`, localisation length, smallest gap vs b. Pass: within 5%, and `b ≤ 0.25` boundary confirmed independently. Then test the *end-mode* dispersion against the physical-mode dispersion: the chiral mode's speed is 0.9855 of the hop rate; a difference would be a species-dependent `c`.
  
-+**Status (v3.4): CLOSED 2026-11-12.** Run `7e09b7c4` (results PR #5, branch `grok/l1-2-run-20261112`); closure record `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6, not yet merged). Table `dw`: 14 of 14 scored cells pass; the pre-registered three-part boundary clause passes; the end-mode speed 0.9855 against the bulk 0.98911 is a difference of −0.359%, recorded as a species-dependent `c` (D2 revised: pass when measured and recorded). Design item R5 failed as written (its 0.5 end-copy-weight threshold was a guess, and the weight at (π/2)³ never exceeds 0.353); it was not retuned. Paper §6.2 now reads "from b ≈ 0.35".
++**Status (v3.4): CLOSED 2026-11-12.** Run `7e09b7c4` (results PR #5, branch `grok/l1-2-run-20261112`); closure record `L1_2_CLOSURE_20261112.txt` (branch `cursor/l1-2-closure-paper-wording-a445`, PR #6, not yet merged). Table `dw`: 14 of 14 scored cells pass; the pre-registered three-part boundary clause passes; the end-mode speed is 0.985529 against the unchained 0.989084, a difference of −0.00355526 or −0.359% (against the paper's 0.98911 it would be −0.362%), recorded as a species-dependent `c` (D2 revised: (a) both speeds measured by one code path with the difference recorded, and (b) the end mode within the 5% rule of the paper's 0.9855). Design item R5 failed as written (its 0.5 end-copy-weight threshold was a guess, and the weight at (π/2)³ never exceeds 0.353); it was not retuned. PR #6, when merged, changes paper §6.2 (main still says "For b≥0.3") to "from b ≈ 0.35".
 +
  ### L1.3 ν from the rule — OP3
  
@@ -120,11 +141,11 @@
 +**Naming (v3.4).** The hop weight ν_S (ν_S² + m² = 1, so ν_S = 1 at m = 0) is a different quantity from ν = cτ/a, which is the light speed c₀ in units of the hop rate.
 +
 +**Status (v3.4): OPEN. Run `9ccf4855` stopped after S2 with verdict FAIL / OPEN** (results PR #8, branch `grok/l1-3-run-20261112`, commit `f4e45728`, SHA256SUMS `17f5e19944dd36a7b257854951e5a4c594515d71dedd8e4a0d43da6f139e6157`).
-+- **R1 PASS.** `c₀(φ) = ½√(1 + 3 sin²φ)` matches the exact symbol at all 16 values of φ in all 13 directions to 4.3e-14, so φ is a free parameter of the rule and the tick `τ = 0.989 t_P` inherits the paper's choice φ = 1.4.
++- **R1 PASS.** `c₀(φ) = ½√(1 + 3 sin²φ)` matches the exact symbol at all 16 values of φ in all 13 directions to 4.3e-14. R1 confirms the closed form `c₀(φ)`. Whether φ is a free parameter is the L1.3 pass question; it needs N1–N5, which were not run, so it stays open. The tick `τ = 0.989 t_P` corresponds to the paper's choice φ = 1.4.
 +- **R2 FAIL.** All 42 pairs with φ₂ ≠ φ₄ miss the 1e-6 tolerance (worst 1.6e-4 at (0.5, π/2)). The design's printed formula had the wrong prefactor (¼, not ½); R2 fails either way, and the run fixed the reading before computing and recorded it (DEV-1).
 +- **S3 not run** (stop rule), so N1–N5 are unscored.
-+- **Unscored follow-ups.** The run's post-hoc note and an independent check (`/cursor/stores/bc-21e0a98b-ccd2-446a-a96d-b0210de6c87f/internal/l1-3-r2-diagnostic-unscored.md`) find that the factor-¼ closed form matches to about 1e-12 when odd powers of |k| are fitted, and that for φ₂ ≠ φ₄ there is a term linear in |k| along [110] and [111] (zero along [100]), which the design's κ² extrapolation could not remove. At φ₂ = φ₄ that term is zero to fit noise. These are observations, not results.
-+- **Next (Edmond, 2026-11-12, 7:55 PM).** R2 is recorded as open as written. A corrected L1.3b is approved to be designed; the design is `L1_3b_run_design_20261112/` (PR #10, sha256 `dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d`), **not yet approved to run**. It corrects the ¼ prefactor, extrapolates in κ with all powers, and runs the unscored N1–N5. If it passes, Edmond may record L1.3 closed on L1.3b with the original R2 failure kept.
++- **Unscored follow-ups.** The run's post-hoc note (`runs/20261112_l13_9ccf4855/post/POSTHOC_NOTE_R2.md`, PR #8) records a term linear in κ for φ₂ ≠ φ₄ along [110], which the design's κ² extrapolation could not remove. The unscored L1.3b design dry-run (PR #10 §10) finds the factor-¼ closed form matches to 3.9e-13 across 49 angle pairs and 13 directions when odd powers of κ are fitted, a linear coefficient of at most 2.1e-10 on the [100] directions and at the seven equal-angle pairs, and a nonzero one otherwise. These are observations, not results.
++- **Next (Edmond, 2026-11-12, 7:55 PM).** R2 is recorded as open as written. A corrected L1.3b is approved to be designed; the design is `L1_3b_run_design_20261112/` (PR #10, sha256 `dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d`), **not yet approved to run**. It corrects the ¼ prefactor, extrapolates in κ with all powers, and runs N1–N5, which were not reached. If it passes, Edmond may record L1.3 closed on L1.3b with the original R2 failure kept.
 +
  ### L1.4 Dispersion and diffusion vs data — OP15
  
@@ -136,13 +157,14 @@
 +Repeat L1.4 with a photon-like vector field and the canonical rule (4-component §6.2; OP4 only as a labelled diagnostic), along at least 13 directions including [100], [110], [111] and [11−1].
  
 -**Why this is a test, not an assumed pass.** The paper's "no linear term, leading effect quadratic" statement (Sec. 6.4 Test 1, Sec. 7.8) comes from the scalar link-only toy. For the OP4 rule, a leading-order analysis predicts a **possible linear, direction-odd massless light-speed leak along [111]**, v_g ≈ 1 + (2/(3√3))κ ≈ 1 + 0.385κ (κ = kℓ), which flips sign along [11−1]; along [100] and [110] the leading term is quadratic (1 − κ²/2, 1 − 5κ²/8) (`/workspace/lorentz_tick_budget_design_20261109/DESIGN.md`). Whether it survives the exact whole-tick macrostep is exactly what the run measures.
-+**Why this is a test, not an assumed pass.** The paper's "no linear term, leading effect quadratic" statement (Sec. 6.4 Test 1, Sec. 7.8) comes from the scalar link-only toy. For the OP4 rule (diagnostic branch; no corresponding prediction has been derived for `dirac4`), a leading-order analysis predicts a **possible linear, direction-odd massless light-speed leak along [111]**, v_g ≈ 1 + (2/(3√3))κ ≈ 1 + 0.385κ (κ = kℓ), which flips sign along [11−1]; along [100] and [110] the leading term is quadratic (1 − κ²/2, 1 − 5κ²/8) (`/workspace/lorentz_tick_budget_design_20261109/DESIGN.md`). Whether it survives the exact whole-tick macrostep is exactly what the run measures. *Hypothesis to pre-register, not a result:* the unscored L1.3 follow-up found no term linear in |k| in the `dirac4` massless light speed at equal Wilson angles (fit noise about 2e-8, 13 directions, φ from 0.3 to π/2), whereas unequal angles produce one on [110] and [111]; a hand derivation for `dirac4` in the style of L1.3 should come before any L1.5 run.
++**Why this is a test, not an assumed pass.** The paper's "no linear term, leading effect quadratic" statement (Sec. 6.4 Test 1, Sec. 7.8) comes from the scalar link-only toy. For the OP4 rule (diagnostic branch; no corresponding prediction has been derived for `dirac4`), a leading-order analysis predicts a **possible linear, direction-odd massless light-speed leak along [111]**, v_g ≈ 1 + (2/(3√3))κ ≈ 1 + 0.385κ (κ = kℓ here; the L1.3 and L1.3b runs use κ = |k| in radians per a/2, so kℓ = √3 κ, and the 0.385 figure comes from a design written under the older h/2 convention: restate it in the current convention before any L1.5 design), which flips sign along [11−1]; along [100] and [110] the leading term is quadratic (1 − κ²/2, 1 − 5κ²/8) (`/workspace/lorentz_tick_budget_design_20261109/DESIGN.md`). Whether it survives the exact whole-tick macrostep is exactly what the run measures. *Hypothesis to pre-register, not a result:* the unscored L1.3 follow-up found no term linear in |k| in the `dirac4` massless light speed at equal Wilson angles (|b| ≤ 2.1e-10 at the seven equal-angle pairs of the L1.3b dry-run, PR #10 §10; 13 directions), whereas unequal angles produce one on [110] and [111]; a hand derivation for `dirac4` in the style of L1.3 should come before any L1.5 run.
  
  **Measure.** Massless v_g(κ, direction) from the exact whole-tick evolution, congestion ON (uniform vacuum load) with OFF as a labelled diagnostic; fit only the leak coefficients ξ₁ (linear) and ξ₂ (quadratic) per direction, with the same uncertainty treatment as the data.
  
-@@ -151,11 +197,11 @@
+ **Pass.** The implied E_QG,1 in every direction exceeds both the Fermi (7.6 E_Pl) and the LHAASO (10 E_Pl) limits, and E_QG,2 exceeds the LHAASO quadratic limit. A direction-odd term is reported with its sky template, since the bound weakens for bursts with small k_x k_y k_z.
  
- **Falsifier.** A linear term that applies to photons and violates the limits. For scale: if the [111] leak of 0.385κ applied to photons at full size, LHAASO would require a ≲ ℓ_P/(0.385×10) ≈ 0.26 ℓ_P. That would conflict with the paper's Planck-scale spacing and with the Sec. 7.8 wording.
+-**Falsifier.** A linear term that applies to photons and violates the limits. For scale: if the [111] leak of 0.385κ applied to photons at full size, LHAASO would require a ≲ ℓ_P/(0.385×10) ≈ 0.26 ℓ_P. That would conflict with the paper's Planck-scale spacing and with the Sec. 7.8 wording.
++**Falsifier.** A linear term that applies to photons and violates the limits. For scale: if the [111] leak of 0.385κ applied to photons at full size, LHAASO would require ℓ ≲ 0.26 ℓ_P (with κ = kℓ), i.e. a ≲ 0.30 ℓ_P (ℓ = a√3/2). That would conflict with the paper's Planck-scale spacing and with the Sec. 7.8 wording.
  
 -**Status.** Tick-budget / light-speed run (`lorentz_tick_budget_design_20261109`) is **designed and held pending Edmond's approval** (25 clock fixtures, 10 light-speed runs, 2 controls; proposed caps 1 thread, 1 GiB, 180 CPU s, 240 s wall, 16 MiB, one attempt). Until it runs, L1.5 is **open**, and the Sec. 6.4 / 7.8 "no linear term" wording should be read as scalar-toy only.
 +**Status.** Tick-budget / light-speed run (`lorentz_tick_budget_design_20261109`) is **designed and held pending Edmond's approval** (25 clock fixtures, 10 light-speed runs, 2 controls; proposed caps 1 thread, 1 GiB, 180 CPU s, 240 s wall, 16 MiB, one attempt). Until it runs, L1.5 is **open**, and the Sec. 6.4 / 7.8 "no linear term" wording should be read as scalar-toy only. **v3.4:** that held design is for the OP4 rule, a diagnostic branch, so it does not gate; a `dirac4` design is needed and has not been written.
@@ -150,7 +172,7 @@
  This closes the largest tree-level Lorentz hole and is a prerequisite for L3.
  
 -**L1 exit gate.** L1.1 decision made and census re-run for the chosen rule; L1.2 reproduced; L1.3 settled; L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs Edmond's approval of the tick-budget run; see §11 for a realistic timeline.)
-+**L1 exit gate.** L1.1 closed (V5 v2 census accepted for the canonical rule on one BCC orbit, Γ images classified, OP4's nodes recorded as a diagnostic finding); L1.2 reproduced (closed 2026-11-12); L1.3 settled (open; R2 FAIL / OPEN recorded); L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs Edmond's approval of the tick-budget run; see §11 for a realistic timeline.)
++**L1 exit gate.** L1.1 census of the canonical rule on one BCC orbit (V5 v2 accepted or re-run, per B4) with Γ images classified, OP4's nodes recorded as a diagnostic finding; L1.2 reproduced (closed 2026-11-12); L1.3 settled (status in L1.3); L1.4 and L1.5 measured against the §0.3 limits. (L1.5 needs a `dirac4` design first: the held tick-budget design is OP4-only and diagnostic; see §11.)
  
  ---
  
@@ -163,6 +185,15 @@
  **Entry rule.** An L3 item that uses the L1 3D node symbol may not start until L1's exit gate is met. Items whose harness does not use that symbol (G1's continuum ray solver, G3's 1D zigzag walk) may run earlier as labelled *pre-L1 pilots*; their results are reported but do not count toward the L3 gate until repeated on the canonical 3D rule.
  
  | Test | OP | Setup (rule) | Measured target | Gate (this item only) | Falsifier | Status (2026-11-09) |
+@@ -245,7 +293,7 @@
+ | G4 tensor source | 8 | rotating + pressure source | GP-B geodetic −6601.8 ± 18.3, frame-dragging −37.2 ± 7.2 mas/yr (Everitt et al., PRL 106, 221101 (2011)) | coupling 2 from rule, not inserted; GP-B within errors | scalar-only result | not started; conditional on G1 open |
+ | G5 Planck-mass node | 6 | single node at m_P, then spread | none (mechanism-first) | GR recovered when load spread; finite core | divergent / no crossover | not started |
+ | G6 1-loop anisotropy | 17 | canonical rule + Wilson, self-energy | **named coefficient:** isotropic photon–electron speed difference, SME combination κ̃_tr − (4/3)c_e^{00}, measured −5.8×10⁻¹² ≤ κ̃_tr − (4/3)c_e^{00} ≤ 1.2×10⁻¹¹ (Hohensee et al., PRL 102, 170402 (2009)); see note | induced value inside that interval with no fine tuning; anisotropic part ≤ C(E/E_P)² | unsuppressed term | not started |
+-| G7 core dynamics | 9–11 | collapsing shell on the load rule | none (mechanism-first) | stable finite core; inner horizon stated | mass inflation / no cap | horizon design: existing rules give **no horizon** (s, F, ρ never reach 0), whereas GR's isotropic lapse reaches 0 at r = M/2; design only |
++| G7 core dynamics | 9–11 | collapsing shell on the load rule | none (mechanism-first) | stable finite core; inner horizon stated | mass inflation / no cap | horizon design: existing rules give **no horizon** (s, F, ρ never reach 0; these are OP4 symbols per §0.4, so this is a diagnostic-branch result), whereas GR's isotropic lapse reaches 0 at r = M/2; design only |
+ 
+ **G1 note: what 0.970 is, and why Cassini is not its comparator.** Verified against `/workspace/gpu/op4_bcc_local/curved_reference_design/photon_field_refinement_20261108/results.json` and `../photon_priority_comparison_20261108/REPORT.md`:
+ 
 @@ -283,6 +331,8 @@
  - Side result: per-generation masses can stay unitary if they enter through the tick budget (ν² + m² = 1), provided the electron's lattice mass is below about 3×10⁻⁴; heavier generations would then have a very slightly lower top speed.
  - The paper's Sec. 6.8 already records an earlier failed doubler-as-generation version (four species, Koide 0.33–0.50).
@@ -172,28 +203,61 @@
  **M3 entry gate (new).** A written mechanism with its physical reason ("each level costs X because of Y"), hashed before comparison, with no free coefficients chosen to hit the targets. **Koide** is used only as a test of the measured masses (Q = 0.666664 ± 0.000005 from PDG 2024), not as a separate target to be fitted. M3 is time-boxed; a further no-go is a valid result.
  
  M1 is the only one that is a normal simulation.
-@@ -319,7 +369,7 @@
+@@ -319,18 +369,18 @@
  |---|---|---|---|---|
  | 1 | all | freezes with L0–L2; L0 names the canonical rule | — | open |
  | 2 | L2 | exchange-phase toy | 1–2 wk | open |
 -| 3 | L1 | one repair-or-reason decision for the 12 face-centre zeros (§6.2) **and** OP4's 3 extra nodes; then rerun census | 3–5 d | open; design only |
-+| 3 | L1 | reason decision made (one BCC orbit; the 12 edge zeros are Γ images); OP4's 3 extra nodes recorded as a diagnostic finding; V5 v2 census accepted as the `dirac4` census | — | L1.1 closed; L1.2 closed; L1.3 open |
++| 3 | L1 | reason decision made (one BCC orbit; the 12 edge zeros are Γ images); OP4's 3 extra nodes recorded as a diagnostic finding; census per B4 (V5 v2 accepted, or re-run), pending Edmond's confirmation | — | L1.1 reason decided, census pending; L1.2 closed; L1.3 open |
  | 4 | L3 | EP composite (G3), pre-L1 pilot: readout fix | 3–5 d | PARTIAL (s = 8 floors) |
  | 5 | L3 | workload→metric map; start with G1 | 2 wk | open |
  | 6 | L3 | single-node m_P toy | 1 wk | open |
+ | 7 | L3 | G1: design a weak-field ε → 0 sequence with matched source and boundary; the strong-field 0.970 is not a γ measurement | 2 wk | open; weak-field γ not measured |
+ | 8 | L3 | G2 + tensor source (G4), labelled conditional on G1 | 2 wk | open |
+ | 9–11 | L3 | G5–G7; horizon design (no horizon from existing rules) | 3–6 wk | design only |
+-| 12 | L4 | new mechanism with stated reason, preregistered; existing-rule no-go recorded | 2 wk | no-go for existing rules |
++| 12 | L4 | new mechanism with stated reason, preregistered; existing-rule no-go recorded (OP4 rule: diagnostic branch) | 2 wk | no-go for existing rules (OP4: diagnostic branch) |
+ | 13 | L4 | L-scan Binder + homing | 1–2 wk | open |
+ | 14 | L4 | RGE rerun (analysis) against measured m_H, m_t | 3 d | open |
+ | 15 | L1 | sky table + diffusion control against Fermi/LHAASO | 1 wk | open |
+-| 16 | L1 | linear-term test along [111]/[11−1] (tick-budget run) | 1 wk | designed; held for approval |
++| 16 | L1 | linear-term test along [111]/[11−1] (tick-budget run) | 1 wk | OP4-rule design held (diagnostic); `dirac4` hand derivation and design needed |
+ | 17 | L3 | 1-loop induced κ̃_tr − (4/3)c_e^{00} | 2–4 wk | open |
+ | 18 | App. A | candidate-field definition (side item, Edmond to decide) | open | — |
+ | 19 | L5 | expanding-grid halo against the pre-registered CLASH stack | 1–2 wk | open |
+@@ -350,7 +400,7 @@
+ ledger/
+   bcc.py       links, dispersion, directions                [frozen]
+   qwalk.py     1D/2D Dirac walk, exact checks               [frozen]
+-  dirac4.py    4-component symbols, gap, chirality           [L1, may change if repaired]
++  dirac4.py    4-component symbols, gap, chirality           [L1; no repair applied]
+   op4.py       OP4 product-walk symbol and nodes (read-only wrapper of prod/op4_local_gpu.py)  [L1]
+   readout.py   energy-share read, CHSH, kappa                [L2]
+   workload.py  load, clock relay, link priority              [L3]
+@@ -363,7 +413,7 @@
+ 2. Every module exposes a pure function `observables(config) -> dict`.
+ 3. All stochastic runs take an explicit seed and return a spread over ≥5 seeds.
+ 4. A result is not reported unless `runs/<date>_<id>/result.json` exists and the table can be regenerated from it.
+-5. `config` carries `congestion: "ON"` by default; `"OFF"` is accepted only with `diagnostic: true` and is excluded from gates.
++5. `config` carries `congestion: "ON"` by default; `"OFF"` is accepted only with `diagnostic: true` and is excluded from gates. Exception: L1.1–L1.3 run on the load-free vacuum symbol (§0.1).
+ 6. Failed and partial runs are kept in `runs/` unchanged, with their logs and hashes.
+ 
+ ---
 @@ -385,19 +435,19 @@
  | 1.4 | 0.082 | 0.084 |
  | 1.5 | 0.035 | 0.035 |
  
 -But the closure has **12 exact zero modes** at the face centres `(±π,±π,0)` and permutations, with the Wilson layer present and `m=0`; `U = I` to 7e−16. They are independent of φ and vanish for `m>0`. The paper's random search cannot hit them (measure-zero set), so the statement "no zero-frequency point other than the physical one" needs the qualifier "in the interior" or a repair.
-+**[Superseded 2026-11-12: the twelve points are Γ images on the one-orbit lattice; kept as history.]** But the closure has **12 exact zero modes** at the face centres `(±π,±π,0)` and permutations, with the Wilson layer present and `m=0`; `U = I` to 7e−16. They are independent of φ and vanish for `m>0`. The paper's random search cannot hit them (measure-zero set), so the statement "no zero-frequency point other than the physical one" needs the qualifier "in the interior" or a repair.
++**[Superseded 2026-11-12: the twelve points are Γ images on the one-orbit lattice; kept as history.]** But the closure has **12 exact zero modes** at the edge labels `(±π,±π,0)` and permutations, with the Wilson layer present and `m=0`; `U = I` to 7e−16. They are independent of φ and vanish for `m>0`. The paper's random search cannot hit them (measure-zero set), so the statement "no zero-frequency point other than the physical one" needs the qualifier "in the interior" or a repair.
  
- **Why it happens.** At `(π,π,0)`, `u = cos kx cos ky cos kz = +1` and `n = 0`, so the Wilson symbol reduces to `e^{−iφτx} e^{+iφτx} = 1`, exactly as at Γ. The layer does not distinguish Γ from the face centres. That is the defect.
+-**Why it happens.** At `(π,π,0)`, `u = cos kx cos ky cos kz = +1` and `n = 0`, so the Wilson symbol reduces to `e^{−iφτx} e^{+iφτx} = 1`, exactly as at Γ. The layer does not distinguish Γ from the face centres. That is the defect.
++**[Superseded 2026-11-12: at (π,π,0) the symbol equals Γ because it is Γ on the one-orbit lattice; kept as history.]** **Why it happens.** At `(π,π,0)`, `u = cos kx cos ky cos kz = +1` and `n = 0`, so the Wilson symbol reduces to `e^{−iφτx} e^{+iφτx} = 1`, exactly as at Γ. The layer does not distinguish Γ from the edge labels. That is the defect.
  
 -**Candidate repair (tested, mixed).** Replace `u` in `X` by `u + g(k)` with `g(Γ)=0` and `g` order one at the face centres, for example `g = (1/3)Σ(1−cos k_i)`; keep the second factor `e^{+iφτx}` so the cancellation at Γ survives, and use a matrix exponential if `X²≠1`. Result at φ=1.4: the 12 zeros lift (ω=0.637), Γ stays massless, and the smallest interior gap rises from 0.082 to 0.221. But `g` is O(k²) near Γ, so it also changes the low-energy dispersion; the light speed and the `(E/E_P)²` coefficient must be re-measured before this patch can be accepted. This is a concrete, falsifiable next step, not a rewrite. (The chosen `g` must be written down with its reason before re-measuring; it is not tuned to the dispersion targets.)
-+**[Withdrawn 2026-11-12: not periodic under π(1,1,0); the one-orbit decision replaces it.]** **Candidate repair (tested, mixed).** Replace `u` in `X` by `u + g(k)` with `g(Γ)=0` and `g` order one at the face centres, for example `g = (1/3)Σ(1−cos k_i)`; keep the second factor `e^{+iφτx}` so the cancellation at Γ survives, and use a matrix exponential if `X²≠1`. Result at φ=1.4: the 12 zeros lift (ω=0.637), Γ stays massless, and the smallest interior gap rises from 0.082 to 0.221. But `g` is O(k²) near Γ, so it also changes the low-energy dispersion; the light speed and the `(E/E_P)²` coefficient must be re-measured before this patch can be accepted. This is a concrete, falsifiable next step, not a rewrite. (The chosen `g` must be written down with its reason before re-measuring; it is not tuned to the dispersion targets.)
++**[Withdrawn 2026-11-12: not periodic under π(1,1,0); the one-orbit decision replaces it.]** **Candidate repair (tested, mixed).** Replace `u` in `X` by `u + g(k)` with `g(Γ)=0` and `g` order one at the edge labels, for example `g = (1/3)Σ(1−cos k_i)`; keep the second factor `e^{+iφτx}` so the cancellation at Γ survives, and use a matrix exponential if `X²≠1`. Result at φ=1.4: the 12 zeros lift (ω=0.637), Γ stays massless, and the smallest interior gap rises from 0.082 to 0.221. But `g` is O(k²) near Γ, so it also changes the low-energy dispersion; the light speed and the `(E/E_P)²` coefficient must be re-measured before this patch can be accepted. This is a concrete, falsifiable next step, not a rewrite. (The chosen `g` must be written down with its reason before re-measuring; it is not tuned to the dispersion targets.)
  
- **Caveat.** If these boundary modes are declared unphysical, the model owes a reason that survives a finite lattice with even L, where `k=(π,π,0)` is an allowed momentum. That is a model decision, not a numerical one.
+-**Caveat.** If these boundary modes are declared unphysical, the model owes a reason that survives a finite lattice with even L, where `k=(π,π,0)` is an allowed momentum. That is a model decision, not a numerical one.
++**[Answered 2026-11-12 by the one-orbit reason: k = (π,π,0) is Γ on the one-orbit lattice, so the reason survives an even-L finite lattice.]** **Caveat.** If these boundary modes are declared unphysical, the model owes a reason that survives a finite lattice with even L, where `k=(π,π,0)` is an allowed momentum. That is a model decision, not a numerical one.
  
 -**OP4 nodes (symbolic, 2026-11-09).** 4 Weyl nodes per block (Γ, H, P, P′), chiralities (+,−,+,−); KS staggering frustrated on BCC; naive BCC zero lines at k_i = k_j = π/2 persist under staggering. Source: `/workspace/bcc_staggered_design_20261109/`.
 +**[Diagnostic branch.]** **OP4 nodes (symbolic, 2026-11-09).** 4 Weyl nodes per block (Γ, H, P, P′), chiralities (+,−,+,−); KS staggering frustrated on BCC; naive BCC zero lines at k_i = k_j = π/2 persist under staggering. Source: `/workspace/bcc_staggered_design_20261109/`.
@@ -206,15 +270,17 @@
  
  **EP composites (2026-11-01).** G3 refinement to s = 8 completed: PARTIAL, floors ~6×10⁻⁴ and 5.8×10⁻³ set by the readout. Source: `/workspace/gpu/equalfall/SUMMARY.md`.
  
-@@ -409,14 +459,14 @@
+@@ -408,15 +458,15 @@
+ **Consistency rule (resolves v2's contradiction).** L2/L3 work that uses the L1 3D node symbol does not start before L1's exit gate. Work whose harness does not use that symbol may run as a labelled pre-L1 pilot (§5 entry rule). G3 qualifies: its harness is the 1D Dirac zigzag walk of `/workspace/op15ep/ep2.py` with the paper's f = e^{−U} weights, not the §6.2 or OP4 3D symbol. Its result counts toward L3 only after a repeat on the canonical 3D rule.
  
  Sprint (2 weeks):
- 1. **L0 canonical-rule decision** (Edmond) — 0.5 d. Needed before L1.1 can close.
+-1. **L0 canonical-rule decision** (Edmond) — 0.5 d. Needed before L1.1 can close.
 -2. **L1.1 repair-or-reason decision + full census** (OP3, canonical rule; diagnostic branch for comparison) — 3–5 d.
 -3. **L1.2 chirality chain reproduction** (Table `dw`) — 2–3 d. Required by the L1 exit gate; omitted in v2's sprint.
 -4. **L1.3 ν derivation** (OP3) — 2 d.
 -5. **L1.5 linear-term test** (OP16) — designed; runs only if Edmond approves the caps. If approved early, about 1 d of compute and analysis; if not, L1.5 stays open.
-+2. **L1.1 doubler census** (OP3). **Done 2026-11-12 (closed):** one-orbit reason decision plus the V5 v2 census accepted as the census (Edmond B4). The OP4 branch is a diagnostic finding only.
++1. **L0 canonical-rule decision** (Edmond) — 0.5 d. **Done: `dirac4`.**
++2. **L1.1 doubler census** (OP3). The one-orbit reason decision is done (2026-11-12). The census is pending Edmond's confirmation of B4 (accept V5 v2, or re-run under a new design). The OP4 branch is a diagnostic finding only.
 +3. **L1.2 chirality chain reproduction** (Table `dw`) — 2–3 d. Required by the L1 exit gate; omitted in v2's sprint. **Done 2026-11-12 (closed).**
 +4. **L1.3 ν derivation** (OP3). Run `9ccf4855`: R1 PASS, R2 FAIL / OPEN, S3 not run; R2 recorded as open; the corrected L1.3b is designed (PR #10) and awaits approval of its hash to run.
 +5. **L1.5 linear-term test** (OP16). The held design is for the diagnostic OP4 rule; a `dirac4` hand derivation and design come first, then Edmond's approval of caps.
@@ -222,7 +288,16 @@
  7. **L2.0 design review** (no run) — Edmond reviews the theorem sketch, gaps G-1 to G-7 and the C5 audit (part (a), read-only).
  
 -**Realistic L1 close.** L1 cannot close inside this sprint. Earliest close is about **4–6 weeks**, and only if (a) Edmond approves the L1.5 run, and (b) the L1.1 decision does not change the low-energy dispersion. A repair that does (as the face-centre `g(k)` patch does) forces L1.4 and L1.5 to be re-measured on the repaired rule, adding about 1–2 weeks. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
-+**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.1, L1.3b and L1.5 designs exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
++**Realistic L1 close.** L1 cannot close inside this sprint. L1.3 needs approval of the L1.3b design hash and its run; L1.4 and L1.5 need designs and approvals. A repair-induced re-measure of L1.4 and L1.5 is no longer needed, because no repair is applied. The earlier "4–6 weeks" estimate is withdrawn and is to be re-estimated once the L1.3b run is done and the L1.4 and L1.5 designs (and an L1.1 re-run design, if B4 means a re-run) exist. Until L1 closes, L2.0–L2.5 and every L3 item except the labelled pilots wait.
  
  ---
+ 
+@@ -427,7 +477,7 @@
+ | Item | Paper ref | v1 location | Why it may be a side item | If kept |
+ |---|---|---|---|---|
+ | M4 dark-matter identity | OP18 (Sec. 6.20) | L4 | Asks *which* excitation dark matter is; the halo tests (OP19, C1–C2) do not depend on the answer | L4, mechanism-first: a candidate field with a stated reason, no fit |
+-| C5 CP bias / baryon asymmetry | S4 (Sec. 3.6) | L5 | Server-side; the paper has no model; needs three generations, which are a no-go under existing rules (M3) | L5, **mechanism-first with no numerical target** (the measured baryon-to-photon ratio, η ≈ 6.1×10⁻¹⁰, is recorded for later use only) |
++| C5 CP bias / baryon asymmetry | S4 (Sec. 3.6) | L5 | Server-side; the paper has no model; needs three generations, which are a no-go under existing rules (M3; established on the OP4 rule, a diagnostic branch) | L5, **mechanism-first with no numerical target** (the measured baryon-to-photon ratio, η ≈ 6.1×10⁻¹⁰, is recorded for later use only) |
+ 
+ **Coverage, for Edmond to confirm.** With OP18 and S4 in this appendix, the main layer line covers **18 of the 19 open problems** (all but OP18) and **6 of the 7 server-side items** (all but S4). Neither is deleted from the paper. If that is not intended, both return to L4/L5 as mechanism-first items.
  

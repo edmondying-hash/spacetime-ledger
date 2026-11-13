@@ -1,0 +1,20 @@
+Layered plan v3.4 draft: decisions sidecar (outside the hashed folder)
+Recorded 2026-11-12 America/New_York. Sign-off of v3.4 itself has NOT been given.
+
+Plan-review items offered by the assistant: B1 (OP4 "both rules"), B2 (OP4-based results), B3 (load-free carve-out), B4 (L1.1 census re-run).
+
+Edmond Ying, 7:48 PM, verbatim:
+  "B1) let dirac4 gate L1.1 and record OP4s three extra nodes as diagnostic finding  B2) all to be redone  B3)  as you suggested is correct  B4)  yes rerun is needed"
+
+Edmond Ying, 7:51 PM, verbatim:
+  "understand, you accepted L1.1"
+
+Edmond Ying, 7:55 PM, verbatim (L1.3):
+  "L1.3  record R2 as open, approve corrected L1.3b"
+
+Status:
+  B1  recorded as decided.
+  B2  recorded as decided; the scope ("all" = results resting on the OP4 rule or bridge) is the assistant's reading and awaits confirmation.
+  B3  recorded as decided.
+  B4  NOT settled. The 7:48 PM words say a re-run is needed; the 7:51 PM words can be read as accepting the V5 v2 census with no re-run. The draft marks L1.1 census pending until Edmond states which he means.
+  L1.3  R2 recorded as open; corrected L1.3b approved to be designed (design in PR #10; running it awaits approval of its sha256).
