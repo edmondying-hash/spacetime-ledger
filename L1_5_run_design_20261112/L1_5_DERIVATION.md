@@ -45,7 +45,7 @@ In both cases the **band mean** ω̄ = ½(p₁ + p₂) is an odd function of κ:
 
   **ω̄(κ n̂) = c₀κ + a₂ κ³ + a₄ κ⁵ + …, no term of even degree in κ, to all orders.**
 
-In terms of the group velocity: no term of the form v = c₀(1 + ξ₁' κ), and none of any odd power of κ, in the mean over the two branches. This is the linear-term cancellation that §7.8 Test 3 of the paper describes ("alternating the two handednesses cancels the linear term exactly in every direction"), now with its mechanism: it is a symmetry of the alternating rule, and it needs the same angle φ on both Wilson layers. A "Wilson layer that removes the doubler modes keeps this cancellation" holds because V⁺ and V⁻ carry the same φ.
+In terms of the group velocity: no term of the form v = c₀(1 + ξ₁' κ), and none of any odd power of κ, in the mean over the two branches. This is the linear-term cancellation that §6.4 Test 3 of the paper describes ("alternating the two handednesses cancels the linear term exactly in every direction"), now with its mechanism: it is a symmetry of the alternating rule, and it needs the same angle φ on both Wilson layers. A "Wilson layer that removes the doubler modes keeps this cancellation" holds because V⁺ and V⁻ carry the same φ.
 
 **(C2) [C] What the symmetry alone leaves open.** In the swap case the two branches could split at O(κ²) with opposite signs, ±β κ² (a helicity-dependent linear term, which the mean does not see). The symmetry does not exclude that, so it is checked directly:
 
@@ -72,7 +72,7 @@ matching the extracted coefficients to 3e-19 (the limit of the 12-point fit), i.
 
 ## 5. What this derivation does not show
 
-- It is about the massless `dirac4` excitation. The paper's photon is not a rule of this lattice model; §7.8 Test 3 uses the massless Dirac walker as the proxy, and so do I. A genuine vector or tensor field built on this rule is not defined and is not covered.
+- It is about the massless `dirac4` excitation. The paper's photon is not a rule of this lattice model; §6.4 Test 3 uses the massless Dirac walker as the proxy, and so do I. A genuine vector or tensor field built on this rule is not defined and is not covered.
 - It is about equal Wilson angles, the canonical rule. The L1.3b observation of a linear term for φ⁺ ≠ φ⁻ is consistent with (I1) failing there, §6.
 - Load is uniform only. Load that varies in space is not part of the free spectrum (L3). Uniform load is treated in §5a.
 - The O(κ⁵) branch splitting and the ξ₂' closed form are numerical.

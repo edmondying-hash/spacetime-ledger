@@ -8,7 +8,16 @@ Reading (the assistant's): L1.5 does not take the B3 carve-out. It keeps congest
 Edmond Ying, 9:53 PM, verbatim (answer to D2, what "photon-like" means):
   "D2 massless "photon-like" has no vector or tensor field"
 
-Reading (the assistant's): D2 is accepted as proposed. The photon proxy is the massless dirac4 excitation, as in paper section 7.8 Test 3. No vector or tensor field is built, and the "vector and tensor fields" wording of the plan item is not carried to a separate open item. A PASS of the design speaks for the massless proxy, and Edmond may record L1.5 closed on it in a closure record after the run (D4 is still his decision then). The design file is not edited for this answer, so its hash is unchanged; this sidecar overrides the D2 text in design section 8.
+Reading (the assistant's, 9:53 PM): D2 accepted as proposed; the photon proxy is the massless dirac4 excitation. At 9:53 PM I added two statements that Edmond did not make: that the "vector and tensor fields" wording is not carried to a separate open item, and that L1.5 may be closed on the proxy. Both are withdrawn as unconfirmed (see 10:14 PM below).
 
-Status of the other decisions in the design (D1b, D3 to D8): no answer yet.
-Design status: revised to r2 after D1. The first draft (sha256 eb166966c5ead6fe69966d3207b0282354b8b696095152f51a5c647a2880a1d1) was never approved and is superseded; the current hash is in the design folder's SHA256SUMS. Not approved to run.
+Edmond Ying, 10:14 PM, after checking with the Grok bot on the old notes (relayed; the Grok bot's message is quoted in the chat, not reproduced here). Recorded as decided or open, by item:
+  D2  CONFIRMED in part: the massless dirac4 stand-in (paper line 708: "Neither involves photons as vector fields"). The two 9:53 PM additions are UNCONFIRMED: new decision D2b (does the vector/tensor wording stay open) and D4/D5 (what a PASS closes).
+  D3  ACCEPTED: E/E_P = kappa (s = 1). Verified in dry-run F: single-handed [111] xi1 = 0.192450 = 1/(3 sqrt 3), E_QG,1 = 2.598 E_P, slope 0.385, E_QG,2 ~ 1.8e19 GeV. Citation corrected: Test 3 is paper section 6.4 (line 704), not 7.8. The paper mixes conventions (lines 395/641: sqrt3 kappa; line 383: 2 kappa). The paper's "|xi2| <= 0.23" holds only for phi >= 1.275 (0.2615 at phi = 0.5).
+  D4  closure rule matches L1.3b and plan 0.6. What it closes now depends on D5.
+  D5  OPEN, conflict with plan v3.4 section 2 (B2) and paper line 704: the clock fixtures (moving clocks, massive walker) are not dropped. The design is L1.5a (light-speed, massless); L1.5b (clock fixtures, massive case) is undesigned. Edmond to choose (a), (b) or (c) in design D5.
+  D6  changed: S4 gate grid now separate from the pilot grid (plan line 93); P1 to P4 thresholds 1e-12 (P3 was 1e-14, 18x over round-off).
+  D7  changed: executing agent named (spacetime, Grok bot, bigbang); the S1 comparison with the frozen dirac4.py is labelled a consistency check, not independent (it agrees with the analytic construction exactly, 0.0).
+  D8  matches; the 7.8 citation fixed; candidate edit (iv) added (phi range of the 0.23 bound).
+
+Status of the other decisions (D1b, D2b, D4, D5): open. D6, D7, D8: the changes above are the assistant's response to the checks; Edmond's acceptance of the revised text is not yet recorded.
+Design status: r3. Earlier drafts r1 (sha256 eb166966c5ead6fe69966d3207b0282354b8b696095152f51a5c647a2880a1d1) and r2 (ec55d22c1cdc147cd72ab0bb568f61023c1ca09e678f31673bac37378953fc2d) were never approved and are superseded. Current hash of L1_5_RUN_DESIGN.md: 79ef28b5c2989644dbb883634619a84a3fa2e70bf491543a2177d020ff4a1554. Not approved to run.
