@@ -1,0 +1,1 @@
+The frozen/ subfolder (qca sources, frozen dirac4.py) is not published; only its hashes are, in SHA256SUMS and result.json. Every other file listed in SHA256SUMS is present and byte-identical.

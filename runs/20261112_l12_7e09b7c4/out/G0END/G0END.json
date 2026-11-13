@@ -1,0 +1,75 @@
+{
+ "hashes": {
+  "frozen/qca/dw.py": {
+   "expected": "769833f0393dc1599d5944f6a2837c6ff5ac207ce6ca169eaa2ba9b2ca5fd651",
+   "actual": "769833f0393dc1599d5944f6a2837c6ff5ac207ce6ca169eaa2ba9b2ca5fd651",
+   "ok": true
+  },
+  "frozen/qca/dirac4s.py": {
+   "expected": "4db41fe71ce2844f58f1c61c3c84a768b37b82de1bd546a468d3980c3f0627b4",
+   "actual": "4db41fe71ce2844f58f1c61c3c84a768b37b82de1bd546a468d3980c3f0627b4",
+   "ok": true
+  },
+  "frozen/qca/dirac4.py": {
+   "expected": "9f01ea8f10947eb6a30506e1499de22e373fc7e1a25fa2689e38c873e2b5aedd",
+   "actual": "9f01ea8f10947eb6a30506e1499de22e373fc7e1a25fa2689e38c873e2b5aedd",
+   "ok": true
+  },
+  "frozen/qca/sym.py": {
+   "expected": "7b1bbafd4b01464c8f4d4643582c60994f34ed3e119c4167625f2e5905131764",
+   "actual": "7b1bbafd4b01464c8f4d4643582c60994f34ed3e119c4167625f2e5905131764",
+   "ok": true
+  },
+  "frozen/qca/dw_gscan.py": {
+   "expected": "5bf6af5d089fd17dbe922f335855e9bf961dc731be4025b591e3e0ff16bf938e",
+   "actual": "5bf6af5d089fd17dbe922f335855e9bf961dc731be4025b591e3e0ff16bf938e",
+   "ok": true
+  },
+  "frozen/qca/dw_final.py": {
+   "expected": "48046ea5332a12322d05ec11a0ea733dc920e05b6f7948a5387904bb43fc6aa1",
+   "actual": "48046ea5332a12322d05ec11a0ea733dc920e05b6f7948a5387904bb43fc6aa1",
+   "ok": true
+  },
+  "frozen/qca/dirac4_checks.py": {
+   "expected": "4e316d9895f035966bb0aa269216dcc38c3986c50c5118907ab609af8e519c05",
+   "actual": "4e316d9895f035966bb0aa269216dcc38c3986c50c5118907ab609af8e519c05",
+   "ok": true
+  },
+  "frozen/f71c782e/dirac4.py": {
+   "expected": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "actual": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "ok": true
+  },
+  "design/L1_2_RUN_DESIGN.md": {
+   "expected": "7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b",
+   "actual": "7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b",
+   "ok": true
+  },
+  "inputs/PREREGISTRATION.md": {
+   "expected": "733752444dfdbaab68654e583b15fdc97619883224fc30357f8ecba998747239",
+   "actual": "733752444dfdbaab68654e583b15fdc97619883224fc30357f8ecba998747239",
+   "ok": true
+  },
+  "inputs/L1_2_DECISIONS.txt": {
+   "expected": "c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e",
+   "actual": "c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e",
+   "ok": true
+  },
+  "inputs/space-ledger-v2.md": {
+   "expected": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+   "actual": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+   "ok": true
+  },
+  "frozen/qca/dw_ring.py": {
+   "expected": "8cbd5eb07af30663f48331bb96964c446ddf6876b3de8dd6f1a4d7c551b2b43b",
+   "actual": "8cbd5eb07af30663f48331bb96964c446ddf6876b3de8dd6f1a4d7c551b2b43b",
+   "ok": true
+  },
+  "frozen/qca/dw_real.py": {
+   "expected": "276c5fdc225320ebddc8970602d03be73d56c16851cfcba04966b606e4e737f8",
+   "actual": "276c5fdc225320ebddc8970602d03be73d56c16851cfcba04966b606e4e737f8",
+   "ok": true
+  }
+ },
+ "all_ok": true
+}
