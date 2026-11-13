@@ -74,10 +74,20 @@ matching the extracted coefficients to 3e-19 (the limit of the 12-point fit), i.
 
 - It is about the massless `dirac4` excitation. The paper's photon is not a rule of this lattice model; §7.8 Test 3 uses the massless Dirac walker as the proxy, and so do I. A genuine vector or tensor field built on this rule is not defined and is not covered.
 - It is about equal Wilson angles, the canonical rule. The L1.3b observation of a linear term for φ⁺ ≠ φ⁻ is consistent with (I1) failing there, §6.
-- It does not use a load term. With a uniform load U₀ the paper's load-first rule rescales time, ω → e^{−U₀}ω, which multiplies c₀ and leaves the dimensionless coefficients ξ₁', ξ₂' unchanged. Load that varies in space is not part of the free spectrum.
+- Load is uniform only. Load that varies in space is not part of the free spectrum (L3). Uniform load is treated in §5a.
 - The O(κ⁵) branch splitting and the ξ₂' closed form are numerical.
 - Whether the E/E_P ↔ κ identification is right is the open ℓ_P item. The design reports the result in four conventions.
 - It says nothing about the OP4 rule. The 0.385κ leak and the "ℓ ≲ 0.26 ℓ_P" scale in the plan belong to the OP4 diagnostic branch and were not re-derived here.
+
+## 5a. Uniform load (congestion ON) [P for the symmetry, C for the numbers]
+
+Edmond's decision (D1, 9:47 PM) keeps congestion ON for L1.5. The paper gives no load term for `dirac4`, so two uniform-load implementations are declared in the design (§2): rule A, `U_A = U^g` (the paper's load-first rule as a uniform slowing of the cycle), and rule B, each of `S^±` and `V^±` replaced by its s-th power (OP4-style: all rotation angles scaled by s = (1+ℓ₀)^(−1/2)), with g = s.
+
+Both identities survive. For any function f of a matrix, T f(M) T = f(T M T) and Q f(M) Q⁻¹ = f(Q M Q⁻¹); the principal-branch power satisfies (M*)^g = (M^g)* because the eigenphases of M* are the negatives of those of M. So (I1) and (I2) hold for `U_A` and `U_B` with the same T X⁻¹ and Q (X and Y replaced by their loaded versions), provided no eigenphase of a factor crosses ±π, which the design's pre-flight P5 checks at the κ used. Hence ω̄ is odd in κ and the symmetry-forbidden linear term vanishes under both rules, at every load.
+
+Numbers (dry-run E, 50 digits, 6 φ × 26 signed directions, ℓ₀ = 0.5 and 2): `|ξ₁'| ≤ 4.5e-22` and `|a₃/a₀| ≤ 1.1e-16` in all four conditions; `a₀ = s c₀` to 2.4e-25. Rule A: ξ₂' is exactly the unloaded closed form (1.5e-17), because U^g = e^{−4igH}. Rule B: ξ₂' changes by up to 0.0058 (ℓ₀ = 0.5) and 0.0116 (ℓ₀ = 2) and the maximum |ξ₂'| over φ and direction drops to 0.2557 and 0.2499. The cubic-harmonic form still holds by symmetry; the closed form for ξ₂' under rule B is not known.
+
+What this does not say: that these two rules are the paper's loaded `dirac4`. They are the two uniform-load rules the plan's §0.4 symbols suggest, applied to a symbol that has no load term; this is decision D1b.
 
 ## 6. Contrast: two Wilson angles
 

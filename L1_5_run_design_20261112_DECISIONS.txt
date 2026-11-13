@@ -1,0 +1,9 @@
+Decisions sidecar for L1_5_run_design_20261112 (outside the hashed folder). Times America/New_York.
+
+Edmond Ying, 9:47 PM, verbatim (answer to D1, load rule):
+  "D1, L1.5 congestion is on"
+
+Reading (the assistant's): L1.5 does not take the B3 carve-out. It keeps congestion ON (plan v3.4 section 0.1 rule 1, unchanged). The paper defines no load term for dirac4, so the design declares two uniform-load implementations, A and B (design section 2 and decision D1b), and requires every gated number to hold under both, at two load levels. The unloaded symbol is a labelled diagnostic only and counts toward no gate.
+
+Status of the other decisions in the design (D2 to D8): no answer yet.
+Design status: revised to r2 after D1. The first draft (sha256 eb166966c5ead6fe69966d3207b0282354b8b696095152f51a5c647a2880a1d1) was never approved and is superseded; the current hash is in the design folder's SHA256SUMS. Not approved to run.

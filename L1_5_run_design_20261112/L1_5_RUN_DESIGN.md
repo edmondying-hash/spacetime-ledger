@@ -1,6 +1,6 @@
 # L1.5 design: the linear-term test on the canonical rule `dirac4` (one BCC orbit, massless excitation)
 
-Quantized Space-Ledger. Draft of 12 November 2026 (America/New_York), for Edmond Ying's approval. **This document is a design. It runs nothing for any gate, and it edits no paper, plan, Sheet or archived record.** Nothing in it is approved until Edmond approves its sha256 (§9). Plan: `layered_plan_v3.4.md` (signed off 8:38 PM, 2026-11-12), §3 L1.5. The hand derivation that precedes it, as the plan asks, is `L1_5_DERIVATION.md` in this folder.
+Quantized Space-Ledger. Draft of 12 November 2026 (America/New_York), revision r2 (after Edmond's answer to D1 at 9:47 PM: congestion is ON), for Edmond Ying's approval. The first draft (sha256 `eb166966…`) was never approved and is superseded. **This document is a design. It runs nothing for any gate, and it edits no paper, plan, Sheet or archived record.** Nothing in it is approved until Edmond approves its sha256 (§9). Plan: `layered_plan_v3.4.md` (signed off 8:38 PM, 2026-11-12), §3 L1.5. The hand derivation that precedes it, as the plan asks, is `L1_5_DERIVATION.md` in this folder.
 
 ## 0. What this replaces and what it is
 
@@ -22,11 +22,15 @@ From `L1_5_DERIVATION.md` (proof marks as there: [P] proved by hand and machine-
 
 - **Rule and lattice.** `dirac4`, canonical, equal Wilson angle φ on both Wilson layers, one BCC orbit, integer hops, k in radians per a/2 (`κ = |k|`), 2π-periodic. **m = 0.**
 - **Field.** The massless `dirac4` excitation, as the proxy for the photon, exactly as the paper's §7.8 Test 3 uses the massless Dirac walker (decision D2). No vector or tensor field is built.
-- **Load rule.** None, the §6.2 vacuum symbol (decision D1). Plan §0.1 rule 1 says L1.5 declares its own load rule and keeps congestion ON; D1 asks Edmond to extend the B3 carve-out to this run.
+- **Load rule: congestion ON (Edmond, D1, 9:47 PM).** L1.5 does not take the B3 carve-out. The paper defines no load term for the §6.2 symbol, so this design **declares** two uniform-load implementations and requires every gated number to hold under both, each at two load levels (decision D1b). Plan §0.1 rule 1 lets a run declare its own load rule; the unloaded symbol is a labelled diagnostic (OFF) and counts toward no gate.
+  - **Rule A (paper load-first, uniform clock potential U₀).** The whole cycle is slowed: `U_A = U^g`, `g = f² = e^{−2U₀}` (the paper's per-link light cost 1/f²), with `g` set equal to `s` below for comparability, `U₀ = −½ ln s`.
+  - **Rule B (OP4-style, uniform node load ℓ₀).** `s = (1 + ℓ₀)^(−1/2)`; bond angle ∝ √sᵢ√sⱼ and on-site clock phase ∝ s both become s for uniform load, so every rotation angle is scaled by s: each of `S⁺, V⁺, S⁻, V⁻` is replaced by its s-th power (principal branch), `U_B = (V⁻)ˢ (S⁻)ˢ (V⁺)ˢ (S⁺)ˢ`.
+  - **Levels.** ℓ₀ ∈ {0.5, 2.0}, i.e. s = 0.8165 and 0.5774, for each rule: four ON conditions A.5, A2, B.5, B2. s = 1 is the unloaded diagnostic.
+  - Both rules reduce to the unloaded cycle at s = 1. The rule symbols ℓ₀, s (OP4) and U₀, f (paper) are the §0.4 symbols; each rule is used with its own symbols and they are not mixed within a condition. The numerical link s = g between the two rules is a choice for comparability, not a bridge claimed by the paper.
 - **Whole ticks.** The cycle eigenvalue and the whole-cycle hop evolution only; no sub-tick interpolation.
 - **Energy convention (D3).** ω = c₀κ(1 + ξ₁'κ + ξ₂'κ² + …) with E/E_P = s κ, s = 1 as the verdict convention. With s = 1 this design's numbers reproduce the paper's Test 3 figures (`|ξ₂| ≤ 0.23`, E_QG,2 ≳ 1.8×10¹⁹ GeV). Results are also reported for s ∈ {√3, 2, 4}. E_P = 1.22×10¹⁹ GeV. The ℓ_P identification stays an open paper item.
 - **No fitting to targets.** φ is scanned, not chosen. Verdict rules are fixed and hashed before the first comparison.
-- **Out of scope.** Massive case, L1.4, vector/tensor fields, unequal Wilson angles (record only, S5), the OP4 rule, clock fixtures, any space-dependent load.
+- **Out of scope.** Massive case, L1.4, vector/tensor fields, unequal Wilson angles (record only, S5), the OP4 rule itself, clock fixtures, any space-dependent load. Uniform load only; a gravitational or otherwise varying load belongs to L3.
 
 ## 3. Pre-flight (stop on any failure)
 
@@ -37,41 +41,43 @@ From `L1_5_DERIVATION.md` (proof marks as there: [P] proved by hand and machine-
 | P2 | The two identities of §1 (I1 and I2 of the derivation) at 200 random (k, φ), both ε | residual `> 1e-13` (dry-run 4.5e-16) |
 | P3 | `mpmath` importable at 50 digits (dry-run: mpmath 1.3.0, numpy 1.26.4, Python 3.12.3); `U` built in mp from the §6.2 symbols agrees with the double-precision build at 20 random k to `1e-14` (dry-run 5.6e-16) | not importable, or residual `> 1e-14` (no silent fallback to double precision) |
 | P4 | The real-space hop weights of §4 S4 reproduce the Bloch symbols `A^ε`, `A^ε†`, `X^ε` at 20 random k | residual `> 1e-13` |
+| P5 | Load conditions: at s = 1 both rules equal the unloaded `U` (residual `≤ 1e-30` at 50 digits at 5 random k); at the four ON conditions `U_A` and `U_B` are unitary (`≤ 1e-30`) and the principal-branch logarithm of every factor has all eigenphase magnitudes `< π − 0.5` at every κ used (so no branch is crossed) | any failure |
 
 ## 4. Steps, measurement and verdict rules
 
-Grids: φ ∈ {0.5, 0.8, 1.0, 1.2, 1.4, 1.5} (the paper's table values with the doubler gap; φ = π/2 excluded because the doublers return); 13 directions (the 3 `[100]`, 6 `[110]`, 4 `[111]` classes: (1,0,0), (0,1,0), (0,0,1), (1,1,0), (1,−1,0), (1,0,1), (1,0,−1), (0,1,1), (0,1,−1), (1,1,1), (1,1,−1), (1,−1,1), (−1,1,1)), each also with n̂ → −n̂ (26 signed directions, including [11−1] and its reverse).
+Grids: φ ∈ {0.5, 0.8, 1.0, 1.2, 1.4, 1.5} (the paper's table values with the doubler gap; φ = π/2 excluded because the doublers return); 13 directions (the 3 `[100]`, 6 `[110]`, 4 `[111]` classes: (1,0,0), (0,1,0), (0,0,1), (1,1,0), (1,−1,0), (1,0,1), (1,0,−1), (0,1,1), (0,1,−1), (1,1,1), (1,1,−1), (1,−1,1), (−1,1,1)), each also with n̂ → −n̂ (26 signed directions, including [11−1] and its reverse). **Every step below is evaluated under each of the four ON conditions A.5, A2, B.5, B2**; the unloaded s = 1 case is evaluated as a labelled diagnostic (OFF) and is excluded from all gates.
 
 ### S1. The symmetry, numerically (gate G1)
 
-For each φ, signed direction and `κ ∈ {0.05, 0.1, 0.2, 0.4}` (so that |θ| stays well below π): the four eigenphases of `U(κ n̂)` against those of `U(−κ n̂)`, sorted; and `θ_j + θ_{5−j}` for each. **G1 passes** iff both are `≤ 1e-12` everywhere (dry-run sample over the full grid: 6.7e-16 and 6.1e-16). As a labelled cross-check the same is evaluated through the frozen `U_cycle` (expected exact agreement of arithmetic, as in L1.3b).
+For each ON condition, φ, signed direction and `κ ∈ {0.05, 0.1, 0.2, 0.4}` (so that |θ| stays well below π): the four eigenphases of `U(κ n̂)` against those of `U(−κ n̂)`, sorted; and `θ_j + θ_{5−j}` for each. **G1 passes** iff both are `≤ 1e-12` everywhere (dry-run sample over the full grid: 6.7e-16 and 6.1e-16). As a labelled cross-check the same is evaluated through the frozen `U_cycle` (expected exact agreement of arithmetic, as in L1.3b).
 
 ### S2. Expansion at 50 digits (gate G2 and checks)
 
 For each φ and signed direction, with `κ_j = j/500`, `j = 1…12`: ω̄(κ_j) = (|θ|₍₂₎ + |θ|₍₄₎)/8, where |θ|₍₁₎ ≤ … ≤ |θ|₍₄₎ are the four sorted eigenphase magnitudes (they come in equal pairs, so this is the mean of the two lowest positive per-layer frequencies), `ω̄/κ` interpolated exactly by a polynomial in κ with all 12 powers: `ω̄/κ = a₀ + a₁κ + a₂κ² + a₃κ³ + …`. `ξ₁' = a₁/a₀`, `ξ₂' = a₂/a₀`.
 
-- **G2 passes** iff `|ξ₁'| ≤ 1e-12` and `|a₃|/a₀ ≤ 1e-12` for every φ and signed direction. (Dry-run: 5e-22 and 1e-17. These are the derivation's exact-zero claims [P]; 1e-12 sits far above the fit's truncation error and far below any physical size.)
-- **Check T1 [F]:** `|a₀ − ½√(1 + 3 sin²φ)| ≤ 1e-12` (dry-run 3e-25).
-- **Check T2 [F], pre-registered prediction:** `|ξ₂'(n̂, φ) − [−(1 − q)/3 − (3/8) sin²φ cos²φ/(1 + 3 sin²φ)]| ≤ 1e-12` at the 13 directions for each φ, and the same value at −n̂ (dry-run 3e-19).
-- **Check T3 [F], pre-registered prediction:** `ξ₂'(100) − ξ₂'(111) = 2/9` to `1e-12` for every φ.
-- T1 to T3 are recorded as passed or failed. A failure does not change the verdict (the physical gate is G3), but a failure of T2 or T3 means the closed form may not be quoted anywhere.
+- **G2 passes** iff `|ξ₁'| ≤ 1e-12` and `|a₃|/a₀ ≤ 1e-12` for every ON condition, φ and signed direction. (Dry-run E: 4.5e-22 and 1.1e-16 over all four conditions. These are the derivation's exact-zero claims [P], extended to uniform load in the derivation §5; 1e-12 sits far above the fit's truncation error and far below any physical size.)
+- **Check T1 [F]:** `|a₀ − s·½√(1 + 3 sin²φ)| ≤ 1e-12` (dry-run 2.4e-25; s = 1 for the unloaded diagnostic).
+- **Check T2 [F], pre-registered prediction, rule A and the unloaded diagnostic:** `|ξ₂'(n̂, φ) − [−(1 − q)/3 − (3/8) sin²φ cos²φ/(1 + 3 sin²φ)]| ≤ 1e-12` at the 13 directions for each φ, and the same value at −n̂ (dry-run 1.5e-17: rule A multiplies ω by g and leaves ξ₂' unchanged).
+- **Check T3 [F], pre-registered prediction, rule A and the unloaded diagnostic:** `ξ₂'(100) − ξ₂'(111) = 2/9` to `1e-12` for every φ.
+- **Rule B is not predicted.** ξ₂' under rule B differs from the unloaded closed form by up to 0.0058 (ℓ₀ = 0.5) and 0.0116 (ℓ₀ = 2); its values are recorded and compared with the pilot values in `dryrun/expected_pilot_load.json` as a replication (tolerance `1e-10`), not as a gate.
+- T1 to T3 and the rule B replication are recorded as passed or failed. A failure does not change the verdict (the physical gate is G3), but a failure of T2 or T3 means the closed form may not be quoted anywhere.
 
 ### S3. The physical gate (gate G3)
 
-With the measured ξ₁', ξ₂' per φ and direction, at s = 1: `E_QG,1 = E_P/(2|ξ₁'|)` and `E_QG,2 = E_P/√(2|ξ₂'|)` (the paper's Test 3 convention). **G3 passes** iff, for every φ and signed direction, `|ξ₁'| ≤ 0.05` (that is E_QG,1 ≥ 10 E_P, the LHAASO linear limit, stricter than Fermi's 7.6 and the conservative 1.2) and `E_QG,2 ≥ 6.9×10¹¹ GeV`. If `ξ₁'` is zero to the fit noise, E_QG,1 is reported as a lower bound `E_P/(2 × noise)`, not as infinity. The worst E_QG,2 over φ and direction is reported with the conversions s = √3, 2, 4. Dry-run: worst `|ξ₂'| = 0.2615` (φ = 0.5, [111]), E_QG,2 = 1.7×10¹⁹ GeV, a factor 2.4×10⁷ above the LHAASO limit; at φ = 1.4 `|ξ₂'| = 0.2249`.
+With the measured ξ₁', ξ₂' per ON condition, φ and direction, with the energy-convention factor (D3) at 1: `E_QG,1 = E_P/(2|ξ₁'|)` and `E_QG,2 = E_P/√(2|ξ₂'|)` (the paper's Test 3 convention). **G3 passes** iff, for every ON condition, φ and signed direction, `|ξ₁'| ≤ 0.05` (that is E_QG,1 ≥ 10 E_P, the LHAASO linear limit, stricter than Fermi's 7.6 and the conservative 1.2) and `E_QG,2 ≥ 6.9×10¹¹ GeV`. If `ξ₁'` is zero to the fit noise, E_QG,1 is reported as a lower bound `E_P/(2 × noise)`, not as infinity. The worst E_QG,2 over φ and direction is reported with the conversions s = √3, 2, 4. Dry-run E: worst `|ξ₂'|` over the ON conditions 0.2615 (rule A, φ = 0.5, [111]; rule B: 0.2557 and 0.2499), E_QG,2 = 1.7×10¹⁹ GeV, a factor 2.4×10⁷ above the LHAASO limit; at φ = 1.4 and rule A `|ξ₂'| = 0.2249`. Note that load enters E_QG only through ξ: the loaded speed `s c₀` is a time-scale, not a Lorentz violation.
 
 **Sky template.** The direction dependence is reported as the cubic-harmonic form `ξ₂'(n̂) = α(φ) + (1/3) q`, with α, and the axis-to-body-diagonal difference 2/9 (in κ units: speed difference 2/3 κ²; in (kℓ)² units 2/9). No direction-odd term is expected; the table lists `ξ₂'` and its n̂ → −n̂ partner for each direction.
 
-### S4. Real-space whole-tick check (gate G4)
+### S4. Real-space whole-tick check (labelled diagnostic, OFF; not in the verdict)
 
-An independent hop implementation, to confirm that the symbol is the evolution of a local rule and that k, direction and sign mean what the symbol says.
+An independent hop implementation, to confirm that the symbol is the evolution of a local rule and that k, direction and sign mean what the symbol says. **It runs on the unloaded symbol**, because the s-th powers of rule A and rule B are not finite-range hop operators (a fractional power of a hop operator has infinite range), so a local loaded evolution does not exist for these rules. Under plan §0.1 rule 1 it is therefore a diagnostic and gates nothing; it checks the code and conventions that S1 to S3 rely on, and its thresholds below are pass/fail for that purpose only.
 
 - **Rule in hop form (algebraic identities from the paper's `u`, `n`):** with the 8 hops `h = (±1, ±1, ±1)`, `u^ε = (1/8) Σ_h (1 − iε h_x h_y h_z) e^{ik·h}`, `n_x^ε = (1/8) Σ_h (−i h_x − ε h_y h_z) e^{ik·h}`, `n_y^ε = (1/8) Σ_h (−i h_y + ε h_x h_z) e^{ik·h}`, `n_z^ε = (1/8) Σ_h (−i h_z − ε h_x h_y) e^{ik·h}`. Then `(Oψ)(x) = Σ_h M_h ψ(x + h)` with `M_h` the 4×4 matrix of the same expression as the symbol (`A`, `A†`, or `X`). Layers applied in order `S⁺, V⁺, S⁻, V⁻`; `V = (cos φ − i sin φ X)(cos φ + i sin φ T)` applied as two operations.
 - **Cell.** Periodic cell of side 96 coordinates (coordinate = a/2) on the BCC sites (all coordinates of equal parity); zero on other sites.
 - **Packet.** Built in k-space: amplitude `exp(−|k − k₀|²σ²)` (σ = 9 coordinates in |ψ|²), `|k₀| = 0.6`, on the two lowest positive-frequency eigenvectors of `U(k)` at each grid k (the spinor at k₀ projected onto that two-dimensional space), phase `e^{−ik·x₀}` with x₀ the cell centre, inverse FFT, masked to the BCC sites, normalised. 3 cycles.
 - **Measurement.** Centroid velocity in coordinates per cycle, `(c₃ − c₀)/3`, with periodic minimum-image coordinates. Prediction: the weight-averaged band-resolved `∇_k(4ω_j)` over the packet's own k-grid weights (the same discrete sum as the state). Directions: (1,0,0), (−1,0,0), (1,1,1), (−1,−1,−1), (1,1,−1), (−1,−1,1), (1,1,0), (1,2,3); φ = 1.4.
-- **G4 passes** iff: (a) the plane-wave cycle in the hop form equals the symbol at one random k on a 16-cell to `1e-12` (dry-run 2.4e-15); (b) `| ‖ψ‖² − 1 | ≤ 1e-10` after 3 cycles (dry-run 1.3e-15); (c) `|v(n̂) + v(−n̂)|_∞ ≤ 3e-3` for the pairs ±[100] and ±[111] (dry-run 3.6e-4 and 1.8e-5); (d) `|v_measured − v_predicted|_∞ ≤ 5e-3` in all eight directions (dry-run worst 9.7e-4). Thresholds (c) and (d) are about 8 to 5 times the dry-run's worst value, set from that pilot and frozen when this file is hashed (plan §0.6, pilot-then-freeze); the pilot never counts toward a gate.
-- **What (c) means physically.** A linear coefficient ξ₁' would show as `v(n̂) + v(−n̂) ≈ 9 ξ₁'` at these parameters, so (c) is an independent bound `|ξ₁'| ≲ 3e-4` from the evolution itself.
+- **S4 is reported pass or fail on** (diagnostic): (a) the plane-wave cycle in the hop form equals the symbol at one random k on a 16-cell to `1e-12` (dry-run 2.4e-15); (b) `| ‖ψ‖² − 1 | ≤ 1e-10` after 3 cycles (dry-run 1.3e-15); (c) `|v(n̂) + v(−n̂)|_∞ ≤ 3e-3` for the pairs ±[100] and ±[111] (dry-run 3.6e-4 and 1.8e-5); (d) `|v_measured − v_predicted|_∞ ≤ 5e-3` in all eight directions (dry-run worst 9.7e-4). Thresholds (c) and (d) are about 8 to 5 times the dry-run's worst value, set from that pilot and frozen when this file is hashed (plan §0.6, pilot-then-freeze); the pilot never counts toward a gate.
+- **What (c) means.** A direction-odd linear coefficient ξ₁' would show as `v(n̂) + v(−n̂) ≈ 9 ξ₁'` at these parameters, so (c) is an independent bound `|ξ₁'| ≲ 3e-4` from the unloaded evolution. By rule 1 that bound does not count toward a gate. Because loaded versions of `U` are matrix functions of the same layers, a pass of S4 is evidence that the symbol is right; it does not replace S1 to S3.
 
 ### S5. Records (not in the verdict)
 
@@ -81,10 +87,10 @@ An independent hop implementation, to confirm that the symbol is the evolution o
 
 ### Verdict for L1.5 on `dirac4`
 
-- **PASS** iff P0 to P4, G1, G2, G3 and G4 all hold.
+- **PASS** iff P0 to P5, G1, G2 and G3 all hold, under every one of the four ON conditions.
 - **FAIL / OPEN** if any of them fails. A failed G2 (a nonzero linear coefficient above 1e-12 that the symmetry forbids) would mean a code error or a missing hypothesis in the derivation and must be diagnosed before anything is concluded; it is not a physical finding by itself.
-- T1 to T3, S5 and the cross-check are recorded evidence and do not decide pass or fail.
-- **What a PASS does.** It says: for the massless `dirac4` excitation at equal Wilson angles on one BCC orbit, the linear dispersion coefficient is zero to 1e-12 in every tested direction, the quadratic coefficient is the stated cubic-harmonic form with `|ξ₂'| ≤ 0.2615`, and E_QG,2 exceeds the LHAASO limit by 2.4×10⁷. Whether that closes L1.5 for the plan item (which says "vector and tensor fields") is Edmond's decision, taken after the run in a closure record (D2, D4).
+- T1 to T3, the rule B replication, S4, S5 and the cross-check are recorded evidence and do not decide pass or fail. An S4 failure means the code or conventions behind S1 to S3 must be diagnosed before the verdict is read.
+- **What a PASS does.** It says: for the massless `dirac4` excitation at equal Wilson angles on one BCC orbit, with congestion ON in the two declared uniform-load implementations, the linear dispersion coefficient is zero to 1e-12 in every tested direction, the quadratic coefficient is the stated cubic-harmonic form with `|ξ₂'| ≤ 0.2615`, and E_QG,2 exceeds the LHAASO limit by 2.4×10⁷. Whether that closes L1.5 for the plan item (which says "vector and tensor fields") is Edmond's decision, taken after the run in a closure record (D2, D4).
 - **Stop rule.** Stop on any failed pre-flight or failed gated step. Unrun steps are recorded "not run" and are not retried within this run.
 
 ## 5. Independence of the implementation
@@ -93,7 +99,7 @@ The executing agent writes its own measurement code from the §6.2 text of the p
 
 ## 6. Resource estimate and cap proposal (plan §0.2)
 
-Dry-run timings: A to C about 15 s together; B (50 digits, 6 φ × 26 signed directions × 12 κ, one 4×4 mp eigensolve each, 6.5 ms) about 11 s; D (8 directions, N = 96, about 8 s each) about 1 min. The real-space arrays are 4 × 96³ complex (57 MB each, a few live copies).
+Dry-run timings: A to C about 15 s together; B (50 digits, 6 φ × 26 signed directions × 12 κ, one 4×4 mp eigensolve each, 6.5 ms) about 11 s; E (the four ON conditions, same grid, matrix powers in mp) about 2 min; D (8 directions, N = 96, about 8 s each) about 1 min. The real-space arrays are 4 × 96³ complex (57 MB each, a few live copies).
 
 | Cap | Proposed ceiling |
 |---|---|
@@ -108,11 +114,12 @@ As with L1.2 and L1.3, the caps are soft ceilings with these hard rules.
 
 ## 7. What `result.json` must contain
 
-Code version (design hash, measurement-code hash, frozen-module hash, paper commit and sha256, Python/numpy/mpmath versions), seed (20261112), grid, boundary condition (periodic, one orbit; S4 on a periodic 96-cell), units (ω per layer; κ per a/2; E/E_P = sκ with s = 1; velocities in coordinates per cycle, coordinate = a/2), load rule ("none, §6.2 vacuum symbol"), caps and resource use per step, the full tables of `a₀, ξ₁', ξ₂'` per φ and signed direction, the G1 to G4 residuals against their thresholds, T1 to T3, S5, and the verdict. Any record-keeping read (a lookup of a cited value) must be exercised on the actual input file in pre-flight (plan §0.6).
+Code version (design hash, measurement-code hash, frozen-module hash, paper commit and sha256, Python/numpy/mpmath versions), seed (20261112), grid, boundary condition (periodic, one orbit; S4 on a periodic 96-cell), units (ω per layer; κ per a/2; E/E_P = sκ with s = 1; velocities in coordinates per cycle, coordinate = a/2), load rule ("congestion ON: uniform load, rule A or B, s = 0.8165 or 0.5774", per condition; the unloaded diagnostic labelled OFF), caps and resource use per step, the full tables of `a₀, ξ₁', ξ₂'` per φ and signed direction, the G1 to G3 residuals against their thresholds and the S4 diagnostic values, T1 to T3, S5, and the verdict. Any record-keeping read (a lookup of a cited value) must be exercised on the actual input file in pre-flight (plan §0.6).
 
 ## 8. Decisions for Edmond
 
-- **D1: load rule.** Proposed: "none, §6.2 vacuum symbol", extending B3 from L1.1–L1.3 to this run. Reason: `dirac4` has no load term, and a uniform load U₀ rescales ω → e^{−U₀}ω, which changes c₀ and leaves ξ₁', ξ₂' unchanged. Plan §0.1 rule 1 currently says L1.5 keeps congestion ON and declares its own load rule; this is that declaration. Alternative: say which uniform-load rule should be implemented instead.
+- **D1: load rule. DECIDED by Edmond (9:47 PM): "D1, L1.5 congestion is on."** L1.5 keeps congestion ON; no B3 carve-out. Recorded in `L1_5_run_design_20261112_DECISIONS.txt`.
+- **D1b: which loaded rule (new, follows from D1).** The paper gives no load term for `dirac4`. Proposed: both rules of §2, A (paper load-first, uniform clock potential, `U^g`) and B (OP4-style, every rotation angle scaled by s), each at ℓ₀ = 0.5 and 2.0, all four required to pass. What the dry-run found (dry-run E, 50 digits): the symmetry argument extends to uniform load, so ξ₁' stays zero (≤ 4.5e-22) under both rules; rule A rescales ω by g and leaves ξ₂' unchanged; rule B changes ξ₂' by up to 0.012 and leaves the maximum |ξ₂'| at 0.2557 and 0.2499 (below the unloaded 0.2615). Say whether you want only one of the rules, other load levels, or a different loaded `dirac4` altogether (for example the loaded form of the paper's 1D zigzag weights `f = e^{−U}` applied to the Wilson layers). The loaded forms used here are not finite-range hop operators, which is why S4 stays on the unloaded symbol (§4).
 - **D2: what "photon-like" means.** Proposed: the massless `dirac4` excitation, as in paper §7.8 Test 3. No vector or tensor field is defined by the paper's rule. Consequence: a PASS speaks for the massless Dirac proxy only. Say whether that closes L1.5, or whether the "vector and tensor fields" part of the item is carried to a separate open item.
 - **D3: energy convention.** Proposed s = 1 for the verdict (E/E_P = κ), the convention in which the paper's own Test 3 numbers come out; the other conventions are reported. Accept or give another.
 - **D4: closure rule.** As for L1.3: a PASS lets Edmond record L1.5 closed (or closed for the proxy, per D2) in a closure record, after the run. Confirm.
@@ -123,20 +130,21 @@ Code version (design hash, measurement-code hash, frozen-module hash, paper comm
 
 ## 9. Approval and freezing
 
-1. A one-line approval naming the sha256 of this file (see `SHA256SUMS` beside it) is the approval required by plan §0.2 for steps S1 to S5, under §6. Decisions D1 to D8 take their proposed values unless Edmond says otherwise; they are recorded in a sidecar outside the hashed folder.
+1. A one-line approval naming the sha256 of this file (see `SHA256SUMS` beside it) is the approval required by plan §0.2 for steps S1 to S5, under §6. Decisions D1b to D8 take their proposed values unless Edmond says otherwise (D1 is answered); they are recorded in a sidecar outside the hashed folder.
 2. The executing agent copies this file unchanged into the run directory, hashes it, and writes `expected.json` (the closed forms of §4 and the paper's table values) before any computation.
-3. Steps: **S0** pre-flight P0 to P4 and the resource timing; **S1**; **S2**; **S3**; **S4**; **S5** and `result.json`.
+3. Steps: **S0** pre-flight P0 to P5 and the resource timing; **S1**; **S2**; **S3**; **S4**; **S5** and `result.json`.
 4. Nothing is authorised beyond S0 to S5. No paper, plan, repo or archived-record edit is authorised by this design.
 
 ## 10. Dry-run (unscored; nothing in it counts toward a gate)
 
-`dryrun/` holds four scripts and their outputs, and the shared library; `L1_5_DERIVATION.md` §3 to §6 quote them.
+`dryrun/` holds five scripts and their outputs, and the shared library; `L1_5_DERIVATION.md` §3 to §6 quote them.
 
 | Script | What it shows | Headline numbers |
 |---|---|---|
 | `dryrun_A_identities.py` | identities I1 and I2, spectra, the unequal-angle contrast, frozen module against the analytic construction | 4.5e-16 and 1.3e-15; frozen vs analytic exactly 0.0; unequal angles 0.66 and 0.086 |
 | `dryrun_B_mp_expansion.py` | 50-digit expansion, 6 φ × 26 signed directions | `|ξ₁'|` ≤ 4.5e-22; `|a₀ − c₀|` ≤ 2.9e-25; ξ₂' closed form to 3e-19; axis−body = 2/9; splitting exponent 5.0 |
 | `dryrun_C_h2_block.py` | effective-Hamiltonian block at O(κ²) | max 2.9e-15 |
+| `dryrun_E_load.py` | congestion ON: rules A and B at ℓ₀ = 0.5 and 2.0, 50 digits | `|ξ₁'|` ≤ 4.5e-22 in all four; `a₀ = s c₀` to 2.4e-25; rule A ξ₂' unchanged (1.5e-17); rule B ξ₂' shifts by ≤ 0.0116, max `|ξ₂'|` 0.2557 / 0.2499 |
 | `dryrun_D_realspace.py` | hop-form whole-tick, packet velocities | plane wave 2.4e-15; norm 1.3e-15; odd test 3.6e-4, 1.8e-5; vs prediction ≤ 9.7e-4 |
 
-`expected_pilot.json` stores the pilot `c₀`, `α(φ)` and `ξ₂'` values at 20 digits. Environment: Python 3.12.3, numpy 1.26.4, mpmath 1.3.0, one thread.
+`expected_pilot.json` stores the pilot unloaded `c₀`, `α(φ)` and `ξ₂'` values at 20 digits; `expected_pilot_load.json` the ξ₂' values of the four ON conditions. Environment: Python 3.12.3, numpy 1.26.4, mpmath 1.3.0, one thread.
