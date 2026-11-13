@@ -12,3 +12,24 @@ Recorded as:
 
 NOT yet approved: running L1.3b. A run needs a one-line approval naming the sha256 above (design section 9).
 Open decisions D1 to D5 are in design section 8.
+
+----
+APPROVAL TO RUN (added 2026-11-12, 8:12 PM America/New_York)
+
+Edmond Ying, 8:12 PM, verbatim:
+  "L1.3b approved"
+
+Recorded as: approval of the design file above, sha256
+dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d
+(verified unchanged at the time of recording), for steps S0 to S3 under design section 6.
+
+Note on the wording: the approval does not quote the hash. The assistant took it to refer to the only L1.3b
+design, and to accept the defaults proposed in design section 8, which are therefore recorded as:
+  D1  runner: the Grok bot on bigbang.
+  D2  tolerance: 1e-6 absolute on v0, unchanged.
+  D3  the disclosed order of events (kappa set, degree-4 extrapolation and R2c replications chosen after an
+      unscored diagnostic; closed form not adjusted to data): accepted.
+  D4  closure rule: a PASS lets Edmond record L1.3 closed on L1.3b, with the original R2 failure kept; the
+      closure itself remains Edmond's decision after the run.
+  D5  paper: no paper edit is authorised by this approval.
+If any of these is not what Edmond meant, he should say so before the run reads its results.
