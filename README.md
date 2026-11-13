@@ -64,7 +64,7 @@ LEFT illustrates established GR geometric lensing. It is not a newly integrated 
 
 **One BCC orbit (2026-11-12).** The paper uses one BCC orbit of the integer grid. The twelve edge labels such as (±π,±π,0) are Γ images, and the sum-form Wilson repair is withdrawn ([reason note](L1_1_one_bcc_reason_r2_20261112/)). Under this choice r8 is no longer the required L1.1 path for `dirac4`; nothing in r8 is withdrawn.
 
-**Layer 1 runs.** L1.2: results in [PR #5](https://github.com/edmondying-hash/spacetime-ledger/pull/5); closed 2026-11-12; the closure record and the "from b ≈ 0.35" wording are in [PR #6](https://github.com/edmondying-hash/spacetime-ledger/pull/6) (not merged). L1.3: results in [PR #8](https://github.com/edmondying-hash/spacetime-ledger/pull/8), FAIL / OPEN (R1 passed, R2 failed, S3 not run); the corrected L1.3b design is in [PR #10](https://github.com/edmondying-hash/spacetime-ledger/pull/10) and is not approved to run.
+**Layer 1 runs.** L1.1: closed 2026-11-12 (one BCC orbit; the official V5 v2 census is accepted as the census, no re-run). L1.2: results in [PR #5](https://github.com/edmondying-hash/spacetime-ledger/pull/5); closed 2026-11-12; the closure record and the "from b ≈ 0.35" wording are in [PR #6](https://github.com/edmondying-hash/spacetime-ledger/pull/6) (not merged). L1.3: results in [PR #8](https://github.com/edmondying-hash/spacetime-ledger/pull/8), FAIL / OPEN (R1 passed, R2 failed, S3 not run); the corrected L1.3b design is in [PR #10](https://github.com/edmondying-hash/spacetime-ledger/pull/10) and is not approved to run.
 
 **Status.** Every claim is framed as a hypothesis. The paper reports its simulation tests (passes, partials and failures) and lists the open problems it hasn't solved.
 
