@@ -1,0 +1,86 @@
+{
+  "N": {
+    "mass_MeV": 544.6541666666667,
+    "avg_ticks": 544.6541666666667,
+    "bare_ticks": 12.0,
+    "route_ticks": 539.4966666666667,
+    "spin_ticks": -6.8425,
+    "redraws_per_cycle": 0.6465,
+    "active_load_pct": 97.79676706166758
+  },
+  "Delta": {
+    "mass_MeV": 552.2575,
+    "avg_ticks": 552.2575,
+    "bare_ticks": 12.0,
+    "route_ticks": 533.8175,
+    "spin_ticks": 6.44,
+    "redraws_per_cycle": 0.6623333333333333,
+    "active_load_pct": 97.82710058260867
+  },
+  "Lambda": {
+    "mass_MeV": 631.7525,
+    "avg_ticks": 631.7525,
+    "bare_ticks": 103.0,
+    "route_ticks": 534.905,
+    "spin_ticks": -6.1525,
+    "redraws_per_cycle": 0.5658333333333333,
+    "active_load_pct": 83.69614682965243
+  },
+  "Sigma": {
+    "mass_MeV": 637.0721666666667,
+    "avg_ticks": 637.0721666666667,
+    "bare_ticks": 103.0,
+    "route_ticks": 537.3458333333333,
+    "spin_ticks": -3.2736666666666667,
+    "redraws_per_cycle": 0.5678333333333333,
+    "active_load_pct": 83.83228692301473
+  },
+  "Xi": {
+    "mass_MeV": 721.4898333333333,
+    "avg_ticks": 721.4898333333333,
+    "bare_ticks": 194.0,
+    "route_ticks": 531.9325,
+    "spin_ticks": -4.442666666666667,
+    "redraws_per_cycle": 0.49866666666666665,
+    "active_load_pct": 73.111194221032
+  },
+  "SigmaStar": {
+    "mass_MeV": 643.9216666666666,
+    "avg_ticks": 643.9216666666666,
+    "bare_ticks": 103.0,
+    "route_ticks": 535.8233333333334,
+    "spin_ticks": 5.098333333333334,
+    "redraws_per_cycle": 0.5703333333333334,
+    "active_load_pct": 84.00426552919221
+  },
+  "XiStar": {
+    "mass_MeV": 731.9551666666666,
+    "avg_ticks": 731.9551666666666,
+    "bare_ticks": 194.0,
+    "route_ticks": 534.3491666666666,
+    "spin_ticks": 3.606,
+    "redraws_per_cycle": 0.49183333333333334,
+    "active_load_pct": 73.49564442813096
+  },
+  "Omega": {
+    "mass_MeV": 821.2253333333333,
+    "avg_ticks": 821.2253333333333,
+    "bare_ticks": 285.0,
+    "route_ticks": 534.0591666666667,
+    "spin_ticks": 2.166166666666667,
+    "redraws_per_cycle": 0.40066666666666667,
+    "active_load_pct": 65.29576129328694
+  },
+  "_inputs": {
+    "ticks_bare_l": 4,
+    "ticks_bare_s": 95,
+    "mev_per_tick_in_code": 1.0
+  },
+  "_pdg": {
+    "p": 938.27208816,
+    "Lambda": 1115.683,
+    "Omega-": 1672.45,
+    "calc_model_p": 938.91875433,
+    "calc_model_Omega-": 1681.887777988625
+  }
+}
