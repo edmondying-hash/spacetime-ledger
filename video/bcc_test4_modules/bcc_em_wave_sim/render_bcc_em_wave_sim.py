@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Explainer video for bcc_em_wave_sim.py (module imported unchanged; the dipole
+"""v2_sound (v4 suite, synthesized SFX): explainer video for bcc_em_wave_sim.py (module imported unchanged; the dipole
 solver is copied only to keep its potential V for display, and asserted to
 reproduce the module's printed residuals)."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import numpy as np
 import bcc_em_wave_sim as em
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
+OUT = "/workspace/bcc_test4_videos/v2_sound/bcc_em_wave_sim"
 
 class KeepV(em.BCCMaxwellGrid):
     def place_dipole_charges(self, pos_plus, pos_minus, q_mag=10.0, iterations=300):
@@ -62,7 +62,7 @@ PR_U = [0.107, 0.477, 0.077, 0.229, 0.056, 0.734, 0.069, 0.978, 0.069, 0.734, 0.
 PR_O = [0.461, 0.273, 1.000, 0.332, 0.470, 0.251, 0.229, 0.262, 0.183, 0.348, 0.121, 0.439, 0.112, 0.413, 0.085]
 assert [round(x, 3) for x in IU] == PR_U and [round(x, 3) for x in IO] == PR_O
 
-v = Video(OUT, "bcc_em_wave_sim", "bcc_test4 · bcc_em_wave_sim.py",
+v = Video(OUT, "_silent", "bcc_test4 · bcc_em_wave_sim.py",
           "Toy model on an 8-neighbour BCC grid · numbers from the actual run of bcc_em_wave_sim.py")
 v.add(4, title_card("Grid electromagnetism", "Gauss's law check · double slit with a which-slit sensor"))
 
@@ -135,5 +135,13 @@ v.add(7, end_card([("Gauss residual 3.61e-16 → 9.16e-16 after hops", GREEN),
                    ("Not a clean single-slit envelope; toy wave rule", DIM),
                    ("Does not show Maxwell's equations emerge", DIM)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    return {"total": v.duration, "scenes": sc, "title": [0, a[1]],
+            "residuals": [a[1] + 1.5 + 1.2 * i for i in range(3)], "built_in": a[1] + 8.5,
+            "slit": [a[2], a[2] + 13], "sensor": a[2] + 5.0, "screen_sum": a[2] + 9.0,
+            "screen_bars": [a[3] + 0.4, a[3] + 1.9], "end": a[4]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 13 + 9))
+    finish(v, "bcc_em_wave_sim", timeline(), os.path.join(OUT, "sfx_bcc_em_wave_sim.py"),
+           thumb_t=4 + 13 + 9, audio_only="--audio-only" in sys.argv)

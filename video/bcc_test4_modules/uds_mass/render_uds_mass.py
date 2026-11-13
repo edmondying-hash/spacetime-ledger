@@ -1,31 +1,32 @@
 #!/usr/bin/env python3
-"""YouTube version of Edmond's animate_uds_mass.py (his script is not modified).
+"""v2_sound: YouTube version of Edmond's animate_uds_mass.py on the v4 (6-face) suite (his script is not modified).
 
 Numbers: the unrounded Lambda / N / Omega tick values come from running
-bcc_unified_sim.py unchanged (grid_values.py -> grid_values.json). The only
+the v4 bcc_unified_sim.py unchanged (grid_values.py -> grid_values.json). The only
 MeV conversion is ONE scale calibrated so the grid Lambda total equals PDG
-Lambda0 (1115.683 MeV, the value baryon_calculator.py uses). The code itself
-uses mev_per_tick = 1.0. Quark hop motion is illustrative (seeded random), like his.
+Lambda0 (1115.683 MeV, the value baryon_calculator.py uses). The v4 code sets no
+MeV scale for baryons (its glueball printout labels ticks as MeV 1:1). Quark hop motion is illustrative (seeded random), like his.
 
 Pipeline: render silent video -> sfx_uds_mass.py builds the wav from events.json
 -> ffmpeg muxes AAC audio normalised to about -16 LUFS.
 """
 import sys, json, math, subprocess, os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import numpy as np
 from matplotlib.patches import Patch
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/uds_mass
+OUT = "/workspace/bcc_test4_videos/v2_sound/uds_mass"
 G = json.load(open(os.path.join(OUT, "grid_values.json")))
 LAM, NUC, OME = G['Lambda'], G['N'], G['Omega']
 PDG_L = G['_pdg']['Lambda']; PDG_P = G['_pdg']['p']; PDG_O = G['_pdg']['Omega-']
-BARE, ROUTE, SPIN, TOT = LAM['bare_ticks'], LAM['route_ticks'], LAM['spin_ticks'], LAM['mass_MeV']
+BARE, ROUTE, SPIN, TOT = LAM['BareT'], LAM['RouteT'], LAM['SpinT'], LAM['GridMass']
 SCALE = PDG_L / TOT                     # MeV per tick, calibrated to PDG Lambda0
 # sanity vs printed bcc_unified_sim output
-assert (round(BARE, 1), round(ROUTE, 1), round(SPIN, 1), round(TOT, 2)) == (103.0, 534.9, -6.2, 631.75)
-assert (round(NUC['mass_MeV'], 2), round(OME['mass_MeV'], 2), NUC['bare_ticks'], OME['bare_ticks']) == (544.65, 821.23, 12.0, 285.0)
-assert G['_inputs']['ticks_bare_l'] == 4 and G['_inputs']['ticks_bare_s'] == 95
+assert (round(BARE, 1), round(ROUTE, 1), round(SPIN, 1), round(TOT, 2)) == (103.0, 716.9, -5.1, 814.80)
+assert (NUC['GridMass'], OME['GridMass'], NUC['BareT'], OME['BareT']) == (720.94, 1006.39, 12.0, 285.0)
+for d in (NUC, LAM, OME):
+    d['mass_MeV'], d['bare_ticks'], d['route_ticks'] = d['GridMass'], d['BareT'], d['RouteT']
 
 # ---------------- timeline (seconds) ----------------
 T_TITLE, T_A1, T_A2, T_A3, T_END = 4.0, 9.0, 17.0, 12.0, 6.0
@@ -102,10 +103,10 @@ def draw_meter(fig, m):
     if r > 0:
         ax.bar(0, r + s, bottom=BARE, width=0.6, color=VIOLET, alpha=0.9)   # net top = total ticks
         ax.bar(0, -s, bottom=BARE + r + s, width=0.6, fill=False, edgecolor=GREEN, hatch="///", lw=1.5)  # spin pair removes this
-    ax.set_xlim(-0.5, 0.5); ax.set_ylim(0, 700); ax.set_xticks([]); ax.set_ylabel("grid ticks per cycle", fontsize=16)
+    ax.set_xlim(-0.5, 0.5); ax.set_ylim(0, 900); ax.set_xticks([]); ax.set_ylabel("grid ticks per cycle", fontsize=16)
     ax.set_title("Λ⁰ (uds)", fontsize=20, color=FG)
     ax.legend(handles=[Patch(color=RED, label=f"bare  {BARE:.1f}"), Patch(color=VIOLET, label=f"gluon routing  +{ROUTE:.1f}"),
-                       Patch(fill=False, edgecolor=GREEN, hatch="///", label=f"spin pair  {SPIN:.1f}")],
+                       Patch(fill=False, edgecolor=GREEN, hatch="///", label=f"spin term  {SPIN:.1f}")],
               loc="upper left", bbox_to_anchor=(1.05, 1.0), frameon=False, fontsize=15)
 
 def draw_readout(fig, m, landed_a):
@@ -136,7 +137,7 @@ def act3(fig, t, T):
         ax.bar(i, b * g, width=0.5, color=RED, alpha=0.9)
         ax.bar(i, rest * g, bottom=b * g, width=0.5, color=VIOLET, alpha=0.9)
         if g > 0.95:
-            ax.text(i, d['mass_MeV'] + 22, f"{d['mass_MeV']:.2f} ticks → {d['mass_MeV'] * SCALE:.1f} MeV",
+            ax.text(i, d['mass_MeV'] + (45 if d is LAM else 22), f"{d['mass_MeV']:.2f} ticks → {d['mass_MeV'] * SCALE:.1f} MeV",
                     ha="center", fontsize=18, color=FG)
             ax.text(i + 0.27, b + rest / 2 - 60, f"routing {d['route_ticks']:.1f}", fontsize=14, color=VIOLET, va="center")
         a = ramp(t, 6.5, 0.8)
@@ -144,58 +145,38 @@ def act3(fig, t, T):
             ax.plot([i - 0.32, i + 0.32], [pdg / SCALE] * 2, color=YELLOW, lw=3, alpha=a, ls="--")
             ax.text(i + 0.35, pdg / SCALE, f"PDG {pdg:.1f}", fontsize=15, color=YELLOW, alpha=a, ha="left", va="center")
     ax.set_xticks(range(3)); ax.set_xticklabels([f[0] for f in FAM], fontsize=24, color=FG)
-    ax.set_xlim(-0.75, 2.75); ax.set_ylim(0, 1050); ax.set_ylabel("grid ticks per cycle", fontsize=16)
+    ax.set_xlim(-0.75, 2.75); ax.set_ylim(0, 1330); ax.set_ylabel("grid ticks per cycle", fontsize=16)
     sec = ax.secondary_yaxis("right", functions=(lambda x: x * SCALE, lambda y: y / SCALE))
     sec.set_ylabel("MeV (Λ⁰-calibrated scale)", fontsize=16); sec.tick_params(colors=DIM)
     ax.legend(handles=[Patch(color=RED, label="bare quarks"), Patch(color=VIOLET, label="gluon routing + spin"),
                        Patch(color=YELLOW, label="PDG mass (dashed)")], loc="upper left", frameon=False, fontsize=16)
 
-v = Video(OUT, "_uds_mass_silent", "bcc_test4 · uds (Λ⁰) mass from grid ticks",
-          "TOY MODEL · ticks from bcc_unified_sim.py · MeV scale calibrated to PDG Λ⁰ · quark motion illustrative")
+v = Video(OUT, "_silent", "bcc_test4 · uds (Λ⁰) mass from grid ticks  (v4, 6-face)",
+          "TOY MODEL · ticks from bcc_unified_sim.py (v4) · MeV scale calibrated to PDG Λ⁰ · quark motion illustrative")
 v.add(T_TITLE, title_card("Bare quarks → baryon mass", "u, d, s at rest, then gluon flux links switch on"))
-v.add(T_A1, act1, [(0.3, "Act 1 · Bare u, d, s at rest: 4 + 4 + 95 = 103 ticks"),
+v.add(T_A1, act1, [(0.3, "Act 1 · Bare u, d, s at rest: 12 + 91 (one s) = 103 ticks, by formula"),
                    (4.5, f"On the Λ⁰ scale that is ≈ {BARE * SCALE:.0f} MeV")], "Act 1 · Bare quarks")
 v.add(T_A2, act2, [(0.3, "Act 2 · Gluon flux links switch on"),
-                   (3.0, f"Routing adds {ROUTE:.1f} ticks; the u–d spin pair {SPIN:.1f}"),
+                   (3.0, f"Routing adds {ROUTE:.1f} ticks (95 × avg links); spin term {SPIN:.1f}"),
                    (7.5, f"In this toy model, links + spin are {100 * (ROUTE + SPIN) / TOT:.1f}% of the ticks"),
                    (CLIMB[1], f"{TOT:.2f} ticks → {PDG_L:.2f} MeV, by calibration")], "Act 2 · Links on")
 v.add(T_A3, act3, [(0.3, "Act 3 · Same rule for p, Λ⁰ and Ω⁻"),
-                   (3.5, "Routing stays near 535 ticks; the bare part grows with s quarks"),
+                   (3.5, "Routing stays near 715–721 ticks; the bare part grows with s quarks"),
                    (7.2, f"Same scale: p {NUC['mass_MeV'] * SCALE:.0f} vs {PDG_P:.0f},  Ω⁻ {OME['mass_MeV'] * SCALE:.0f} vs {PDG_O:.0f} MeV")],
       "Act 3 · Comparison")
-v.add(T_END, end_card([(f"Bare uds: {BARE:.0f} ticks (input costs 4 + 4 + 95)", RED),
+v.add(T_END, end_card([(f"Bare uds: {BARE:.0f} ticks (formula 12 + 91 per s quark)", RED),
                        (f"Links + spin: {100 * (ROUTE + SPIN) / TOT:.1f}% of Λ⁰ ticks, in this toy model", VIOLET),
                        (f"MeV scale fitted to PDG Λ⁰: 1 tick = {SCALE:.3f} MeV", YELLOW),
                        (f"Same scale: Ω⁻ off by {OME['mass_MeV'] * SCALE - PDG_O:+.0f} MeV; not a QCD result", DIM)]))
 assert abs(v.duration - TOTAL) < 1e-9
 
-def events():
-    ev = {"total": TOTAL, "act1": [A1, A2], "act2": [A2, A3], "act3": [A3, END],
-          "title": [0, T_TITLE], "end": [END, TOTAL],
-          "links_on": [A2 + LINK_ON[0], A2 + LINK_ON[1]], "climb": [A2 + CLIMB[0], A2 + CLIMB[1]],
-          "land": A2 + CLIMB[1],
-          "hops": [[A2 + th, q] for th, q, _, _ in HOPS],
-          "bars": [A3 + b for b in BAR_T], "pdg_marks": A3 + 6.5}
-    json.dump(ev, open(os.path.join(OUT, "events.json"), "w"), indent=1)
+def timeline():
+    return {"total": TOTAL, "act1": [A1, A2], "act2": [A2, A3], "act3": [A3, END],
+            "title": [0, T_TITLE], "end": [END, TOTAL],
+            "links_on": [A2 + LINK_ON[0], A2 + LINK_ON[1]], "climb": [A2 + CLIMB[0], A2 + CLIMB[1]],
+            "land": A2 + CLIMB[1], "hops": [[A2 + th, q] for th, q, _, _ in HOPS],
+            "bars": [A3 + b for b in BAR_T], "pdg_marks": A3 + 6.5}
 
 if __name__ == "__main__":
-    events()
-    audio_only = "--audio-only" in sys.argv   # reuse the video stream of an existing uds_mass.mp4
-    if audio_only:
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", os.path.join(OUT, "uds_mass.mp4"), "-map", "0:v",
-                        "-c", "copy", v.mp4], check=True)
-    else:
-        v.render()
-    subprocess.run([sys.executable, os.path.join(OUT, "sfx_uds_mass.py")], check=True)
-    final = os.path.join(OUT, "uds_mass.mp4"); wav = os.path.join(OUT, "uds_mass_sfx.wav")
-    # two-pass loudnorm to -16 LUFS, TP -1.5
-    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", wav, "-af", "loudnorm=I=-16:TP=-2.0:LRA=11:print_format=json",
-                           "-f", "null", "-"], capture_output=True, text=True).stderr
-    j = json.loads(meas[meas.rindex("{"):meas.rindex("}") + 1])
-    ln = (f"loudnorm=I=-16:TP=-2.0:LRA=11:measured_I={j['input_i']}:measured_TP={j['input_tp']}:"
-          f"measured_LRA={j['input_lra']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true")
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", v.mp4, "-i", wav, "-map", "0:v", "-map", "1:a",
-                    "-c:v", "copy", "-af", ln + ",aresample=48000", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-                    "-shortest", "-movflags", "+faststart", final], check=True)
-    os.remove(v.mp4); v.mp4 = final
-    print(v.extras(thumb_t=A2 + CLIMB[1] + 1.5))
+    finish(v, "uds_mass", timeline(), os.path.join(OUT, "sfx_uds_mass.py"),
+           thumb_t=A2 + CLIMB[1] + 1.5, audio_only="--audio-only" in sys.argv)

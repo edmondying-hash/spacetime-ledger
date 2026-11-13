@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Original synthesized sound design for uds_mass.mp4 (numpy only, no samples).
-Reads events.json written by render_uds_mass.py and writes uds_mass_sfx.wav
+Reads timeline.json written by render_uds_mass.py and writes uds_mass_sfx.wav
 (48 kHz, 16-bit stereo). Final loudness (-16 LUFS) is set by ffmpeg loudnorm."""
 import json, wave, os
 import numpy as np
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/uds_mass
+OUT = "/workspace/bcc_test4_videos/v2_sound/uds_mass"
 SR = 48000
-ev = json.load(open(os.path.join(OUT, "events.json")))
+ev = json.load(open(os.path.join(OUT, "timeline.json")))
 N = int(ev["total"] * SR)
 L = np.zeros(N); R = np.zeros(N)
 rng = np.random.default_rng(2026)

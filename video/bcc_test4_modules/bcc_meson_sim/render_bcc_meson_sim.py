@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Explainer video for bcc_meson_sim.py (module imported unchanged)."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+"""v2_sound (v4 suite, synthesized SFX): explainer video for bcc_meson_sim.py (module imported unchanged)."""
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import bcc_meson_sim as ms
 from matplotlib.patches import Rectangle
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
+OUT = "/workspace/bcc_test4_videos/v2_sound/bcc_meson_sim"
 S = ms.BCCMesonSim()
 SPEC = S.run_spectrum()
 STR = S.simulate_flux_tube_stretch(max_hops=9)
@@ -19,7 +19,7 @@ for r in SPEC:
 assert STR['snapped_at_hop'] == 7 and STR['steps'][7]['tube_mev'] == 315.0
 LAB = {'pi': 'π', 'rho': 'ρ', 'K': 'K', 'K*': 'K*', 'phi': 'φ', 'D': 'D', 'D*': 'D*', 'J/psi': 'J/ψ'}
 
-v = Video(OUT, "bcc_meson_sim", "bcc_test4 · bcc_meson_sim.py",
+v = Video(OUT, "_silent", "bcc_test4 · bcc_meson_sim.py",
           "Closed-form toy model · quark masses and couplings are hand-set inputs · numbers from the actual run")
 v.add(4, title_card("Meson spectrum & flux tube", "Quark–antiquark pairs on the 6-face grid"))
 
@@ -106,5 +106,15 @@ v.add(7, end_card([("Quark masses 310 / 485 / 1550 MeV are hand-set", DIM),
                    ("3 : 1 spin split and 45 MeV/hop are rule inputs", ORANGE),
                    ("Breaking at 7 hops follows from 7 × 45 > 275", YELLOW)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    hop_t = [a[3] + 0.6 + 0.8 * h for h in range(1, 8)]
+    return {"total": v.duration, "scenes": sc, "title": [0, a[1]],
+            "spec_rise": [a[1] + 0.3, a[1] + 2.8], "pdg": a[1] + 4.0, "diffs": a[1] + 7.5, "bad": a[1] + 11.5,
+            "hyper": [[a[2] + 0.4 + 0.5 * j, SPEC[i]['SpinT']] for j, (p, q) in enumerate(PAIRS) for i in (p, q)],
+            "hops": hop_t, "energies": [STR['steps'][h]['tube_mev'] for h in range(1, 8)],
+            "snap": hop_t[-1], "end": a[4]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 16 + 10 + 9))
+    finish(v, "bcc_meson_sim", timeline(), os.path.join(OUT, "sfx_bcc_meson_sim.py"),
+           thumb_t=4 + 16 + 10 + 9, audio_only="--audio-only" in sys.argv)

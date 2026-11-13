@@ -1,0 +1,3 @@
+wrote sfx
+/workspace/bcc_test4_videos/v2_sound/bcc_meson_sim/_silent.mp4: 1530 frames, 51.00s
+/workspace/bcc_test4_videos/v2_sound/bcc_meson_sim/bcc_meson_sim.mp4 {'integrated_lufs': -16.1, 'true_peak_dbtp': -0.9, 'sample_peak_dbfs': -0.927498, 'clipping': False, 'duration_s': 51}

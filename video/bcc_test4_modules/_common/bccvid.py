@@ -22,7 +22,7 @@ plt.rcParams.update({
     "font.size": 16,
 })
 
-SRC_ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../bcc_test4"))  # path edit: was /workspace/bcc_test4_videos/src/bcc_test4
+SRC_ROOT = "/workspace/bcc_test4_videos/v4/bcc_test4"
 
 
 def import_src():
@@ -144,3 +144,71 @@ def style_ax(ax, grid=True):
         ax.grid(color=GRID, lw=0.8, alpha=0.6)
     ax.set_axisbelow(True)
     return ax
+
+
+# ---------------- v2_sound additions: timeline export + audio mux ----------------
+import json, hashlib
+
+
+def scene_starts(video):
+    out, t = [], 0.0
+    for dur, fn, caps, heading in video.scenes:
+        out.append({"start": t, "dur": dur, "heading": heading}); t += dur
+    return out
+
+
+def _measure_wav(wav, af=None):
+    import re
+    chain = (af + "," if af else "") + "ebur128=peak=true"
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", wav, "-af", chain, "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    return float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1]), float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)[-1])
+
+
+def loudnorm_mux(silent_mp4, wav, final_mp4, I=-16.0, TP=-2.0):
+    """Gain to I LUFS, then a 4x-oversampled look-ahead limiter at TP-1.0 dB (true-peak safe),
+    re-measured and re-gained (3 iterations) so limiting does not pull loudness off target; AAC 192k."""
+    lim = 10 ** ((TP - 1.0) / 20)
+    gain = I - _measure_wav(wav)[0]
+    for _ in range(3):
+        af = (f"volume={gain:.3f}dB,aresample=192000,alimiter=limit={lim:.4f}:level=false:attack=2:release=60:asc=1,"
+              f"aresample=48000")
+        got, _tp = _measure_wav(wav, af)
+        if abs(got - I) < 0.1: break
+        gain += I - got
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", silent_mp4, "-i", wav, "-map", "0:v", "-map", "1:a",
+                    "-c:v", "copy", "-af", af, "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-shortest", "-movflags", "+faststart", final_mp4], check=True)
+
+
+def audio_report(mp4):
+    """Integrated LUFS / true peak (ebur128) and sample peak (astats) of the muxed AAC track."""
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", mp4, "-map", "0:a",
+                        "-af", "ebur128=peak=true,astats=measure_overall=Peak_level", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    import re
+    I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1])
+    tp = float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)[-1])
+    sp = max(float(x) for x in re.findall(r"Peak level dB: (-?[\d.]+)", r))
+    return {"integrated_lufs": I, "true_peak_dbtp": tp, "sample_peak_dbfs": sp, "clipping": sp >= 0.0}
+
+
+def finish(video, final_name, timeline, sfx_script, thumb_t, audio_only=False):
+    """render silent -> timeline.json -> sfx wav -> loudnorm mux -> extras -> sha256 -> audio report."""
+    out = video.out_dir
+    json.dump(timeline, open(os.path.join(out, "timeline.json"), "w"), indent=1)
+    final = os.path.join(out, final_name + ".mp4"); wav = os.path.join(out, final_name + "_sfx.wav")
+    if audio_only and os.path.exists(final):
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", final, "-map", "0:v", "-c", "copy", video.mp4], check=True)
+    else:
+        video.render()
+    subprocess.run([sys.executable, sfx_script], check=True)
+    loudnorm_mux(video.mp4, wav, final)
+    os.remove(video.mp4); video.mp4 = final
+    video.extras(thumb_t)
+    h = hashlib.sha256(open(final, "rb").read()).hexdigest()
+    open(final + ".sha256", "w").write(f"{h}  {final_name}.mp4\n")
+    rep = audio_report(final); rep["duration_s"] = video.duration
+    json.dump(rep, open(os.path.join(out, "audio_levels.json"), "w"), indent=1)
+    print(final, rep)
+    return rep

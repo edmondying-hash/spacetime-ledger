@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Explainer video for bcc_3d_gravity.py (module imported unchanged; ray tracing
+"""v2_sound (v4 suite, synthesized SFX): explainer video for bcc_3d_gravity.py (module imported unchanged; ray tracing
 and the 3D Pascal step are copied only to record per-tick state, and asserted
 to reproduce the module's printed numbers)."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import numpy as np
 import bcc_3d_gravity as gm
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
+OUT = "/workspace/bcc_test4_videos/v2_sound/bcc_3d_gravity"
 sim = gm.BCC3DGravityGrid(size=25, max_node_ticks=100)
 sim.inject_3d_mass_core(12, 12, 12, total_workload=1100.0, radius=1)
 sim.solve_3d_poisson_congestion(iterations=250)
@@ -60,7 +60,7 @@ for p in ((0, 0, 0), (2, 0, 0), (2, 1, 0), (3, 2, 1)):
 assert [(c['lag_b0_pixels'], c['lag_b2_pixels']) for c in CPL] == [(6, 0), (9, 1), (12, 3), (13, 5)]
 assert [round(c['peak_core_W'], 2) for c in CPL] == [67.36, 89.81, 101.03, 134.71]
 
-v = Video(OUT, "bcc_3d_gravity", "bcc_test4 · bcc_3d_gravity.py",
+v = Video(OUT, "_silent", "bcc_test4 · bcc_3d_gravity.py",
           "Toy model on a 6-face cubic grid · numbers from the actual run of bcc_3d_gravity.py")
 v.add(4, title_card("Congestion 'gravity' on a 3D grid", "Load spreads out · rays queue · momentum adds load"))
 
@@ -155,5 +155,14 @@ v.add(7, end_card([("Load decays with r, but faster than 1/r here", ORANGE),
                    ("Momentum adds load by rule, so lag grows", CYAN),
                    ("A toy congestion model, not a test of GR", DIM)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    return {"total": v.duration, "scenes": sc, "title": [0, a[1]],
+            "profile_pts": [a[1] + 0.5 * k for k in range(1, 9)], "rw": a[1] + 5.0,
+            "ray_ticks": [a[2] + 8.0 * k / 22 for k in range(1, 23)], "lag": a[2] + 8.0,
+            "zig": [a[3] + 0.45 * k for k in range(1, 9)], "pascal": [a[4], a[4] + 11], "centroid": a[4] + 5.5,
+            "coupler": [[a[5] + 0.4 + 0.5 * i, c['lag_b0_pixels']] for i, c in enumerate(CPL)], "end": a[6]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 11 + 10))
+    finish(v, "bcc_3d_gravity", timeline(), os.path.join(OUT, "sfx_bcc_3d_gravity.py"),
+           thumb_t=4 + 11 + 10, audio_only="--audio-only" in sys.argv)

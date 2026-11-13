@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Explainer video for baryon_calculator.py (Edmond's code is imported unchanged)."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+"""v2_sound: explainer video for baryon_calculator.py on the v4 suite (code imported unchanged), with synthesized SFX."""
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import baryon_calculator as bc
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
+OUT = "/workspace/bcc_test4_videos/v2_sound/baryon_calculator"
 NAMES = ['p', 'Delta+', 'Lambda', 'Sigma0', 'Xi0', 'Omega-']
 LABEL = {'p': 'p', 'Delta+': 'Δ⁺', 'Lambda': 'Λ', 'Sigma0': 'Σ⁰', 'Xi0': 'Ξ⁰', 'Omega-': 'Ω⁻'}
 R = {n: bc.calculate(n) for n in NAMES}
@@ -18,7 +18,7 @@ for n, (m, c) in PRINTED.items():
     assert round(R[n]['mass_MeV'], 2) == m and round(R[n]['comparison_MeV'], 2) == c, n
 CAL = {'p', 'Delta+', 'Lambda'}
 
-v = Video(OUT, "baryon_calculator", "bcc_test4 · baryon_calculator.py",
+v = Video(OUT, "_silent", "bcc_test4 · baryon_calculator.py",
           "Effective model calibrated to PDG 2024 · all numbers from the actual run of baryon_calculator.py")
 
 v.add(4, title_card("Baryon mass calculator", "One pair-spin rule for light + strange baryons",
@@ -106,5 +106,18 @@ v.add(7, end_card([("3 masses in → 3 fitted parameters", ORANGE),
                    ("Code's own label: not a BCC or time-evolution simulation", DIM),
                    ("Δ value is a mixed-charge proxy, not a per-charge measurement", DIM)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    return {"total": v.duration, "scenes": sc,
+            "title": [0, a[1]],
+            "inputs": [a[1] + 0.4 + 0.4 * i for i in range(3)], "fit_arrow": a[1] + 1.8,
+            "outputs": [a[1] + 2.4 + 0.4 * i for i in range(3)],
+            "baseline": [a[2] + 0.3, a[2] + 2.8], "spin": [a[2] + 4.0, a[2] + 6.0], "pdg": a[2] + 8.5,
+            "split": a[2] + 9.5,
+            "diff_bars": [a[3] + 0.3 + 0.3 * i for i in range(6)],
+            "diff_signs": [1 if R[n]['difference_MeV'] >= 0 else -1 for n in NAMES],
+            "end": a[4]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 9 + 13))
+    finish(v, "baryon_calculator", timeline(), os.path.join(OUT, "sfx_baryon_calculator.py"),
+           thumb_t=4 + 9 + 13, audio_only="--audio-only" in sys.argv)

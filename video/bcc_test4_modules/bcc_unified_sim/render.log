@@ -1,0 +1,4 @@
+wrote sfx
+/workspace/bcc_test4_videos/v2_sound/bcc_unified_sim/_silent.mp4: 1770 frames, 59.00s
+/workspace/bcc_test4_videos/v2_sound/bcc_unified_sim/bcc_unified_sim.mp4 {'integrated_lufs': -16.1, 'true_peak_dbtp': -2.5, 'sample_peak_dbfs': -2.497216, 'clipping': False, 'duration_s': 59}
+done

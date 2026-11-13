@@ -1,0 +1,29 @@
+=== PART 1: 6-Face Planck Grid Baryon Workload vs. Pair-Spin Rule ===
+Family      BareT  RouteT   SpinT  Redraw/c  Load%  GridMass
+--------------------------------------------------------------
+N            12.0   715.4    -6.5      0.72  98.0%    720.94
+Delta        12.0   703.8     6.5      0.72  98.0%    722.29
+Lambda      103.0   716.9    -5.1      0.61  87.0%    814.80
+Sigma       103.0   734.6    -2.5      0.61  87.0%    835.02
+Xi          194.0   726.1    -2.4      0.51  76.0%    917.67
+SigmaStar   103.0   732.0     4.1      0.61  87.0%    839.12
+XiStar      194.0   732.1     2.1      0.51  76.0%    928.14
+Omega       285.0   720.6     0.8      0.39  65.0%   1006.39
+
+=== PART 2: Pure-Gluon Glueball Loop Sweep & Mass Gap ===
+Loop Links=0: Mass=0.00 MeV (empty vacuum)
+Loop Links=4: Mass=2001.19 MeV (Mass Gap Δ)
+Loop Links=6: Mass=2851.47 MeV
+Loop Links=8: Mass=3701.75 MeV
+
+=== PART 3: Wavefront Lensing via Network Congestion (Cluster at y=12) ===
+Row y= 4 | dist= 8 | X=24 | Lag=0 px
+Row y= 7 | dist= 5 | X=24 | Lag=0 px
+Row y=10 | dist= 2 | X=19 | Lag=5 px
+Row y=12 | dist= 0 | X=14 | Lag=10 px
+Row y=14 | dist= 2 | X=19 | Lag=5 px
+Row y=17 | dist= 5 | X=24 | Lag=0 px
+Row y=20 | dist= 8 | X=24 | Lag=0 px
+
+=== PART 4: Strictly Locked 2D Core + 3D Boundary Shell Pile-Up ===
+Deadlocked: 13 -> 23 | 3D shell: 73 | Escaped: 0

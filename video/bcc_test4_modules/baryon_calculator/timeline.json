@@ -1,0 +1,72 @@
+{
+ "total": 44,
+ "scenes": [
+  {
+   "start": 0.0,
+   "dur": 4,
+   "heading": ""
+  },
+  {
+   "start": 4.0,
+   "dur": 9,
+   "heading": "1 \u00b7 Calibration"
+  },
+  {
+   "start": 13.0,
+   "dur": 15,
+   "heading": "2 \u00b7 Six baryons"
+  },
+  {
+   "start": 28.0,
+   "dur": 9,
+   "heading": "3 \u00b7 Residuals"
+  },
+  {
+   "start": 37.0,
+   "dur": 7,
+   "heading": ""
+  }
+ ],
+ "title": [
+  0,
+  4.0
+ ],
+ "inputs": [
+  4.4,
+  4.800000000000001,
+  5.2
+ ],
+ "fit_arrow": 5.8,
+ "outputs": [
+  6.4,
+  6.800000000000001,
+  7.2
+ ],
+ "baseline": [
+  13.3,
+  15.8
+ ],
+ "spin": [
+  17.0,
+  19.0
+ ],
+ "pdg": 21.5,
+ "split": 22.5,
+ "diff_bars": [
+  28.3,
+  28.6,
+  28.900000000000002,
+  29.2,
+  29.5,
+  29.8
+ ],
+ "diff_signs": [
+  1,
+  1,
+  1,
+  -1,
+  1,
+  1
+ ],
+ "end": 37.0
+}

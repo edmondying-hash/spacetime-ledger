@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Explainer video for bcc3dhorizonsim.py, run as
-`python3 bcc3dhorizonsim.py --size 17 --workload 2400 --packets 260`.
+"""v2_sound (v4 suite, synthesized SFX): explainer video for bcc3dhorizonsim.py with its defaults
+(19^3 grid, workload 2400, 300 packets) - the run_bcc_suite.py / README v4 configuration.
 Module imported unchanged; the accretion loop is copied only to record the
 deadlocked set after every packet, and asserted to match the module's output."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import numpy as np
 import bcc3dhorizonsim as hz
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
-SIZE, WORK, PACK = 17, 2400.0, 260
+OUT = "/workspace/bcc_test4_videos/v2_sound/bcc3dhorizonsim"
+SIZE, WORK, PACK = 19, 2400.0, 300
 c = SIZE // 2
 s = hz.BCC3DHorizonSim(size=SIZE, max_node_ticks=100, seed=42)
 s.inject_3d_core(c, c, c, total_workload=WORK, radius=1)
@@ -31,13 +31,13 @@ ref = hz.BCC3DHorizonSim(size=SIZE, max_node_ticks=100, seed=42)
 ref.inject_3d_core(c, c, c, total_workload=WORK, radius=1); ref.relax_3d_congestion(iterations=250)
 st = ref.step_accretion(incoming_packets=PACK, packet_load=25)
 assert (len(CORE0), SHELL0) == (19, 38)
-assert st['total_deadlocked'] == len(HIST[-1][0]) == 98 and st['exposed_3d_shell'] == HIST[-1][2] == 130
+assert st['total_deadlocked'] == len(HIST[-1][0]) == 105 and st['exposed_3d_shell'] == HIST[-1][2] == 131
 assert st['span_xyz'] == (7, 7, 7)
-assert [(h['packets_absorbed'], h['deadlocked_nodes']) for h in st['checkpoints']] == [(50, 37), (100, 50), (200, 83)]
-assert [p['workload'] for p in PROF] == [242.46, 185.32, 106.71, 119.87, 27.38, 17.12, 10.14]
+assert [(h['packets_absorbed'], h['deadlocked_nodes']) for h in st['checkpoints']] == [(50, 37), (100, 50), (200, 83), (300, 105)]
+assert [p['workload'] for p in PROF] == [244.33, 187.19, 108.61, 121.81, 29.42, 19.32, 12.61]
 
-v = Video(OUT, "bcc3dhorizonsim", "bcc_test4 · bcc3dhorizonsim.py  (--size 17 --workload 2400 --packets 260)",
-          "Toy model · 6-face cubic grid · numbers from the actual CLI run of bcc3dhorizonsim.py")
+v = Video(OUT, "_silent", "bcc_test4 · bcc3dhorizonsim.py  (defaults: 19³ grid, 2400 load, 300 packets)",
+          "Toy model · 6-face cubic grid · numbers from the actual run of bcc3dhorizonsim.py (v4 suite defaults)")
 v.add(4, title_card("Deadlock 'horizon' on a 3D grid", "Saturated nodes stop routing; infalling load piles up on the shell"))
 
 def p1(fig, t, T):
@@ -46,7 +46,7 @@ def p1(fig, t, T):
     ax.imshow(np.minimum(sl, 250), origin="lower", cmap="inferno", vmin=0, vmax=250)
     if t > 2.5:
         ax.contour(sl, levels=[100], colors=[CYAN], linewidths=3)
-    ax.set_xticks([]); ax.set_yticks([]); ax.set_title("workload, slice z = 8 (17³ grid)", fontsize=17, color=DIM)
+    ax.set_xticks([]); ax.set_yticks([]); ax.set_title(f"workload, slice z = {c} (19³ grid)", fontsize=17, color=DIM)
     fig.text(0.56, 0.66, "node capacity: 100 ticks", fontsize=28, color=FG, alpha=ramp(t, 1.0))
     fig.text(0.56, 0.57, "W ≥ 100  →  deadlocked", fontsize=28, color=CYAN, alpha=ramp(t, 2.5))
     fig.text(0.56, 0.45, f"core: {len(CORE0)} nodes", fontsize=32, color=ORANGE, alpha=ramp(t, 4.0))
@@ -63,7 +63,7 @@ def p2(fig, t, T):
     ax.scatter(*zip(*old), s=110, c=ORANGE, depthshade=False, edgecolors=BG)
     if new: ax.scatter(*zip(*new), s=110, c=RED, depthshade=False, edgecolors=BG, alpha=0.9)
     ax.scatter(*HIST[k][1], s=120, c=CYAN, depthshade=False)
-    ax.set_xlim(4, 12); ax.set_ylim(4, 12); ax.set_zlim(4, 12)
+    ax.set_xlim(c - 4, c + 4); ax.set_ylim(c - 4, c + 4); ax.set_zlim(c - 4, c + 4)
     ax.view_init(elev=20, azim=-60 + 60 * t / T)
     for a in (ax.xaxis, ax.yaxis, ax.zaxis):
         a.set_pane_color((0.07, 0.08, 0.13, 1)); a.set_tick_params(colors=BG)
@@ -71,15 +71,15 @@ def p2(fig, t, T):
     fig.text(0.63, 0.66, f"deadlocked       {len(dead)}", fontsize=30, color=RED)
     fig.text(0.63, 0.58, f"exposed shell   {HIST[k][2]}", fontsize=30, color=FG)
     fig.text(0.63, 0.47, "checkpoints (module output):", fontsize=19, color=DIM)
-    for i, (n, d) in enumerate(((50, 37), (100, 50), (200, 83))):
+    for i, (n, d) in enumerate(((50, 37), (100, 50), (200, 83), (300, 105))):
         fig.text(0.63, 0.42 - 0.045 * i, f"{n} packets → {d} deadlocked", fontsize=19,
                  color=FG if k + 1 >= n else GRID)
     for i, (lab, col) in enumerate((("● initial 19-node core", ORANGE), ("● newly deadlocked", RED), ("● latest packet", CYAN))):
-        fig.text(0.63, 0.25 - 0.04 * i, lab, fontsize=18, color=col)
+        fig.text(0.63, 0.225 - 0.04 * i, lab, fontsize=18, color=col)
 
 v.add(15, p2, [(0.3, "Each packet adds 25 ticks to a random shell node"),
                (6.0, "Shell nodes that reach 100 lock too: the core grows"),
-               (11.0, "260 packets: 98 deadlocked, shell 130, block 7×7×7")], "2 · Pile-up")
+               (11.0, "300 packets: 105 deadlocked, shell 131, block 7×7×7")], "2 · Pile-up")
 
 def p3(fig, t, T):
     ax = style_ax(fig.add_axes([0.10, 0.20, 0.80, 0.62]))
@@ -99,9 +99,29 @@ v.add(11, p3, [(0.3, "Probe outward from the centre"),
                (4.0, "r = 0–3 blocked; just outside, +1 tick; then free")], "3 · Radial probe")
 
 v.add(7, end_card([("Saturation threshold, not curvature, makes the 'horizon'", CYAN),
-                   ("Core 19 → 98 nodes after 260 packets", RED),
+                   ("Core 19 → 105 nodes after 300 packets", RED),
                    ("Escaped = 0 is hard-coded: packets only land on the shell", YELLOW),
                    ("Toy model; no comparison to a real black hole", DIM)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    pk = []
+    last = -1.0
+    for k in range(PACK):                                    # packet k shown at a[2] + 0.5 + 13*k/PACK
+        t = a[2] + 0.5 + 13.0 * k / PACK
+        if t - last >= 0.09:                                 # rate-limit clicks (~11/s)
+            pk.append([t, len(HIST[k][0])]); last = t
+    locks = []
+    for k in range(1, PACK):
+        if len(HIST[k][0]) > len(HIST[k - 1][0]):
+            locks.append(a[2] + 0.5 + 13.0 * k / PACK)
+    return {"total": v.duration, "scenes": sc, "title": [0, a[1]],
+            "contour": a[1] + 2.5, "core": a[1] + 4.0,
+            "pile": [a[2], a[3]], "packets": pk, "locks": locks,
+            "checkpoints": [a[2] + 0.5 + 13.0 * n / PACK for n in (50, 100, 200)],
+            "radial": [[a[3] + 0.3 + 0.35 * i, p['extra_tick_delay'] is None] for i, p in enumerate(PROF)],
+            "end": a[4]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 9 + 14))
+    finish(v, "bcc3dhorizonsim", timeline(), os.path.join(OUT, "sfx_bcc3dhorizonsim.py"),
+           thumb_t=4 + 9 + 14, audio_only="--audio-only" in sys.argv)

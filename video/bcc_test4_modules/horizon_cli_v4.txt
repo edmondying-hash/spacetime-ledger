@@ -1,0 +1,13 @@
+=== STANDALONE 3D HORIZON & NETWORK-DEADLOCK SIMULATION ===
+Grid: 17x17x17 (6-face 1.0 l_P^3 Planck cubes) | Initial core: 19 nodes (shell: 38)
+Post-infall deadlocked nodes: 98 | Exposed 3D shell: 130 | Escaped: 0
+3D Bounding Volume (X x Y x Z): (7, 7, 7)
+Radius r   Node (x,y,z)   Workload   Horizon Status         Tick Delay
+------------------------------------------------------------------------
+       0      (8, 8, 8)     242.46   DEADLOCKED / BLOCKED   BLOCKED (0 escape)
+       1      (9, 8, 8)     185.32   DEADLOCKED / BLOCKED   BLOCKED (0 escape)
+       2     (10, 8, 8)     106.71   DEADLOCKED / BLOCKED   BLOCKED (0 escape)
+       3     (11, 8, 8)     119.87   DEADLOCKED / BLOCKED   BLOCKED (0 escape)
+       4     (12, 8, 8)      27.38   Active I/O             +1 ticks
+       5     (13, 8, 8)      17.12   Active I/O             +0 ticks
+       6     (14, 8, 8)      10.14   Active I/O             +0 ticks

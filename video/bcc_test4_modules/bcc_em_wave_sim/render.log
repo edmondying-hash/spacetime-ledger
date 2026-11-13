@@ -1,0 +1,3 @@
+wrote sfx
+/workspace/bcc_test4_videos/v2_sound/bcc_em_wave_sim/_silent.mp4: 1410 frames, 47.00s
+/workspace/bcc_test4_videos/v2_sound/bcc_em_wave_sim/bcc_em_wave_sim.mp4 {'integrated_lufs': -16.0, 'true_peak_dbtp': -1.6, 'sample_peak_dbfs': -1.990163, 'clipping': False, 'duration_s': 47}

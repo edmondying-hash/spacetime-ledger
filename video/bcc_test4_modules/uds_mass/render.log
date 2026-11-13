@@ -1,0 +1,4 @@
+wrote uds_mass_sfx.wav 48.0 s
+/workspace/bcc_test4_videos/v2_sound/uds_mass/_silent.mp4: 1440 frames, 48.00s
+/workspace/bcc_test4_videos/v2_sound/uds_mass/uds_mass.mp4 {'integrated_lufs': -16.1, 'true_peak_dbtp': -2.7, 'sample_peak_dbfs': -2.98735, 'clipping': False, 'duration_s': 48.0}
+done

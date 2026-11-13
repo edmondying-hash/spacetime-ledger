@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Explainer video for bcc_born_pascal.py (module imported unchanged; the
+"""v2_sound (v4 suite, synthesized SFX): explainer video for bcc_born_pascal.py (module imported unchanged; the
 per-tick states are the module's own function called with n_ticks = 1..12)."""
-import os, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # path edit: bccvid.py sits beside this script; was /workspace/bcc_test4_videos/_common
+import sys
+sys.path.insert(0, "/workspace/bcc_test4_videos/v2_sound/_common")
 from bccvid import *
 import_src()
 import bcc_born_pascal as bp
 
-OUT = os.path.dirname(os.path.abspath(__file__))  # path edit: this script's folder; was /workspace/bcc_test4_videos/<module>
+OUT = "/workspace/bcc_test4_videos/v2_sound/bcc_born_pascal"
 STEPS = {n: bp.compute_dual_pascal_distribution(n_ticks=n) for n in range(1, 13)}
 R12 = STEPS[12]['rows']
 DARK = [r['x'] for r in R12 if r['net_psi'] == 0]
@@ -16,7 +16,7 @@ assert [(r['pos'], r['neg']) for r in R12][6] == (452, 472)
 ERR = {n: bp.compute_dual_pascal_distribution(n_ticks=n)['max_abs_diff'] for n in (12, 24, 48, 100)}
 assert [round(ERR[n], 6) for n in (12, 24, 48, 100)] == [0.217776, 0.144931, 0.098975, 0.067291]
 
-v = Video(OUT, "bcc_born_pascal", "bcc_test4 · bcc_born_pascal.py",
+v = Video(OUT, "_silent", "bcc_test4 · bcc_born_pascal.py",
           "Toy model · integer path counting · numbers from the actual run of bcc_born_pascal.py")
 v.add(4, title_card("Two-channel Pascal walk", "Counting paths in + and − channels; cancellations make dark nodes"))
 
@@ -83,5 +83,13 @@ v.add(7, end_card([("Pure integer counting in two channels", CYAN),
                    ("Reference curve is hand-chosen; its zeros sit on the dark nodes", YELLOW),
                    ("Gap shrinks 0.218 → 0.067 from N = 12 to 100", DIM)]))
 
+def timeline():
+    sc = scene_starts(v); a = [x["start"] for x in sc]
+    return {"total": v.duration, "scenes": sc, "title": [0, a[1]],
+            "ticks": [a[1] + (n - 1) * 0.85 for n in range(1, 13)], "dark": a[1] + 11 * 0.85,
+            "born_rise": [a[2] + 0.3, a[2] + 1.8], "ref": a[2] + 4.0,
+            "conv": [[a[3] + 1.2 * k, ERR[n]] for k, n in enumerate((12, 24, 48, 100))], "end": a[4]}
+
 if __name__ == "__main__":
-    v.render(); print(v.extras(thumb_t=4 + 14.5))
+    finish(v, "bcc_born_pascal", timeline(), os.path.join(OUT, "sfx_bcc_born_pascal.py"),
+           thumb_t=4 + 14.5, audio_only="--audio-only" in sys.argv)
