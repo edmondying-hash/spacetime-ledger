@@ -1,0 +1,120 @@
+{
+ "written": "2026-11-12 20:18:16 EST (America/New_York), before any computation of L1.3b; no measurement code written or run yet",
+ "run": "20261112_l13b_dc90fd23",
+ "design": {
+  "file": "design/L1_3b_RUN_DESIGN.md",
+  "sha256": "dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d",
+  "branch": "cursor/l1-3b-run-design-a445",
+  "commit": "9da63d53f354295f363801a919739177fdc9c765",
+  "pr": "https://github.com/edmondying-hash/spacetime-ledger/pull/10"
+ },
+ "approval": {
+  "decisions_file": "inputs/L1_3b_run_design_20261112_DECISIONS.txt",
+  "decisions_sha256": "c2081f1852847777e3acf931442890a1d80dcc7768b582af6da423029c995e9c",
+  "recorded": "Edmond Ying 2026-11-12 8:12 PM America/New_York \"L1.3b approved\" (hash not quoted; recorded by the Cursor agent as approval of dc90fd23...); Slack DM to the Grok bot 2026-11-12 8:14 PM America/New_York \"approved to proceed with L1.3b\"",
+  "scope": "S0-S3 only, design Sec. 6 caps; D1-D5 defaults as recorded in the decisions file"
+ },
+ "paper": {
+  "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+  "commit": "cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32",
+  "sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70"
+ },
+ "closed_form_equal_angles": {
+  "formula": "c0(phi) = 0.5*sqrt(1 + 3*sin(phi)**2)",
+  "source": "design Sec. 1 line 25 and Sec. 4 R1' line 52 (confirmed by R1 of run 9ccf4855)",
+  "derivative": "dc0/dphi = 3*sin(phi)*cos(phi) / (2*sqrt(1 + 3*sin(phi)**2))",
+  "derivative_quoted": "0.127 at phi = 1.4 (design Sec. 4 N2, line 70)"
+ },
+ "closed_form_two_angles": {
+  "formula": "c0(phi2, phi4) = 0.25*sqrt( (2 + sin(phi2)**2 + sin(phi4)**2)**2 + (sin(phi2)*cos(phi2) + sin(phi4)*cos(phi4))**2 )",
+  "source": "design Sec. 1 line 23 (the 1/4 formula); R2b pass rule (line 57) applies to this formula, no normalisation reading needed",
+  "special_cases_design_line_25": {
+   "c0(phi,phi)": "0.5*sqrt(1+3 sin^2 phi)",
+   "c0(0,0)": 0.5,
+   "c0(pi/2,pi/2)": 1.0,
+   "symmetry": "c0(phi2,phi4) = c0(phi4,phi2)"
+  },
+  "phi2_is": "Wilson angle of step 2 (V+)",
+  "phi4_is": "Wilson angle of step 4 (V-)"
+ },
+ "paper_table_dirac4_light_speed": {
+  "source": "paper main cc2cc5c8, Table tab:dirac4, lines 558-564, column 'Light speed / hop rate'",
+  "values": [
+   {
+    "phi": "0.5",
+    "printed": "0.650",
+    "line": 558
+   },
+   {
+    "phi": "0.8",
+    "printed": "0.797",
+    "line": 559
+   },
+   {
+    "phi": "1.0",
+    "printed": "0.884",
+    "line": 560
+   },
+   {
+    "phi": "1.2",
+    "printed": "0.949",
+    "line": 561
+   },
+   {
+    "phi": "1.4",
+    "printed": "0.989",
+    "line": 562
+   },
+   {
+    "phi": "1.5",
+    "printed": "0.998",
+    "line": 563
+   },
+   {
+    "phi": "pi/2",
+    "printed": "1.000",
+    "line": 564
+   }
+  ]
+ },
+ "paper_other_quoted": [
+  {
+   "text": "c_0(\\varphi=1.4)=0.98911, which is direction independent to 10^{-6} at this order",
+   "line": 543
+  },
+  {
+   "text": "\\nu = 0.989 (\\varphi = 1.4)",
+   "line": 381
+  },
+  {
+   "text": "Wilson layers at a fixed angle \\varphi (\\varphi=1.4 by default)",
+   "line": 534
+  }
+ ],
+ "N4_cited_value": {
+  "source": "V5 v2 census results.json sha256 ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708 (bigbang L0_V5v2_official_20261111/v5v2_official/results.json)",
+  "quoted_in_L1_3_design": "1.4e-17 at phi = pi/2",
+  "closed_form": "c0(pi/2) = 1",
+  "note": "cited, not re-run"
+ },
+ "tolerances_frozen": {
+  "R1prime_abs_on_v0": 1e-06,
+  "R1prime_direction_spread": 1e-06,
+  "R2b_abs_on_v0": 1e-06,
+  "R2b_direction_spread": 1e-06,
+  "R2c_Q1_Q2_abs_b": 1e-06,
+  "P1_unitarity_inf_norm": 1e-12,
+  "P2": 1e-13,
+  "P3": 1e-13,
+  "P4": 1e-13,
+  "P5": 1e-13,
+  "N1": 1e-12,
+  "N2_nonzero_threshold": 0.0001,
+  "N3_strict_gap": 1e-06,
+  "N3_span_endpoints": 1e-06,
+  "source": "design Sec. 3, Sec. 4 (lines 41-75); L1.3 design Sec. 3 residual limits; D2 accepted 1e-6"
+ },
+ "measurement_protocol": "design Sec. 4 line 47: 13 directions; kappa in {0.001, 0.002, 0.004, 0.008, 0.016}; v = omega_min/kappa, omega = arg(lambda)/(-4), omega_min = min |omega| over 4 eigenvalues; v0 = Neville to kappa = 0 in kappa (all powers) through all five (degree 4); degree 3 (four smallest kappa) diagnostic; b, c = linear and quadratic coefficients of the degree-4 interpolating polynomial",
+ "verdict_rule_verbatim_design_sec4": "PASS iff R1' passes, R2b passes, N1 holds, and N2 and N3 hold as pre-declared. FAIL / OPEN if R1' or R2b fails, if N1 finds a phi where a layer is not unitary, or if N5 finds a derivation of phi = 1.4 from the rule. R2c, N4, N5 (absent a derivation) and the cross-check are recorded evidence and do not by themselves decide pass or fail.",
+ "pointer_previous_run": "20261112_l13_9ccf4855 (PR #8, branch grok/l1-3-run-20261112, commit f4e45728, SHA256SUMS 17f5e19944dd36a7b257854951e5a4c594515d71dedd8e4a0d43da6f139e6157); R1 PASS, R2 FAIL/OPEN as recorded"
+}

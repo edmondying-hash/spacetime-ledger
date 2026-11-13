@@ -1,0 +1,190 @@
+{
+ "run": "20261112_l13b_dc90fd23",
+ "written": "2026-11-12 20:23:20 EST",
+ "runner": "bigbang (gn100-7c00), /home/eying/spacetime_files/runs/20261112_l13b_dc90fd23",
+ "status": "COMPLETED: S0, S1, S2, S3 each run once, all exit 0; nothing not run within S0-S3",
+ "verdict_per_design_sec4": "PASS",
+ "verdict_basis": {
+  "R1prime": true,
+  "R2b": true,
+  "N1": true,
+  "N2": true,
+  "N3": true,
+  "N5_derivation_found": false
+ },
+ "closure_note": "Design Sec. 4/D4: the R2 of 9ccf4855 remains FAIL as written. Closing L1.3 on L1.3b is Edmond's decision after the run; no closure record written.",
+ "design_sha256": "dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d",
+ "u_builder_sha256": "5e606a0631b0124992d65f22dd15ffb90e9ad388706c73a9b7739cb388870d8e",
+ "u_builder_lines_51_96_sha256": "44815a07776770e4eefc00e30d6ae674a6c01f87ca86e757c2ababd6dd8df82b",
+ "measurement_code_sha256": "70fbfbf554e0477e029715c01957587aa96e2cdd4194a5e1fbada31f1d00b014",
+ "frozen_dirac4_sha256": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+ "paper": {
+  "commit": "cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32",
+  "sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70"
+ },
+ "preflight": {
+  "P1": {
+   "max": 8.579468896432389e-16,
+   "tol": 1e-12,
+   "pass_": true
+  },
+  "P2": {
+   "max": 4.443761908153001e-16,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P3": {
+   "max": 2.220446049250313e-16,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P4": {
+   "max": 1.790180836524724e-15,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P5": {
+   "max": 1.1102230246251565e-16,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P0": {
+   "pass_": true
+  }
+ },
+ "R1prime": {
+  "max_abs_diff": 1.6864287744056128e-13,
+  "max_direction_spread": 2.360334150353083e-13,
+  "tol": 1e-06,
+  "all_tabulated_round_to_paper": true,
+  "max_abs_diff_degree3_diag": 1.2524981052308704e-11,
+  "pass_": true
+ },
+ "R2b": {
+  "max_abs_diff": 4.1022740759899534e-13,
+  "worst_pair": [
+   "pi/2",
+   "1.0"
+  ],
+  "max_direction_spread": 4.3287595730134854e-13,
+  "pairs_passing": 49,
+  "tol": 1e-06,
+  "max_abs_diff_degree3_diag": 1.2543854843727331e-11,
+  "pass_": true
+ },
+ "R2c": {
+  "Q1": {
+   "statement": "|b| <= 1e-6 on the three [100] directions for every pair (replication, not prediction)",
+   "max_abs_b": 1.5929189157874585e-10,
+   "tol": 1e-06,
+   "pass_": true
+  },
+  "Q2": {
+   "statement": "|b| <= 1e-6 at every diagonal pair phi2 = phi4 (replication, not prediction)",
+   "max_abs_b": 1.6995333499698246e-10,
+   "tol": 1e-06,
+   "pass_": true
+  },
+  "max_abs_b_all": 0.10444176295679508,
+  "max_abs_c_all": 0.23574991842215287,
+  "note": "record only"
+ },
+ "N1": {
+  "max": 3.009082808959195e-15,
+  "tol": 1e-12,
+  "holds": true
+ },
+ "N2": {
+  "fd_min": 0.12662599887239945,
+  "fd_max": 0.12662599887359516,
+  "closed_form_derivative_at_1p4": 0.12700396424668395,
+  "closed_form_same_fd": 0.12662599887319215,
+  "threshold": 0.0001,
+  "holds": true
+ },
+ "N3": {
+  "min_gap": 0.0018699413400543596,
+  "strict_gap": 1e-06,
+  "span_endpoints": {
+   "phi0": [
+    0.4999999999999587,
+    0.5000000000000224
+   ],
+   "phi_pi2": [
+    0.9999999999998314,
+    0.9999999999999997
+   ]
+  },
+  "holds": true
+ },
+ "N4": "post/N4_CITED_READ.json (S3 read failed on a key-type defect; value read post-run: gap 1.3669139210508844e-17 at phi = pi/2; c0(pi/2) = 1)",
+ "N5": "post/N5_CLASSIFICATION.json (26 hits, 1 keyword-flagged, no derivation)",
+ "cross_check": {
+  "frozen": "frozen/dirac4.py",
+  "sha256_at_import": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+  "expected": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+  "max_abs_U_diff_pairs_frozen_layers": 0.0,
+  "max_abs_U_diff_frozen_U_cycle_equal_angles": 0.0,
+  "max_abs_v0_diff_R2b_grid": 0.0,
+  "method": "49 R2b pairs x 13 directions x 5 kappa: frozen V_step(-1,k,phi4) S_step(-1,k) V_step(+1,k,phi2) S_step(+1,k) (frozen U_cycle takes one phi; same order as U_cycle); diagonal pairs and the 16 R1prime phi also through frozen U_cycle(k, phi) directly"
+ },
+ "resources": {
+  "S0": {
+   "exit_code": 0,
+   "wall_s": 0.210615873336792,
+   "cpu_s": 0.090593,
+   "peak_tree_rss_MiB": 11.55078125,
+   "max_single_child_rss_MiB": 38.65625,
+   "killed_at_ceiling": false,
+   "start": "2026-11-12 20:22:00 EST"
+  },
+  "S1": {
+   "exit_code": 0,
+   "wall_s": 0.21955657005310059,
+   "cpu_s": 0.088722,
+   "peak_tree_rss_MiB": 11.65625,
+   "max_single_child_rss_MiB": 35.30859375,
+   "killed_at_ceiling": false,
+   "start": "2026-11-12 20:22:11 EST"
+  },
+  "S2": {
+   "exit_code": 0,
+   "wall_s": 0.21097135543823242,
+   "cpu_s": 0.10600899999999999,
+   "peak_tree_rss_MiB": 11.5546875,
+   "max_single_child_rss_MiB": 35.76171875,
+   "killed_at_ceiling": false,
+   "start": "2026-11-12 20:22:19 EST"
+  },
+  "S3": {
+   "exit_code": 0,
+   "wall_s": 1.091585397720337,
+   "cpu_s": 1.027829,
+   "peak_tree_rss_MiB": 40.44140625,
+   "max_single_child_rss_MiB": 40.73828125,
+   "killed_at_ceiling": false,
+   "start": "2026-11-12 20:22:27 EST"
+  }
+ },
+ "totals": {
+  "wall_s": 1.732729196548462,
+  "cpu_s": 1.313153,
+  "peak_tree_rss_MiB": 40.44140625,
+  "max_single_child_rss_MiB": 40.73828125
+ },
+ "caps": {
+  "memory": "2 GiB (address-space ulimit)",
+  "threads": 1,
+  "wall": "30 min total / 10 min per step",
+  "output": "64 MiB",
+  "attempts": "one per step"
+ },
+ "deviations_and_disclosures": [
+  "RD-1..RD-12 in PROTOCOL_NOTES.md (pre-declared)",
+  "pre-hash mock software test on the box (no real-symbol values)",
+  "N4 read defect in S3 (KeyError(5)); value read post-run in post/N4_CITED_READ.json; S3 not repeated",
+  "result.json written inside S3 carries S0-S2 resources; S3 resources are in logs/resources_S3.json and this record",
+  "approval wording does not quote the hash (decisions file note)"
+ ],
+ "previous_run": "20261112_l13_9ccf4855 unaltered"
+}
