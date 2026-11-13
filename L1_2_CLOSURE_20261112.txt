@@ -1,0 +1,120 @@
+L1.2 CLOSURE RECORD
+================================================================
+
+Recorded: 2026-11-12, after Edmond Ying's message of 7:20 PM America/New_York
+(2026-11-13 00:20 UTC), by the reviewing agent (spacetime-ledger).
+Approved by: Edmond Ying ("L1.2 closed, please use 'from b ≈ 0.35', #3 no need").
+
+This record sits outside the run folder and the design folder. It changes
+neither. It is a new file.
+
+----------------------------------------------------------------
+1. WHAT WAS CLOSED
+----------------------------------------------------------------
+Plan layered_plan_v3.3.md section 3, L1.2: reproduce Table dw within 5%, confirm
+independently that b <= 0.25, and test the end-mode dispersion against the
+physical-mode dispersion.
+
+Design:       L1_2_run_design_20261112/L1_2_RUN_DESIGN.md
+              sha256 7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b
+              (approved by Edmond, 2026-11-12 4:56 PM ET)
+Decisions:    L1_2_run_design_20261112_DECISIONS.txt
+              sha256 c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e
+              (D1 load-free; D2 revised to pass-with-recorded-difference;
+              D3 accepted; D4 pre-registration governs)
+Run:          runs/20261112_l12_7e09b7c4/ on branch grok/l1-2-run-20261112
+              (PR #5), commit 60b2ffb4, run-folder SHA256SUMS sha256
+              c6d465e5ebbcac3329ac324917bbe8980646b2eb466b18683c477292be5cd63d
+Pre-reg:      PREREGISTRATION.md sha256
+              733752444dfdbaab68654e583b15fdc97619883224fc30357f8ecba998747239
+Paper base:   space-ledger-v2.md on main at cc2cc5c, sha256
+              8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70
+
+The frozen qca sources are published as hashes only. Everything else in the
+run folder verifies against its SHA256SUMS.
+
+----------------------------------------------------------------
+2. WHAT THE RUN SHOWED (reviewed against the design's verdict rules)
+----------------------------------------------------------------
+- Table dw: 14 of 14 scored cells within 5%. N_s = 24 is UNINFORMATIVE under
+  the pre-registration (raw value 2.08167e-17); it would also pass the design's
+  own floor rule.
+- Doubler gaps at N_s = 16: 0.0580283, 0.0460285, 0.0341205, 0.0224238 for
+  b = 0.10, 0.15, 0.20, 0.25 (paper 0.058, 0.046, 0.034, 0.022). The
+  independent dense search (R4b) equals the reproduction (R4a). The paper's
+  values stand. Bulk gap at b = 0.2: 0.0331042 (paper 0.033).
+- Boundary: the pre-registration three-part clause PASSES. By the plan's
+  wording, b <= 0.25 is confirmed independently.
+- Speeds: end mode 0.985529 (paper 0.9855); unchained 0.989084; difference
+  -0.00355526, -0.359% relative. Under D2 as revised, the clause PASSES with a
+  recorded species-dependent difference.
+- The twelve edge labels have lowest |omega| of about 1e-16 (Gamma images),
+  consistent with L1.1.
+
+----------------------------------------------------------------
+3. WHAT DID NOT PASS AS WRITTEN, STATED PLAINLY
+----------------------------------------------------------------
+Design R5 (the design's own b ladder with the D3 thresholds) does NOT confirm.
+Reasons, both in the design and not in the run:
+  (a) The doubler end-mode weight at exactly (+-pi/2)^3 never reaches the 0.5
+      "survives" threshold (maximum 0.353 at b = 0.40, N_s = 8; about 0.276 at
+      b = 0.40, N_s = 48), so no (b, N_s) is classified "survives". b = 0.30
+      and 0.35 therefore classify "allowed".
+  (b) b = 0.40 has no reference gap in the design or the pre-registration, so
+      it classifies "unresolved (rule input missing)".
+The D3 thresholds were proposals made without the data, and Edmond accepted
+them as written. They are NOT retuned after the data (plan section 0.1, rule 4).
+Design R5 is recorded as failed as written, with the rule mis-specified. L1.2 is
+closed on the pre-registration boundary clause, which governs under D4.
+
+What the data do show about the doubler at the point (pi/2, pi/2, +-pi/2),
+measured at exactly those points over N_s = 24, 32, 48:
+  b = 0.25   gap 0.0243 -> 0.0233, fitted slope -0.0017 per copy
+  b = 0.30   gap 0.0131 -> 0.0113, fitted slope -0.0059 per copy (decelerating)
+  b = 0.35   gap 0.00418 -> 0.00158, fitted slope -0.040 per copy
+  b = 0.40   gap 5.6e-4 -> 1.2e-5, fitted slope -0.16 per copy
+The exponential fall is clear from b = 0.35. At b = 0.30 it is weak and
+decelerating on three points. The evaluation is at exactly (pi/2)^3; the
+doubler at b = 0.30 may sit nearby.
+
+Notes recorded, not gates:
+  - The end-mode direction spread at |k| = 0.05 is 5.49e-4 against the paper's
+    "about 5e-4" (about 10% high). The exponent is 2.0016 against 2.00.
+  - Localisation length at |k| = 0.2 depends on direction: 0.603 to 0.653
+    across the 13 directions. The paper does not state which direction its
+    table uses.
+  - The design's section 5 expectation that the Dirac-fit omega0 agrees with
+    omega(k = 0) holds at N_s = 2 and 4 and fails at N_s = 8 and 12. The fit
+    cannot resolve residual masses below about 2.5e-5. This is a resolution
+    limit of the fit, not a finding about the physics.
+
+----------------------------------------------------------------
+4. PAPER EDIT AUTHORISED BY THIS CLOSURE
+----------------------------------------------------------------
+Edmond: use "from b ≈ 0.35". Exactly one phrase in space-ledger-v2.md, section
+6.2, line 588 (Doublers and bulk):
+  before: "For $b\geq 0.3$ a doubler end mode survives near ..."
+  after:  "From $b\approx 0.35$ a doubler end mode survives near ..."
+Nothing else in the sentence changes, including "and the construction still
+requires $b\lesssim 0.25$".
+space-ledger-v2.md sha256 before: 8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70
+space-ledger-v2.md sha256 after:  24f88a66eb6cc3abf2ecafd8afc22738ae65a159fb2a1233bf78233564128e12
+space-ledger-v2.pdf is NOT rebuilt by this change. The README already says the
+markdown is the source of record and the PDF may lag.
+
+----------------------------------------------------------------
+5. DECLINED, NOT AUTHORISED
+----------------------------------------------------------------
+- A sentence in section 6.1 or 7.2 about the 0.359% difference between the
+  chained and unchained speeds: Edmond said "no need". Not added.
+- Any edit to the plan, the L1.1 records, the design, the decisions file or the
+  run folder.
+- Regenerating domainwall.png or rebuilding the PDF.
+
+----------------------------------------------------------------
+6. STATE OF THE L1 EXIT GATE
+----------------------------------------------------------------
+L1.2 is reproduced, as closed above. The plan's L1 exit gate still needs L1.3
+(nu from the rule), L1.4 and L1.5 measured against the section 0.3 limits, and
+the L1.1 census re-run question for the chosen rule. This record decides none
+of those.
