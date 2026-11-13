@@ -5,5 +5,10 @@ Edmond Ying, 9:47 PM, verbatim (answer to D1, load rule):
 
 Reading (the assistant's): L1.5 does not take the B3 carve-out. It keeps congestion ON (plan v3.4 section 0.1 rule 1, unchanged). The paper defines no load term for dirac4, so the design declares two uniform-load implementations, A and B (design section 2 and decision D1b), and requires every gated number to hold under both, at two load levels. The unloaded symbol is a labelled diagnostic only and counts toward no gate.
 
-Status of the other decisions in the design (D2 to D8): no answer yet.
+Edmond Ying, 9:53 PM, verbatim (answer to D2, what "photon-like" means):
+  "D2 massless "photon-like" has no vector or tensor field"
+
+Reading (the assistant's): D2 is accepted as proposed. The photon proxy is the massless dirac4 excitation, as in paper section 7.8 Test 3. No vector or tensor field is built, and the "vector and tensor fields" wording of the plan item is not carried to a separate open item. A PASS of the design speaks for the massless proxy, and Edmond may record L1.5 closed on it in a closure record after the run (D4 is still his decision then). The design file is not edited for this answer, so its hash is unchanged; this sidecar overrides the D2 text in design section 8.
+
+Status of the other decisions in the design (D1b, D3 to D8): no answer yet.
 Design status: revised to r2 after D1. The first draft (sha256 eb166966c5ead6fe69966d3207b0282354b8b696095152f51a5c647a2880a1d1) was never approved and is superseded; the current hash is in the design folder's SHA256SUMS. Not approved to run.
