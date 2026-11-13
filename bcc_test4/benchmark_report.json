@@ -1,0 +1,189 @@
+{
+  "architecture": {
+    "grid": "6-face cubic",
+    "tests_run": 0,
+    "tests_ok": true
+  },
+  "baryon_spectrum": [
+    {
+      "name": "p",
+      "model": 938.92,
+      "pdg": 938.27
+    },
+    {
+      "name": "Delta+",
+      "model": 1232.0,
+      "pdg": 1232.0
+    },
+    {
+      "name": "Lambda",
+      "model": 1115.68,
+      "pdg": 1115.68
+    },
+    {
+      "name": "Sigma0",
+      "model": 1179.81,
+      "pdg": 1192.64
+    },
+    {
+      "name": "Xi0",
+      "model": 1329.77,
+      "pdg": 1314.86
+    },
+    {
+      "name": "Omega-",
+      "model": 1681.89,
+      "pdg": 1672.45
+    }
+  ],
+  "meson_spectrum": [
+    {
+      "name": "pi",
+      "quarks": "llbar",
+      "J": 0,
+      "model": 140.0,
+      "pdg": 138.04
+    },
+    {
+      "name": "rho",
+      "quarks": "llbar",
+      "J": 1,
+      "model": 780.0,
+      "pdg": 775.26
+    },
+    {
+      "name": "K",
+      "quarks": "lsbar",
+      "J": 0,
+      "model": 488.2,
+      "pdg": 495.64
+    },
+    {
+      "name": "K*",
+      "quarks": "lsbar",
+      "J": 1,
+      "model": 897.27,
+      "pdg": 893.6
+    },
+    {
+      "name": "phi",
+      "quarks": "ssbar",
+      "J": 1,
+      "model": 1035.37,
+      "pdg": 1019.46
+    },
+    {
+      "name": "D",
+      "quarks": "lcbar",
+      "J": 0,
+      "model": 1764.0,
+      "pdg": 1867.2
+    },
+    {
+      "name": "D*",
+      "quarks": "lcbar",
+      "J": 1,
+      "model": 1892.0,
+      "pdg": 2008.55
+    },
+    {
+      "name": "J/psi",
+      "quarks": "ccbar",
+      "J": 1,
+      "model": 3106.4,
+      "pdg": 3096.9
+    }
+  ],
+  "string_breaking": {
+    "threshold_mev": 275.0,
+    "hops": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "stored_mev": [
+      0.0,
+      45.0,
+      90.0,
+      135.0,
+      180.0,
+      225.0,
+      270.0,
+      315.0,
+      360.0,
+      405.0
+    ]
+  },
+  "glueball_mass_gap": [
+    {
+      "links": "0 (Vacuum)",
+      "mass_mev": 0.0
+    },
+    {
+      "links": "4 (Mass Gap \u0394)",
+      "mass_mev": 2001.18
+    },
+    {
+      "links": "6 Links",
+      "mass_mev": 2851.75
+    },
+    {
+      "links": "8 Links",
+      "mass_mev": 3694.67
+    }
+  ],
+  "momentum_lensing": [
+    {
+      "momentum": "(0,0,0)",
+      "load": 6,
+      "lag_b0": 6,
+      "lag_b2": 0
+    },
+    {
+      "momentum": "(2,0,0)",
+      "load": 8,
+      "lag_b0": 9,
+      "lag_b2": 1
+    },
+    {
+      "momentum": "(2,1,0)",
+      "load": 9,
+      "lag_b0": 12,
+      "lag_b2": 3
+    },
+    {
+      "momentum": "(3,2,1)",
+      "load": 12,
+      "lag_b0": 13,
+      "lag_b2": 5
+    }
+  ],
+  "radial_horizon": {
+    "deadlock_cap": 100.0,
+    "radii": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "workload": [
+      244.33,
+      187.19,
+      108.61,
+      121.81,
+      29.42,
+      19.32,
+      12.61
+    ]
+  }
+}
