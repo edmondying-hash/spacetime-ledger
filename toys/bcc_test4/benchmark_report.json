@@ -1,0 +1,244 @@
+{
+  "architecture": {
+    "grid": "6-face cubic",
+    "tests_run": 43,
+    "tests_ok": true
+  },
+  "baryon_spectrum": [
+    {
+      "name": "p",
+      "model": 938.92,
+      "pdg": 938.27
+    },
+    {
+      "name": "Delta+",
+      "model": 1232.0,
+      "pdg": 1232.0
+    },
+    {
+      "name": "Lambda",
+      "model": 1115.68,
+      "pdg": 1115.68
+    },
+    {
+      "name": "Sigma0",
+      "model": 1179.81,
+      "pdg": 1192.64
+    },
+    {
+      "name": "Xi0",
+      "model": 1329.77,
+      "pdg": 1314.86
+    },
+    {
+      "name": "Omega-",
+      "model": 1681.89,
+      "pdg": 1672.45
+    }
+  ],
+  "meson_spectrum": [
+    {
+      "name": "pi",
+      "quarks": "llbar",
+      "J": 0,
+      "model": 140.0,
+      "pdg": 138.04
+    },
+    {
+      "name": "rho",
+      "quarks": "llbar",
+      "J": 1,
+      "model": 780.0,
+      "pdg": 775.26
+    },
+    {
+      "name": "K",
+      "quarks": "lsbar",
+      "J": 0,
+      "model": 493.01,
+      "pdg": 495.64
+    },
+    {
+      "name": "K*",
+      "quarks": "lsbar",
+      "J": 1,
+      "model": 902.08,
+      "pdg": 893.6
+    },
+    {
+      "name": "phi",
+      "quarks": "ssbar",
+      "J": 1,
+      "model": 1035.37,
+      "pdg": 1019.46
+    },
+    {
+      "name": "D",
+      "quarks": "lcbar",
+      "J": 0,
+      "model": 1867.33,
+      "pdg": 1867.2
+    },
+    {
+      "name": "D*",
+      "quarks": "lcbar",
+      "J": 1,
+      "model": 1995.33,
+      "pdg": 2008.55
+    },
+    {
+      "name": "J/psi",
+      "quarks": "ccbar",
+      "J": 1,
+      "model": 3106.4,
+      "pdg": 3096.9
+    },
+    {
+      "name": "B",
+      "quarks": "lbbar",
+      "J": 0,
+      "model": 5493.07,
+      "pdg": 5279.66
+    },
+    {
+      "name": "B*",
+      "quarks": "lbbar",
+      "J": 1,
+      "model": 5535.02,
+      "pdg": 5324.71
+    },
+    {
+      "name": "Upsilon",
+      "quarks": "bbbar",
+      "J": 1,
+      "model": 9460.69,
+      "pdg": 9460.4
+    }
+  ],
+  "string_breaking": {
+    "threshold_mev": 275.0,
+    "hops": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "stored_mev": [
+      0.0,
+      45.0,
+      90.0,
+      135.0,
+      180.0,
+      225.0,
+      270.0
+    ]
+  },
+  "glueball_mass_gap": [
+    {
+      "links": "0 (Vacuum)",
+      "mass_mev": 0.0
+    },
+    {
+      "links": "4 (Mass Gap \u0394)",
+      "mass_mev": 2001.19
+    },
+    {
+      "links": "6 Links",
+      "mass_mev": 2851.47
+    },
+    {
+      "links": "8 Links",
+      "mass_mev": 3701.75
+    }
+  ],
+  "momentum_lensing": [
+    {
+      "momentum": "(0,0,0)",
+      "load": 6,
+      "lag_b0": 6,
+      "lag_b2": 0
+    },
+    {
+      "momentum": "(2,0,0)",
+      "load": 8,
+      "lag_b0": 9,
+      "lag_b2": 1
+    },
+    {
+      "momentum": "(2,1,0)",
+      "load": 9,
+      "lag_b0": 12,
+      "lag_b2": 3
+    },
+    {
+      "momentum": "(3,2,1)",
+      "load": 12,
+      "lag_b0": 13,
+      "lag_b2": 5
+    }
+  ],
+  "radial_horizon": {
+    "deadlock_cap": 100.0,
+    "radii": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "workload": [
+      244.33,
+      187.19,
+      108.61,
+      121.81,
+      29.42,
+      19.32,
+      12.61
+    ]
+  },
+  "three_body_orbits": [
+    "=== 6-FACE LEDGER GRID: 3-BODY ORBITS VS. UNSOFTENED NEWTON ===",
+    "Figure-8 (1 period, 12 cells/u): min_sep=0.677 | drift(instant)=0.046 | drift(finite c=20)=2.884",
+    "Pythagorean 3-4-5 (t=1.80 pre-pass): min_sep=0.586 | drift=0.005",
+    "Pythagorean 3-4-5 (t=10.0 post-pass): min_sep=0.042 (< 0.15 cap) | drift=233.533"
+  ],
+  "dark_matter": [
+    "=== PART 1: Invisible Gravitational Lensing (Q_EM = 0 Closed-Loop Halo) ===",
+    "Impact b   Q_EM   EM Attenuation   Halo Load (ticks)   Grav Wavefront Lag",
+    "-------------------------------------------------------------------------",
+    "0    0.0             0.0              4740.0                12 px",
+    "2    0.0             0.0              4740.0                 5 px",
+    "4    0.0             0.0              4740.0                 2 px",
+    "8    0.0             0.0              4740.0                 1 px",
+    "=== PART 2: Galaxy Rotation Curve (Baryons Only vs. Baryons + Dark Halo) ===",
+    "Radius r   v_Baryon (Keplerian)   v_Total (Flat Halo)   Dark Load Fraction",
+    "--------------------------------------------------------------------------",
+    "2.0                  20.06                 21.26                 0.110",
+    "4.0                  16.36                 19.88                 0.323",
+    "8.0                  12.18                 19.43                 0.607",
+    "14.0                   9.26                 19.58                 0.776",
+    "20.0                   7.75                 19.76                 0.846",
+    "=== PART 3: Bullet-Cluster Collision (EM Baryon Drag vs. Collisionless Halo) ===",
+    "Baryon separation: 1.1 l_P | Dark halo separation: 4.0 l_P | Lensing peak offset: +1.45 l_P"
+  ],
+  "baryogenesis": [
+    "=== PART 1: 50/50 Big Bang Cascade (Untuned Toy vs. Cosmic-Tuned eta ~ 6.1e-10) ===",
+    "N_gen  J_cp    Untuned Matter   Untuned eta   Cosmic Matter    Cosmic eta (PDG ~6.1e-10)",
+    "----------------------------------------------------------------------------------------",
+    "1 0.0000              0.00    0.0000e+00        0.000000       0.0000e+00",
+    "2 0.0000              0.00    0.0000e+00        0.000000       0.0000e+00",
+    "3 0.9128            547.66    9.2114e-03        0.000037       6.0973e-10",
+    "=== PART 2: 3D Orthogonal Axis Capacity & 100-Tick Node Cutoff ===",
+    "Generation             3D Routing Geometry     Tick Load   Lattice Status",
+    "------------------------------------------------------------------------------",
+    "Gen 1 (u, d, e)        1D Linear Hop                18.0   Allowed (< 100 cap)",
+    "Gen 2 (c, s, mu)       2D Planar Turn               44.0   Allowed (< 100 cap)",
+    "Gen 3 (t, b, tau)      3D Volumetric Twist          82.0   Allowed (< 100 cap)",
+    "Gen 4 (Hypothetical)   Over-Cap Multi-Loop         128.0   BLOCKED / Fractures (> 100 cap)"
+  ]
+}

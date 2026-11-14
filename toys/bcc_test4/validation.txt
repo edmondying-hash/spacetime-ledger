@@ -1,0 +1,29 @@
+test_calibration (__main__.CalculatorTests.test_calibration) ... ok
+test_catalogue_and_pauli_allowed_identical_flavours (__main__.CalculatorTests.test_catalogue_and_pauli_allowed_identical_flavours) ... ok
+test_channel_validation (__main__.CalculatorTests.test_channel_validation) ... ok
+test_delta_proxy_not_charge_measurement (__main__.CalculatorTests.test_delta_proxy_not_charge_measurement) ... ok
+test_expected_outputs (__main__.CalculatorTests.test_expected_outputs) ... ok
+test_explicit_lambda_sigma_pair_states (__main__.CalculatorTests.test_explicit_lambda_sigma_pair_states) ... ok
+test_one_rule_all_channels (__main__.CalculatorTests.test_one_rule_all_channels) ... ok
+test_parameter_validation (__main__.CalculatorTests.test_parameter_validation) ... ok
+test_permutations (__main__.CalculatorTests.test_permutations) ... ok
+test_quantum_pair_sum (__main__.CalculatorTests.test_quantum_pair_sum) ... ok
+test_zero_spin_coupling (__main__.CalculatorTests.test_zero_spin_coupling) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK
+
+Effective pair-spin mass calculator; not a BCC or time-evolution simulation.
+Default calibration: p/n mean + Delta mixed-charge BW proxy + Lambda.
+Channel        Baseline       Spin      Model    Compare  Status
+p               1085.46    -146.54     938.92     938.27  calibration: p/n mean, not individual splitting
+Delta+          1085.46     146.54    1232.00    1232.00  calibration: shared mixed-charge proxy
+Lambda          1262.22    -146.54    1115.68    1115.68  calibration
+Sigma0          1262.22     -82.41    1179.81    1192.64  out-of-calibration comparison (not blind validation)
+Xi0             1438.99    -109.22    1329.77    1314.86  out-of-calibration comparison (not blind validation)
+Omega-          1615.75      66.14    1681.89    1672.45  out-of-calibration comparison (not blind validation)
+All energies in MeV. Delta comparisons are NOT charge-specific measurements.
+Source: https://pdg.lbl.gov/2024/tables/rpp2024-sum-baryons.pdf
+CPU seconds: 0.0374; peak RSS KiB: 14916
