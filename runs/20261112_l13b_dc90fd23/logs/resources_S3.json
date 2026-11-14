@@ -1,0 +1,29 @@
+{
+ "step": "S3",
+ "cmd": [
+  "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/env/venv/bin/python",
+  "-B",
+  "-u",
+  "/home/eying/spacetime_files/runs/20261112_l13b_dc90fd23/harness/l13b_measure.py",
+  "S3"
+ ],
+ "exit_code": 0,
+ "wall_s": 1.091585397720337,
+ "cpu_user_s": 1.00642,
+ "cpu_sys_s": 0.021408999999999997,
+ "cpu_s": 1.027829,
+ "peak_tree_rss_bytes_sampled": 42405888,
+ "peak_tree_rss_MiB": 40.44140625,
+ "max_procs_in_tree": 1,
+ "max_single_child_rss_bytes": 42717184,
+ "killed_at_ceiling": false,
+ "ceiling_s": 600,
+ "start_epoch": 1794532947.9345038,
+ "end_epoch": 1794532949.0260892,
+ "start_local": "2026-11-12 20:22:27 EST",
+ "thread_env": {
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1"
+ }
+}
