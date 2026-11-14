@@ -1,0 +1,172 @@
+{
+ "platform": "Linux-7.0.0-1024-nvidia-aarch64-with-glibc2.39",
+ "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+ "numpy": "2.5.4",
+ "scipy": "1.18.1",
+ "hostname": "gn100-7c00",
+ "P0": {
+  "frozen/qca/dw.py": {
+   "expected": "769833f0393dc1599d5944f6a2837c6ff5ac207ce6ca169eaa2ba9b2ca5fd651",
+   "actual": "769833f0393dc1599d5944f6a2837c6ff5ac207ce6ca169eaa2ba9b2ca5fd651",
+   "ok": true
+  },
+  "frozen/qca/dirac4s.py": {
+   "expected": "4db41fe71ce2844f58f1c61c3c84a768b37b82de1bd546a468d3980c3f0627b4",
+   "actual": "4db41fe71ce2844f58f1c61c3c84a768b37b82de1bd546a468d3980c3f0627b4",
+   "ok": true
+  },
+  "frozen/qca/dirac4.py": {
+   "expected": "9f01ea8f10947eb6a30506e1499de22e373fc7e1a25fa2689e38c873e2b5aedd",
+   "actual": "9f01ea8f10947eb6a30506e1499de22e373fc7e1a25fa2689e38c873e2b5aedd",
+   "ok": true
+  },
+  "frozen/qca/sym.py": {
+   "expected": "7b1bbafd4b01464c8f4d4643582c60994f34ed3e119c4167625f2e5905131764",
+   "actual": "7b1bbafd4b01464c8f4d4643582c60994f34ed3e119c4167625f2e5905131764",
+   "ok": true
+  },
+  "frozen/qca/dw_gscan.py": {
+   "expected": "5bf6af5d089fd17dbe922f335855e9bf961dc731be4025b591e3e0ff16bf938e",
+   "actual": "5bf6af5d089fd17dbe922f335855e9bf961dc731be4025b591e3e0ff16bf938e",
+   "ok": true
+  },
+  "frozen/qca/dw_final.py": {
+   "expected": "48046ea5332a12322d05ec11a0ea733dc920e05b6f7948a5387904bb43fc6aa1",
+   "actual": "48046ea5332a12322d05ec11a0ea733dc920e05b6f7948a5387904bb43fc6aa1",
+   "ok": true
+  },
+  "frozen/qca/dirac4_checks.py": {
+   "expected": "4e316d9895f035966bb0aa269216dcc38c3986c50c5118907ab609af8e519c05",
+   "actual": "4e316d9895f035966bb0aa269216dcc38c3986c50c5118907ab609af8e519c05",
+   "ok": true
+  },
+  "frozen/f71c782e/dirac4.py": {
+   "expected": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "actual": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "ok": true
+  },
+  "design/L1_2_RUN_DESIGN.md": {
+   "expected": "7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b",
+   "actual": "7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b",
+   "ok": true
+  },
+  "inputs/PREREGISTRATION.md": {
+   "expected": "733752444dfdbaab68654e583b15fdc97619883224fc30357f8ecba998747239",
+   "actual": "733752444dfdbaab68654e583b15fdc97619883224fc30357f8ecba998747239",
+   "ok": true
+  },
+  "inputs/L1_2_DECISIONS.txt": {
+   "expected": "c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e",
+   "actual": "c3225f353a1ad68956e2d39443814586b8c6e62ce862dced70e9c1f5aa17cf4e",
+   "ok": true
+  },
+  "inputs/space-ledger-v2.md": {
+   "expected": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+   "actual": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+   "ok": true
+  },
+  "frozen/qca/dw_ring.py": {
+   "expected": "8cbd5eb07af30663f48331bb96964c446ddf6876b3de8dd6f1a4d7c551b2b43b",
+   "actual": "8cbd5eb07af30663f48331bb96964c446ddf6876b3de8dd6f1a4d7c551b2b43b",
+   "ok": true
+  },
+  "frozen/qca/dw_real.py": {
+   "expected": "276c5fdc225320ebddc8970602d03be73d56c16851cfcba04966b606e4e737f8",
+   "actual": "276c5fdc225320ebddc8970602d03be73d56c16851cfcba04966b606e4e737f8",
+   "ok": true
+  }
+ },
+ "P0_pass": true,
+ "P1": {
+  "Ns2_b0.1": {
+   "max_inf_norm": 1.9197245407400288e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns2_b0.2": {
+   "max_inf_norm": 1.9592404450613893e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns2_b0.25": {
+   "max_inf_norm": 1.9573430084906336e-15,
+   "max_abs_entry": 1.5543122344752192e-15
+  },
+  "Ns8_b0.1": {
+   "max_inf_norm": 1.9197245407400288e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns8_b0.2": {
+   "max_inf_norm": 1.9592404450613893e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns8_b0.25": {
+   "max_inf_norm": 1.9573430084906336e-15,
+   "max_abs_entry": 1.5543122344752192e-15
+  },
+  "Ns16_b0.1": {
+   "max_inf_norm": 1.9197245407400288e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns16_b0.2": {
+   "max_inf_norm": 1.9592404450613893e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns16_b0.25": {
+   "max_inf_norm": 1.9573430084906336e-15,
+   "max_abs_entry": 1.5543122344752192e-15
+  },
+  "Ns32_b0.1": {
+   "max_inf_norm": 1.9197245407400288e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns32_b0.2": {
+   "max_inf_norm": 1.9592404450613893e-15,
+   "max_abs_entry": 1.6653345369377348e-15
+  },
+  "Ns32_b0.25": {
+   "max_inf_norm": 1.9573430084906336e-15,
+   "max_abs_entry": 1.5543122344752192e-15
+  }
+ },
+ "P1_pass": true,
+ "P2_maxdiff": 1.0370338861126152e-15,
+ "P2_pass": true,
+ "P3_dist_gamma_pi_pi_0": 0.0,
+ "P3_dist_gamma_pi2": 2.7206990463513265,
+ "P3_pass": true,
+ "P4_Ucycle_r0_edge_vs_Gamma": 6.827582621857774e-16,
+ "P4_chain_Ns4_b0.2_edge_vs_Gamma": 6.827582621857774e-16,
+ "P4_pass": true,
+ "G0b_chain": 1.5214902912426038e-15,
+ "G0b_cycle": 1.5126381665126443e-15,
+ "G0b_pass": true,
+ "G1_residual_m0_0_Ns16": 0.0,
+ "G1_pass": true,
+ "redirects": [
+  [
+   "/workspace/qca/dirac4.py",
+   "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/frozen/qca/dirac4.py"
+  ],
+  [
+   "/workspace/qca/dirac4s.py",
+   "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/frozen/qca/dirac4s.py"
+  ],
+  [
+   "/workspace/qca/dw.py",
+   "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/frozen/qca/dw.py"
+  ],
+  [
+   "sym.py",
+   "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/frozen/qca/sym.py"
+  ]
+ ],
+ "timing_Ns16_grid_point": {
+  "single_point_cpu_s": 0.0028865576000000003,
+  "single_point_wall_s": 0.002886760234832764,
+  "batched_per_point_cpu_s": 0.0009191733839999999,
+  "S3_grid_points": 8586756,
+  "S3_grid_cpu_s_est": 7892.717570102303,
+  "S3_grid_wall_s_est_20proc": 394.63587850511516,
+  "note": "S3 estimate = 4 x 129^3 points x batched per-point CPU; plus Nelder-Mead refinement of local minima (~1500 single-point evaluations each, unknown count until the grid is done). Design guess was \"order of an hour, multi-thread\"."
+ },
+ "preflight_all_pass": true
+}

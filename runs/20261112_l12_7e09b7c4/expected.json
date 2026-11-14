@@ -1,0 +1,83 @@
+{
+ "written_at": "2026-11-12 (America/New_York), before any L1.2 computation",
+ "paper": {
+  "repo": "edmondying-hash/spacetime-ledger",
+  "commit": "cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32",
+  "path": "space-ledger-v2.md",
+  "url": "https://raw.githubusercontent.com/edmondying-hash/spacetime-ledger/cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32/space-ledger-v2.md",
+  "sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+  "lines": "584-624 (Sec. 6.2, Table tab:dw at 595-611), 381, 383"
+ },
+ "table_dw": {
+  "residual_mass_m0_0.05": {
+   "2": 0.0029,
+   "4": 0.00018,
+   "8": 7e-07,
+   "12": 2.7e-09,
+   "24": "~1e-16 (at the roundoff floor) -- UNINFORMATIVE per PREREGISTRATION decision 1"
+  },
+  "components": {
+   "2": 8,
+   "4": 16,
+   "8": 32,
+   "12": 48,
+   "24": 96
+  },
+  "abs_gamma5_Ns16_m0_0": {
+   "0.01": 1.0,
+   "0.05": 0.9999,
+   "0.1": 0.9993,
+   "0.15": 0.9953,
+   "0.2": 0.954
+  },
+  "loc_length_components_Ns16_m0_0": {
+   "0.01": 0.12,
+   "0.05": 0.2,
+   "0.1": 0.29,
+   "0.15": 0.4,
+   "0.2": 0.64
+  }
+ },
+ "prose": {
+  "decay_rate_m0_0.05": -1.39,
+  "decay_pred_m0_0.05": -1.399,
+  "decay_rate_m0_0.1": -0.698,
+  "decay_pred_m0_0.1": -0.703,
+  "end_modes_m0_0": "exactly massless",
+  "gamma5_at_k0.3": 0.47,
+  "doubler_gap_Ns16": {
+   "0.10": 0.058,
+   "0.15": 0.046,
+   "0.20": 0.034,
+   "0.25": 0.022
+  },
+  "bulk_gap_b0.2": 0.033,
+  "b_ge_0.3": "doubler end mode survives near (pi/2,pi/2,+-pi/2), gap falls exponentially with Ns; requires b <~ 0.25",
+  "end_mode_speed": 0.9855,
+  "spread_exponent": 2.0,
+  "spread_at_k0.05": 0.0005,
+  "physical_mode_speed_nu": 0.989,
+  "physical_mode_speed_design_c0": 0.98911,
+  "physical_mode_speed_VERIFY_richardson": 0.98910736,
+  "exactness_X1": {
+   "unitarity": 9e-16,
+   "outside_cone": 0.0,
+   "norm": 2e-15,
+   "reversal": 2e-15
+  },
+  "cost_X2": {
+   "8": 32,
+   "16": 64
+  }
+ },
+ "rules": {
+  "within5pct": "|measured-paper|/|paper|<=0.05 (prereg governs; design adds 'or rounds to printed digits', reported alongside)",
+  "D2_revised": "R6 clause passes iff (a) both speeds measured by same code path over 13 directions, 6 s.f., difference and relative size reported, and (b) end-mode speed within 5% of 0.9855",
+  "R6_species_independence_tol_rel": 1e-06,
+  "R5_thresholds_D3": {
+   "end_weight": 0.5,
+   "allowed_slope_gt": -0.05,
+   "excluded_slope_le": -0.1
+  }
+ }
+}

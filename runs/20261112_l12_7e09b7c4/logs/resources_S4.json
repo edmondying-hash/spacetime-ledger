@@ -1,0 +1,25 @@
+{
+ "step": "S4",
+ "cmd": [
+  "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/env/venv/bin/python",
+  "-u",
+  "/home/eying/spacetime_files/runs/20261112_l12_7e09b7c4/harness/l12.py",
+  "S4"
+ ],
+ "exit_code": 0,
+ "wall_s": 1.718019962310791,
+ "cpu_user_s": 11.886902,
+ "cpu_sys_s": 0.290628,
+ "cpu_s": 12.177529999999999,
+ "peak_tree_rss_bytes_sampled": 1290334208,
+ "peak_tree_rss_GiB": 1.2017173767089844,
+ "max_procs_in_tree": 21,
+ "max_single_child_rss_bytes": 83165184,
+ "start_epoch": 1794528359.3479724,
+ "end_epoch": 1794528361.0659924,
+ "thread_env": {
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1"
+ }
+}
