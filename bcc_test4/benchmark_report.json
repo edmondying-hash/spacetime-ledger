@@ -1,7 +1,7 @@
 {
   "architecture": {
     "grid": "6-face cubic",
-    "tests_run": 37,
+    "tests_run": 61,
     "tests_ok": true
   },
   "baryon_spectrum": [
@@ -55,14 +55,14 @@
       "name": "K",
       "quarks": "lsbar",
       "J": 0,
-      "model": 488.2,
+      "model": 493.01,
       "pdg": 495.64
     },
     {
       "name": "K*",
       "quarks": "lsbar",
       "J": 1,
-      "model": 897.27,
+      "model": 902.08,
       "pdg": 893.6
     },
     {
@@ -76,14 +76,14 @@
       "name": "D",
       "quarks": "lcbar",
       "J": 0,
-      "model": 1764.0,
+      "model": 1867.33,
       "pdg": 1867.2
     },
     {
       "name": "D*",
       "quarks": "lcbar",
       "J": 1,
-      "model": 1892.0,
+      "model": 1995.33,
       "pdg": 2008.55
     },
     {
@@ -92,6 +92,27 @@
       "J": 1,
       "model": 3106.4,
       "pdg": 3096.9
+    },
+    {
+      "name": "B",
+      "quarks": "lbbar",
+      "J": 0,
+      "model": 5493.07,
+      "pdg": 5279.66
+    },
+    {
+      "name": "B*",
+      "quarks": "lbbar",
+      "J": 1,
+      "model": 5535.02,
+      "pdg": 5324.71
+    },
+    {
+      "name": "Upsilon",
+      "quarks": "bbbar",
+      "J": 1,
+      "model": 9460.69,
+      "pdg": 9460.4
     }
   ],
   "string_breaking": {
@@ -103,10 +124,7 @@
       3,
       4,
       5,
-      6,
-      7,
-      8,
-      9
+      6
     ],
     "stored_mev": [
       0.0,
@@ -115,13 +133,27 @@
       135.0,
       180.0,
       225.0,
-      270.0,
-      315.0,
-      360.0,
-      405.0
+      270.0
     ]
   },
-  "glueball_mass_gap": [],
+  "glueball_mass_gap": [
+    {
+      "links": "0 (Vacuum)",
+      "mass_mev": 0.0
+    },
+    {
+      "links": "4 (Mass Gap \u0394)",
+      "mass_mev": 2001.19
+    },
+    {
+      "links": "6 Links",
+      "mass_mev": 2851.47
+    },
+    {
+      "links": "8 Links",
+      "mass_mev": 3701.75
+    }
+  ],
   "momentum_lensing": [
     {
       "momentum": "(0,0,0)",
@@ -172,7 +204,176 @@
   "three_body_orbits": [
     "=== 6-FACE LEDGER GRID: 3-BODY ORBITS VS. UNSOFTENED NEWTON ===",
     "Figure-8 (1 period, 12 cells/u): min_sep=0.677 | drift(instant)=0.046 | drift(finite c=20)=2.884",
-    "Pythagorean 3-4-5 (t=1.80 pre-pass): min_sep=0.596 | drift=0.005",
+    "Pythagorean 3-4-5 (t=1.80 pre-pass): min_sep=0.586 | drift=0.005",
     "Pythagorean 3-4-5 (t=10.0 post-pass): min_sep=0.042 (< 0.15 cap) | drift=233.533"
+  ],
+  "dark_matter": [
+    "=== PART 1: Invisible Gravitational Lensing (Q_EM = 0 Closed-Loop Halo) ===",
+    "Impact b   Q_EM   EM Attenuation   Halo Load (ticks)   Grav Wavefront Lag",
+    "-------------------------------------------------------------------------",
+    "0    0.0             0.0              4740.0                12 px",
+    "2    0.0             0.0              4740.0                 5 px",
+    "4    0.0             0.0              4740.0                 2 px",
+    "8    0.0             0.0              4740.0                 1 px",
+    "=== PART 2: Galaxy Rotation Curve (Baryons Only vs. Baryons + Dark Halo) ===",
+    "Radius r   v_Baryon (Keplerian)   v_Total (Flat Halo)   Dark Load Fraction",
+    "--------------------------------------------------------------------------",
+    "2.0                  20.06                 21.26                 0.110",
+    "4.0                  16.36                 19.88                 0.323",
+    "8.0                  12.18                 19.43                 0.607",
+    "14.0                   9.26                 19.58                 0.776",
+    "20.0                   7.75                 19.76                 0.846",
+    "=== PART 3: Bullet-Cluster Collision (EM Baryon Drag vs. Collisionless Halo) ===",
+    "Baryon separation: 1.1 l_P | Dark halo separation: 4.0 l_P | Lensing peak offset: +1.45 l_P"
+  ],
+  "baryogenesis": [
+    "=== PART 0: KNOBS (hand-set, not derived) ===",
+    "KNOB_STEP_FACTOR_21      = 0.5",
+    "KNOB_PHOTONS_PER_PAIR    = 2.0",
+    "KNOB_WASHOUT_KAPPA       = 1.0",
+    "KNOB_PHOTON_DILUTION     = 1.0",
+    "KNOB_GEN_TICKS           = {'Gen 1 (u, d, e)': 18.0, 'Gen 2 (c, s, mu)': 44.0, 'Gen 3 (t, b, tau)': 82.0, 'Gen 4 (Hypothetical)': 128.0}",
+    "KNOB_NODE_CAP            = 100.0",
+    "=== PART 1: CKM Jarlskog invariant from PDG 2024 angles (Eq. 12.28) ===",
+    "sin th12=0.22501, sin th13=0.003732, sin th23=0.04183, delta=1.147 rad",
+    "unitarity defect max|VV^dag - 1| = 1.11e-16",
+    "J = Im(V_us V_cb V_ub* V_cs*)    = 3.1170e-05   (PDG 2024 fit: 3.12 +0.13 -0.12 e-5)",
+    "J_max = 1/(6 sqrt 3)             = 9.6225e-02   J/J_max = 3.24e-04",
+    "J after random quark rephasing   = 3.1170e-05   (rephasing invariant)",
+    "=== PART 2: Why CP violation needs >= 3 generations (computed, not assumed) ===",
+    "N_gen   physical CP phases (N-1)(N-2)/2",
+    "1   0",
+    "2   0",
+    "3   1",
+    "4   3",
+    "N=2, 200 random U(2): max |Im(U11 U22 U12* U21*)| = 5.6e-17; max |Im| after rephasing = 9.4e-16",
+    "N=3 Jarlskog det[HuHd]: |Im det| = 2.3742e+05 vs 2 J F_u F_d = 2.3742e+05",
+    "N=3 with m_d = m_s (degenerate):  |det| = 4.1e-11  -> CP removable",
+    "=== PART 3: epsilon as an OUTPUT (target eta = 6.1e-10, Planck 2018) ===",
+    "closed form: eta = 2b/(3 - 2b + b^2/2), b = eps*J  ~  (2/3) eps J",
+    "required eps per decay           = 2.9355e-05   (~ 1.5 eta / J = 2.9355e-05)",
+    "N_gen  J_cp           Surviving Matter   eta (cascade)   (2/3) eps J",
+    "1    0.0000e+00        0.0000e+00     0.0000e+00   0.0000e+00",
+    "2   -1.3878e-17        0.0000e+00     0.0000e+00   -2.7159e-22",
+    "3    3.1170e-05        3.6600e-05     6.1000e-10   6.1000e-10",
+    "Open question: can the lattice produce eps ~ 3e-5 per decay without a knob?",
+    "=== PART 4: Generation tick loads (ALL KNOBS) + LEP data ===",
+    "Generation             3D Routing Geometry     Tick Load   Status",
+    "------------------------------------------------------------------------------",
+    "Gen 1 (u, d, e)        1D Linear Hop                18.0   Allowed (< cap, knob)",
+    "Gen 2 (c, s, mu)       2D Planar Turn               44.0   Allowed (< cap, knob)",
+    "Gen 3 (t, b, tau)      3D Volumetric Twist          82.0   Allowed (< cap, knob)",
+    "Gen 4 (Hypothetical)   Over-Cap Multi-Loop         128.0   Over cap (knob)",
+    "Data (not a lattice test): LEP Z width gives N_nu = 2.984 +- 0.0082 light neutrinos."
+  ],
+  "virtual_carriers": [
+    "=== PART 1: Massless Photon (1/r) vs. Massive Weak Boson (Yukawa exp(-r/r0)/r) ===",
+    "Hops (r)   Photon V(r)   Photon Flux   Weak V(r)   Weak Survival   Force Regime",
+    "----------------------------------------------------------------------------------",
+    "1      1.000000      1.000000    0.513417        0.513417   Long-range 1/r + short weak",
+    "2      0.500000      1.000000    0.131799        0.263597   Long-range 1/r + short weak",
+    "3      0.333333      1.000000    0.045112        0.135335   Long-range 1/r + short weak",
+    "4      0.250000      1.000000    0.017371        0.069483   Pure long-range EM/Gravity",
+    "5      0.200000      1.000000    0.007135        0.035674   Pure long-range EM/Gravity",
+    "6      0.166667      1.000000    0.003053        0.018316   Pure long-range EM/Gravity",
+    "7      0.142857      1.000000    0.001343        0.009404   Pure long-range EM/Gravity",
+    "8      0.125000      1.000000    0.000603        0.004828   Pure long-range EM/Gravity",
+    "=== PART 2: Self-Interacting Gluon Carrier Bundling vs. Photon Spread ===",
+    "Hops (r)   Photon V(r) (1/r)   Gluon Tube (MeV)   Confinement State",
+    "--------------------------------------------------------------------------",
+    "1            1.000000              45.00   1D bundled color flux tube",
+    "2            0.500000              90.00   1D bundled color flux tube",
+    "3            0.333333             135.00   1D bundled color flux tube",
+    "4            0.250000             180.00   1D bundled color flux tube",
+    "5            0.200000             225.00   1D bundled color flux tube",
+    "6            0.166667             270.00   1D bundled color flux tube",
+    "7            0.142857             315.00   Snapped -> new q qbar pair",
+    "8            0.125000             360.00   Snapped -> new q qbar pair"
+  ],
+  "gr_emergence": [
+    "=== PART 1: Gravitational Time Dilation (g_00) & Deadlocked Horizon (r_s = 3.0) ===",
+    "Radius r   Workload W(r)   Grid dtau/dt   GR dtau/dt   Lattice Horizon Status",
+    "----------------------------------------------------------------------------------",
+    "3.0          100.00       0.000000     0.000000   DEADLOCKED Horizon (0 escape)",
+    "4.0           75.00       0.500000     0.500000   Active Clock",
+    "6.0           50.00       0.707107     0.707107   Active Clock",
+    "10.0           30.00       0.836660     0.836660   Active Clock",
+    "20.0           15.00       0.921954     0.921954   Active Clock",
+    "=== PART 2: Photon Deflection (Queue Wait g_00 + Orthogonal Detour g_rr = 2x Newton) ===",
+    "Impact b   Newton (1x)   Grid Deflect   Einstein GR   Grid/Newton   Shapiro Ticks",
+    "--------------------------------------------------------------------------------------",
+    "6.0      0.500000       1.000000      1.000000       2.0000x          15.575",
+    "10.0      0.300000       0.600000      0.600000       2.0000x          12.568",
+    "15.0      0.200000       0.400000      0.400000       2.0000x          10.244",
+    "25.0      0.120000       0.240000      0.240000       2.0000x           7.494",
+    "=== PART 3: Relativistic Perihelion Precession (1/r^3 Congestion Correction) ===",
+    "Orbit (a=1200.0, e=0.50, r_s=3.0) -> Grid Advance = 0.031657 rad | Exact GR = 0.031416 rad (diff = 0.767%)"
+  ],
+  "sr_emergence": [
+    "=== PART 1: Kinematic Time Dilation & Length Contraction (1-Hop/Tick Budget) ===",
+    "Beta (v/c)   Lorentz gamma   Clock Rate (1/g)   Time Dilation   Length (L0=10)",
+    "----------------------------------------------------------------------------------",
+    "0.00        1.000000           1.000000        1.000000          10.0000",
+    "0.50        1.154701           0.866025        1.154701           8.6603",
+    "0.80        1.666667           0.600000        1.666667           6.0000",
+    "0.95        3.202563           0.312250        3.202563           3.1225",
+    "0.99        7.088812           0.141067        7.088812           1.4107",
+    "=== PART 2: Relativistic Dispersion E^2 = (pc)^2 + (m0 c^2)^2 (Nucleon m0=938.92 MeV) ===",
+    "Beta (v/c)   Momentum pc (MeV)   E = gamma*m0 (MeV)   Pythagorean E (MeV)   Residual",
+    "--------------------------------------------------------------------------------------",
+    "0.00                0.00               938.92                938.92   0.00e+00",
+    "0.50              542.09              1084.17               1084.17   0.00e+00",
+    "0.80             1251.89              1564.87               1564.87   0.00e+00",
+    "0.95             2856.60              3006.95               3006.95   0.00e+00",
+    "0.99             6589.27              6655.83               6655.83   0.00e+00",
+    "=== PART 3: Bounded Velocity Addition & Invariance of Light Speed c ===",
+    "Frame v/c   Object u/c   Galilean u+v   Grid Relativistic   Respects c Cap",
+    "------------------------------------------------------------------------------",
+    "0.50         0.50       1.000000            0.800000   True",
+    "0.80         0.80       1.600000            0.975610   True",
+    "0.95         0.95       1.900000            0.998686   True",
+    "0.80         1.00       1.800000            1.000000   True"
+  ],
+  "halo_solver": [
+    "=== PART 1: Inverse Halo Reconstruction from Galaxy Rotation Curve ===",
+    "Radius r   M_Baryon   M_Halo(<r)   rho_Halo(r)   Q_EM=0 Loops   Dark Frac   Dark:Baryon",
+    "----------------------------------------------------------------------------------------",
+    "2.0     804.81        99.17       0.98644          247.8      0.1097       0.12 : 1",
+    "4.0    1070.60       510.26       1.02230         1274.9      0.3228       0.48 : 1",
+    "8.0    1186.82      1833.38       0.41129         4580.7      0.6070       1.54 : 1",
+    "14.0    1200.47      4166.80       0.15790        10410.8      0.7763       3.47 : 1",
+    "20.0    1201.25      6607.90       0.08094        16509.9      0.8462       5.50 : 1",
+    "=== PART 2: Cusp-vs.-Core Central Density (100-Tick/Cycle Node Throughput Cap) ===",
+    "Radius r   NFW Cusp (1/r)   Grid Core Density   Lattice Core Status",
+    "--------------------------------------------------------------------------",
+    "0.2          1062.50               84.46   Cored & Bounded (< 100 cap)",
+    "0.5           425.00               81.73   Cored & Bounded (< 100 cap)",
+    "1.0           212.50               73.28   Cored & Bounded (< 100 cap)",
+    "2.5            85.00               42.50   Cored & Bounded (< 100 cap)",
+    "5.0            42.50               17.00   Cored & Bounded (< 100 cap)",
+    "10.0            21.25                5.00   Cored & Bounded (< 100 cap)"
+  ],
+  "cmb_spectrum": [
+    "=== PART 1: Cosmic Expansion Redshift Cooling & CMB Photon/Baryon Bath ===",
+    "Present CMB T_0 = 2.725 K | n_gamma = 410.50 cm^-3 | eta = 6.10e-10 -> n_baryon = 2.50e-07 cm^-3",
+    "Redshift z   Scale a(t)   Temp T(z) (K)   Peak lambda (mm)   Cosmic Lattice Era",
+    "----------------------------------------------------------------------------------",
+    "1098.0     0.000910        2994.775             0.0010   Recombination (H decoupling)",
+    "100.0     0.009901         275.225             0.0105   Free-streaming expansion",
+    "10.0     0.090909          29.975             0.0967   Free-streaming expansion",
+    "1.0     0.500000           5.450             0.5317   Free-streaming expansion",
+    "0.0     1.000000           2.725             1.0634   Present-day CMB",
+    "=== PART 2: Planck Blackbody Spectrum B_nu(T_0 = 2.725 K) Across Microwave Band ===",
+    "Freq (GHz)   Mode Occupancy   Spectral Radiance (W/m^2/Hz/sr)   Normalized Peak",
+    "----------------------------------------------------------------------------------",
+    "40.0           0.9777                        9.2266e-19            0.2405",
+    "80.0           0.3235                        2.4419e-18            0.6365",
+    "120.0           0.1374                        3.5016e-18            0.9127",
+    "160.2           0.0633                        3.8367e-18            1.0000",
+    "220.0           0.0212                        3.3289e-18            0.8677",
+    "300.0           0.0051                        2.0304e-18            0.5292",
+    "400.0           0.0009                        8.2357e-19            0.2147",
+    "=== PART 3: 3D 6-Face Acoustic Sound Speed (c_s = c/sqrt(3)) & First Peak l_1 ===",
+    "3-Axis Plasma c_s/c = 0.577350 | Sound Horizon theta_s = 0.5965 deg | Grid l_1 = 220.00 (Planck 2018 = 220.0)"
   ]
 }

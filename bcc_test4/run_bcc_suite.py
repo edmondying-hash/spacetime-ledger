@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Master test & simulation runner for the 6-face Planck-cube grid suite."""
+"""Master test & simulation runner for the 6-face Planck-cube grid suite (43 tests)."""
 
 import argparse, io, json, os, subprocess, sys, time, unittest
 from contextlib import redirect_stdout
-import baryon_calculator, bcc_3d_gravity, bcc_3body_orbits, bcc_born_pascal
-import bcc_em_wave_sim, bcc_meson_sim, bcc_unified_sim, bcc3dhorizonsim
+import baryon_calculator, bcc_3d_gravity, bcc_3body_orbits, bcc_baryogenesis
+import bcc_born_pascal, bcc_dark_matter, bcc_em_wave_sim, bcc_meson_sim
+import bcc_unified_sim, bcc_virtual_carriers, bcc3dhorizonsim, bcc_gr_emergence, bcc_sr_emergence, bcc_halo_solver, bcc_cmb_spectrum
 
 TESTS = [
     "test_baryon_calculator", "test_bcc_unified_sim", "test_bcc_meson_sim",
     "test_bcc_em_wave_sim", "test_bcc_born_pascal", "test_bcc_3d_gravity",
-    "test_bcc3dhorizonsim", "test_bcc_3body_orbits",
+    "test_bcc3dhorizonsim", "test_bcc_3body_orbits", "test_bcc_dark_matter",
+    "test_bcc_baryogenesis", "test_bcc_virtual_carriers", "test_bcc_gr_emergence",
+    "test_bcc_sr_emergence", "test_bcc_halo_solver", "test_bcc_cmb_spectrum",
 ]
 
 
@@ -49,32 +52,40 @@ def run_mod(mod, script, funcs):
     print(p.stdout, end="")
     return p.stdout
 
-
 def parse_json(tests_run, tests_ok, outs):
     baryons, mesons, hops, stored, glue, lensing, radii, work = [], [], [], [], [], [], [], []
+    b_names = {"p", "Delta+", "Lambda", "Sigma0", "Xi0", "Omega-"}
     for line in outs["baryon"].splitlines():
         c = line.split()
-        if len(c) >= 5 and c[0] in {"p", "Delta+", "Lambda", "Sigma0", "Xi0", "Omega-"}:
-            baryons.append({"name": c[0], "model": float(c[3]), "pdg": float(c[4])})
+        if len(c) >= 5:
+            name, _b, _s, mod_s, pdg_s, *_ = c
+            if name in b_names:
+                baryons.append({"name": name, "model": float(mod_s), "pdg": float(pdg_s)})
 
+    m_names = {"pi", "rho", "K", "K*", "phi", "D", "D*", "J/psi", "B", "B*", "Upsilon"}
     for line in outs["meson"].splitlines():
         c = line.split()
-        if len(c) >= 8 and c[0] in {"pi", "rho", "K", "K*", "phi", "D", "D*", "J/psi"}:
-            mesons.append({"name": c[0], "quarks": c[1], "J": int(c[2]),
-                           "model": float(c[6]), "pdg": float(c[7])})
-        elif len(c) >= 3 and c[0].isdigit():
-            hops.append(int(c[0]))
-            stored.append(float(c[2]))
+        if len(c) >= 8:
+            name, qks, j_s, _bt, _rt, _st, mod_s, pdg_s, *_ = c
+            if name in m_names:
+                mesons.append({"name": name, "quarks": qks, "J": int(j_s),
+                               "model": float(mod_s), "pdg": float(pdg_s)})
+        elif len(c) >= 3:
+            h_s, _tks, mev_s, *_ = c
+            if h_s.isdigit():
+                hops.append(int(h_s))
+                stored.append(float(mev_s))
 
     in_p2 = False
     for line in outs["unified"].splitlines():
         if "PART 2:" in line: in_p2 = True
         elif "PART 3:" in line: in_p2 = False
-        elif in_p2 and line.split() and line.split()[0].isdigit():
-            c = line.split()
-            lk = int(c[0])
+        elif in_p2 and "Loop Links=" in line:
+            left, right = line.split("Mass=", 1)
+            lk = int(left.split("=").pop().strip(": "))
+            mass_val = float(right.split("MeV").pop(0).strip())
             lbl = "0 (Vacuum)" if lk == 0 else ("4 (Mass Gap Δ)" if lk == 4 else f"{lk} Links")
-            glue.append({"links": lbl, "mass_mev": float(c[5])})
+            glue.append({"links": lbl, "mass_mev": mass_val})
 
     in_p6 = False
     for line in outs["gravity"].splitlines():
@@ -83,27 +94,33 @@ def parse_json(tests_run, tests_ok, outs):
             m_str, rest = line.strip().split(")", 1)
             c = rest.split()
             if len(c) >= 7:
+                ld_s, _tw, _cw, b0_s, _px0, b2_s, *_ = c
                 lensing.append({"momentum": (m_str + ")").replace(" ", ""),
-                                "load": int(c[0]), "lag_b0": int(c[3]), "lag_b2": int(c[5])})
+                                "load": int(ld_s), "lag_b0": int(b0_s), "lag_b2": int(b2_s)})
 
     for line in outs["horizon"].splitlines():
         c = line.split()
-        if len(c) >= 6 and c[0].isdigit() and "(" in line and ")" in line:
-            radii.append(int(c[0]))
-            after_coord = line.split(")", 1)[1].split()
-            work.append(float(after_coord[0]))
-
-    three_body = [ln.strip() for ln in outs["three_body"].splitlines() if ln.strip()]
+        if len(c) >= 6 and "(" in line and ")" in line:
+            r_s, *_ = c
+            if r_s.isdigit():
+                radii.append(int(r_s))
+                wk_s, *_ = line.split(")", 1).pop(1).split()
+                work.append(float(wk_s))
 
     return {
         "architecture": {"grid": "6-face cubic", "tests_run": tests_run, "tests_ok": tests_ok},
-        "baryon_spectrum": baryons,
-        "meson_spectrum": mesons,
+        "baryon_spectrum": baryons, "meson_spectrum": mesons,
         "string_breaking": {"threshold_mev": 275.0, "hops": hops, "stored_mev": stored},
-        "glueball_mass_gap": glue,
-        "momentum_lensing": lensing,
+        "glueball_mass_gap": glue, "momentum_lensing": lensing,
         "radial_horizon": {"deadlock_cap": 100.0, "radii": radii, "workload": work},
-        "three_body_orbits": three_body,
+        "three_body_orbits": [ln.strip() for ln in outs["three_body"].splitlines() if ln.strip()],
+        "dark_matter": [ln.strip() for ln in outs["dark_matter"].splitlines() if ln.strip()],
+        "baryogenesis": [ln.strip() for ln in outs["baryogenesis"].splitlines() if ln.strip()],
+        "virtual_carriers": [ln.strip() for ln in outs["virtual_carriers"].splitlines() if ln.strip()],
+        "gr_emergence": [ln.strip() for ln in outs["gr_emergence"].splitlines() if ln.strip()],
+        "sr_emergence": [ln.strip() for ln in outs["sr_emergence"].splitlines() if ln.strip()],
+        "halo_solver": [ln.strip() for ln in outs["halo_solver"].splitlines() if ln.strip()],
+        "cmb_spectrum": [ln.strip() for ln in outs["cmb_spectrum"].splitlines() if ln.strip()],
     }
 
 
@@ -113,11 +130,8 @@ def main():
     ap.add_argument("--json-out", default="")
     args = ap.parse_args()
     t0 = time.perf_counter()
-
     t_run, t_ok = (0, True) if args.skip_tests else run_tests()
-    if not t_ok:
-        sys.exit(1)
-
+    if not t_ok: sys.exit(1)
     outs = {
         "baryon": run_baryon(),
         "unified": run_mod(bcc_unified_sim, "bcc_unified_sim.py", ("run_unified_demo", "run_demo", "main")),
@@ -127,6 +141,13 @@ def main():
         "gravity": run_mod(bcc_3d_gravity, "bcc_3d_gravity.py", ("run_3d_gravity_demo", "run_demo", "main")),
         "horizon": run_mod(bcc3dhorizonsim, "bcc3dhorizonsim.py", ("run_3d_horizon_demo", "run_demo", "main")),
         "three_body": run_mod(bcc_3body_orbits, "bcc_3body_orbits.py", ("run_3body_demo", "run_demo", "main")),
+        "dark_matter": run_mod(bcc_dark_matter, "bcc_dark_matter.py", ("run_dark_matter_demo", "run_demo", "main")),
+        "baryogenesis": run_mod(bcc_baryogenesis, "bcc_baryogenesis.py", ("run_baryogenesis_demo", "run_demo", "main")),
+        "virtual_carriers": run_mod(bcc_virtual_carriers, "bcc_virtual_carriers.py", ("run_virtual_carrier_demo", "run_demo", "main")),
+        "gr_emergence": run_mod(bcc_gr_emergence, "bcc_gr_emergence.py", ("run_gr_emergence_demo", "run_demo", "main")),
+        "sr_emergence": run_mod(bcc_sr_emergence, "bcc_sr_emergence.py", ("run_sr_emergence_demo", "run_demo", "main")),
+        "halo_solver": run_mod(bcc_halo_solver, "bcc_halo_solver.py", ("run_halo_solver_demo", "run_demo", "main")),
+        "cmb_spectrum": run_mod(bcc_cmb_spectrum, "bcc_cmb_spectrum.py", ("run_cmb_spectrum_demo", "run_demo", "main")),
     }
     if args.json_out:
         with open(args.json_out, "w", encoding="utf-8") as f:

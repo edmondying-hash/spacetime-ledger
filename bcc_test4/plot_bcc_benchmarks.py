@@ -1,226 +1,236 @@
 #!/usr/bin/env python3
-"""8-Panel Benchmark Dashboard for the 6-Face Planck-Cube Grid Suite (37/37 Tests)."""
+"""Compact 18-Panel (3x6) Master Dashboard Covering All 15 Modules (61/61 Tests OK)."""
 
-import argparse, json, os
+import argparse, json
 import matplotlib.pyplot as plt
 import numpy as np
 from bcc_3body_orbits import _grad_6face_load, _newton_acc
-
-DEFAULTS = {
-    "baryon_spectrum": [
-        {"name": "p", "model": 938.92, "pdg": 938.27},
-        {"name": "Delta+", "model": 1232.00, "pdg": 1232.00},
-        {"name": "Lambda", "model": 1115.68, "pdg": 1115.68},
-        {"name": "Sigma0", "model": 1179.81, "pdg": 1192.64},
-        {"name": "Xi0", "model": 1329.77, "pdg": 1314.86},
-        {"name": "Omega-", "model": 1681.89, "pdg": 1672.45},
-    ],
-    "meson_spectrum": [
-        {"name": "pi", "model": 140.00, "pdg": 138.04},
-        {"name": "rho", "model": 780.00, "pdg": 775.26},
-        {"name": "K", "model": 488.20, "pdg": 495.64},
-        {"name": "K*", "model": 897.27, "pdg": 893.60},
-        {"name": "phi", "model": 1035.37, "pdg": 1019.46},
-        {"name": "D", "model": 1764.00, "pdg": 1867.20},
-        {"name": "D*", "model": 1892.00, "pdg": 2008.55},
-        {"name": "J/psi", "model": 3106.40, "pdg": 3096.90},
-    ],
-    "string_breaking": {
-        "threshold_mev": 275.0,
-        "hops": list(range(10)),
-        "stored_mev": [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0, 360.0, 405.0],
-    },
-    "glueball_mass_gap": [
-        {"links": "0 (Vacuum)", "mass_mev": 0.0},
-        {"links": "4 (Mass Gap Δ)", "mass_mev": 2001.18},
-        {"links": "6 Links", "mass_mev": 2851.75},
-        {"links": "8 Links", "mass_mev": 3694.67},
-    ],
-    "momentum_lensing": [
-        {"momentum": "(0,0,0)", "load": 6, "lag_b0": 6, "lag_b2": 0},
-        {"momentum": "(2,0,0)", "load": 8, "lag_b0": 9, "lag_b2": 1},
-        {"momentum": "(2,1,0)", "load": 9, "lag_b0": 12, "lag_b2": 3},
-        {"momentum": "(3,2,1)", "load": 12, "lag_b0": 13, "lag_b2": 5},
-    ],
-    "radial_horizon": {
-        "deadlock_cap": 100.0,
-        "radii": list(range(7)),
-        "workload": [244.33, 187.19, 108.61, 121.81, 29.42, 19.32, 12.61],
-    },
-}
+from bcc_baryogenesis import BCCBaryogenesisSim
+from bcc_cmb_spectrum import BCCCMBSpectrumSim
+from bcc_dark_matter import BCCDarkMatterSim
+from bcc_gr_emergence import BCCGREmergenceSim
+from bcc_halo_solver import BCCHaloSolver
+from bcc_sr_emergence import BCCSREmergenceSim
+from bcc_virtual_carriers import BCCVirtualCarrierSim
 
 
-def _step_bodies(pos_list, vel_list, masses, dt, fn_acc):
-    new_v, new_p = [], []
-    for i, ((px, py), (vx, vy)) in enumerate(zip(pos_list, vel_list)):
-        others = [(ox, oy, masses[j]) for j, (ox, oy) in enumerate(pos_list) if j != i]
-        ax, ay = fn_acc((px, py), others)
+def _step(pos, vel, masses, dt, fn):
+    nv, np_ = [], []
+    for i, ((px, py), (vx, vy)) in enumerate(zip(pos, vel)):
+        oth = [(ox, oy, masses[j]) for j, (ox, oy) in enumerate(pos) if j != i]
+        ax, ay = fn((px, py), oth)
         vx2, vy2 = vx + ax * dt, vy + ay * dt
-        new_v.append((vx2, vy2))
-        new_p.append((px + vx2 * dt, py + vy2 * dt))
-    return new_p, new_v
+        nv.append((vx2, vy2))
+        np_.append((px + vx2 * dt, py + vy2 * dt))
+    return np_, nv
 
 
-def trace_3body(masses, pos0, vel0, t_end, dt=0.004, scale=12.0, smooth=0.15):
-    gp = [(float(x), float(y)) for x, y in pos0]
-    gv = [(float(vx), float(vy)) for vx, vy in vel0]
-    np_ = list(gp)
-    nv = list(gv)
-    g_hist = [[p] for p in gp]
-    n_hist = [[p] for p in np_]
-    g_fn = lambda pos, oth: _grad_6face_load(pos, oth, scale, smooth)
-    for _ in range(int(round(t_end / dt))):
-        gp, gv = _step_bodies(gp, gv, masses, dt, g_fn)
-        np_, nv = _step_bodies(np_, nv, masses, dt, _newton_acc)
+def trace_3body(masses, p0, v0, t_end, scale):
+    gp, gv = [(float(x), float(y)) for x, y in p0], [(float(x), float(y)) for x, y in v0]
+    np_, nv = list(gp), list(gv)
+    gh, nh = [[p] for p in gp], [[p] for p in np_]
+    g_fn = lambda pos, oth: _grad_6face_load(pos, oth, scale, 0.15)
+    for _ in range(int(round(t_end / 0.004))):
+        gp, gv = _step(gp, gv, masses, 0.004, g_fn)
+        np_, nv = _step(np_, nv, masses, 0.004, _newton_acc)
         for i in range(3):
-            g_hist[i].append(gp[i])
-            n_hist[i].append(np_[i])
-    return g_hist, n_hist
+            gh[i].append(gp[i])
+            nh[i].append(np_[i])
+    return gh, nh
 
 
-def build_dashboard(data, out_path):
+def build_dashboard(d, out_path):
     plt.style.use("seaborn-v0_8-whitegrid")
-    fig, axes = plt.subplots(2, 4, figsize=(22, 10.5), dpi=160)
-    it = iter(axes.flat)
-    n_tests = data.get("architecture", {}).get("tests_run") or 37
-    fig.suptitle(
-        f"6-Face Planck-Cube Grid (1.0 $l_P^3$, 1.0 $t_P$) — Unified Benchmarks ({n_tests}/{n_tests} Tests OK)",
-        fontsize=14, fontweight="bold", y=0.98,
-    )
-    w = 0.36
+    fig, axes = plt.subplots(3, 6, figsize=(28, 14.5), dpi=160)
+    it, w = iter(axes.flat), 0.36
+    nt = d.get("architecture", {}).get("tests_run") or 61
+    fig.suptitle(f"6-Face Planck-Cube Grid — 15-Module Master Benchmarks ({nt}/{nt} Tests OK)",
+                 fontsize=16, fontweight="bold", y=0.975)
 
-    # 1. Baryons
-    ax = next(it)
-    b = data["baryon_spectrum"]
-    x = np.arange(len(b))
-    ax.bar(x - w / 2, [r["model"] for r in b], w, label="6-Face Grid", color="#2563eb")
-    ax.bar(x + w / 2, [r["pdg"] for r in b], w, label="PDG 2024", color="#94a3b8")
-    ax.set_title("1. Ground-State Baryons (3q)", fontweight="bold")
-    ax.set_ylabel("Mass (MeV)")
-    ax.set_xticks(x)
-    ax.set_xticklabels([r["name"] for r in b], fontsize=8)
-    ax.legend(fontsize=8)
-
-    # 2. Mesons
-    ax = next(it)
-    m = data["meson_spectrum"]
-    xm = np.arange(len(m))
-    ax.bar(xm - w / 2, [r["model"] for r in m], w, label="6-Face Grid", color="#0d9488")
-    ax.bar(xm + w / 2, [r["pdg"] for r in m], w, label="PDG 2024", color="#94a3b8")
-    ax.set_title("2. Ground-State Mesons ($q\\bar{q}$)", fontweight="bold")
-    ax.set_ylabel("Mass (MeV)")
-    ax.set_xticks(xm)
-    ax.set_xticklabels([r["name"] for r in m], fontsize=8)
-    ax.legend(fontsize=8)
+    # 1. Baryons & 2. Mesons
+    for title, key, col in (("1. Baryons (3q)", "baryon_spectrum", "#2563eb"),
+                            ("2. Mesons ($q\\bar{q}$)", "meson_spectrum", "#0d9488")):
+        ax, rows = next(it), d[key]
+        x = np.arange(len(rows))
+        ax.bar(x - w / 2, [r["model"] for r in rows], w, label="Grid", color=col)
+        ax.bar(x + w / 2, [r["pdg"] for r in rows], w, label="PDG", color="#94a3b8")
+        ax.set_title(title, fontweight="bold", fontsize=10)
+        ax.set_xticks(x)
+        ax.set_xticklabels([r["name"] for r in rows], fontsize=6.5)
+        ax.legend(fontsize=7)
 
     # 3. Flux-Tube String Breaking
-    ax = next(it)
-    sb = data["string_breaking"]
-    hops, stored, th = np.array(sb["hops"]), np.array(sb["stored_mev"]), sb["threshold_mev"]
-    ax.plot(hops, stored, "--", color="#475569", lw=1.2)
-    ax.scatter(hops[stored <= th], stored[stored <= th], color="#2563eb", s=45, label="Intact")
-    ax.scatter(hops[stored > th], stored[stored > th], color="#dc2626", s=55, marker="X", label="Snapped")
-    ax.axhline(th, color="#ea580c", ls=":", lw=1.6, label=f"Threshold ({th:.0f} MeV)")
-    ax.set_title("3. Flux-Tube String Breaking", fontweight="bold")
-    ax.set_xlabel("6-Face Hops (L)")
-    ax.set_ylabel("Energy (MeV)")
-    ax.legend(fontsize=8)
+    ax, sb = next(it), d["string_breaking"]
+    hops, st, th = np.array(sb["hops"]), np.array(sb["stored_mev"]), sb["threshold_mev"]
+    ax.plot(hops, st, "--", color="#475569", lw=1.2)
+    ax.scatter(hops[st <= th], st[st <= th], color="#2563eb", s=34, label="Intact")
+    ax.scatter(hops[st > th], st[st > th], color="#dc2626", s=46, marker="X", label="Snapped")
+    ax.axhline(th, color="#ea580c", ls=":", lw=1.5, label=f"{th:.0f} MeV Cap")
+    ax.set_title("3. Flux-Tube Breaking", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7)
 
     # 4. Glueball Mass Gap
-    ax = next(it)
-    gb = data["glueball_mass_gap"]
+    ax, gb = next(it), d["glueball_mass_gap"]
     bars = ax.bar([g["links"] for g in gb], [g["mass_mev"] for g in gb],
                   color=["#cbd5e1", "#7c3aed", "#6d28d9", "#5b21b6"], width=0.5)
     for bar, g in zip(bars, gb):
-        ax.text(bar.get_x() + bar.get_width() / 2, g["mass_mev"] + 55,
-                f"{g['mass_mev']:.1f}", ha="center", fontsize=8, fontweight="bold")
+        ax.text(bar.get_x() + bar.get_width() / 2, g["mass_mev"] + 60,
+                f"{g['mass_mev']:.0f}", ha="center", fontsize=7, fontweight="bold")
     ax.set_ylim(0, max(g["mass_mev"] for g in gb) * 1.15)
-    ax.set_title("4. Pure-Gluon Mass Gap ($BareT=0$)", fontweight="bold")
-    ax.set_ylabel("Mass (MeV)")
-    ax.tick_params(axis="x", labelsize=7.5)
+    ax.set_title("4. Gluon Mass Gap (BareT=0)", fontweight="bold", fontsize=10)
+    ax.tick_params(axis="x", labelsize=6.5)
 
-    # 5. Momentum-Coupled Lensing
-    ax = next(it)
-    ml = data["momentum_lensing"]
+    # 5. Momentum Lensing
+    ax, ml = next(it), d["momentum_lensing"]
     xl = np.arange(len(ml))
-    ax.plot(xl, [r["lag_b0"] for r in ml], "o-", color="#dc2626", lw=2, label="Central (b=0)")
-    ax.plot(xl, [r["lag_b2"] for r in ml], "s-", color="#f59e0b", lw=2, label="Off-Axis (b=2)")
-    ax.set_title("5. Momentum Lensing (Part 5→1)", fontweight="bold")
-    ax.set_ylabel("Delay (Pixels)")
+    ax.plot(xl, [r["lag_b0"] for r in ml], "o-", color="#dc2626", lw=2, label="b=0")
+    ax.plot(xl, [r["lag_b2"] for r in ml], "s-", color="#f59e0b", lw=2, label="b=2")
+    ax.set_title("5. Momentum Lensing", fontweight="bold", fontsize=10)
     ax.set_xticks(xl)
-    ax.set_xticklabels([r["momentum"] for r in ml], fontsize=8)
-    ax.legend(fontsize=8)
+    ax.set_xticklabels([r["momentum"] for r in ml], fontsize=6.8)
+    ax.legend(fontsize=7)
 
-    # 6. 3D Deadlocked Horizon
-    ax = next(it)
-    rh = data["radial_horizon"]
+    # 6. 3D Horizon
+    ax, rh = next(it), d["radial_horizon"]
     rad, wk, cap = np.array(rh["radii"]), np.array(rh["workload"]), rh["deadlock_cap"]
     ax.bar(rad, wk, color=["#dc2626" if v >= cap else "#16a34a" for v in wk], width=0.55)
-    ax.axhline(cap, color="#1e293b", ls="--", lw=1.5, label="Deadlock Cap (100)")
-    ax.set_title("6. 3D Network-Deadlocked Horizon", fontweight="bold")
-    ax.set_xlabel("Radius r ($l_P$)")
-    ax.set_ylabel("Workload (Ticks)")
-    ax.legend(fontsize=8)
+    ax.axhline(cap, color="#1e293b", ls="--", lw=1.5, label="Cap (100)")
+    ax.set_title("6. 3D Deadlocked Horizon", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7)
 
-    # 7. 3-Body Figure-8 Choreography
+    # 7. Figure-8 & 8. Pythagorean 3-4-5
     ax = next(it)
-    f8_p = [(-0.97000436, 0.24308753), (0.97000436, -0.24308753), (0.0, 0.0)]
     vx3, vy3 = -0.93240737, -0.86473146
-    f8_v = [(-0.5 * vx3, -0.5 * vy3), (-0.5 * vx3, -0.5 * vy3), (vx3, vy3)]
-    g8, n8 = trace_3body([1.0, 1.0, 1.0], f8_p, f8_v, t_end=6.33, scale=12.0)
-    for i, (tr_g, col) in enumerate(zip(g8, ("#2563eb", "#0d9488", "#7c3aed"))):
-        gx, gy = zip(*tr_g)
-        ax.plot(gx, gy, color=col, lw=1.8, label="6-Face Grid" if i == 0 else None)
-    nx8, ny8 = zip(*next(iter(n8)))
-    ax.plot(nx8, ny8, "--", color="#94a3b8", lw=1.3, label="Newton")
-    ax.set_title("7. 3-Body Figure-8 (min_sep=0.68)", fontweight="bold")
-    ax.set_xlabel("x (units)")
-    ax.legend(fontsize=8)
+    g8, n8 = trace_3body([1.0, 1.0, 1.0],
+                         [(-0.97000436, 0.24308753), (0.97000436, -0.24308753), (0.0, 0.0)],
+                         [(-0.5 * vx3, -0.5 * vy3), (-0.5 * vx3, -0.5 * vy3), (vx3, vy3)], 6.33, 12.0)
+    for i, (tr, c) in enumerate(zip(g8, ("#2563eb", "#0d9488", "#7c3aed"))):
+        ax.plot(*zip(*tr), color=c, lw=1.8, label="Grid" if i == 0 else None)
+    ax.plot(*zip(*next(iter(n8))), "--", color="#94a3b8", lw=1.3, label="Newton")
+    ax.set_title("7. 3-Body Figure-8", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7)
 
-    # 8. 3-Body Pythagorean 3-4-5 Close-Pass Split (Zoomed Core)
     ax = next(it)
-    p345_p = [(1.0, 3.0), (-2.0, -1.0), (1.0, -1.0)]
-    p345_v = [(0.0, 0.0), (0.0, 0.0), (0.0, 0.0)]
-    g3, n3 = trace_3body([3.0, 4.0, 5.0], p345_p, p345_v, t_end=3.2, scale=10.0)
-    cols = ("#dc2626", "#f59e0b", "#2563eb")
-    lbls = ("m=3", "m=4", "m=5")
-    for i, (tr_g, tr_n, col, m_lbl) in enumerate(zip(g3, n3, cols, lbls)):
-        gx, gy = zip(*tr_g)
-        nx, ny = zip(*tr_n)
-        ax.plot(gx, gy, color=col, lw=1.9, label=f"Grid ({m_lbl})")
-        ax.plot(nx, ny, ":", color="#64748b", lw=1.2, label="Newton" if i == 0 else None)
-        sx, sy = next(iter(tr_g))
-        ex, ey = tr_g[-1]
-        ax.scatter([sx], [sy], color=col, s=36, zorder=4)
-        ax.scatter([ex], [ey], color=col, marker="o", edgecolor="k", s=45, zorder=5)
-    ax.set_xlim(-3.5, 3.5)
-    ax.set_ylim(-3.5, 3.5)
-    ax.set_aspect("equal", adjustable="box")
-    ax.set_title("8. Pythagorean 3-4-5 Zoom (0.15 Cap)", fontweight="bold")
-    ax.set_xlabel("x (units)")
-    ax.legend(fontsize=7.2, loc="upper left", ncol=2)
+    g3, n3 = trace_3body([3.0, 4.0, 5.0], [(1.0, 3.0), (-2.0, -1.0), (1.0, -1.0)],
+                         [(0.0, 0.0), (0.0, 0.0), (0.0, 0.0)], 3.2, 10.0)
+    for i, (tg, tn, c) in enumerate(zip(g3, n3, ("#dc2626", "#f59e0b", "#2563eb"))):
+        ax.plot(*zip(*tg), color=c, lw=1.8, label=f"Grid m={i+3}")
+        ax.plot(*zip(*tn), ":", color="#64748b", lw=1.2, label="Newton" if i == 0 else None)
+    ax.set_xlim(-3.5, 3.5); ax.set_ylim(-3.5, 3.5); ax.set_aspect("equal")
+    ax.set_title("8. Pythagorean 3-4-5 (0.15 Cap)", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=6.5, loc="upper left", ncol=2)
 
-    plt.tight_layout(rect=(0, 0, 1, 0.95))
-    plt.savefig(out_path, dpi=180)
-    plt.close(fig)
-    print(f"Saved 8-panel benchmark dashboard to: {out_path}")
+    # 9. Dark Matter Rotation Curve
+    ax, r_dm = next(it), [float(r) for r in range(2, 22, 2)]
+    cv = BCCDarkMatterSim().rotation_curve(r_dm)
+    ax.plot(r_dm, [c["v_total"] for c in cv], "o-", color="#7c3aed", lw=2, label="+ $Q_{EM}=0$ Halo")
+    ax.plot(r_dm, [c["v_baryon"] for c in cv], "s--", color="#64748b", lw=1.7, label="Baryons Only")
+    ax.set_ylim(0, 26); ax.set_title("9. Dark Matter Rotation Curve", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7, loc="lower left")
+    # 10. 3-Generation Baryogenesis (50/50 Cascade)
+    ax, bsim = next(it), BCCBaryogenesisSim()
+    b_res = [bsim.simulate_universe(n) for n in (1, 2, 3)]
+    b_bars = ax.bar(["1 Gen\n(1D)", "2 Gens\n(2D)", "3 Gens\n(3D)"],
+                    [r["surviving_matter"] for r in b_res],
+                    color=["#94a3b8", "#94a3b8", "#2563eb"], width=0.5)
+    ax.set_ylim(0, max(r["surviving_matter"] for r in b_res) * 1.28)
+    for bar, r in zip(b_bars, b_res):
+        lbl = "0" if r["surviving_matter"] == 0 else f"η~6.1e-10"
+        ax.text(bar.get_x() + bar.get_width() / 2, r["surviving_matter"] * 1.04 + 1e-6,
+                lbl, ha="center", fontsize=6.8, fontweight="bold")
+    ax.set_title("10. 3-Gen Baryogenesis", fontweight="bold", fontsize=10)
+
+    # 11. 3D Axis Generation Cutoff (100-Tick Node Cap)
+    ax, gloads = next(it), bsim.generation_node_loads(node_cap=100.0)
+    ax.bar(["Gen 1", "Gen 2", "Gen 3", "Gen 4"],
+           [g["ticks"] for g in gloads],
+           color=["#16a34a" if g["allowed"] else "#dc2626" for g in gloads], width=0.52)
+    ax.axhline(100.0, color="#1e293b", ls="--", lw=1.5, label="Node Cap (100)")
+    ax.set_ylim(0, 148)
+    ax.set_title("11. 3D Axis Gen Cutoff", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7, loc="upper left")
+
+    # 12. Virtual Force-Carrier Range (1/r Photon vs. Yukawa Weak)
+    ax, vsim = next(it), BCCVirtualCarrierSim()
+    em_c = vsim.simulate_carrier_range(max_hops=8, mass_mev=0.0)
+    wk_c = vsim.simulate_carrier_range(max_hops=8, mass_mev=80379.0, range_scale_hops=1.5)
+    vhops = [r["hops"] for r in em_c]
+    ax.plot(vhops, [r["potential"] for r in em_c], "o-", color="#0d9488", lw=2, label="Photon γ (1/r)")
+    ax.plot(vhops, [r["potential"] for r in wk_c], "s--", color="#ea580c", lw=2, label="Weak W± (Yukawa)")
+    ax.set_title("12. Virtual Carrier Range", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7)
+
+    # 13. Special Relativity: Lorentz Time Dilation & Length Contraction
+    ax, sr_sim = next(it), BCCSREmergenceSim()
+    betas = [0.0, 0.25, 0.5, 0.7, 0.85, 0.95]
+    sr_kin = sr_sim.kinematics_profile(betas, rest_length_lp=1.0)
+    ax.plot(betas, [r["gamma"] for r in sr_kin], "o-", color="#2563eb", lw=2, label="Time Dilation γ")
+    ax.plot(betas, [r["clock_rate"] for r in sr_kin], "s--", color="#0d9488", lw=1.8, label="Length L/L0 (1/γ)")
+    ax.set_title("13. SR Lorentz γ & Length", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7, loc="upper left")
+
+    # 14. Special Relativity: Bounded Velocity Addition (u + v <= c)
+    ax = next(it)
+    u_vals = [0.0, 0.25, 0.5, 0.75, 0.9, 1.0]
+    gal = [u + 0.8 for u in u_vals]
+    rel = [sr_sim.compose_velocities(u, 0.8)["grid_relativistic"] for u in u_vals]
+    ax.plot(u_vals, gal, ":", color="#94a3b8", lw=1.6, label="Galilean (u+0.8c)")
+    ax.plot(u_vals, rel, "o-", color="#7c3aed", lw=2, label="Grid SR Addition")
+    ax.axhline(1.0, color="#dc2626", ls="--", lw=1.4, label="c Cap (1.0)")
+    ax.set_title("14. SR Velocity Addition", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=6.8, loc="upper left")
+
+    # 15. General Relativity: Schwarzschild g_00 Clock Rate & Horizon Lock
+    ax, gr_sim = next(it), BCCGREmergenceSim(node_cap=100.0, r_s=3.0)
+    gr_rad = [3.0, 4.0, 6.0, 8.0, 12.0, 16.0, 20.0]
+    gr_prof = gr_sim.time_dilation_profile(gr_rad)
+    ax.plot(gr_rad, [r["gr_dtau_dt"] for r in gr_prof], "-", color="#94a3b8", lw=3, label="Exact GR g_00")
+    ax.plot(gr_rad, [r["grid_dtau_dt"] for r in gr_prof], "o--", color="#dc2626", lw=1.8, label="Grid sqrt(1-W/100)")
+    ax.axvline(3.0, color="#1e293b", ls=":", lw=1.3, label="Horizon r_s=3")
+    ax.set_ylim(-0.05, 1.05)
+    ax.set_title("15. GR Time Dilation & Lock", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=6.8, loc="lower right")
+
+    # 16. Inverse Halo Solver: Cored Lattice Halo vs. Divergent NFW Cusp
+    ax, h_solver = next(it), BCCHaloSolver(node_cap=100.0)
+    h_rad = [0.4, 0.8, 1.5, 2.5, 4.0, 6.0, 8.0]
+    h_prof = h_solver.cored_vs_cusp_profile(h_rad, rho_0=85.0, core_radius=2.5)
+    ax.plot(h_rad, [r["nfw_cusp_ticks"] for r in h_prof], "s:", color="#94a3b8", lw=1.8, label="NFW Cusp (1/r)")
+    ax.plot(h_rad, [r["grid_core_ticks"] for r in h_prof], "o-", color="#0d9488", lw=2, label="Grid Cored Halo")
+    ax.axhline(100.0, color="#dc2626", ls="--", lw=1.4, label="Node Cap (100)")
+    ax.set_ylim(0, 320)
+    ax.set_title("16. Halo Core vs. NFW Cusp", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=6.8, loc="upper right")
+
+    # 17. CMB Planck Blackbody Spectrum (T_0 = 2.725 K, Peak = 160.2 GHz)
+    ax, cmb_sim = next(it), BCCCMBSpectrumSim()
+    freqs = [30.0, 60.0, 90.0, 120.0, 160.2, 200.0, 250.0, 300.0, 360.0, 420.0]
+    spec = cmb_sim.planck_blackbody_spectrum(freqs)
+    ax.plot(freqs, [s["norm_radiance"] for s in spec], "o-", color="#ea580c", lw=2, label="T_0 = 2.725 K")
+    ax.axvline(160.2, color="#2563eb", ls="--", lw=1.4, label="Peak 160.2 GHz")
+    ax.set_ylim(0, 1.15)
+    ax.set_title("17. CMB Blackbody (2.725 K)", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=7, loc="upper right")
+
+    # 18. Cosmic Expansion Cooling T(z) = 2.725 * (1 + z) & Acoustic Peak l_1 = 220
+    ax = next(it)
+    z_vals = [0.0, 1.0, 5.0, 20.0, 100.0, 400.0, 1098.0]
+    cool = cmb_sim.redshift_cooling_history(z_vals)
+    ax.loglog([1.0 + z for z in z_vals], [c["temp_k"] for c in cool], "s-", color="#7c3aed", lw=2, label="T(z) = T_0(1+z)")
+    ax.scatter([1099.0], [2994.775], color="#dc2626", s=45, zorder=5, label="Recomb (l_1=220)")
+    ax.set_title("18. CMB Cooling & l_1=220", fontweight="bold", fontsize=10)
+    ax.legend(fontsize=6.8, loc="upper left")
+
+    fig.subplots_adjust(left=0.035, right=0.99, top=0.92, bottom=0.05, wspace=0.28, hspace=0.36)
+    plt.savefig(out_path, dpi=180); plt.close(fig)
+    print(f"Saved 18-panel (3x6) master dashboard to: {out_path}")
 
 
-def main():
+if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", default="benchmark_report.json")
     ap.add_argument("--out", default="bcc_benchmark_dashboard.png")
     args = ap.parse_args()
-    data = dict(DEFAULTS)
-    if args.json and os.path.exists(args.json):
-        with open(args.json, "r", encoding="utf-8") as f:
-            raw = json.load(f)
-        for k, v in raw.items():
-            if v:
-                data[k] = v
-    build_dashboard(data, args.out)
-
-
-if __name__ == "__main__":
-    main()
+    with open(args.json, "r", encoding="utf-8") as f:
+        build_dashboard(json.load(f), args.out)
 

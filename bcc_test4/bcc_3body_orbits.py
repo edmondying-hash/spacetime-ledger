@@ -127,6 +127,14 @@ def simulate_3body(
             for i in range(3)
         ]
 
+    for i in range(3):
+        xi, yi = g_pos[i]
+        for j in range(i + 1, 3):
+            xj, yj = g_pos[j]
+            d = math.hypot(xi - xj, yi - yj)
+            if d < min_sep:
+                min_sep = d
+
     max_drift = max(
         math.hypot(g_pos[i][0] - n_pos[i][0], g_pos[i][1] - n_pos[i][1])
         for i in range(3)

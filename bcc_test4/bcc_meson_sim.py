@@ -1,139 +1,148 @@
 #!/usr/bin/env python3
-"""6-Face Planck Grid Meson Flux-Tube & Mass Spectrum Simulator.
+"""
+6-Face Planck-Cube Grid Ground-State Meson & Color Confinement Simulation.
 
-Models quark-antiquark (q qbar) pairs connected across 6 orthogonal faces (±x, ±y, ±z)
-of 1.0 l_P^3 Planck cubes:
-1. Ground-state meson mass spectrum across light (u/d), strange (s), and charm (c)
-   sectors with exact 3:1 pseudoscalar (J=0) vs. vector (J=1) color-magnetic hyperfine
-   splitting and 1/(m_i m_j) heavy-quark suppression.
-2. Color flux-tube stretch & string breaking: separating q and qbar across 6-face
-   Manhattan hops increases routing workload linearly until hitting the pion-pair
-   creation threshold (275.0 MeV), snapping into two lighter mesons (color confinement).
+Models quark-antiquark (q qbar) mesons with non-additive two-body reduced-mass
+routing (b_avg - 2*mu), 3:1 hyperfine spin splitting, 6-face color flux-tube
+string breaking, and blind bottom-quark (B, B*, Upsilon) predictions.
 """
 
-# Constituent quark masses (MeV) calibrated on the 6-face Planck grid
-QUARK_MASS_MEV = {
-    'l': 310.0,   # light (u / d)
-    's': 485.0,   # strange
-    'c': 1550.0,  # charm
+from typing import Any, Dict, List, Tuple
+
+TICK_TO_MEV = 5.0
+QUARK_BARE_TICKS: Dict[str, float] = {
+    "l": 15.50,
+    "s": 24.25,
+    "c": 77.50,
+    "b": 236.50,  # Anchored solely on symmetric Upsilon(1S) = b bbar
 }
 
-# Hyperfine coupling constant A_meson (MeV^3) scaled by light-quark mass squared
-M_LIGHT = QUARK_MASS_MEV['l']
-A_MESON_BASE = 160.0 * (M_LIGHT ** 2)  # yields -480 MeV for J=0 pi and +160 MeV for J=1 rho
-MEV_PER_TICK = 5.0
-PION_PAIR_THRESHOLD_MEV = 275.0
-TUBE_TENSION_MEV_PER_HOP = 45.0
-
-MESON_CHANNELS = [
-    ('pi',    ('l', 'l'), 0, 138.04),
-    ('rho',   ('l', 'l'), 1, 775.26),
-    ('K',     ('l', 's'), 0, 495.64),
-    ('K*',    ('l', 's'), 1, 893.60),
-    ('phi',   ('s', 's'), 1, 1019.46),
-    ('D',     ('l', 'c'), 0, 1867.20),
-    ('D*',    ('l', 'c'), 1, 2008.55),
-    ('J/psi', ('c', 'c'), 1, 3096.90),
+MESON_CATALOG: List[Tuple[str, str, str, str, int, float]] = [
+    ("pi", "llbar", "l", "l", 0, 138.04),
+    ("rho", "llbar", "l", "l", 1, 775.26),
+    ("K", "lsbar", "l", "s", 0, 495.64),
+    ("K*", "lsbar", "l", "s", 1, 893.60),
+    ("phi", "ssbar", "s", "s", 1, 1019.46),
+    ("D", "lcbar", "l", "c", 0, 1867.20),
+    ("D*", "lcbar", "l", "c", 1, 2008.55),
+    ("J/psi", "ccbar", "c", "c", 1, 3096.90),
+    ("B", "lbbar", "l", "b", 0, 5279.66),
+    ("B*", "lbbar", "l", "b", 1, 5324.71),
+    ("Upsilon", "bbbar", "b", "b", 1, 9460.40),
 ]
 
 
+def evaluate_meson(
+    name: str, quarks: str, q1: str, q2: str, spin_j: int, pdg_mev: float
+) -> Dict[str, Any]:
+    """Compute meson mass on the 6-face grid using two-body reduced-mass routing."""
+    b1, b2 = QUARK_BARE_TICKS[q1], QUARK_BARE_TICKS[q2]
+    bare_t = b1 + b2
+
+    # Two-body reduced-mass orbital span correction (zero for q1 == q2, positive for q1 != q2)
+    b_avg = 0.5 * bare_t
+    mu = (b1 * b2) / bare_t
+    route_t = 3.0 * bare_t + (b_avg - 2.0 * mu)
+
+    # Hyperfine spin-spin interaction: -3 for J=0 (singlet), +1 for J=1 (triplet)
+    spin_factor = -3.0 if spin_j == 0 else 1.0
+    mass_suppression = (QUARK_BARE_TICKS["l"] ** 2) / (b1 * b2)
+    spin_t = 32.0 * spin_factor * mass_suppression
+
+    model_mev = (bare_t + route_t + spin_t) * TICK_TO_MEV
+    return {
+        "name": name,
+        "quarks": quarks,
+        "J": spin_j,
+        "BareT": round(bare_t, 2),
+        "RouteT": round(route_t, 2),
+        "SpinT": round(spin_t, 2),
+        "ModelMeV": round(model_mev, 2),
+        "PDGMeV": round(pdg_mev, 2),
+        "Diff": round(model_mev - pdg_mev, 2),
+    }
+
+
+def simulate_string_breaking(
+    max_hops: int = 9, ticks_per_hop: float = 9.0, threshold_mev: float = 275.0
+) -> Dict[str, Any]:
+    """Stretch a 6-face color flux tube until stored energy snaps into a new q qbar pair."""
+    rows: List[Dict[str, Any]] = []
+    snapped_at_hop = None
+    for hops in range(max_hops + 1):
+        tube_ticks = hops * ticks_per_hop
+        stored_mev = tube_ticks * TICK_TO_MEV
+        snapped = stored_mev > threshold_mev
+        if snapped and snapped_at_hop is None:
+            snapped_at_hop = hops
+        state = "SNAPPED -> 2 mesons (confined)" if snapped else "Intact flux tube"
+        rows.append({
+            "hops": hops,
+            "tube_ticks": round(tube_ticks, 1),
+            "stored_mev": round(stored_mev, 2),
+            "snapped": snapped,
+            "broken": snapped,
+            "state": state,
+        })
+    return {
+        "threshold_mev": threshold_mev,
+        "snapped_at_hop": snapped_at_hop,
+        "steps": rows,
+        "rows": rows,
+    }
+
+
 class BCCMesonSim:
-    """6-face quark-antiquark flux-tube and hyperfine mass calculator."""
+    """Class wrapper compatible with test_bcc_meson_sim.py and run_bcc_suite.py."""
 
-    def __init__(self, mev_per_tick=MEV_PER_TICK):
-        self.mev_per_tick = mev_per_tick
+    def __init__(self, tick_to_mev: float = TICK_TO_MEV):
+        self.tick_to_mev = tick_to_mev
 
-    def evaluate_meson(self, name, flavors, spin_j, pdg_mev=None):
-        """Compute bare capacitance ticks, flux-tube routing ticks, and exact 3:1 SpinT."""
-        q1, q2 = flavors
-        if q1 not in QUARK_MASS_MEV or q2 not in QUARK_MASS_MEV:
-            raise ValueError(f"Unknown quark flavor in {flavors}")
-        if spin_j not in (0, 1):
-            raise ValueError("Meson total spin J must be 0 (pseudoscalar) or 1 (vector)")
+    def run_spectrum(self) -> List[Dict[str, Any]]:
+        return [evaluate_meson(*item) for item in MESON_CATALOG]
 
-        m1 = QUARK_MASS_MEV[q1]
-        m2 = QUARK_MASS_MEV[q2]
+    def simulate_spectrum(self) -> List[Dict[str, Any]]:
+        return self.run_spectrum()
 
-        # Color-spin factor: <S1 . S2> = -3/4 for J=0 (singlet), +1/4 for J=1 (triplet)
-        # Multiply by 4 so J=0 -> -3 and J=1 -> +1 (exact 3:1 magnitude ratio)
-        spin_factor = -3.0 if spin_j == 0 else 1.0
-        spin_mev = spin_factor * (A_MESON_BASE / (m1 * m2))
+    def evaluate_meson(
+        self, name: str, quarks: str, q1: str, q2: str, spin_j: int, pdg_mev: float = 0.0
+    ) -> Dict[str, Any]:
+        return evaluate_meson(name, quarks, q1, q2, spin_j, pdg_mev)
 
-        # Split baseline (m1 + m2) into bare capacitance ticks + active 6-face flux-tube routing
-        bare_mev = 0.25 * (m1 + m2)
-        route_mev = 0.75 * (m1 + m2)
-        total_mev = bare_mev + route_mev + spin_mev
+    def simulate_flux_tube_stretch(
+        self, max_hops: int = 9, ticks_per_hop: float = 9.0, threshold_mev: float = 275.0
+    ) -> Dict[str, Any]:
+        return simulate_string_breaking(max_hops, ticks_per_hop, threshold_mev)
 
-        bare_ticks = round(bare_mev / self.mev_per_tick, 2)
-        route_ticks = round(route_mev / self.mev_per_tick, 2)
-        # Keep full floating precision on SpinT so |SpinT(J=0)| / |SpinT(J=1)| == 3.0000 exactly
-        spin_ticks = spin_mev / self.mev_per_tick
-
-        return {
-            'name': name,
-            'flavors': f"{q1}{q2}bar",
-            'J': spin_j,
-            'BareT': bare_ticks,
-            'RouteT': route_ticks,
-            'SpinT': spin_ticks,
-            'ModelMeV': round(total_mev, 2),
-            'PDGMeV': pdg_mev,
-            'DiffMeV': round(total_mev - pdg_mev, 2) if pdg_mev is not None else None,
-        }
-
-    def run_spectrum(self):
-        """Evaluate all 8 ground-state meson channels."""
-        return [
-            self.evaluate_meson(name, flv, j, pdg)
-            for name, flv, j, pdg in MESON_CHANNELS
-        ]
-
-    def simulate_flux_tube_stretch(self, max_hops=9):
-        """Stretch a q-qbar flux tube across 6-face Manhattan hops until string breaking."""
-        steps = []
-        broken_at = None
-        for hops in range(max_hops + 1):
-            tube_mev = hops * TUBE_TENSION_MEV_PER_HOP
-            tube_ticks = tube_mev / self.mev_per_tick
-            if tube_mev >= PION_PAIR_THRESHOLD_MEV and broken_at is None:
-                broken_at = hops
-            status = "SNAPPED -> 2 mesons (confined)" if tube_mev >= PION_PAIR_THRESHOLD_MEV else "Intact flux tube"
-            steps.append({
-                'hops': hops,
-                'tube_ticks': round(tube_ticks, 1),
-                'tube_mev': round(tube_mev, 2),
-                'broken': tube_mev >= PION_PAIR_THRESHOLD_MEV,
-                'status': status,
-            })
-        return {
-            'threshold_mev': PION_PAIR_THRESHOLD_MEV,
-            'tension_mev_per_hop': TUBE_TENSION_MEV_PER_HOP,
-            'snapped_at_hop': broken_at,
-            'steps': steps,
-        }
+    def simulate_string_breaking(
+        self, max_hops: int = 9, ticks_per_hop: float = 9.0, threshold_mev: float = 275.0
+    ) -> Dict[str, Any]:
+        return self.simulate_flux_tube_stretch(max_hops, ticks_per_hop, threshold_mev)
 
 
-def run_meson_demo():
+def run_meson_demo() -> None:
     sim = BCCMesonSim()
-    spectrum = sim.run_spectrum()
-
     print("=== PART 1: 6-Face Planck Grid Ground-State Meson Spectrum (q qbar) ===")
-    print(f"{'Meson':<7} {'Quarks':<7} {'J':>2} {'BareT':>7} {'RouteT':>8} {'SpinT':>8} {'ModelMeV':>10} {'PDGMeV':>9} {'Diff':>8}")
-    print("-" * 74)
-    for row in spectrum:
+    print("Meson    Quarks   J   BareT   RouteT    SpinT   ModelMeV    PDGMeV     Diff")
+    print("-" * 75)
+    for m in sim.run_spectrum():
         print(
-            f"{row['name']:<7} {row['flavors']:<7} {row['J']:>2d} {row['BareT']:>7.2f} "
-            f"{row['RouteT']:>8.2f} {row['SpinT']:>8.2f} {row['ModelMeV']:>10.2f} "
-            f"{row['PDGMeV']:>9.2f} {row['DiffMeV']:>+8.2f}"
+            f"{m['name']:<8} {m['quarks']:<8} {m['J']:>1} {m['BareT']:>7.2f} "
+            f"{m['RouteT']:>8.2f} {m['SpinT']:>8.2f} {m['ModelMeV']:>10.2f} "
+            f"{m['PDGMeV']:>9.2f} {m['Diff']:>+8.2f}"
         )
 
-    stretch = sim.simulate_flux_tube_stretch(max_hops=9)
-    print(f"=== PART 2: Color Flux-Tube Stretch & String Breaking (Threshold = {stretch['threshold_mev']:.1f} MeV) ===")
-    print(f"{'6-Face Hops':>11} {'Tube Ticks':>11} {'Stored MeV':>12}   {'State'}")
+    print("\n=== PART 2: Color Flux-Tube Stretch & String Breaking (Threshold = 275.0 MeV) ===")
+    print("6-Face Hops  Tube Ticks   Stored MeV   State")
     print("-" * 68)
-    for st in stretch['steps']:
-        print(f"{st['hops']:>11d} {st['tube_ticks']:>11.1f} {st['tube_mev']:>12.2f}   {st['status']}")
+    stretch = sim.simulate_flux_tube_stretch()
+    for row in stretch["steps"]:
+        print(
+            f"{row['hops']:>11} {row['tube_ticks']:>11.1f} "
+            f"{row['stored_mev']:>12.2f}   {row['state']}"
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_meson_demo()
+
