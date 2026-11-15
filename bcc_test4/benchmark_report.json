@@ -1,7 +1,7 @@
 {
   "architecture": {
     "grid": "6-face cubic",
-    "tests_run": 61,
+    "tests_run": 74,
     "tests_ok": true
   },
   "baryon_spectrum": [
@@ -375,5 +375,75 @@
     "400.0           0.0009                        8.2357e-19            0.2147",
     "=== PART 3: 3D 6-Face Acoustic Sound Speed (c_s = c/sqrt(3)) & First Peak l_1 ===",
     "3-Axis Plasma c_s/c = 0.577350 | Sound Horizon theta_s = 0.5965 deg | Grid l_1 = 220.00 (Planck 2018 = 220.0)"
+  ],
+  "dark_energy": [
+    "=== PART 1: Congestion-Gated Expansion (Bound Galaxies vs. Intergalactic Void) ===",
+    "After 50 cosmic ticks (h_vac = 0.01):",
+    "Bound Galaxy (W=85, gate=0.00): 10.00 l_P -> 10.00 l_P (unchanged)",
+    "Cosmic Void  (W=0,  gate=1.00): 20.00 l_P -> 32.89 l_P (+64.5% expansion)",
+    "Total Ruler  (G1 + Void + G2):     40.00 l_P -> 52.89 l_P",
+    "=== PART 2: Cosmic Deceleration-to-Acceleration Flip (z_acc = 0.632) ===",
+    "Redshift z   Scale a(t)   Busy Matter Om(z)   Idle Vacuum OL(z)   Decel q(z)   Cosmic Expansion Regime",
+    "------------------------------------------------------------------------------------------------------",
+    "3.000       0.2500              0.9671              0.0329       0.4507   Decelerating (Matter-Dominated)",
+    "1.500       0.4000              0.8778              0.1222       0.3167   Decelerating (Matter-Dominated)",
+    "0.632       0.6127              0.6665              0.3335      -0.0002   Inflection (q ~ 0)",
+    "0.300       0.7692              0.5026              0.4974      -0.2462   Accelerating (Vacuum-Dominated)",
+    "0.000       1.0000              0.3150              0.6850      -0.5275   Accelerating (Vacuum-Dominated)"
+  ],
+  "kugelblitz_spin": [
+    "=== PART 1: Star-Ring Photon Convergence (Normal Galaxy vs. Kugelblitz Black Hole) ===",
+    "Stars   Ray Ticks   Central W(0)   100-Cap Status          Emergent Core State",
+    "----------------------------------------------------------------------------------",
+    "12         3.0          36.00   Under Cap (< 100)       Transparent Light Web",
+    "16         5.0          80.00   Under Cap (< 100)       Transparent Light Web",
+    "24         5.0         120.00   OVER CAP (>= 100)       DEADLOCKED Black Hole (0 escape)",
+    "36         6.0         216.00   OVER CAP (>= 100)       DEADLOCKED Black Hole (0 escape)",
+    "=== PART 2: Ring Asymmetry -> Core Torque & Action=Reaction Recoil (L_total = 0) ===",
+    "Asymmetry   Core L_z   Star Recoil L_z   Ledger Sum   Core Spin Direction",
+    "--------------------------------------------------------------------------------",
+    "+0.00    +0.0000           -0.0000       0.0000   Non-Rotating (Symmetric)",
+    "+0.08    +5.7600           -5.7600       0.0000   Counter-Clockwise (CCW)",
+    "-0.08    -5.7600           +5.7600       0.0000   Clockwise (CW)",
+    "+0.20   +14.4000          -14.4000       0.0000   Counter-Clockwise (CCW)",
+    "=== PART 3: Outward Lense-Thirring Frame-Dragging (omega_drag ~ 1/r^3 from Tidal Infall) ===",
+    "Radius r   Core L_z   Drag omega(r)   r^3 * omega   Disk Alignment Regime",
+    "------------------------------------------------------------------------------",
+    "2.0    14.4000        3.600000       28.8000   Co-rotating drag (Bardeen-Petterson)",
+    "3.0    14.4000        1.066667       28.8000   Co-rotating drag (Bardeen-Petterson)",
+    "5.0    14.4000        0.230400       28.8000   Co-rotating drag (Bardeen-Petterson)",
+    "8.0    14.4000        0.056250       28.8000   Co-rotating drag (Bardeen-Petterson)",
+    "10.0    14.4000        0.028800       28.8000   Co-rotating drag (Bardeen-Petterson)"
+  ],
+  "dirac4_spinor": [
+    "=== PART 1: Spin-1/2 Double Cover on 6-Face Grid (360 deg -> -psi, 720 deg -> +psi) ===",
+    "Rotation (deg)   Re<psi|psi'>   Im<psi|psi'>   Dirac4 Spinor State",
+    "------------------------------------------------------------------------",
+    "0.0      +1.000000      -0.000000   Identity (+psi)",
+    "180.0      +0.000000      -1.000000   Superposition",
+    "360.0      -1.000000      -0.000000   Sign Flip (-psi)",
+    "540.0      -0.000000      +1.000000   Superposition",
+    "720.0      +1.000000      +0.000000   Identity (+psi)",
+    "=== PART 2: Rest-Mass Zitterbewegung (gamma^0 Chiral Oscillation L <-> R at p=0) ===",
+    "Tick   Time t   Left P(L)   Right P(R)   Total Norm |psi|^2",
+    "----------------------------------------------------------------",
+    "0     0.00    1.000000     0.000000            1.000000",
+    "1     0.26    0.933012     0.066988            1.000000",
+    "2     0.52    0.749999     0.250001            1.000000",
+    "3     0.79    0.499998     0.500002            1.000000",
+    "4     1.05    0.249998     0.750002            1.000000",
+    "5     1.31    0.066986     0.933014            1.000000",
+    "6     1.57    0.000000     1.000000            1.000000",
+    "=== PART 3: Orthogonal +x Face Chiral Packet Transport & Relativistic Energy ===",
+    "After 6 ticks on +x face: Norm = 1.000000 | Centroid <x> = +4.0227 l_P | p = 0.2555 MeV -> E = 0.5713 MeV"
+  ],
+  "em_recoil": [
+    "=== 2-Body EM Link-Flux Attraction/Repulsion & Mass-Gated Recoil ===",
+    "Particle Pair                           Regime                          Move% (1 vs 2)   Ratio 1/2   p_tot",
+    "------------------------------------------------------------------------------------------------------------",
+    "e- (-1, 0.511 MeV) vs p+ (+1, 938.27 MeV) Attraction (flux cancellation)  99.95% vs  0.05%  1836.15x   0.0e+00",
+    "p+ (+1, 938.27 MeV) vs Xi- (-1, 1321.71 MeV) Attraction (flux cancellation)  58.48% vs 41.52%     1.41x   0.0e+00",
+    "e- (-1, 0.511 MeV) vs e+ (+1, 0.511 MeV) Attraction (flux cancellation)  50.00% vs 50.00%     1.00x   0.0e+00",
+    "p+ (+1, 938.27 MeV) vs p+ (+1, 938.27 MeV) Repulsion (flux pile-up)        50.00% vs 50.00%     1.00x   0.0e+00"
   ]
 }

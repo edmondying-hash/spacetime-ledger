@@ -5,7 +5,10 @@ import argparse, io, json, os, subprocess, sys, time, unittest
 from contextlib import redirect_stdout
 import baryon_calculator, bcc_3d_gravity, bcc_3body_orbits, bcc_baryogenesis
 import bcc_born_pascal, bcc_dark_matter, bcc_em_wave_sim, bcc_meson_sim
-import bcc_unified_sim, bcc_virtual_carriers, bcc3dhorizonsim, bcc_gr_emergence, bcc_sr_emergence, bcc_halo_solver, bcc_cmb_spectrum
+import bcc_unified_sim, bcc_virtual_carriers, bcc3dhorizonsim, bcc_gr_emergence
+import bcc_sr_emergence, bcc_halo_solver, bcc_cmb_spectrum, bcc_dark_energy
+import bcc_kugelblitz_spin, bcc_dirac4_spinor, bcc_em_recoil
+
 
 TESTS = [
     "test_baryon_calculator", "test_bcc_unified_sim", "test_bcc_meson_sim",
@@ -13,6 +16,8 @@ TESTS = [
     "test_bcc3dhorizonsim", "test_bcc_3body_orbits", "test_bcc_dark_matter",
     "test_bcc_baryogenesis", "test_bcc_virtual_carriers", "test_bcc_gr_emergence",
     "test_bcc_sr_emergence", "test_bcc_halo_solver", "test_bcc_cmb_spectrum",
+    "test_bcc_dark_energy", "test_bcc_kugelblitz_spin", "test_bcc_dirac4_spinor",
+    "test_bcc_em_recoil",
 ]
 
 
@@ -121,6 +126,10 @@ def parse_json(tests_run, tests_ok, outs):
         "sr_emergence": [ln.strip() for ln in outs["sr_emergence"].splitlines() if ln.strip()],
         "halo_solver": [ln.strip() for ln in outs["halo_solver"].splitlines() if ln.strip()],
         "cmb_spectrum": [ln.strip() for ln in outs["cmb_spectrum"].splitlines() if ln.strip()],
+        "dark_energy": [ln.strip() for ln in outs["dark_energy"].splitlines() if ln.strip()],
+        "kugelblitz_spin": [ln.strip() for ln in outs["kugelblitz_spin"].splitlines() if ln.strip()],
+        "dirac4_spinor": [ln.strip() for ln in outs["dirac4_spinor"].splitlines() if ln.strip()],
+        "em_recoil": [ln.strip() for ln in outs["em_recoil"].splitlines() if ln.strip()],
     }
 
 
@@ -148,6 +157,10 @@ def main():
         "sr_emergence": run_mod(bcc_sr_emergence, "bcc_sr_emergence.py", ("run_sr_emergence_demo", "run_demo", "main")),
         "halo_solver": run_mod(bcc_halo_solver, "bcc_halo_solver.py", ("run_halo_solver_demo", "run_demo", "main")),
         "cmb_spectrum": run_mod(bcc_cmb_spectrum, "bcc_cmb_spectrum.py", ("run_cmb_spectrum_demo", "run_demo", "main")),
+        "dark_energy": run_mod(bcc_dark_energy, "bcc_dark_energy.py", ("run_dark_energy", "run_demo", "main")),
+        "kugelblitz_spin": run_mod(bcc_dark_energy, "bcc_kugelblitz_spin.py", ("run_kugelblitz_spin", "run_demo", "main")),
+        "dirac4_spinor": run_mod(bcc_dark_energy, "bcc_dirac4_spinor.py", ("run_dirac4_spinor", "run_demo", "main")),
+        "em_recoil": run_mod(bcc_em_recoil, "bcc_em_recoil.py", ("run_em_recoil", "run_demo", "main")),
     }
     if args.json_out:
         with open(args.json_out, "w", encoding="utf-8") as f:
