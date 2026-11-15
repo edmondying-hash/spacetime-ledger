@@ -1,0 +1,40 @@
+{
+ "start_local": "2026-11-14 22:30:03 EST",
+ "checks": [
+  {
+   "check": "S0",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 4.307940244674683,
+   "cpu_s": 4.214715,
+   "peak_tree_rss_MiB": 82.58203125,
+   "label": "PASS",
+   "run_folder_bytes_after": 78731
+  },
+  {
+   "check": "C4",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 0.622262716293335,
+   "cpu_s": 0.427552,
+   "peak_tree_rss_MiB": 61.85546875,
+   "label": "FAIL",
+   "run_folder_bytes_after": 121763
+  },
+  {
+   "check": "C5",
+   "ceiling_s": 900,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 27.409488201141357,
+   "cpu_s": 27.178967,
+   "peak_tree_rss_MiB": 145.390625,
+   "label": "NOT PASSED (D10: C5(a) does not pass; C5 is not treated as passed while \u00a75.5 stays a two-outcome primitive)",
+   "run_folder_bytes_after": 4503716
+  }
+ ],
+ "total_wall_s": 32.44688653945923,
+ "end_local": "2026-11-14 22:30:35 EST"
+}

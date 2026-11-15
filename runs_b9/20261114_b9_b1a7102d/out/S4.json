@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "results": {
+    "I3": {
+      "beta": 1.0,
+      "gamma": 0.0,
+      "formula": 14.326897841676312,
+      "formula_ref": 14.326897841676312,
+      "formula_rel_diff": 0.0,
+      "orbit_100yr_endpoint": 14.278142317383175,
+      "orbit_100yr_ref_if_any": null,
+      "orbit_200_linear_fit": 14.328050101925422,
+      "orbit_100yr_meta": {
+        "nfev": 337706,
+        "nsteps": 27779,
+        "success": true,
+        "message": "The solver successfully reached the end of the integration interval.",
+        "years": 100.0
+      },
+      "orbit_200_linear_fit_meta": {
+        "nfev": 167489,
+        "n_orbits": 200,
+        "success": true,
+        "newton_E_start": -1145869600.8482263,
+        "newton_E_end": -1145869600.86497,
+        "newton_E_rel_change": 1.4612186204041098e-11,
+        "slope_rad_per_s": 2.2011923318111407e-14,
+        "intercept_rad": -1.1773168292488633e-09
+      },
+      "note": "I4 has no consistent 1PN orbit; omitted. I1/I2 are S1/S2."
+    },
+    "I5": {
+      "beta": 1.0,
+      "gamma": 1.0,
+      "formula": 42.98069352502894,
+      "formula_ref": 42.98069352502894,
+      "formula_rel_diff": 0.0,
+      "orbit_100yr_endpoint": 42.91229380880339,
+      "orbit_100yr_ref_if_any": 42.91229380880339,
+      "orbit_200_linear_fit": 42.98224462225191,
+      "orbit_100yr_meta": {
+        "nfev": 337706,
+        "nsteps": 27779,
+        "success": true,
+        "message": "The solver successfully reached the end of the integration interval.",
+        "years": 100.0
+      },
+      "orbit_200_linear_fit_meta": {
+        "nfev": 167489,
+        "n_orbits": 200,
+        "success": true,
+        "newton_E_start": -1145869600.8482263,
+        "newton_E_end": -1145869600.8650072,
+        "newton_E_rel_change": 1.4644644782497417e-11,
+        "slope_rad_per_s": 6.603284228732383e-14,
+        "intercept_rad": -1.6619342542967653e-09
+      },
+      "note": "I4 has no consistent 1PN orbit; omitted. I1/I2 are S1/S2."
+    },
+    "I4": {
+      "status": "UNINFORMATIVE",
+      "reason": "no_consistent_1PN_orbit_until_G_retuned",
+      "alpha_redshift": 1.0
+    }
+  },
+  "resources": {
+    "step": "S4",
+    "wall_s": 11.144833943049889,
+    "cpu_s": 11.143464,
+    "peak_rss_mib": 88.48828125
+  }
+}

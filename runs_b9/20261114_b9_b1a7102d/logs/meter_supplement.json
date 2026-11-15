@@ -1,0 +1,60 @@
+{
+  "name": "P6_supplement_gates",
+  "cmd": [
+    "python3",
+    "harness/b9_supplement.py",
+    "gates",
+    "out"
+  ],
+  "start_epoch": 1794709270.4731486,
+  "wall_s": 2.690164126979653,
+  "cpu_user_s": 2.640586,
+  "cpu_sys_s": 0.048232,
+  "cpu_s": 2.688818,
+  "peak_rss_mib_polled": 83.98046875,
+  "peak_rss_mib_ru_maxrss": 86.7578125,
+  "exit_code": 0,
+  "killed": null,
+  "step_boundaries": [
+    {
+      "file": "S0.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.000780974980443716
+    },
+    {
+      "file": "S1.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S2.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S3.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S4.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S5.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "supplement.json",
+      "t_s": 2.629729653010145,
+      "step_wall_s": 2.628948678029701
+    }
+  ],
+  "affinity": [
+    0
+  ],
+  "threads_env": "1",
+  "gpu": "none (CUDA_VISIBLE_DEVICES empty)"
+}

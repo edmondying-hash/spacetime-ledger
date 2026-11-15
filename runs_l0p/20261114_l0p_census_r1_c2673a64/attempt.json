@@ -1,0 +1,16 @@
+{
+ "mode": "census",
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "code_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "code_dir": "/workspace/L0p_census_r1_code_20261114",
+ "driver_pid": 2422901,
+ "start_local": "2026-11-14 12:06:30 EST",
+ "MemAvailable_kB_at_start": 7020464,
+ "total_caps": {
+  "cpu_s": 18180,
+  "wall_s": 24240,
+  "rss_mib": 3072,
+  "out_mib": 193
+ },
+ "NOTICE": null
+}

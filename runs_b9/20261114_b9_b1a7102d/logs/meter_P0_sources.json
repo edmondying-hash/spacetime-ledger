@@ -1,0 +1,24 @@
+{
+  "name": "P0_sources",
+  "cmd": [
+    "python3",
+    "harness/b9_supplement.py",
+    "sources",
+    "out"
+  ],
+  "start_epoch": 1794709239.9849565,
+  "wall_s": 0.0612962759914808,
+  "cpu_user_s": 0.038908,
+  "cpu_sys_s": 0.015896999999999998,
+  "cpu_s": 0.05480499999999999,
+  "peak_rss_mib_polled": 16.1953125,
+  "peak_rss_mib_ru_maxrss": 16.90625,
+  "exit_code": 0,
+  "killed": null,
+  "step_boundaries": [],
+  "affinity": [
+    0
+  ],
+  "threads_env": "1",
+  "gpu": "none (CUDA_VISIBLE_DEVICES empty)"
+}

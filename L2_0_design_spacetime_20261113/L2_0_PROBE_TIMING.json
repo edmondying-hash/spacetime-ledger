@@ -1,0 +1,104 @@
+{
+ "note": "Unscored timing probe for L2_0_RUN_DESIGN.md. Not a C1-C5 result. No gate is scored.",
+ "time_local": "2026-11-13 15:30:09 EST",
+ "dirac4_sha256": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+ "expected_dirac4_sha256": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+ "phi": 1.4,
+ "m": 0.0,
+ "displacements": 35,
+ "n_params": 560,
+ "pieces": {
+  "U_cycle_unitarity": {
+   "n_k": 35,
+   "max_dev_from_unitary": 1.247225763318735e-15,
+   "wall_s": 0.07746243476867676,
+   "cpu_s": 0.07930300000000001,
+   "peak_rss_mib": 37.796875
+  },
+  "fft_L16": {
+   "precompute_U_s": 0.5060179233551025,
+   "cycles": 40,
+   "packet_evolve_s": 0.04207181930541992,
+   "s_per_cycle_packet": 0.001051795482635498,
+   "random_evolve_s": 0.030508756637573242,
+   "s_per_cycle_random": 0.000762718915939331,
+   "projected_1000_cycles_s": 1.051795482635498,
+   "rel_drift_40_cycles": {
+    "0.5": 2.247343789529095,
+    "1.0": 1.774845293682536,
+    "1.5": 0.7272220630745467,
+    "2.0": 8.881784197001252e-16,
+    "2.5": 0.41798652468143294,
+    "3.0": 0.6510408993102723,
+    "4.0": 0.8631145608053512
+   },
+   "wall_s": 0.586127519607544,
+   "cpu_s": 0.5736400000000001,
+   "peak_rss_mib": 42.65234375
+  },
+  "fft_L32": {
+   "precompute_U_s": 3.7286930084228516,
+   "cycles": 40,
+   "packet_evolve_s": 0.3263707160949707,
+   "s_per_cycle_packet": 0.008159267902374267,
+   "random_evolve_s": 0.24523043632507324,
+   "s_per_cycle_random": 0.006130760908126831,
+   "projected_1000_cycles_s": 8.159267902374268,
+   "rel_drift_40_cycles": {
+    "0.5": 14.559738026293175,
+    "1.0": 7.154084966726495,
+    "1.5": 2.005763105911317,
+    "2.0": 1.5543122344752192e-15,
+    "2.5": 0.676207893089908,
+    "3.0": 0.8948573942531843,
+    "4.0": 0.9883908947732547
+   },
+   "wall_s": 4.313468933105469,
+   "cpu_s": 4.312843000000001,
+   "peak_rss_mib": 63.16015625
+  },
+  "algebra_k_random_40": {
+   "n_k": 40,
+   "n_eq": 640,
+   "n_par": 560,
+   "build_s": 0.6380159854888916,
+   "svd_s": 0.3007688522338867,
+   "s_max": 25.436246993651487,
+   "s_min": 1.0640395759719746e-15,
+   "wall_s": 0.9388046264648438,
+   "cpu_s": 2.456449000000001,
+   "peak_rss_mib": 65.71484375
+  },
+  "algebra_k_grid_6cubed": {
+   "n_k": 216,
+   "n_eq": 3456,
+   "n_par": 560,
+   "build_s": 3.3297085762023926,
+   "svd_s": 1.214789628982544,
+   "s_max": 35.0026927769967,
+   "s_min": 3.1362827704984955e-15,
+   "wall_s": 4.544527053833008,
+   "cpu_s": 11.822244,
+   "peak_rss_mib": 91.375
+  },
+  "shots_1e5_four_channel": {
+   "nshots": 100000,
+   "wall_s": 0.7168443202972412,
+   "cpu_s": 1.3443450000000006,
+   "peak_rss_mib": 91.375,
+   "s_per_1e5": 0.7168629169464111
+  },
+  "c5b_geometry_L16_50x5": {
+   "n_pairs": 250,
+   "shift_d": 4,
+   "max_midplane_charge": 0.1602776401980687,
+   "n_exclusive_pairs": 0,
+   "wall_s": 0.08922958374023438,
+   "cpu_s": 0.16816599999999937,
+   "peak_rss_mib": 91.375,
+   "note": "max_midplane_charge and n_exclusive_pairs are geometry-timing sanity, not a C5 result."
+  }
+ },
+ "peak_rss_mib_end": 91.375,
+ "cpu_s_end": 21.442024
+}

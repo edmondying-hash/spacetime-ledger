@@ -1,0 +1,29 @@
+{
+ "step": "C5",
+ "cmd": [
+  "/usr/bin/python3",
+  "-B",
+  "/workspace/runs_l20/20261114_l20r2_833f49f2/harness/l20_score.py",
+  "C5"
+ ],
+ "exit_code": 0,
+ "wall_s": 27.409488201141357,
+ "cpu_user_s": 24.549746,
+ "cpu_sys_s": 2.629221,
+ "cpu_s": 27.178967,
+ "peak_tree_rss_bytes_sampled": 152453120,
+ "peak_tree_rss_MiB": 145.390625,
+ "max_procs_in_tree": 1,
+ "ru_maxrss_children_MiB": 145.19921875,
+ "killed": null,
+ "ceiling_s": 900.0,
+ "rss_cap_bytes": 536870912,
+ "start_epoch": 1794713408.135868,
+ "end_epoch": 1794713435.5453563,
+ "start_local": "2026-11-14 22:30:08 EST",
+ "thread_env": {
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1"
+ }
+}

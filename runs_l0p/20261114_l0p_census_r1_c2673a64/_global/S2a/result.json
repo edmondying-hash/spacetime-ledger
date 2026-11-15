@@ -1,0 +1,219 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "_global",
+ "step": "S2a",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "six-face scalar reference, a = l_P",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  300,
+  450,
+  512,
+  5
+ ],
+ "cpu_s": 17.691,
+ "wall_s": 17.69,
+ "peak_rss_mib": 74.8,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "analytic": [
+  {
+   "cell": "1 GeV [100]",
+   "value": 8.398280032249396e-40,
+   "formatted": "8.4e-40",
+   "printed": "8.4e-40",
+   "match": true
+  },
+  {
+   "cell": "1 GeV [111]",
+   "value": 2.799426677416467e-40,
+   "formatted": "2.8e-40",
+   "printed": "2.8e-40",
+   "match": true
+  },
+  {
+   "cell": "30 GeV [100]",
+   "value": 7.558452029024455e-37,
+   "formatted": "7.6e-37",
+   "printed": "7.6e-37",
+   "match": true
+  },
+  {
+   "cell": "31 GeV [100]",
+   "value": 8.07074711099167e-37,
+   "formatted": "8.1e-37",
+   "printed": "8.1e-37",
+   "match": true
+  },
+  {
+   "cell": "1 TeV [100]",
+   "value": 8.398280032249396e-34,
+   "formatted": "8.4e-34",
+   "printed": "8.4e-34",
+   "match": true
+  },
+  {
+   "cell": "E_QG2 [100]",
+   "value": 4.226203970468061e+19,
+   "formatted": "4.2e+19",
+   "printed": "4.2e+19",
+   "match": true
+  },
+  {
+   "cell": "E_QG2 [111]",
+   "value": 7.32e+19,
+   "formatted": "7.3e+19",
+   "printed": "7.3e+19",
+   "match": true
+  }
+ ],
+ "leapfrog": [
+  {
+   "dir": [
+    1,
+    0,
+    0
+   ],
+   "ka": 0.25,
+   "speed_over_c": 0.994101640879925,
+   "printed": 0.994,
+   "match": true,
+   "group_velocity_analytic": 0.9941311179394597
+  },
+  {
+   "dir": [
+    1,
+    1,
+    0
+   ],
+   "ka": 0.25,
+   "speed_over_c": 0.9980226206890774,
+   "printed": 0.998,
+   "match": true,
+   "group_velocity_analytic": 0.9980424204718805
+  },
+  {
+   "dir": [
+    1,
+    1,
+    1
+   ],
+   "ka": 0.25,
+   "speed_over_c": 0.9993374172991173,
+   "printed": 0.9993,
+   "match": true,
+   "group_velocity_analytic": 0.9993473306045522
+  },
+  {
+   "dir": [
+    1,
+    0,
+    0
+   ],
+   "ka": 1.0,
+   "speed_over_c": 0.9039048795260706,
+   "printed": 0.9038,
+   "match": true,
+   "group_velocity_analytic": 0.9039379077916817
+  },
+  {
+   "dir": [
+    1,
+    1,
+    0
+   ],
+   "ka": 1.0,
+   "speed_over_c": 0.9675707026173611,
+   "printed": 0.9676,
+   "match": true,
+   "group_velocity_analytic": 0.9675946532302547
+  },
+  {
+   "dir": [
+    1,
+    1,
+    1
+   ],
+   "ka": 1.0,
+   "speed_over_c": 0.9891427862981054,
+   "printed": 0.9891,
+   "match": true,
+   "group_velocity_analytic": 0.989155069269081
+  },
+  {
+   "dir": [
+    1,
+    0,
+    0
+   ],
+   "ka": 2.0,
+   "speed_over_c": 0.5955466595939393,
+   "printed": 0.5955,
+   "match": true,
+   "group_velocity_analytic": 0.5955822502390045
+  },
+  {
+   "dir": [
+    1,
+    1,
+    0
+   ],
+   "ka": 2.0,
+   "speed_over_c": 0.8558533234557244,
+   "printed": 0.8559,
+   "match": true,
+   "group_velocity_analytic": 0.8558915029809169
+  },
+  {
+   "dir": [
+    1,
+    1,
+    1
+   ],
+   "ka": 2.0,
+   "speed_over_c": 0.9508176428737303,
+   "printed": 0.9508,
+   "match": true,
+   "group_velocity_analytic": 0.9508399238221603
+  }
+ ],
+ "B0_bcc_coefficients_record": [
+  {
+   "dir": [
+    1,
+    0,
+    0
+   ],
+   "coefficient": 0.041666666666666664,
+   "printed": 0.041666666666666664,
+   "abs_dev": 0.0,
+   "match": true
+  },
+  {
+   "dir": [
+    1,
+    1,
+    0
+   ],
+   "coefficient": 0.0833333333333333,
+   "printed": 0.08333333333333333,
+   "abs_dev": 2.7755575615628914e-17,
+   "match": true
+  },
+  {
+   "dir": [
+    1,
+    1,
+    1
+   ],
+   "coefficient": 0.09722222222222228,
+   "printed": 0.09722222222222222,
+   "abs_dev": 5.551115123125783e-17,
+   "match": true
+  }
+ ],
+ "outcome": "MET"
+}

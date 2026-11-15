@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "table": [
+    {
+      "id": "I1",
+      "beta": 1.0,
+      "gamma": 1.0,
+      "factor": 1.0,
+      "perihelion_formula_arcsec_cy": 42.98069352502894,
+      "alpha_redshift": 0.0,
+      "z_over_z_GR_linear": 1.0,
+      "limb_deflection_arcsec": 1.7512433,
+      "shapiro_over_GR": 1.0,
+      "notes": "Paper split, no self-load. Clock e^{-U}, light cost e^{2U}, U = U_phys. Control.",
+      "targets": {
+        "perihelion": "MEETS",
+        "perihelion_residual_arcsec": 0.0006935250289430428,
+        "redshift": "MEETS",
+        "alpha": 0.0,
+        "gamma": "MEETS",
+        "gamma_minus_one": 0.0
+      }
+    },
+    {
+      "id": "I2",
+      "beta": 0.766,
+      "gamma": 1.0,
+      "factor": 1.078,
+      "perihelion_formula_arcsec_cy": 46.333187619981196,
+      "alpha_redshift": 0.0,
+      "z_over_z_GR_linear": 1.0,
+      "limb_deflection_arcsec": 1.7512433,
+      "shapiro_over_GR": 1.0,
+      "notes": "Paper own-load, archived beta=0.766. The 46.3'' double-count. Control.",
+      "targets": {
+        "perihelion": "MISSES",
+        "perihelion_residual_arcsec": 3.353187619981199,
+        "redshift": "MEETS",
+        "alpha": 0.0,
+        "gamma": "MEETS",
+        "gamma_minus_one": 0.0
+      }
+    },
+    {
+      "id": "I3",
+      "beta": 1.0,
+      "gamma": 0.0,
+      "factor": 0.3333333333333333,
+      "perihelion_formula_arcsec_cy": 14.326897841676312,
+      "alpha_redshift": 0.0,
+      "z_over_z_GR_linear": 1.0,
+      "limb_deflection_arcsec": 0.87562165,
+      "shapiro_over_GR": 0.5,
+      "notes": "B_m common factor, rigid nodes, G to Kepler. Clock and coordinate light share s; local c constant.",
+      "targets": {
+        "perihelion": "MISSES",
+        "perihelion_residual_arcsec": -28.653102158323684,
+        "redshift": "MEETS",
+        "alpha": 0.0,
+        "gamma": "MISSES",
+        "gamma_minus_one": -1.0
+      }
+    },
+    {
+      "id": "I4",
+      "beta": null,
+      "gamma": null,
+      "factor": null,
+      "perihelion_formula_arcsec_cy": null,
+      "alpha_redshift": 1.0,
+      "z_over_z_GR_linear": 2.0,
+      "limb_deflection_arcsec": null,
+      "shapiro_over_GR": null,
+      "notes": "Diagnostic: paper U held fixed, clock Phi=e^{-2U}, no G retuning. Linear redshift 2x; linear g00 also 2x (Kepler fails). No consistent 1PN (beta,gamma) until G is retuned.",
+      "targets": {
+        "perihelion": "UNINFORMATIVE",
+        "redshift": "MISSES",
+        "alpha": 1.0,
+        "gamma": "UNINFORMATIVE"
+      }
+    },
+    {
+      "id": "I5",
+      "beta": 1.0,
+      "gamma": 1.0,
+      "factor": 1.0,
+      "perihelion_formula_arcsec_cy": 42.98069352502894,
+      "alpha_redshift": 0.0,
+      "z_over_z_GR_linear": 1.0,
+      "limb_deflection_arcsec": 1.7512433,
+      "shapiro_over_GR": 1.0,
+      "notes": "B_m clock at e^{-2U_load} with paper load-first routing still on, G to Kepler. Relabel of I1. Live only if the split remains.",
+      "targets": {
+        "perihelion": "MEETS",
+        "perihelion_residual_arcsec": 0.0006935250289430428,
+        "redshift": "MEETS",
+        "alpha": 0.0,
+        "gamma": "MEETS",
+        "gamma_minus_one": 0.0
+      }
+    }
+  ],
+  "resources": {
+    "step": "S3",
+    "wall_s": 3.4645956475287676e-05,
+    "cpu_s": 3.500000000045134e-05,
+    "peak_rss_mib": 88.27734375
+  },
+  "include_I6": false
+}

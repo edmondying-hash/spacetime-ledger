@@ -1,0 +1,18 @@
+{
+ "round": "repair",
+ "step": "S5a",
+ "caps": {
+  "cpu_s": 600,
+  "wall_s": 900,
+  "rss_mib": 2048,
+  "out_mib": 10
+ },
+ "cpu_s": 522.099,
+ "wall_s": 1654.962,
+ "peak_rss_mib_wait4": 448.7,
+ "peak_rss_mib_polled": 433.2,
+ "output_bytes": 0,
+ "exit_code": -9,
+ "cap_trip": "wall cap 900 s exceeded",
+ "step_label_if_tripped_or_crashed": "UNINFORMATIVE"
+}

@@ -1,0 +1,147 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "_global",
+ "step": "S0",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": null,
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  120,
+  180,
+  512,
+  1
+ ],
+ "cpu_s": 0.897,
+ "wall_s": 0.898,
+ "peak_rss_mib": 70.2,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "MemAvailable_kB": 6991100,
+ "threshold_kB": 3670016,
+ "design_file_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "manifest_sha256_recomputed": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "manifest": {
+  "census.py": {
+   "listed": "ede99b889e8ee01858e1f48b5bf8ba8e58f231a85e513dc7f7dd57cdd3ba74de",
+   "recomputed": "ede99b889e8ee01858e1f48b5bf8ba8e58f231a85e513dc7f7dd57cdd3ba74de",
+   "match": true
+  },
+  "census_core.py": {
+   "listed": "e4cbabd9b75dc16a9adeb8e2544190fd7b3ed15bd572afb924c611ad5cf5e333",
+   "recomputed": "e4cbabd9b75dc16a9adeb8e2544190fd7b3ed15bd572afb924c611ad5cf5e333",
+   "match": true
+  },
+  "census_steps.py": {
+   "listed": "d63b2ef71f48ff69f790963cccb878565204aa88df21f04dcc216e491c35a522",
+   "recomputed": "d63b2ef71f48ff69f790963cccb878565204aa88df21f04dcc216e491c35a522",
+   "match": true
+  },
+  "dirac4_cycle_symbol.py": {
+   "listed": "cc4bb988e81e5e93937184ce89cb14f7cbb847c058551fd0b5406b4ccd8f77d6",
+   "recomputed": "cc4bb988e81e5e93937184ce89cb14f7cbb847c058551fd0b5406b4ccd8f77d6",
+   "match": true
+  },
+  "watcher.sh": {
+   "listed": "99ac9334c91d4ea9e2e8dfc599f525708055bcc4ec1ef0edae38b62858529dfa",
+   "recomputed": "99ac9334c91d4ea9e2e8dfc599f525708055bcc4ec1ef0edae38b62858529dfa",
+   "match": true
+  },
+  "IMPLEMENTATION_NOTES.md": {
+   "listed": "675b2388456a5ad42362683f0e7959191f0eea492b5c3d2cd63ac30be2207382",
+   "recomputed": "675b2388456a5ad42362683f0e7959191f0eea492b5c3d2cd63ac30be2207382",
+   "match": true
+  }
+ },
+ "K_checks": {
+  "K1": 4.965068306494546e-16,
+  "K2_X": 0,
+  "K2_V": 5.36049202688126e-16,
+  "K3": 5.978733960281817e-16,
+  "K3b": 2.237726045655905e-16,
+  "K4": 6.661338147750939e-16,
+  "K5_C1": 3.1221368064985396e-15,
+  "K5_C3_even": 6.827582621857772e-16,
+  "K5_C3_odd_norm": [
+   0.6312666378723215,
+   0.6312666378723215,
+   0.6312666378723215,
+   0.6312666378723215
+  ],
+  "K5_C4": 3.4638242249419736e-16,
+  "K6": true,
+  "K7": 2.4424906541753444e-15
+ },
+ "implementation_checks": {
+  "B0_composed_vs_dirac4": 3.1031676915590912e-15,
+  "C4_vs_AmAp": 9.238896857051834e-16,
+  "C1_RC3_vs_closed_form": 1.0087920413118926e-15,
+  "C2_unitarity": 1.7763568394002505e-15,
+  "layer_counts": {
+   "B0": {
+    "hop": 4,
+    "onsite": 0,
+    "r1_hop": 4,
+    "r1_onsite": 0,
+    "match": true
+   },
+   "C1": {
+    "hop": 18,
+    "onsite": 12,
+    "r1_hop": 18,
+    "r1_onsite": 12,
+    "match": true
+   },
+   "C2": {
+    "hop": 12,
+    "onsite": 0,
+    "r1_hop": 12,
+    "r1_onsite": 0,
+    "match": true
+   },
+   "C3": {
+    "hop": 18,
+    "onsite": 4,
+    "r1_hop": 18,
+    "r1_onsite": 4,
+    "match": true
+   },
+   "C4": {
+    "hop": 6,
+    "onsite": 0,
+    "r1_hop": 6,
+    "r1_onsite": 0,
+    "match": true
+   },
+   "RC3": {
+    "hop": 30,
+    "onsite": 16,
+    "r1_hop": 30,
+    "r1_onsite": 16,
+    "match": true
+   }
+  }
+ },
+ "environment": {
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "platform": "Linux-6.12.113+-x86_64-with-glibc2.41",
+  "cpu_count": 8,
+  "threads_env": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "threadpools": "ModuleNotFoundError(\"No module named 'threadpoolctl'\")"
+ },
+ "checks": {
+  "memory": true,
+  "design_sha256": true,
+  "code_manifest": true,
+  "K1_K7_and_impl": true
+ },
+ "outcome": "PASS"
+}

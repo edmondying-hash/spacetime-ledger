@@ -1,0 +1,152 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "C4",
+ "step": "S5a",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "ell = face link length = cube side (simple cubic, one site per Planck cube)",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  5400,
+  7200,
+  3072,
+  50
+ ],
+ "cpu_s": 17.105,
+ "wall_s": 17.112,
+ "peak_rss_mib": 365.8,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "per_knob": {
+  "None": {
+   "knob": null,
+   "cbar0": 2.000000000443082,
+   "rows": [
+    {
+     "sigma": 1.5,
+     "N_grid": 48,
+     "cycles": 4,
+     "R_front": 8.000000001772328,
+     "lattice_obs": {
+      "P_out": 0.003616508230752216,
+      "A": 0.1867130304021286,
+      "Q2": 0.01607341443508029,
+      "P_face": 5.834233338342817e-15,
+      "W_weight": 0.8612465190100836
+     },
+     "reference_obs": {
+      "P_out": 0.0002085671193918764,
+      "A": -1.0683111852359844e-05,
+      "Q2": 1.8025953369299565e-09,
+      "P_face": 9.823202797578743e-12,
+      "W_weight": 0.9996144670581116
+     },
+     "Lambda": 0.0034079411113603396,
+     "dA": 0.18672371351398098,
+     "dQ2": 0.016073412632484952,
+     "wrap_ok": true,
+     "res_cpu_s": 0.244,
+     "res_wall_s": 0.244,
+     "res_peak_rss_mib": 76.1,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 3.0,
+     "N_grid": 90,
+     "cycles": 9,
+     "R_front": 18.000000003987736,
+     "lattice_obs": {
+      "P_out": 0.000966477736534153,
+      "A": 0.08706178673186457,
+      "Q2": 0.0023350836616205747,
+      "P_face": 1.034968176012887e-14,
+      "W_weight": 0.9951786616999477
+     },
+     "reference_obs": {
+      "P_out": 0.00022485200873359872,
+      "A": 9.347037506504896e-06,
+      "Q2": 2.6920403771168014e-09,
+      "P_face": 3.318847344128526e-14,
+      "W_weight": 0.9995716657569601
+     },
+     "Lambda": 0.0007416257278005543,
+     "dA": 0.08705243969435807,
+     "dQ2": 0.0023350809695801976,
+     "wrap_ok": true,
+     "res_cpu_s": 1.807,
+     "res_wall_s": 1.808,
+     "res_peak_rss_mib": 108.0,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 6.0,
+     "N_grid": 180,
+     "cycles": 18,
+     "R_front": 36.00000000797547,
+     "lattice_obs": {
+      "P_out": 0.00038392746042425027,
+      "A": 0.01922337941765503,
+      "Q2": 0.0004936054370304839,
+      "P_face": 1.1661134654205317e-14,
+      "W_weight": 0.9995345058834273
+     },
+     "reference_obs": {
+      "P_out": 0.00022664324030494609,
+      "A": 1.2367161791648007e-06,
+      "Q2": 1.7148977274173543e-09,
+      "P_face": 3.5831550853109166e-14,
+      "W_weight": 0.9995775494511548
+     },
+     "Lambda": 0.00015728422011930418,
+     "dA": 0.019222142701475865,
+     "dQ2": 0.0004936037221327565,
+     "wrap_ok": true,
+     "res_cpu_s": 15.05,
+     "res_wall_s": 15.057,
+     "res_peak_rss_mib": 365.8,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    }
+   ],
+   "observables": {
+    "dA": {
+     "values": [
+      0.18672371351398098,
+      0.08705243969435807,
+      0.019222142701475865
+     ],
+     "below_floor": false,
+     "slope": -1.6400320451500883,
+     "last_ok": false,
+     "ok": false
+    },
+    "dQ2": {
+     "values": [
+      0.016073412632484952,
+      0.0023350809695801976,
+      0.0004936037221327565
+     ],
+     "below_floor": false,
+     "slope": -2.5125895920657353,
+     "last_ok": true,
+     "ok": true
+    },
+    "Lambda": {
+     "values": [
+      0.0034079411113603396,
+      0.0007416257278005543,
+      0.00015728422011930418
+     ],
+     "below_floor": false,
+     "slope": -2.2187272823198505,
+     "last_ok": true,
+     "ok": true
+    }
+   },
+   "outcome": "NOT MET"
+  }
+ },
+ "outcome_F5a": "NOT MET",
+ "outcome": "NOT MET"
+}

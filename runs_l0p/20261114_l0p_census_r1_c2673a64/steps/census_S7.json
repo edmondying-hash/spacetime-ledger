@@ -1,0 +1,18 @@
+{
+ "round": "census",
+ "step": "S7",
+ "caps": {
+  "cpu_s": 120,
+  "wall_s": 180,
+  "rss_mib": 512,
+  "out_mib": 5
+ },
+ "cpu_s": 0.367,
+ "wall_s": 0.505,
+ "peak_rss_mib_wait4": 71.5,
+ "peak_rss_mib_polled": 1.2,
+ "output_bytes": 4515,
+ "exit_code": 0,
+ "cap_trip": null,
+ "step_label_if_tripped_or_crashed": null
+}

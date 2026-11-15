@@ -1,0 +1,404 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "B0",
+ "step": "S5a",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "ell = BCC link length = a*sqrt(3)/2 (OD8(a)); grid unit a/2; k*ell = sqrt(3) k_grid",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  5400,
+  7200,
+  3072,
+  50
+ ],
+ "cpu_s": 992.278,
+ "wall_s": 2885.184,
+ "peak_rss_mib": 2202.2,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "per_knob": {
+  "0.5": {
+   "knob": 0.5,
+   "cbar0": 1.5009092982644865,
+   "rows": [
+    {
+     "sigma": 1.5,
+     "N_grid": 80,
+     "cycles": 6,
+     "R_front": 9.005455789586918,
+     "lattice_obs": {
+      "P_out": 0.0014551885652287551,
+      "A": 0.11915598099173849,
+      "Q2": 0.0003020504411987123,
+      "P_face": 6.354718019981849e-15,
+      "W_weight": 0.9688433001894775
+     },
+     "reference_obs": {
+      "P_out": 0.0002158078041785365,
+      "A": 7.922408348790166e-06,
+      "Q2": 1.624267449221659e-09,
+      "P_face": 4.0155539444333287e-14,
+      "W_weight": 0.9995248026046027
+     },
+     "Lambda": 0.0012393807610502187,
+     "dA": 0.1191480585833897,
+     "dQ2": 0.0003020488169312631,
+     "wrap_ok": true,
+     "res_cpu_s": 3.296,
+     "res_wall_s": 3.292,
+     "res_peak_rss_mib": 103.6,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 3.0,
+     "N_grid": 160,
+     "cycles": 12,
+     "R_front": 18.010911579173836,
+     "lattice_obs": {
+      "P_out": 0.0005049091172100684,
+      "A": 0.026572134735073034,
+      "Q2": 1.6110160857943427e-05,
+      "P_face": 6.7447310478090414e-15,
+      "W_weight": 0.9994763104887763
+     },
+     "reference_obs": {
+      "P_out": 0.0002257770224144434,
+      "A": -6.82187713422475e-06,
+      "Q2": 3.671590431878108e-09,
+      "P_face": 3.94087515309739e-14,
+      "W_weight": 0.9995867297739177
+     },
+     "Lambda": 0.000279132094795625,
+     "dA": 0.026578956612207258,
+     "dQ2": 1.610648926751155e-05,
+     "wrap_ok": true,
+     "res_cpu_s": 26.716,
+     "res_wall_s": 26.722,
+     "res_peak_rss_mib": 371.0,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 6.0,
+     "N_grid": 320,
+     "cycles": 24,
+     "R_front": 36.02182315834767,
+     "lattice_obs": {
+      "P_out": 0.00029241315909538226,
+      "A": 0.006245736123595867,
+      "Q2": 9.148858957593094e-07,
+      "P_face": 7.750218869740435e-15,
+      "W_weight": 0.999559626814028
+     },
+     "reference_obs": {
+      "P_out": 0.00022777005366770819,
+      "A": -1.05984419338487e-06,
+      "Q2": 8.212300891097701e-10,
+      "P_face": 4.0453037164068954e-14,
+      "W_weight": 0.999574171885745
+     },
+     "Lambda": 6.464310542767408e-05,
+     "dA": 0.006246795967789252,
+     "dQ2": 9.140646656701997e-07,
+     "wrap_ok": true,
+     "res_cpu_s": 321.955,
+     "res_wall_s": 1334.896,
+     "res_peak_rss_mib": 2201.8,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    }
+   ],
+   "observables": {
+    "dA": {
+     "values": [
+      0.1191480585833897,
+      0.026578956612207258,
+      0.006246795967789252
+     ],
+     "below_floor": false,
+     "slope": -2.126747612243303,
+     "last_ok": true,
+     "ok": true
+    },
+    "dQ2": {
+     "values": [
+      0.0003020488169312631,
+      1.610648926751155e-05,
+      9.140646656701997e-07
+     ],
+     "below_floor": false,
+     "slope": -4.184134893932688,
+     "last_ok": true,
+     "ok": true
+    },
+    "Lambda": {
+     "values": [
+      0.0012393807610502187,
+      0.000279132094795625,
+      6.464310542767408e-05
+     ],
+     "below_floor": false,
+     "slope": -2.1304895810736153,
+     "last_ok": true,
+     "ok": true
+    }
+   },
+   "outcome": "MET"
+  },
+  "1.0": {
+   "knob": 1.0,
+   "cbar0": 2.040986772666062,
+   "rows": [
+    {
+     "sigma": 1.5,
+     "N_grid": 80,
+     "cycles": 4,
+     "R_front": 8.163947090664248,
+     "lattice_obs": {
+      "P_out": 0.0013976879397355774,
+      "A": 0.10478988769848958,
+      "Q2": 0.0008191716163410608,
+      "P_face": 6.3553880550106856e-15,
+      "W_weight": 0.9498816085199794
+     },
+     "reference_obs": {
+      "P_out": 0.00023690777310280767,
+      "A": -2.4623295195652032e-05,
+      "Q2": 1.5167292945328734e-09,
+      "P_face": 2.566830383398223e-14,
+      "W_weight": 0.999527073707791
+     },
+     "Lambda": 0.0011607801666327698,
+     "dA": 0.10481451099368523,
+     "dQ2": 0.0008191700996117662,
+     "wrap_ok": true,
+     "res_cpu_s": 3.119,
+     "res_wall_s": 3.117,
+     "res_peak_rss_mib": 104.2,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 3.0,
+     "N_grid": 160,
+     "cycles": 9,
+     "R_front": 18.36888095399456,
+     "lattice_obs": {
+      "P_out": 0.0004932268960729629,
+      "A": 0.02786361954123253,
+      "Q2": 3.0752551530632924e-05,
+      "P_face": 6.909368053208307e-15,
+      "W_weight": 0.9994755790944907
+     },
+     "reference_obs": {
+      "P_out": 0.00022772733340893262,
+      "A": -1.4043143645875705e-06,
+      "Q2": 2.322666681871515e-09,
+      "P_face": 4.666309578815667e-14,
+      "W_weight": 0.9995740749547048
+     },
+     "Lambda": 0.0002654995626640303,
+     "dA": 0.027865023855597117,
+     "dQ2": 3.0750228863951054e-05,
+     "wrap_ok": true,
+     "res_cpu_s": 27.115,
+     "res_wall_s": 27.124,
+     "res_peak_rss_mib": 371.3,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 6.0,
+     "N_grid": 320,
+     "cycles": 18,
+     "R_front": 36.73776190798912,
+     "lattice_obs": {
+      "P_out": 0.0002870710037275235,
+      "A": 0.00633701087381095,
+      "Q2": 1.621230410885612e-06,
+      "P_face": 7.608732641492818e-15,
+      "W_weight": 0.9995640049191259
+     },
+     "reference_obs": {
+      "P_out": 0.00022676314912952646,
+      "A": -7.998028484547768e-07,
+      "Q2": 1.7927066169908455e-09,
+      "P_face": 4.7434408889094204e-14,
+      "W_weight": 0.9995774357740707
+     },
+     "Lambda": 6.0307854597997055e-05,
+     "dA": 0.006337810676659405,
+     "dQ2": 1.6194377042686211e-06,
+     "wrap_ok": true,
+     "res_cpu_s": 331.853,
+     "res_wall_s": 573.353,
+     "res_peak_rss_mib": 2202.1,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    }
+   ],
+   "observables": {
+    "dA": {
+     "values": [
+      0.10481451099368523,
+      0.027865023855597117,
+      0.006337810676659405
+     ],
+     "below_floor": false,
+     "slope": -2.0238550447839816,
+     "last_ok": true,
+     "ok": true
+    },
+    "dQ2": {
+     "values": [
+      0.0008191700996117662,
+      3.0750228863951054e-05,
+      1.6194377042686211e-06
+     ],
+     "below_floor": false,
+     "slope": -4.491263137094517,
+     "last_ok": true,
+     "ok": true
+    },
+    "Lambda": {
+     "values": [
+      0.0011607801666327698,
+      0.0002654995626640303,
+      6.0307854597997055e-05
+     ],
+     "below_floor": false,
+     "slope": -2.133302525420734,
+     "last_ok": true,
+     "ok": true
+    }
+   },
+   "outcome": "MET"
+  },
+  "1.5": {
+   "knob": 1.5,
+   "cbar0": 2.3050636272008207,
+   "rows": [
+    {
+     "sigma": 1.5,
+     "N_grid": 80,
+     "cycles": 4,
+     "R_front": 9.220254508803283,
+     "lattice_obs": {
+      "P_out": 0.001172232844834937,
+      "A": 0.10466446779612042,
+      "Q2": 0.0008369856435335908,
+      "P_face": 6.711341199127685e-15,
+      "W_weight": 0.9100005226521879
+     },
+     "reference_obs": {
+      "P_out": 0.0001928333839780774,
+      "A": 3.013610879548053e-07,
+      "Q2": 3.4165456013617647e-09,
+      "P_face": 2.8803189722874907e-14,
+      "W_weight": 0.9996844570363104
+     },
+     "Lambda": 0.0009793994608568598,
+     "dA": 0.10466416643503246,
+     "dQ2": 0.0008369822269879895,
+     "wrap_ok": true,
+     "res_cpu_s": 3.067,
+     "res_wall_s": 3.067,
+     "res_peak_rss_mib": 104.3,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 3.0,
+     "N_grid": 160,
+     "cycles": 8,
+     "R_front": 18.440509017606566,
+     "lattice_obs": {
+      "P_out": 0.0004708235078222765,
+      "A": 0.02866913147829587,
+      "Q2": 4.1579097941721874e-05,
+      "P_face": 6.867798082581661e-15,
+      "W_weight": 0.9994486073920757
+     },
+     "reference_obs": {
+      "P_out": 0.00023879373281457668,
+      "A": 1.181575388312248e-06,
+      "Q2": 1.7926305329331863e-09,
+      "P_face": 2.8651099058991114e-14,
+      "W_weight": 0.9995533301784152
+     },
+     "Lambda": 0.00023202977500769983,
+     "dA": 0.028667949902907556,
+     "dQ2": 4.157730531118894e-05,
+     "wrap_ok": true,
+     "res_cpu_s": 25.506,
+     "res_wall_s": 25.519,
+     "res_peak_rss_mib": 371.3,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    },
+    {
+     "sigma": 6.0,
+     "N_grid": 320,
+     "cycles": 16,
+     "R_front": 36.88101803521313,
+     "lattice_obs": {
+      "P_out": 0.000278204030698836,
+      "A": 0.006375550637509582,
+      "Q2": 2.0782305174028128e-06,
+      "P_face": 7.741019139965143e-15,
+      "W_weight": 0.9995634172637079
+     },
+     "reference_obs": {
+      "P_out": 0.0002270266458011391,
+      "A": -7.303889384900643e-07,
+      "Q2": 1.1118740731809796e-09,
+      "P_face": 3.0017111665473483e-14,
+      "W_weight": 0.9995738738315528
+     },
+     "Lambda": 5.11773848976969e-05,
+     "dA": 0.006376281026448072,
+     "dQ2": 2.0771186433296317e-06,
+     "wrap_ok": true,
+     "res_cpu_s": 249.61,
+     "res_wall_s": 888.049,
+     "res_peak_rss_mib": 2202.2,
+     "res_peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record"
+    }
+   ],
+   "observables": {
+    "dA": {
+     "values": [
+      0.10466416643503246,
+      0.028667949902907556,
+      0.006376281026448072
+     ],
+     "below_floor": false,
+     "slope": -2.0184542848086964,
+     "last_ok": true,
+     "ok": true
+    },
+    "dQ2": {
+     "values": [
+      0.0008369822269879895,
+      4.157730531118894e-05,
+      2.0771186433296317e-06
+     ],
+     "below_floor": false,
+     "slope": -4.3272347768341,
+     "last_ok": true,
+     "ok": true
+    },
+    "Lambda": {
+     "values": [
+      0.0009793994608568598,
+      0.00023202977500769983,
+      5.11773848976969e-05
+     ],
+     "below_floor": false,
+     "slope": -2.1291595337303817,
+     "last_ok": true,
+     "ok": true
+    }
+   },
+   "outcome": "MET"
+  }
+ },
+ "outcome_F5a": "MET",
+ "outcome": "MET"
+}

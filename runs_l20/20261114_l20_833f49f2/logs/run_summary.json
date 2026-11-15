@@ -1,0 +1,73 @@
+{
+ "start_local": "2026-11-14 22:09:01 EST",
+ "checks": [
+  {
+   "check": "S0",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 4.532387733459473,
+   "cpu_s": 4.400723,
+   "peak_tree_rss_MiB": 81.5390625,
+   "label": "PASS",
+   "run_folder_bytes_after": 66037
+  },
+  {
+   "check": "C1",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 112.03836297988892,
+   "cpu_s": 111.83572799999999,
+   "peak_tree_rss_MiB": 124.6875,
+   "label": "UNINFORMATIVE",
+   "run_folder_bytes_after": 1938353
+  },
+  {
+   "check": "C2",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 2.676506519317627,
+   "cpu_s": 2.535967,
+   "peak_tree_rss_MiB": 68.42578125,
+   "label": "FAIL",
+   "run_folder_bytes_after": 2126182
+  },
+  {
+   "check": "C3",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 51.76409935951233,
+   "cpu_s": 51.669725,
+   "peak_tree_rss_MiB": 69.421875,
+   "label": "PASS",
+   "run_folder_bytes_after": 2140558
+  },
+  {
+   "check": "C4",
+   "ceiling_s": 600,
+   "exit_code": 0,
+   "killed": null,
+   "wall_s": 0.41113853454589844,
+   "cpu_s": 0.39257,
+   "peak_tree_rss_MiB": 58.0859375,
+   "label": "FAIL",
+   "run_folder_bytes_after": 2182509
+  },
+  {
+   "check": "C5",
+   "ceiling_s": 900,
+   "exit_code": -9,
+   "killed": "rss_cap",
+   "wall_s": 2.8794915676116943,
+   "cpu_s": 2.690018,
+   "peak_tree_rss_MiB": 532.765625,
+   "label": null,
+   "run_folder_bytes_after": 2183875
+  }
+ ],
+ "total_wall_s": 174.45183420181274,
+ "end_local": "2026-11-14 22:11:56 EST"
+}

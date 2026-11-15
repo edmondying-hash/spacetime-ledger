@@ -1,0 +1,167 @@
+{
+ "label": "PASS",
+ "P0": {
+  "hashes": {
+   "L2_0_RUN_DESIGN.md": "833f49f26418b2267cc0a9b389a46220078b453eebe92cf149145af330077ed9",
+   "L2_0_RUN_DESIGN.pdf": "6bae2decb7984454830be973f086dc7938eb0ec36a3b8e5ec2138b20b0e33992",
+   "L2_0_C5A_AUDIT.md": "423920fe845e26df1871e0e2a5ebc044c780735919c1df1af3c47ecabf683090",
+   "L2_0_OPEN_DECISIONS.md": "6e313901623227c9818606e18b398b3e3b3dfbf39f0a4f41e77bc0e19339ab9b",
+   "l20_measure.py": "08e98af5d2936474260f233f85c4b1ef06b4564d6533409f36c34a7bfa5dd516",
+   "L2_0_PROBE_TIMING.json": "9bad7d32371956121f3c6905d4dbaf3916f2a4d8c0b888dccf5988da5f45227d",
+   "frozen/dirac4.py": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "SHA256SUMS": "ae005712b98eb2263e702cdc5701abfd1fb0e9e0bef102367c40d28dab858edc",
+   "imported_dirac4": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "imported_l20_measure": "08e98af5d2936474260f233f85c4b1ef06b4564d6533409f36c34a7bfa5dd516",
+   "this_file_l20_score": "08d8e79fcdc7b1a84eb1d952c70b2e5286bcf34666f9ab6fc9f425537002506a"
+  },
+  "expected": {
+   "L2_0_RUN_DESIGN.md": "833f49f26418b2267cc0a9b389a46220078b453eebe92cf149145af330077ed9",
+   "L2_0_RUN_DESIGN.pdf": "6bae2decb7984454830be973f086dc7938eb0ec36a3b8e5ec2138b20b0e33992",
+   "L2_0_C5A_AUDIT.md": "423920fe845e26df1871e0e2a5ebc044c780735919c1df1af3c47ecabf683090",
+   "L2_0_OPEN_DECISIONS.md": "6e313901623227c9818606e18b398b3e3b3dfbf39f0a4f41e77bc0e19339ab9b",
+   "l20_measure.py": "08e98af5d2936474260f233f85c4b1ef06b4564d6533409f36c34a7bfa5dd516",
+   "L2_0_PROBE_TIMING.json": "9bad7d32371956121f3c6905d4dbaf3916f2a4d8c0b888dccf5988da5f45227d",
+   "frozen/dirac4.py": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+   "SHA256SUMS": "ae005712b98eb2263e702cdc5701abfd1fb0e9e0bef102367c40d28dab858edc"
+  },
+  "L20_SCORE": "1",
+  "ok": true
+ },
+ "P1": {
+  "n_k": 64,
+  "max_abs_dev_UdagU_minus_I": 1.2212453270876722e-15,
+  "bound": 1e-14,
+  "ok": true
+ },
+ "P2": {
+  "per_L": {
+   "16": {
+    "n_list": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      7,
+      3,
+      4
+     ],
+     [
+      0,
+      5,
+      -6
+     ],
+     [
+      1,
+      6,
+      -1
+     ]
+    ],
+    "max_abs_dev": 1.0000946685982955e-14,
+    "ok": true
+   },
+   "32": {
+    "n_list": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      15,
+      3,
+      8
+     ],
+     [
+      9,
+      4,
+      7
+     ],
+     [
+      -12,
+      0,
+      -7
+     ]
+    ],
+    "max_abs_dev": 2.1365970969325545e-14,
+    "ok": true
+   }
+  },
+  "bound": 1e-12,
+  "ok": true
+ },
+ "P3": {
+  "per_L": {
+   "16": {
+    "max_abs_offorbit_after_10_cycles": 5.920112449248843e-17,
+    "ok": true
+   },
+   "32": {
+    "max_abs_offorbit_after_10_cycles": 3.336035423100052e-17,
+    "ok": true
+   }
+  },
+  "bound": 1e-14,
+  "ok": true
+ },
+ "P4": {
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1",
+   "CUDA_VISIBLE_DEVICES": "",
+   "L20_METER": "1"
+  },
+  "os_threads_in_process": 1,
+  "gpu_used": false,
+  "numpy_version": "2.5.4",
+  "ok": true
+ },
+ "check": "S0",
+ "design_sha256": "833f49f26418b2267cc0a9b389a46220078b453eebe92cf149145af330077ed9",
+ "dirac4_sha256": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+ "l20_measure_sha256": "08e98af5d2936474260f233f85c4b1ef06b4564d6533409f36c34a7bfa5dd516",
+ "l20_score_sha256": "08d8e79fcdc7b1a84eb1d952c70b2e5286bcf34666f9ab6fc9f425537002506a",
+ "params": {
+  "phi": 1.4,
+  "m": 0.0,
+  "wilson": true,
+  "wilson_mass": 0.0,
+  "patch": false,
+  "load_rule": "none",
+  "seeds": [
+   20261113,
+   20261114,
+   20261115,
+   20261116,
+   20261117
+  ],
+  "nshot": 100000
+ },
+ "self_wall_s": 3.9365804195404053,
+ "self_cpu_s": 4.1729840000000005,
+ "self_ru_maxrss_MiB": 85.0234375,
+ "finished_local": "2026-11-14 22:30:07 EST"
+}

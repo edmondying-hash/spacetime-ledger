@@ -1,0 +1,67 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "RC3",
+ "step": "S1",
+ "round": "repair",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "ell = face link length = cube side (simple cubic, one site per Planck cube)",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  120,
+  180,
+  1024,
+  2
+ ],
+ "cpu_s": 6.831,
+ "wall_s": 6.834,
+ "peak_rss_mib": 79.1,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "per_knob": {
+  "0.5": {
+   "knob": 0.5,
+   "grid_L": 24,
+   "n_layers": 2300,
+   "dQ": 6.350475700855895e-14,
+   "bandQ": 5.10702591327572e-12,
+   "dR": 9.07974882262313e-16,
+   "bandR": 1.021405182655144e-11,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  },
+  "1.0": {
+   "knob": 1.0,
+   "grid_L": 24,
+   "n_layers": 2300,
+   "dQ": 3.863576125695545e-14,
+   "bandQ": 5.10702591327572e-12,
+   "dR": 5.500475520511539e-16,
+   "bandR": 1.021405182655144e-11,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  },
+  "1.5": {
+   "knob": 1.5,
+   "grid_L": 24,
+   "n_layers": 2300,
+   "dQ": 2.2648549702353193e-14,
+   "bandQ": 5.10702591327572e-12,
+   "dR": 3.192468599076999e-16,
+   "bandR": 1.021405182655144e-11,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  }
+ },
+ "seed_random_state": 20261614,
+ "outcome_F3": "MET",
+ "outcome_V1": "MET",
+ "outcome": "MET"
+}

@@ -1,0 +1,18 @@
+{
+ "round": "census",
+ "step": "S3",
+ "caps": {
+  "cpu_s": 3600,
+  "wall_s": 4500,
+  "rss_mib": 2048,
+  "out_mib": 50
+ },
+ "cpu_s": 754.851,
+ "wall_s": 2490.41,
+ "peak_rss_mib_wait4": 227.2,
+ "peak_rss_mib_polled": 226.7,
+ "output_bytes": 2625440,
+ "exit_code": 0,
+ "cap_trip": null,
+ "step_label_if_tripped_or_crashed": null
+}

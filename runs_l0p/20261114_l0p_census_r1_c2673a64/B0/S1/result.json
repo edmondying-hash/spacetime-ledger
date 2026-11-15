@@ -1,0 +1,67 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "B0",
+ "step": "S1",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "ell = BCC link length = a*sqrt(3)/2 (OD8(a)); grid unit a/2; k*ell = sqrt(3) k_grid",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  600,
+  900,
+  1024,
+  10
+ ],
+ "cpu_s": 4.796,
+ "wall_s": 4.802,
+ "peak_rss_mib": 86.2,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "per_knob": {
+  "0.5": {
+   "knob": 0.5,
+   "grid_L": 48,
+   "n_layers": 200,
+   "dQ": 3.597122599785507e-14,
+   "bandQ": 4.440892098500626e-13,
+   "dR": 1.0172315515170224e-15,
+   "bandR": 8.881784197001252e-13,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  },
+  "1.0": {
+   "knob": 1.0,
+   "grid_L": 48,
+   "n_layers": 200,
+   "dQ": 4.8183679268731794e-14,
+   "bandQ": 4.440892098500626e-13,
+   "dR": 1.3931952523308845e-15,
+   "bandR": 8.881784197001252e-13,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  },
+  "1.5": {
+   "knob": 1.5,
+   "grid_L": 48,
+   "n_layers": 200,
+   "dQ": 6.650235917504688e-14,
+   "bandQ": 4.440892098500626e-13,
+   "dR": 1.7436196507538483e-15,
+   "bandR": 8.881784197001252e-13,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [],
+   "outcome": "MET"
+  }
+ },
+ "seed_random_state": 20261114,
+ "outcome_F3": "MET",
+ "outcome_V1": "MET",
+ "outcome": "MET"
+}

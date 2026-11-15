@@ -1,0 +1,184 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "_global",
+ "step": "S5b",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic (FFT); infinite lattice for the method control",
+ "units": "SC: ell = face link; BCC: ell = a*sqrt(3)/2, grid a/2",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  1200,
+  1800,
+  2048,
+  10
+ ],
+ "cpu_s": 3.966,
+ "wall_s": 3.971,
+ "peak_rss_mib": 1266.2,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "method_control": {
+  "r": 12,
+  "dA_bessel": 0.0003336117660724426,
+  "dA_fft": 0.0002598652322342958,
+  "n_unique_sites": 49,
+  "ok": false,
+  "boundary": "infinite lattice (Bessel integral)"
+ },
+ "sc": {
+  "boxes": {
+   "96": {
+    "n_gamma_modes_removed": 1,
+    "shells": [
+     {
+      "r": 3,
+      "n_sites": 98,
+      "A_load": 0.052643953245221,
+      "A_ref": 0.045593223515301415,
+      "dA_load": 0.007050729729919582,
+      "Q2_record": -2.953364852140346e-17
+     },
+     {
+      "r": 6,
+      "n_sites": 450,
+      "A_load": -0.0038478625740737756,
+      "A_ref": -0.004838020078478106,
+      "dA_load": 0.0009901575044043306,
+      "Q2_record": -1.3944007504525842e-16
+     },
+     {
+      "r": 12,
+      "n_sites": 1814,
+      "A_load": -0.017226980833990452,
+      "A_ref": -0.01740869860118216,
+      "dA_load": 0.00018171776719170737,
+      "Q2_record": -1.0142435328262948e-15
+     }
+    ]
+   },
+   "192": {
+    "n_gamma_modes_removed": 1,
+    "shells": [
+     {
+      "r": 3,
+      "n_sites": 98,
+      "A_load": 0.05249371435320252,
+      "A_ref": 0.045593223515301415,
+      "dA_load": 0.006900490837901105,
+      "Q2_record": -2.1327122105635012e-16
+     },
+     {
+      "r": 6,
+      "n_sites": 450,
+      "A_load": -0.003664777460443039,
+      "A_ref": -0.004838020078478106,
+      "dA_load": 0.0011732426180350673,
+      "Q2_record": -2.2394010516196254e-16
+     },
+     {
+      "r": 12,
+      "n_sites": 1814,
+      "A_load": -0.017148833368947864,
+      "A_ref": -0.01740869860118216,
+      "dA_load": 0.0002598652322342958,
+      "Q2_record": -9.485977580962738e-16
+     }
+    ]
+   }
+  },
+  "box_control": {
+   "dA12_big": 0.0002598652322342958,
+   "dA12_small": 0.00018171776719170737,
+   "ok": false
+  },
+  "gated_values": [
+   0.006900490837901105,
+   0.0011732426180350673,
+   0.0002598652322342958
+  ],
+  "slope": -2.365431727113288,
+  "below_floor": false,
+  "gate_raw": "MET",
+  "outcome": "UNINFORMATIVE"
+ },
+ "bcc": {
+  "boxes": {
+   "168": {
+    "n_gamma_modes_removed": 4,
+    "shells": [
+     {
+      "r": 3,
+      "n_sites": 194,
+      "A_load": -0.06082945593289573,
+      "A_ref": -0.05739894339050948,
+      "dA_load": -0.0034305125423862506,
+      "Q2_record": 3.270289963869797e-17
+     },
+     {
+      "r": 6,
+      "n_sites": 566,
+      "A_load": 0.03351892661189031,
+      "A_ref": 0.03447591646033741,
+      "dA_load": -0.0009569898484471026,
+      "Q2_record": -2.6073522884719845e-16
+     },
+     {
+      "r": 12,
+      "n_sites": 2414,
+      "A_load": 0.00040984854755107613,
+      "A_ref": 0.0006047461310293319,
+      "dA_load": -0.00019489758347825576,
+      "Q2_record": -6.190333128970348e-16
+     }
+    ]
+   },
+   "336": {
+    "n_gamma_modes_removed": 4,
+    "shells": [
+     {
+      "r": 3,
+      "n_sites": 194,
+      "A_load": -0.060711287951860704,
+      "A_ref": -0.05739894339050948,
+      "dA_load": -0.0033123445613512242,
+      "Q2_record": -1.5927979352075493e-16
+     },
+     {
+      "r": 6,
+      "n_sites": 566,
+      "A_load": 0.03351871425354192,
+      "A_ref": 0.03447591646033741,
+      "dA_load": -0.0009572022067954877,
+      "Q2_record": -2.357841840291193e-16
+     },
+     {
+      "r": 12,
+      "n_sites": 2414,
+      "A_load": 0.0003841448000985834,
+      "A_ref": 0.0006047461310293319,
+      "dA_load": -0.00022060133093074847,
+      "Q2_record": -6.814247017186225e-16
+     }
+    ]
+   }
+  },
+  "box_control": {
+   "dA12_big": -0.00022060133093074847,
+   "dA12_small": -0.00019489758347825576,
+   "ok": false
+  },
+  "gated_values": [
+   -0.0033123445613512242,
+   -0.0009572022067954877,
+   -0.00022060133093074847
+  ],
+  "slope": -1.954169677281063,
+  "below_floor": false,
+  "gate_raw": "MET",
+  "outcome": "UNINFORMATIVE"
+ },
+ "controls_ok": false,
+ "outcome": "see per-lattice outcomes"
+}

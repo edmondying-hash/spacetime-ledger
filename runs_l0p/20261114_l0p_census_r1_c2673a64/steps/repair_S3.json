@@ -1,0 +1,18 @@
+{
+ "round": "repair",
+ "step": "S3",
+ "caps": {
+  "cpu_s": 900,
+  "wall_s": 1200,
+  "rss_mib": 2048,
+  "out_mib": 10
+ },
+ "cpu_s": 266.732,
+ "wall_s": 267.253,
+ "peak_rss_mib_wait4": 223.8,
+ "peak_rss_mib_polled": 151.8,
+ "output_bytes": 1307605,
+ "exit_code": 0,
+ "cap_trip": null,
+ "step_label_if_tripped_or_crashed": null
+}

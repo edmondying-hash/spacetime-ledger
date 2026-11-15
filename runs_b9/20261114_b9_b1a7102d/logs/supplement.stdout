@@ -1,0 +1,111 @@
+{
+  "C1_linear_fit": {
+    "value": 42.98224462225191,
+    "ref": 42.982,
+    "abs_diff": 0.00024462225191257403,
+    "tol": 0.02,
+    "gate": "MET"
+  },
+  "newtonian_energy_drift": {
+    "S1": {
+      "rel_change": 1.4644644782497417e-11,
+      "span_yr": 48.169234039800926,
+      "per_century": 3.040248630567168e-11,
+      "limit": 1e-06,
+      "gate": "MET"
+    },
+    "S2": {
+      "rel_change": 1.4618844373980855e-11,
+      "span_yr": 48.169234039800926,
+      "per_century": 3.034892429865441e-11,
+      "limit": 1e-06,
+      "gate": "MET"
+    },
+    "S4_I3": {
+      "rel_change": 1.4612186204041098e-11,
+      "span_yr": 48.169234039800926,
+      "per_century": 3.0335101845230596e-11,
+      "limit": 1e-06,
+      "gate": "MET"
+    },
+    "S4_I5": {
+      "rel_change": 1.4644644782497417e-11,
+      "span_yr": 48.169234039800926,
+      "per_century": 3.040248630567168e-11,
+      "limit": 1e-06,
+      "gate": "MET"
+    }
+  },
+  "newtonian_only_100yr": {
+    "value_arcsec_cy": 0.0001485360210586517,
+    "tol": 0.01,
+    "nfev": 337706,
+    "success": true,
+    "gate": "MET"
+  },
+  "resources": {
+    "wall_s": 2.273128619999625,
+    "cpu_s": 2.628387,
+    "peak_rss_mib": 86.7578125
+  }
+}
+{
+  "name": "P6_supplement_gates",
+  "cmd": [
+    "python3",
+    "harness/b9_supplement.py",
+    "gates",
+    "out"
+  ],
+  "start_epoch": 1794709270.4731486,
+  "wall_s": 2.690164126979653,
+  "cpu_user_s": 2.640586,
+  "cpu_sys_s": 0.048232,
+  "cpu_s": 2.688818,
+  "peak_rss_mib_polled": 83.98046875,
+  "peak_rss_mib_ru_maxrss": 86.7578125,
+  "exit_code": 0,
+  "killed": null,
+  "step_boundaries": [
+    {
+      "file": "S0.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.000780974980443716
+    },
+    {
+      "file": "S1.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S2.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S3.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S4.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "S5.json",
+      "t_s": 0.000780974980443716,
+      "step_wall_s": 0.0
+    },
+    {
+      "file": "supplement.json",
+      "t_s": 2.629729653010145,
+      "step_wall_s": 2.628948678029701
+    }
+  ],
+  "affinity": [
+    0
+  ],
+  "threads_env": "1",
+  "gpu": "none (CUDA_VISIBLE_DEVICES empty)"
+}

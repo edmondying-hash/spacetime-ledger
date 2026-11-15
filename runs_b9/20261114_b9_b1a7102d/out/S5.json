@@ -1,0 +1,9 @@
+{
+  "status": "RECORDED",
+  "resources": {
+    "step": "S5",
+    "wall_s": 4.859990440309048e-06,
+    "cpu_s": 4.000000000559112e-06,
+    "peak_rss_mib": 88.48828125
+  }
+}

@@ -1,0 +1,286 @@
+L1.5 CLOSURE RECORD
+================================================================
+
+Written: 2026-11-14, after Edmond Ying's message of 9:44 PM America/New_York
+(2026-11-15 02:44 UTC), by the reviewing agent (spacetime).
+Edmond Ying: "ok, please draft closure note and please also let helper check".
+Under decision J3 (approval record of run 20261112_l15ab_865660ec_56a19950),
+L1.5 closes only when both parts pass, by Edmond's closure record. This file
+takes effect as that record when Edmond accepts it in his own words. It has
+not been pushed to main.
+
+This record sits outside the run folders and the design folders. It changes
+none of them. It is a new file.
+
+----------------------------------------------------------------
+1. WHAT IS CLOSED
+----------------------------------------------------------------
+Plan layered_plan_v3.4.md section 3, L1.5 "Vector and tensor fields;
+linear-term test - OP16" (plan line 189), sha256
+a50dd0a0d5c9304e782d8482905167d797f4973106d9a27326c69572a1e846cf
+(main at 3f29cc90c927b1518cea73c5ba796718029b1cdf). Plan text: repeat L1.4
+with a photon-like vector field and the canonical rule (dirac4), along at
+least 13 directions including [100], [110], [111] and [11-1]; massless v_g
+from the exact whole-tick evolution, congestion ON; fit xi1 and xi2 per
+direction. Pass (plan line 197): implied E_QG,1 in every direction exceeds the
+Fermi (7.6 E_Pl) and LHAASO (10 E_Pl) limits, and E_QG,2 exceeds the LHAASO
+quadratic limit; a direction-odd term is reported with its sky template.
+
+Split accepted by Edmond (J1, 2026-11-12): L1.5a (massless, linear-term test)
+and L1.5b (moving clocks and the massive case).
+
+Designs:      L1_5ab_design_spacetime_20261112/
+              L1_5a_RUN_DESIGN.md sha256
+              865660ecfa1c34c0dfc5df796090627181bdaa6bbeb2d485c3252e27a044dbd0
+              L1_5b_RUN_DESIGN.md sha256
+              56a19950375881c16815aebe7f219eba0dc06c0c4c7c39e7efbdde3859b5073f
+              open decisions L1_5ab_design_spacetime_20261112_OPEN_DECISIONS.md
+              sha256
+              36078a6fd134afc0d2ff2a87e21ce78a92992ec4938b80933fe27fab336be211
+Approval:     Edmond, 2026-11-12 11:22 PM ET (t2574u), verbatim in the run's
+              APPROVAL.txt (sha256
+              8733d798b07e1e30c06903fa97bf6a562d7557439ddaf13f251ee8e7336035b1):
+              "Approve L1.5a 865660ec... 56a19950... as in the designs.
+              B1:A_m, A1 as proposed in designs, J1 accept splitting, J2
+              continue to run, B4 as proposed in the design". All other open
+              decisions at the design values.
+Verdict run:  20261112_l15ab_865660ec_56a19950 on bigbang (gn100-7c00),
+              ~/spacetime_files/runs/20261112_l15ab_865660ec_56a19950/; box
+              copy /workspace/runs_l15/20261112_l15ab_865660ec_56a19950/.
+              The run is not in this repository. Run-folder SHA256SUMS sha256
+              7ba13b2f4df104e67058c88359b554683b218ccb3a19f95dc772c0dbddd7b01a
+              (every entry verified OK on the box copy, 2026-11-14).
+              Measurement code harness/l15ab_measure.py sha256
+              8a3c5a38068435f2040e235320d291926655ce5ed8622b8541c79d44cfc6a5a0
+              result_L1_5a.json sha256
+              eecc35ea2ff28896527b70359833f5700148f2630613ee739057f5948d88eac6
+              result_L1_5b.json sha256
+              b52bee34fdaadd2f9ef95eb40f6514aadcdba8f229860fba273d4890669b4553
+              result.json sha256
+              99e5656af721826efea177c726331597fac61db937f065138d0d60ae1646a4dc
+              Box tgz copy_20261112_l15ab_865660ec_56a19950.tgz sha256
+              1b80b2ac7c79718ff8b01bfe0403eadfa2278ab011856e2b63d12096df471a1f
+B_m run:      20261113_l15b_Bm_comparison (comparison only, not a gate), on
+              bigbang; box copy
+              /workspace/runs_l15/20261113_l15b_Bm_comparison/.
+              Approval Edmond 2026-11-12 11:59 PM ET (t2576u): "let's change B1
+              to B_m and rerun it, results for comparison only". Run-folder
+              SHA256SUMS sha256
+              328ffb90b9ceb79dd5f3d14178f27d562a493f420a03a7f7e605501a011fd671
+              (every entry verified OK on the box copy, 2026-11-14).
+              result_COMPARISON.json sha256
+              9eed9977dda36fe78ebc8cd95d6f0d8523bd4557be7d6a92f17ca6afc188e754
+              COMPARISON_TABLE.md sha256
+              fcd195ba94ac7a2795c9bd2fdd9f5dddca5995639736c7c365f6f36cd0412dab
+              Box tgz copy_20261113_l15b_Bm_comparison.tgz sha256
+              72da699fe9baf2b5878522157b44f9078290f46f135d58ae758391e913cf4b26
+B9 design:    B9_clock_design_spacetime_20261113/B9_CLOCK_DESIGN.md sha256
+              b1a7102db33df9769a97c0495c710a9bf494fd26d7c4d498d0e5e648c34af728
+              B9_OPEN_DECISIONS.md sha256
+              f5ce6f447a9e19d89be2a379a11a72fc7738a0724d57169a505167ade55f607e
+B9 run:       /workspace/runs_b9/20261114_b9_b1a7102d/ (the box). Run-folder
+              SHA256SUMS sha256
+              6467a03e2063679b7c7dfd624aeecf778d23f4dee70524e6f40ee2bbd00b19fe
+              READOUT.md sha256
+              d6d139eb22e54afc0b91fcad0cc0c3f1f3dd8b8203f2266e27fcb4f38c052a1d
+Paper base:   space-ledger-v2.md on main at
+              3f29cc90c927b1518cea73c5ba796718029b1cdf, sha256
+              ce22701ca6e5e2dfa143ab43a6062e80025c1afeba5137f7e271c239bc75555c
+              (the same bytes as the L1.4 closure's paper base).
+
+----------------------------------------------------------------
+2. WHAT THE VERDICT RUN SHOWED (reviewed against the designs' verdict rules)
+----------------------------------------------------------------
+Run 2026-11-12, 23:48:35 to 23:51:42 EST. All 12 steps ran once and exited 0;
+none hit a cap. Verdicts (harness/verdict.py, rule RD-15): L1.5a PASS,
+L1.5b PASS. L1.5b ran with B1 = A_m (U(k; m)^g, g = f^2 = s).
+
+L1.5a (four ON conditions A0.5, A2, B0.5, B2; s = 1 for the verdict):
+- S0a P0-P6 and S0b Pb1-Pb6: all hold.
+- G1 (A1, symmetry): worst ON residual 1.110e-15.
+- G2 (A2): max |xi1'| = 4.523e-22, max |a3|/a0 = 1.076e-16 (threshold 1e-12);
+  max interpolation residual 4.0e-51; not ill-conditioned.
+- G3 (A3): E_QG,1 lower bound 1.349e40 GeV. Worst E_QG,2 = 1.687e19 GeV at
+  s = 1 (A0.5, phi = 0.5, [111]); 2.922e19 GeV at s = sqrt(3); 3.374e19 GeV at
+  s = 2. Margin 2.445e7 against the LHAASO quadratic limit 6.9e11 GeV.
+  Max |xi2| ON = 0.2615.
+- S4(a) residual 9.426e-15 (threshold 1e-12) and S4(b) 1.110e-15 (threshold
+  1e-10): hold. S4(c) = 0.02866 (label 3e-3) and S4(d) = 0.01555 (label 5e-3)
+  lie outside their labels; under option (ii) (A5) they do not hold the
+  verdict.
+- Records: T1 2.09e-17, T2 2.89e-18, T3 (diff100-111 minus 2/9) 2.14e-19, rule
+  B replication 2.78e-17 against Cursor's pilot load; R5a unequal-angle linear
+  term 1.4128 at (0.5, 1.3), 0.1942 at (0.9, 1.0), 8.9e-16 at (1.4, 1.4).
+  Axis-minus-diagonal d xi2 = 2/9, i.e. 2/3 per kappa^2 (s = 1), 2/9
+  (s = sqrt(3)), 1/6 (s = 2); paper line 1253 uses 1/18.
+
+L1.5b (ON conditions A_m0.5 and A_m2, as read in RD-2):
+- Gb1 worst ON 9.992e-16. Gb2a max spread 1.99e-29 (threshold 1e-12). Gb2b
+  max |dc/c| electron 6.56e-24 (bound 5.8e-12), constant term 7.49e-23
+  (threshold 1e-12). Gb3a max odd 1.75e-45 (threshold 1e-12). Gb3b worst
+  delta_Li 9.06e-38 (Ives-Stilwell bound 2.3e-9 at beta = 0.338), smallest
+  p_min 1.80; not UNINFORMATIVE.
+- S4(a) 1.617e-14 and S4(b) 3.775e-15 hold. S4(c) as written (32-cell, 6
+  cycles, 24 links) is UNINFORMATIVE (vacuous: no site lies outside 24 links;
+  DEV-1). The record-only 64-cell supplement: 36,087 sites outside 24 links,
+  all exactly 0.0.
+- Records: T1b, rest clock under A_m = g w0 = f^2 w0 to 2.1e-53. T4b, A_m
+  dimensionless moving-clock results equal the unloaded ones to 7.9e-50.
+  R5a b1 0.0423 to 0.1567 (paper 0.043); R5b local exponents 1.80 to 2.09
+  (paper 2); R5c electron dc/c 1.77e-24 to 6.56e-24 (paper about 1e-24),
+  proton 3.26e-21 to 1.20e-20 (paper 3e-21); R5d open paper item (line 704).
+
+Resources (result.json): total wall 186.07 s, CPU 185.06 s, peak RSS
+306.5 MiB (B4). Caps 2 GiB, 1 thread, 60 min total wall.
+
+----------------------------------------------------------------
+3. THE L1.5b RULE: B_m, RECORDED BY THIS CLOSURE
+----------------------------------------------------------------
+Edmond's widget answer of 1:59 PM ET, 2026-11-13 (t2621s7765, as quoted to
+spacetime and as recorded in B9_CLOCK_DESIGN.md line 3): record B_m as the
+L1.5b rule by a later closure note citing the comparison run, with no rerun
+of L1.5b; settle B9 before closing L1.5. B9 K9 (default, unchanged): no paper
+edit, no plan edit; recording B_m as the L1.5b rule by a closure note that
+cites the comparison run (no rerun) is later.
+
+This record therefore records B_m as the L1.5b rule, on the comparison run
+20261113_l15b_Bm_comparison (SHA256SUMS
+328ffb90b9ceb79dd5f3d14178f27d562a493f420a03a7f7e605501a011fd671). L1.5b is not
+rerun. The A_m verdict run and its PASS stay on record unaltered.
+
+Rule B_m (L1.5b design section 2): each of S+, V+, S-, V- (with mass) is
+replaced by its s-th power (principal branch), s = (1 + l0)^(-1/2), option (b)
+g = f^2 = s. ON conditions B_m.5 and B_m2: l0 in {0.5, 2.0},
+s = f^2 in {0.816497, 0.577350}, f in {0.903602, 0.759836}.
+
+Comparison run 2026-11-13, 00:09 to 00:13 EST, one attempt per step, none
+refused or killed. Outcomes as the run labels them (would-be, comparison
+only): S0a PASS, S0b PASS, B1 PASS, B2 PASS, B3 PASS, B4 PASS (S4(c) as written
+vacuous, 64-cell supplement exactly zero), B5 records; would-be overall PASS.
+- Gb1 9.99e-16; Gb2a 1.39e-29; Gb2b electron 6.56e-24, constant term 5.93e-23;
+  Gb3a 3.05e-45; Gb3b worst delta_Li 1.56e-37, smallest p_min 1.77; S4(a)
+  1.62e-14; S4(b) 3.77e-15.
+- T1b, rest-clock factor w0^Bm / w0^OFF: 0.816496580927726 (B_m.5) and
+  0.577350269189626 (B_m2), equal to s = f^2 to 2.7e-51 at every phi and m.
+  c0^Bm / c0^OFF = s at every phi. The rest clock and the massless speed both
+  scale by s = f^2, not by the paper's f.
+- T4b (record only): B_m changes the dimensionless moving-clock results,
+  max |delta_Bm - delta_OFF| = 6.5e-4 (B_m2, phi 0.8, m 0.2, [111]-type,
+  beta 0.8), max relative difference 0.41. b2 changes (phi 0.8: -0.4362 OFF,
+  -0.4077 B_m.5, -0.3791 B_m2); b1 and electron/proton dc/c agree with OFF.
+- Resources (COMPARISON_TABLE.md): total wall 265 s of 2400 s; peak RSS
+  233 MiB (B4).
+
+----------------------------------------------------------------
+4. B9, THE CLOCK-FACTOR QUESTION (run once on 2026-11-14)
+----------------------------------------------------------------
+Approval: Edmond, 9:18 PM ET 2026-11-14: "let's run hash
+b1a7102db33df9769a97c0495c710a9bf494fd26d7c4d498d0e5e648c34af728 , no change".
+K1-K11 at the design defaults. Run on the box, 9:20 to 9:21 PM EST, CPU only,
+one attempt per step. Harness status S0-S4 PASS, S5 RECORDED. Controls C1 and
+C2 PASS or MET; Newtonian energy drift per century about 3.04e-11 (threshold
+1e-6) and the Newtonian-only endpoint 0.000149 "/cy (threshold 0.01") MET. No
+UNINFORMATIVE control condition was triggered.
+
+Targets (K4-K6): perihelion 42.98 +/- 0.04 "/cy on the formula value;
+Gravity Probe A |alpha| <= 1.4e-4; Cassini gamma-1 = (2.1 +/- 2.3)e-5.
+
+  ID   reading                     peri "/cy  perihelion  redshift   gamma
+  I1   paper split (control)       42.981     MEETS       MEETS      MEETS
+  I2   46.3" own-load (control)    46.333     MISSES      MEETS      MEETS
+  I3   common factor, G to Kepler  14.327     MISSES      MEETS      MISSES
+  I4   paper U fixed, no G retune  none       UNINFORM.   MISSES     UNINFORM.
+  I5   clock e^-2U, load-first on  42.981     MEETS       MEETS      MEETS
+
+  (I3: gamma = 0. I4: z = 2 x GR, alpha = 1.0. UNINFORM. = UNINFORMATIVE.)
+
+Numeric orbits (200-orbit linear fit): I3 14.328 "/cy, I5 42.982 "/cy. I6 not
+scored (K2 default: the paper's 46.3" own-load and B_m's f^2 clock are
+different mechanisms). field.py not rerun (K11).
+
+K1 default: I3, I4 and I5 computed and reported; none is adopted. The sidecar
+records that Edmond's "all excitations slow by one common factor" is the
+verbal content of I3, not of I5. The choice of gravity map (I3, I4, I5, a
+combination, or another map) is open and is Edmond's call; this record does
+not make it.
+
+Disclosed in the read-out: one supplement script, harness/b9_supplement.py
+sha256 79a72dec90e7865972b8d8ca98658987c58b81dc178a65a4f5336a7c16affad1,
+implemented section-7 gates absent from the harness (C1 linear fit,
+Newtonian energy drift, Newtonian-only check). The paper was read at
+fdf3e72a958bdc0e3ed95f06530b0a96d0a45d61, sha256 ce22701c... as pinned by the
+design. Resources: 26.04 CPU s, 26.44 wall s, 88.6 MiB peak RSS (caps 512 MiB,
+120 s per step, 600 s total).
+
+----------------------------------------------------------------
+5. SEQUENCE ON 2026-11-14
+----------------------------------------------------------------
+- 11:02 AM ET: the work moved to a 6-face simple cubic grid; K1-K3, B9, this
+  closure note and the L2.0 run were set aside.
+- L0' census r1: design L0p_census_design_r1_20261114/L0P_CENSUS_DESIGN_r1.md
+  sha256 c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1;
+  run /workspace/runs_l0p/20261114_l0p_census_r1_c2673a64/, SHA256SUMS sha256
+  9513cd71f50ea47d9048dd9d6c8fb9c64368e282e8847736e3176fba8e1379f1 (verified
+  OK). No simple cubic candidate (C1-C4, RC3) met every criterion
+  (_global/S7_repair/READOUT.md sha256
+  5d1764c36f4a4194a2fcd6e4b9041b2be323ace523f47973de1b87f111456218).
+- 6:59 PM ET, Edmond (widget answer): "Yes: fall back to BCC/dirac4 per the
+  fork rule, no rerun, and pick up at L1.5 with B9, the closure note, then
+  L2.0." That resumed B9, this note and L2.0.
+- space-ledger-v2.md on main is unchanged by the six-face work (sha256 above).
+
+----------------------------------------------------------------
+6. OPEN ITEMS CARRIED FORWARD, NOT DECIDED BY THIS RECORD
+----------------------------------------------------------------
+- B9 K1: the gravity map from B_m (I3, I4, I5, a combination, or another).
+- B9 K2: whether the paper's 46.3" own-load is B_m's f^2 clock (I6 not scored).
+- A3: vector/tensor wording stays an open sub-item.
+- E2 / A4: the ell_P energy convention (s = 1, sqrt(3) or 2).
+- E10 / A8: paper line 1253 (scalar 1/18 versus dirac4's 2/9) and the ell_P
+  identification.
+- B5: Hohensee bound read as a limiting-speed bound; SME map not derived.
+- R5d / B10: paper line 704 (UHECR proton limiting speed; "|xi2| <= 0.23"
+  exceeded for phi <= 1.2, max 0.2615 at phi = 0.5, [111]); no wording change.
+- L1.5a S4(c) and S4(d) outside their labels; the post-run notes attribute
+  this to the packets' band content; not diagnosed further.
+- L1.5b S4 real-space clock: UNINFORMATIVE as a moving-clock test (post-run
+  notes); L1.5b's PASS rests on the Bloch-level gates Gb1-Gb3.
+- From the L1.4 record: the Poisson-control stall at k >= 0.8.
+- Plan v3.4: the L1.5 status line (plan line 201) still reads open, and the
+  B2 scope reading (line 136) is still marked pending; both sit inside the
+  hashed plan and are not edited by this record.
+- L0' census r1: the design fixes 1-4 proposed by helper for a hashed r2 note
+  were not taken up in Edmond's 6:59 PM answer.
+
+----------------------------------------------------------------
+7. PAPER EDIT AUTHORISED BY THIS CLOSURE
+----------------------------------------------------------------
+None. K9 and B10: no paper edit, no plan edit. No change to space-ledger-v2.md,
+the PDF, the README or the plan is made by this record.
+
+----------------------------------------------------------------
+8. DECLINED, NOT AUTHORISED
+----------------------------------------------------------------
+- Any edit to the paper, the README, the plan, the designs, the open-decisions
+  sidecars, or any run folder.
+- A rerun of L1.5a or L1.5b, or re-scoring of the A_m verdict.
+- Adopting any B9 gravity map.
+- Rebuilding the paper PDF.
+- Pushing this record to main without Edmond's ask.
+
+----------------------------------------------------------------
+9. STATE OF THE L1 EXIT GATE, AND NEXT
+----------------------------------------------------------------
+L1.1 closed. L1.2 closed (L1_2_CLOSURE_20261112.txt). L1.3 closed
+(L1_3_CLOSURE_20261112.txt). L1.4 closed (L1_4_CLOSURE_20261113.txt). L1.5
+closes by this record when Edmond accepts it. The plan's L1 exit gate
+(plan line 205) lists L1.1-L1.5; with this record accepted, each has a
+closure record. The L2.0 entry gate is the L1 exit gate (plan line 253).
+
+Next: L2.0, design L2_0_design_spacetime_20261113/L2_0_RUN_DESIGN.md sha256
+833f49f26418b2267cc0a9b389a46220078b453eebe92cf149145af330077ed9 (folder
+SHA256SUMS sha256
+ae005712b98eb2263e702cdc5701abfd1fb0e9e0bef102367c40d28dab858edc), approved by
+Edmond on 2026-11-13 at 3:44 PM ET (widget t2630s7800) to run once with
+D1-D16 at the defaults after L1.5 closes (D15). Edmond's acceptance of this
+record is what lets that run start. This record does not start it.

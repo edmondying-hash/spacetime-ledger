@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "report": {
+    "imports": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "solve_ivp": true
+    },
+    "formula_check": {
+      "I1": {
+        "value": 42.98069352502894,
+        "ref": 42.98069352502894,
+        "rel_diff": 0.0
+      },
+      "I2": {
+        "value": 46.333187619981196,
+        "ref": 46.333187619981196,
+        "rel_diff": 0.0
+      },
+      "I3": {
+        "value": 14.326897841676312,
+        "ref": 14.326897841676312,
+        "rel_diff": 0.0
+      }
+    },
+    "timing_orbit_5yr": {
+      "wall_s": 0.20806650799931958,
+      "value_arcsec_cy_not_a_result": 44.1617892068795,
+      "note": "5-year single endpoint is a poor read-out; official orbits use 100 years or a 200-orbit linear fit.",
+      "nfev": 16922,
+      "nsteps": 1394,
+      "success": true,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "years": 5.0
+    }
+  },
+  "resources": {
+    "step": "S0",
+    "wall_s": 0.9313026269664988,
+    "cpu_s": 0.606963,
+    "peak_rss_mib": 76.34765625
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "round": "repair",
+ "step": "S4",
+ "caps": {
+  "cpu_s": 120,
+  "wall_s": 180,
+  "rss_mib": 1024,
+  "out_mib": 2
+ },
+ "cpu_s": 0.461,
+ "wall_s": 0.505,
+ "peak_rss_mib_wait4": 70.6,
+ "peak_rss_mib_polled": 0.8,
+ "output_bytes": 306931,
+ "exit_code": 0,
+ "cap_trip": null,
+ "step_label_if_tripped_or_crashed": null
+}

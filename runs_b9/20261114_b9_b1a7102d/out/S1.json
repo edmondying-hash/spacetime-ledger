@@ -1,0 +1,35 @@
+{
+  "beta": 1.0,
+  "gamma": 1.0,
+  "formula": 42.98069352502894,
+  "formula_ref": 42.98069352502894,
+  "formula_rel_diff": 0.0,
+  "orbit_100yr_endpoint": 42.91229380880339,
+  "orbit_100yr_ref": 42.91229380880339,
+  "orbit_100yr_abs_diff": 0.0,
+  "orbit_100yr_meta": {
+    "nfev": 337706,
+    "nsteps": 27779,
+    "success": true,
+    "message": "The solver successfully reached the end of the integration interval.",
+    "years": 100.0
+  },
+  "orbit_200_linear_fit": 42.98224462225191,
+  "orbit_200_linear_fit_meta": {
+    "nfev": 167489,
+    "n_orbits": 200,
+    "success": true,
+    "newton_E_start": -1145869600.8482263,
+    "newton_E_end": -1145869600.8650072,
+    "newton_E_rel_change": 1.4644644782497417e-11,
+    "slope_rad_per_s": 6.603284228732383e-14,
+    "intercept_rad": -1.6619342542967653e-09
+  },
+  "status": "PASS",
+  "resources": {
+    "step": "S1",
+    "wall_s": 5.994331135996617,
+    "cpu_s": 5.969256000000001,
+    "peak_rss_mib": 86.97265625
+  }
+}

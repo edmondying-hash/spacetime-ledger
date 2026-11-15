@@ -1,0 +1,18 @@
+{
+ "round": "census",
+ "step": "S5a",
+ "caps": {
+  "cpu_s": 5400,
+  "wall_s": 7200,
+  "rss_mib": 3072,
+  "out_mib": 50
+ },
+ "cpu_s": 1897.432,
+ "wall_s": 6245.659,
+ "peak_rss_mib_wait4": 365.8,
+ "peak_rss_mib_polled": 2196.4,
+ "output_bytes": 47531,
+ "exit_code": 0,
+ "cap_trip": null,
+ "step_label_if_tripped_or_crashed": null
+}

@@ -1,0 +1,43 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "C4",
+ "step": "S1",
+ "round": "census",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "ell = face link length = cube side (simple cubic, one site per Planck cube)",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  600,
+  900,
+  1024,
+  10
+ ],
+ "cpu_s": 0.095,
+ "wall_s": 0.094,
+ "peak_rss_mib": 72.7,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "per_knob": {
+  "None": {
+   "knob": null,
+   "grid_L": 24,
+   "n_layers": 300,
+   "dQ": 2.220446049250313e-16,
+   "bandQ": 6.661338147750939e-13,
+   "dR": 2.8774488717354935e-17,
+   "bandR": 1.3322676295501878e-12,
+   "lightcone_ok": true,
+   "lightcone_max_outside": 0.0,
+   "T_test_record_M_that_work": [
+    "sigma2"
+   ],
+   "outcome": "MET"
+  }
+ },
+ "seed_random_state": 20261514,
+ "outcome_F3": "MET",
+ "outcome_V1": "MET",
+ "outcome": "MET"
+}

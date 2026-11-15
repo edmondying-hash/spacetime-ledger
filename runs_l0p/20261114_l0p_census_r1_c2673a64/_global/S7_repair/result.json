@@ -1,0 +1,173 @@
+{
+ "NOTICE": null,
+ "design_sha256": "c2673a6426ca5728738c7e7e63871bd26577e8475e9b2819d9980aeccb642fd1",
+ "implementation_manifest_sha256": "6bcd29d8787b7f3c257925206789df1a2a056293ccd61782b90c285f72a704b6",
+ "candidate": "_global",
+ "step": "S7_repair",
+ "round": "repair",
+ "mode": "census",
+ "boundary": "periodic",
+ "units": "assembly, no new computation",
+ "load_rule": "none (free rule)",
+ "caps_cpu_wall_rss_out": [
+  60,
+  90,
+  512,
+  1
+ ],
+ "cpu_s": 0.064,
+ "wall_s": 0.064,
+ "peak_rss_mib": 73.9,
+ "peak_rss_note": "VmHWM of the step process after clear_refs reset at the start of this record",
+ "table": {
+  "B0": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "MET",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "MET",
+   "simplicity": "MET",
+   "knob rule": "NOT MET"
+  },
+  "C1": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "NOT MET",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "NOT MET",
+   "simplicity": "MET",
+   "knob rule": "NOT MET"
+  },
+  "C2": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "NOT MET",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "NOT MET",
+   "simplicity": "MET",
+   "knob rule": "NOT MET"
+  },
+  "C3": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "NOT MET",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "NOT MET",
+   "simplicity": "MET",
+   "knob rule": "NOT MET"
+  },
+  "C4": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "NOT MET",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "NOT MET",
+   "simplicity": "MET",
+   "knob rule": "not applicable (no knob)"
+  },
+  "RC3": {
+   "F1": "NOT MET",
+   "F3": "MET",
+   "F4": "NOT MET",
+   "F5a": "UNINFORMATIVE",
+   "F5b": "UNINFORMATIVE",
+   "V1": "MET",
+   "V2": "MET",
+   "V3": "MET",
+   "V4": "MET",
+   "F2": "NOT MET",
+   "simplicity": "MET",
+   "knob rule": "NOT MET"
+  }
+ },
+ "columns": [
+  "F1",
+  "F2",
+  "F3",
+  "F4",
+  "F5a",
+  "F5b",
+  "knob rule",
+  "simplicity",
+  "V1",
+  "V2",
+  "V3",
+  "V4"
+ ],
+ "row_notes": {
+  "B0": {
+   "F2_factors": "no position-dependent factor or fixed order within a layer",
+   "components": 4,
+   "declared_knobs": 1
+  },
+  "C1": {
+   "F2_factors": "fixed layer order (not a fixed direction provided F4 and F5 incl. dQ2 are MET, OD6(a))",
+   "components": 4,
+   "declared_knobs": 1
+  },
+  "C2": {
+   "F2_factors": "fixed layer order (not a fixed direction provided F4 and F5 incl. dQ2 are MET, OD6(a)); KS phases, checkerboard standing (OD5(a))",
+   "components": 1,
+   "declared_knobs": 1
+  },
+  "C3": {
+   "F2_factors": "fixed layer order (not a fixed direction provided F4 and F5 incl. dQ2 are MET, OD6(a))",
+   "components": 4,
+   "declared_knobs": 1
+  },
+  "C4": {
+   "F2_factors": "fixed layer order (not a fixed direction provided F4 and F5 incl. dQ2 are MET, OD6(a))",
+   "components": 2,
+   "declared_knobs": 0
+  },
+  "RC3": {
+   "F2_factors": "fixed layer order (not a fixed direction provided F4 and F5 incl. dQ2 are MET, OD6(a))",
+   "components": 4,
+   "declared_knobs": 1
+  }
+ },
+ "all_SC_criteria_MET_by_at_least_one_candidate": "no",
+ "B0_row": {
+  "F1": "NOT MET",
+  "F3": "MET",
+  "F4": "NOT MET",
+  "F5a": "MET",
+  "F5b": "UNINFORMATIVE",
+  "V1": "MET",
+  "V2": "MET",
+  "V3": "MET",
+  "V4": "MET",
+  "F2": "MET",
+  "simplicity": "MET",
+  "knob rule": "NOT MET"
+ },
+ "trigger_statement": "No simple cubic candidate is MET in every column of this table; the trigger condition (no simple cubic candidate passes F1-F5, the knob rule and the simplicity test) holds in this round, to be read alongside the B0 row.",
+ "C3_F1_cell": "NOT MET",
+ "repair_round_condition_met": null,
+ "outcome": "assembled"
+}

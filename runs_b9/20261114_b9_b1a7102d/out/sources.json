@@ -1,0 +1,48 @@
+{
+  "paper": {
+    "commit": "fdf3e72a958bdc0e3ed95f06530b0a96d0a45d61",
+    "file": "space-ledger-v2.md",
+    "sha256": "ce22701ca6e5e2dfa143ab43a6062e80025c1afeba5137f7e271c239bc75555c",
+    "expected": "ce22701ca6e5e2dfa143ab43a6062e80025c1afeba5137f7e271c239bc75555c",
+    "match": true,
+    "5a00f03e_is_ancestor": true
+  },
+  "mercury": {
+    "/workspace/mercury/RESULTS.md": {
+      "sha256": "f6723571b6aed238d5f779a1d607be6c6901073083577e2fa47ae02be3919557",
+      "expected": "f6723571b6aed238d5f779a1d607be6c6901073083577e2fa47ae02be3919557",
+      "match": true
+    },
+    "/workspace/mercury/field.py": {
+      "sha256": "a3b7a951ec4c31bfbecdd88f3febd1d71290636f5e6ecd7c643b20f3f31b3b87",
+      "expected": "a3b7a951ec4c31bfbecdd88f3febd1d71290636f5e6ecd7c643b20f3f31b3b87",
+      "match": true
+    },
+    "/workspace/mercury/orbit.py": {
+      "sha256": "a0cefdf9d6816ec30fdbff352fd7e527eb4cbe2ee7f0ffc203c6cf9a09d402ad",
+      "expected": "a0cefdf9d6816ec30fdbff352fd7e527eb4cbe2ee7f0ffc203c6cf9a09d402ad",
+      "match": true
+    },
+    "/workspace/mercury/orbit.json": {
+      "sha256": "64d13f100821979984c7148cdaf7bbd90f5fe415cad4650f92b90f269fd52499",
+      "expected": "64d13f100821979984c7148cdaf7bbd90f5fe415cad4650f92b90f269fd52499",
+      "match": true
+    },
+    "/workspace/mercury/beta.json": {
+      "sha256": "841f7240568b60008c3fca13219725171289871c3b1284fd0e3d49071ed28930",
+      "expected": "841f7240568b60008c3fca13219725171289871c3b1284fd0e3d49071ed28930",
+      "match": true
+    },
+    "/workspace/mercury/results.json": {
+      "sha256": "0ea1da674234c172b90f1434d802af5a210405b523ffe4a0fa2cc1258db28d60",
+      "expected": "0ea1da674234c172b90f1434d802af5a210405b523ffe4a0fa2cc1258db28d60",
+      "match": true
+    },
+    "/workspace/mercury/run.log": {
+      "sha256": "f569a468f71e8acb93d5ab2ec9b0735ffa17ed73d7fdeb141db62be51abf8394",
+      "expected": "f569a468f71e8acb93d5ab2ec9b0735ffa17ed73d7fdeb141db62be51abf8394",
+      "match": true
+    }
+  },
+  "all_match": true
+}
