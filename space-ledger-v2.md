@@ -661,7 +661,9 @@ The Dirac equation recovered above is Lorentz invariant, so in this model specia
 
 : Lattice-induced photon speed shortfall for $a = l_P$.
 
-Observations of GRB 090510, with photons up to about 31 GeV, found no evidence of Lorentz-invariance violation and set a lower limit of $1.2\,E_P$ on the scale of a *linear* energy dependence of the speed of light (Abdo et al., 2009). This lattice rule produces no linear term; its leading effect is quadratic. For quadratic dispersion, Vasileiou et al. (2013) report $E_{\text{QG},2} > 1.3\times10^{11}$ GeV (95% C.L., subluminal) from the same burst. In their convention ($\delta v/c = \tfrac32 (E/E_{\text{QG},2})^2$), the lattice corresponds to $E_{\text{QG},2} \approx 4.2$–$7.3\times10^{19}$ GeV, depending on direction. At 31 GeV the lattice effect is about $10^{17}$ times below the current bound.
+These shortfalls use the simple-cubic formula (axis slowest); the model's BCC coefficient, $(k\ell)^2/18$ with axis fastest, is given in Sec. 6.1.
+
+Observations of GRB 090510, with photons up to about 31 GeV, found no evidence of Lorentz-invariance violation and set a lower limit of $1.2\,E_P$ on the scale of a *linear* energy dependence of the speed of light (Abdo et al., 2009). This lattice rule produces no linear term; its leading effect is quadratic. For quadratic dispersion, Vasileiou et al. (2013) report $E_{\text{QG},2} > 1.3\times10^{11}$ GeV (95% C.L., subluminal) from the same burst. In their convention ($\delta v/c = \tfrac32 (E/E_{\text{QG},2})^2$), the same simple-cubic formula corresponds to $E_{\text{QG},2} \approx 4.2$–$7.3\times10^{19}$ GeV, depending on direction. At 31 GeV the lattice effect is about $10^{17}$ times below the current bound.
 
 \begin{figure}[tp]
 \centering
