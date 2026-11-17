@@ -648,7 +648,7 @@ The Dirac equation recovered above is Lorentz invariant, so in this model specia
 | 1.0 | 0.9038 | 0.9676 | 0.9891 |
 | 2.0 | 0.5955 | 0.8559 | 0.9508 |
 
-: Measured wave-packet group velocities on the cubic lattice ($\lambda = 0.5$).
+: Measured wave-packet group velocities on the simple-cubic lattice ($\lambda = 0.5$).
 
 *Extrapolation to Planck spacing.* Setting $a = l_P$, so that $ka = E/E_P$ with $E_P \approx 1.22\times10^{19}$ GeV, and taking the timestep to zero, the fractional speed shortfall is $\tfrac18 (E/E_P)^2 \sum_i n_i^4$:
 
@@ -659,7 +659,7 @@ The Dirac equation recovered above is Lorentz invariant, so in this model specia
 | 31 GeV (highest GRB 090510 photon) | $8.1\times10^{-37}$ ([100]) |
 | 1 TeV | $8.4\times10^{-34}$ ([100]) |
 
-: Lattice-induced photon speed shortfall for $a = l_P$.
+: Lattice-induced photon speed shortfall for $a = l_P$ (simple-cubic formula).
 
 These shortfalls use the simple-cubic formula (axis slowest); the model's BCC coefficient, $(k\ell)^2/18$ with axis fastest, is given in Sec. 6.1.
 
@@ -668,7 +668,7 @@ Observations of GRB 090510, with photons up to about 31 GeV, found no evidence o
 \begin{figure}[tp]
 \centering
 \includegraphics[width=\linewidth]{replot_anisotropy.png}
-\caption{Test 1: leapfrog wave equation on a 3D cubic lattice ($c = 1$, spacing $a$). (a) Analytic group velocity versus $ka$ for directions [100], [110], [111] at Courant number $\lambda = 0.5$ (lines), with measured speeds of planar Gaussian wave packets (dots). (b) Deviation $|1 - v_g/c|$ on log axes; dashed lines show the leading-order form $(ka)^2/8\,|\sum_i n_i^4 - \lambda^2|$. (c) Axis-versus-body-diagonal speed difference for $\lambda = 0.01, 0.5, 1/\sqrt{3}$, scaling as $(ka)^2$ and vanishing as $ka \to 0$.}
+\caption{Test 1: leapfrog wave equation on a 3D simple-cubic lattice ($c = 1$, spacing $a$). (a) Analytic group velocity versus $ka$ for directions [100], [110], [111] at Courant number $\lambda = 0.5$ (lines), with measured speeds of planar Gaussian wave packets (dots). (b) Deviation $|1 - v_g/c|$ on log axes; dashed lines show the leading-order form $(ka)^2/8\,|\sum_i n_i^4 - \lambda^2|$. (c) Axis-versus-body-diagonal speed difference for $\lambda = 0.01, 0.5, 1/\sqrt{3}$, scaling as $(ka)^2$ and vanishing as $ka \to 0$.}
 \label{fig:test1}
 \end{figure}
 
