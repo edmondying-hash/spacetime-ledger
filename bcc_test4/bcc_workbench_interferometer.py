@@ -25,7 +25,7 @@ class BCCWorkbenchInterferometerSim:
         mirror_reflectivity: float = 0.997,
         arm_radius_m: float = 0.15,          # 30 cm balanced crossbar (15 cm lever arm)
         fiber_length_m: float = 0.40,        # 40 cm tungsten suspension fiber
-        fiber_diameter_um: float = 75.0,     # 25 micron tungsten wire
+        fiber_diameter_um: float = 75.0,     # 75 micron tungsten wire
         beam_waist_mm: float = 1.0,          # 1 mm collimated FAC laser spot
     ):
         self.p_opt = laser_optical_watts
