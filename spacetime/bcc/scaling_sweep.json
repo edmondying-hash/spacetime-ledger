@@ -1,0 +1,229 @@
+{
+  "parameters": {
+    "cycles": 3000,
+    "clicks": 1000,
+    "radius": [
+      30,
+      60,
+      90,
+      120
+    ],
+    "link_weight_mev": 198.0
+  },
+  "modules": {
+    "module_5_isotropy_sweep": [
+      {
+        "radius": 30,
+        "mean_speed": 0.3387,
+        "mean_shapiro_lag": 24.8,
+        "mean_isotropy_err_pct": 0.84,
+        "directions": [
+          {
+            "direction": "Axis (1,0,0)",
+            "r_actual": 30.0,
+            "vac_tick": 64.0,
+            "mass_tick": 90.0,
+            "shapiro_lag": 26.0,
+            "eff_speed": 0.3333,
+            "isotropy_err_pct": 1.58
+          },
+          {
+            "direction": "Face Diag (1,1,0)",
+            "r_actual": 28.28,
+            "vac_tick": 59.0,
+            "mass_tick": 83.0,
+            "shapiro_lag": 24.0,
+            "eff_speed": 0.3408,
+            "isotropy_err_pct": 0.63
+          },
+          {
+            "direction": "Body Diag (1,1,1)",
+            "r_actual": 27.71,
+            "vac_tick": 57.0,
+            "mass_tick": 81.0,
+            "shapiro_lag": 24.0,
+            "eff_speed": 0.3421,
+            "isotropy_err_pct": 1.02
+          },
+          {
+            "direction": "Off-Axis (2,1,0)",
+            "r_actual": 28.64,
+            "vac_tick": 60.0,
+            "mass_tick": 85.0,
+            "shapiro_lag": 25.0,
+            "eff_speed": 0.3369,
+            "isotropy_err_pct": 0.52
+          },
+          {
+            "direction": "Oblique (3,2,1)",
+            "r_actual": 29.93,
+            "vac_tick": 63.0,
+            "mass_tick": 88.0,
+            "shapiro_lag": 25.0,
+            "eff_speed": 0.3402,
+            "isotropy_err_pct": 0.45
+          }
+        ]
+      },
+      {
+        "radius": 60,
+        "mean_speed": 0.3403,
+        "mean_shapiro_lag": 36.2,
+        "mean_isotropy_err_pct": 0.39,
+        "directions": [
+          {
+            "direction": "Axis (1,0,0)",
+            "r_actual": 60.0,
+            "vac_tick": 141.0,
+            "mass_tick": 178.0,
+            "shapiro_lag": 37.0,
+            "eff_speed": 0.3371,
+            "isotropy_err_pct": 0.95
+          },
+          {
+            "direction": "Face Diag (1,1,0)",
+            "r_actual": 59.4,
+            "vac_tick": 138.0,
+            "mass_tick": 174.0,
+            "shapiro_lag": 36.0,
+            "eff_speed": 0.3414,
+            "isotropy_err_pct": 0.32
+          },
+          {
+            "direction": "Body Diag (1,1,1)",
+            "r_actual": 58.89,
+            "vac_tick": 137.0,
+            "mass_tick": 172.0,
+            "shapiro_lag": 35.0,
+            "eff_speed": 0.3424,
+            "isotropy_err_pct": 0.61
+          },
+          {
+            "direction": "Off-Axis (2,1,0)",
+            "r_actual": 59.93,
+            "vac_tick": 140.0,
+            "mass_tick": 176.0,
+            "shapiro_lag": 36.0,
+            "eff_speed": 0.3405,
+            "isotropy_err_pct": 0.05
+          },
+          {
+            "direction": "Oblique (3,2,1)",
+            "r_actual": 59.87,
+            "vac_tick": 139.0,
+            "mass_tick": 176.0,
+            "shapiro_lag": 37.0,
+            "eff_speed": 0.3402,
+            "isotropy_err_pct": 0.04
+          }
+        ]
+      },
+      {
+        "radius": 90,
+        "mean_speed": 0.3465,
+        "mean_shapiro_lag": 43.0,
+        "mean_isotropy_err_pct": 0.2,
+        "directions": [
+          {
+            "direction": "Axis (1,0,0)",
+            "r_actual": 90.0,
+            "vac_tick": 217.0,
+            "mass_tick": 261.0,
+            "shapiro_lag": 44.0,
+            "eff_speed": 0.3448,
+            "isotropy_err_pct": 0.5
+          },
+          {
+            "direction": "Face Diag (1,1,0)",
+            "r_actual": 90.51,
+            "vac_tick": 218.0,
+            "mass_tick": 261.0,
+            "shapiro_lag": 43.0,
+            "eff_speed": 0.3468,
+            "isotropy_err_pct": 0.08
+          },
+          {
+            "direction": "Body Diag (1,1,1)",
+            "r_actual": 90.07,
+            "vac_tick": 217.0,
+            "mass_tick": 259.0,
+            "shapiro_lag": 42.0,
+            "eff_speed": 0.3477,
+            "isotropy_err_pct": 0.33
+          },
+          {
+            "direction": "Off-Axis (2,1,0)",
+            "r_actual": 89.44,
+            "vac_tick": 215.0,
+            "mass_tick": 258.0,
+            "shapiro_lag": 43.0,
+            "eff_speed": 0.3467,
+            "isotropy_err_pct": 0.05
+          },
+          {
+            "direction": "Oblique (3,2,1)",
+            "r_actual": 89.8,
+            "vac_tick": 216.0,
+            "mass_tick": 259.0,
+            "shapiro_lag": 43.0,
+            "eff_speed": 0.3467,
+            "isotropy_err_pct": 0.05
+          }
+        ]
+      },
+      {
+        "radius": 120,
+        "mean_speed": 0.3516,
+        "mean_shapiro_lag": 47.2,
+        "mean_isotropy_err_pct": 0.1,
+        "directions": [
+          {
+            "direction": "Axis (1,0,0)",
+            "r_actual": 120.0,
+            "vac_tick": 294.0,
+            "mass_tick": 342.0,
+            "shapiro_lag": 48.0,
+            "eff_speed": 0.3509,
+            "isotropy_err_pct": 0.21
+          },
+          {
+            "direction": "Face Diag (1,1,0)",
+            "r_actual": 118.79,
+            "vac_tick": 291.0,
+            "mass_tick": 338.0,
+            "shapiro_lag": 47.0,
+            "eff_speed": 0.3515,
+            "isotropy_err_pct": 0.04
+          },
+          {
+            "direction": "Body Diag (1,1,1)",
+            "r_actual": 117.78,
+            "vac_tick": 288.0,
+            "mass_tick": 335.0,
+            "shapiro_lag": 47.0,
+            "eff_speed": 0.3516,
+            "isotropy_err_pct": 0.01
+          },
+          {
+            "direction": "Off-Axis (2,1,0)",
+            "r_actual": 118.96,
+            "vac_tick": 291.0,
+            "mass_tick": 338.0,
+            "shapiro_lag": 47.0,
+            "eff_speed": 0.352,
+            "isotropy_err_pct": 0.1
+          },
+          {
+            "direction": "Oblique (3,2,1)",
+            "r_actual": 119.73,
+            "vac_tick": 293.0,
+            "mass_tick": 340.0,
+            "shapiro_lag": 47.0,
+            "eff_speed": 0.3522,
+            "isotropy_err_pct": 0.16
+          }
+        ]
+      }
+    ]
+  }
+}

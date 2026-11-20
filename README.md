@@ -61,8 +61,7 @@ LEFT illustrates established GR geometric lensing. It is not a newly integrated 
 - [Notes](video/gr_vs_bcc_lensing/README.md) · [thumbnail at 30 s](video/gr_vs_bcc_lensing/thumbnail.png) · [storyboard](video/gr_vs_bcc_lensing/storyboard.md) · [scientific notes](video/gr_vs_bcc_lensing/SCIENTIFIC_NOTES_v2.md)
 
 **Toy-model simulation suite**
-- [`bcc_test4/`](bcc_test4/): runnable toy-model simulation suite. From that folder, `python3 run_bcc_suite.py`.
-- [`video/bcc_test4_modules/`](video/bcc_test4_modules/): seven silent 1080p30 module videos driven by that suite's output.
+- [`spacetime/`](spacetime/): runnable toy-model simulation suite. From that folder, `python3 export_master_report.py` then `python3 plot_master_dashboard.py`.
 
 **Signed-off records (exact copies).** [Layered plan v3.4](layered_plan_v3_4_draft_20261112/) is the live layered plan, signed off 2026-11-12 (8:38 PM ET) and merged in [PR #9](https://github.com/edmondying-hash/spacetime-ledger/pull/9). The folder name keeps "draft" because the plan's own status line sits inside its hash; the [decisions sidecar](layered_plan_v3_4_draft_20261112_DECISIONS.txt) is the sign-off record and overrides the draft wording. [Layered plan v3.3 r2](layered_plan_v3_3_r2_20261111/) is the previous signed-off plan and is kept unchanged. [L1.1 repair spec r8](L1_1_repair_spec_r8_20261111/) stays signed off; it was the L1.1 gate before the one-BCC change (below). The [sign-off sidecar](L1_1_repair_spec_r8_20261111_SIGNOFF.txt) sits beside the r8 folder; it is the sign-off record because r8's own status line is frozen inside its hash.
 
