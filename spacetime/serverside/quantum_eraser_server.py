@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Serverside Module 4: Delayed-Choice Quantum Eraser via Zero-Metadata redraw() API."""
 
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# INSERTED: idler statistics use |amp|^2 Born weights in a non-local server table (by design).
+# The slit amplitudes come from a genuine 4-direction quantum walk.
+# ---------------------------------------------------------------------------
+
+
 import math
 from typing import Dict, List, Optional, Tuple
 import numpy as np

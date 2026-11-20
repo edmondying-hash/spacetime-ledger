@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""3D BCC Orbital Mechanics: Emergent Orbits & Perihelion Precession from Node Congestion."""
+"""Orbits in an inserted congestion field c_eff(r) = 1/(1 + k/r) (smooth 3D, not a lattice walk).
+
+Inserted, not emergent: the 1/r congestion law and the force a = -c_eff grad c_eff.
+FIXED: periapsis advance is measured from successive periapses in the orbital plane.
+"""
 
 import argparse
 import math
@@ -45,12 +49,17 @@ class BCCOrbitalEngine:
         v_circ = math.sqrt(r0 * c0 * g0)
 
         pos = np.array([r0, 0.0, 0.0], dtype=np.float64)
-        # Slight 3D tilt (vz != 0) to demonstrate full 3D BCC orbital plane
-        vel = np.array([0.0, v_circ * v_tan_ratio, 0.06 * v_circ], dtype=np.float64)
+        # Slight 3D tilt to show a tilted orbital plane.  FIXED: the tilt now rotates the
+        # velocity instead of adding vz = 0.06 v_circ (which raised the speed above v_circ,
+        # so the "circular" orbit was not circular).
+        tilt = math.atan(0.06)
+        speed = v_circ * v_tan_ratio
+        vel = np.array([0.0, speed * math.cos(tilt), speed * math.sin(tilt)], dtype=np.float64)
 
         path: List[np.ndarray] = [pos.copy()]
         radii: List[float] = [r0]
-        perihelion_angles: List[float] = []
+        swept: List[float] = [0.0]          # cumulative in-plane angle swept (rad)
+        peri_swept: List[float] = []         # swept angle at each periapsis
         captured = False
 
         for _ in range(ticks):
@@ -69,34 +78,53 @@ class BCCOrbitalEngine:
             vel = vel + 0.5 * (acc1 + acc2) * dt
             pos = pos_next
 
+            prev = path[-1]
             path.append(pos.copy())
             radii.append(r_next)
+            cosang = float(np.dot(prev, pos) / (np.linalg.norm(prev) * np.linalg.norm(pos)))
+            swept.append(swept[-1] + math.acos(max(-1.0, min(1.0, cosang))))
 
-            # Detect local radial minima (perihelion passages)
+            # Periapsis passages: local minima of r, refined by a parabola through 3 samples
             if len(radii) >= 3 and radii[-2] < radii[-3] and radii[-2] < radii[-1]:
-                px, py, _ = path[-2]
-                angle_deg = math.degrees(math.atan2(float(py), float(px))) % 360.0
-                perihelion_angles.append(angle_deg)
+                r_a, r_b, r_c = radii[-3], radii[-2], radii[-1]
+                denom = r_a - 2.0 * r_b + r_c
+                frac = 0.5 * (r_a - r_c) / denom if denom > 0 else 0.0
+                s_b = swept[-2]
+                ds = (swept[-1] - swept[-3]) / 2.0
+                peri_swept.append(s_b + frac * ds)
 
             if r_next > r0 * 3.5:
                 break
 
         pts = np.array(path)
-        precession_per_orbit = 0.0
-        if len(perihelion_angles) >= 2:
-            diffs = [
-                (perihelion_angles[i + 1] - perihelion_angles[i]) % 360.0
-                for i in range(len(perihelion_angles) - 1)
-            ]
-            precession_per_orbit = sum(diffs) / len(diffs)
+        r_min, r_max = min(radii), max(radii)
+        ecc = (r_max - r_min) / (r_max + r_min)
+        # FIXED: advance = (swept angle between successive periapses) - 360 deg.
+        # The old code averaged (atan2 angle difference mod 360), i.e. reported the
+        # full inter-periapsis angle (~272-281 deg), not the advance, and read noise
+        # minima on the circular orbit as periapses.
+        advances = [math.degrees(peri_swept[i + 1] - peri_swept[i]) - 360.0
+                    for i in range(len(peri_swept) - 1)]
+        if ecc < 1e-3:
+            precession_per_orbit = 0.0      # circular: periapsis undefined
+            status = "circular"
+        elif advances:
+            precession_per_orbit = sum(advances) / len(advances)
+            status = "measured"
+        else:
+            precession_per_orbit = float("nan")
+            status = "fewer than 2 periapses"
 
         return {
             "points": pts,
             "min_r": round(min(radii), 2),
             "max_r": round(max(radii), 2),
             "captured": captured,
-            "perihelions": len(perihelion_angles),
-            "precession_deg": round(precession_per_orbit, 2),
+            "perihelions": len(peri_swept),
+            "eccentricity": round(ecc, 5),
+            "precession_deg": round(precession_per_orbit, 3),
+            "precession_status": status,
+            "orbits_swept": round(swept[-1] / (2 * math.pi), 2),
         }
 
 
@@ -113,7 +141,8 @@ def run_orbital_suite(out_png: str = "bcc_orbits.png") -> None:
     print("=" * 78)
     print("3D BCC CONGESTION ORBITAL MECHANICS (Refractive Wavepacket Steering)")
     print("=" * 78)
-    print("Trajectory Regime              | Min R | Max R | Orbits | Precession/Orbit")
+    print("Advance per orbit = swept angle between successive periapses - 360 deg (+ = prograde)")
+    print("Trajectory Regime                | Min R | Max R |   e     | Periapses | Advance/Orbit")
     print("-" * 78)
 
     fig, (ax_xy, ax_3d) = plt.subplots(
@@ -130,10 +159,17 @@ def run_orbital_suite(out_png: str = "bcc_orbits.png") -> None:
     for label, v_ratio, steps, color in scenarios:
         res = sim.trace_trajectory(r0=24.0, v_tan_ratio=v_ratio, ticks=steps)
         pts = res["points"]
-        status = "CAPTURED" if res["captured"] else f"{res['precession_deg']:>6.2f}°/orbit"
+        if res["captured"]:
+            status = "CAPTURED"
+        elif res["precession_status"] == "circular":
+            status = "~0 (circular, e < 1e-3)"
+        elif res["precession_status"] == "measured":
+            status = f"{res['precession_deg']:+8.3f} deg/orbit"
+        else:
+            status = "n/a (unbound or < 2 periapses)"
         print(
-            f"{label:<30} | {res['min_r']:>5.1f} | {res['max_r']:>5.1f} | "
-            f"{res['perihelions']:>6} | {status}"
+            f"{label:<32} | {res['min_r']:>5.1f} | {res['max_r']:>5.1f} | {res['eccentricity']:.5f} | "
+            f"{res['perihelions']:>9} | {status}"
         )
 
         ax_xy.plot(pts[:, 0], pts[:, 1], color=color, linewidth=1.8, label=label)

@@ -39,7 +39,7 @@ except ImportError:
 def collect_master_report() -> Dict[str, Any]:
     report: Dict[str, Any] = {"project": "Client-Server 3D BCC Spacetime Network", "pillars": {}}
 
-    # 1. BCC Pillar: Meson Spectrum, Orbital Precession & Virtual Carriers
+    # 1. BCC Pillar: Meson Spectrum, Orbital Precession & Virtual Carriers (Compton + FFT Green's)
     meson_sim = BCCMesonSim()
     orb_sim = BCCOrbitalEngine(core_mass_mev=1218.3, cluster_count=18)
     ellipse = orb_sim.trace_trajectory(r0=24.0, v_tan_ratio=0.84, ticks=1600)
@@ -50,8 +50,10 @@ def collect_master_report() -> Dict[str, Any]:
         "precessing_orbit_xy": ellipse["points"][:, :2].tolist(),
         "horizon_radius": orb_sim.horizon_radius,
         "photon_carriers": vc_sim.simulate_carrier_range(max_hops=8, mass_mev=0.0),
-        "weak_carriers": vc_sim.simulate_carrier_range(max_hops=8, mass_mev=80379.0, range_scale_hops=1.5),
+        "weak_carriers": vc_sim.simulate_carrier_range(max_hops=8, mass_mev=80379.0),
         "gluon_bundling": vc_sim.gluon_carrier_bundling(max_hops=8),
+        "lattice_green_mu0": vc_sim.lattice_green_function(n=96, mu=0.0),
+        "lattice_green_yukawa": vc_sim.lattice_green_function(n=96, mu=1.0 / 3.0),
     }
 
     # 2. Serverside Pillar: Bell CHSH & 3-Particle GHZ Decoherence Sweep

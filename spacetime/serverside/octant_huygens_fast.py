@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Serverside Module 2: 8x Accelerated Octant-Symmetry 3D BCC Huygens Wavefront Engine."""
 
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# Same physics as engine Module 5: genuine 8-neighbour BCC wave; INSERTED 1/r load for the 'mass' run.
+# DECLARED KNOB: dt (wave speed dt/sqrt(2) coord/tick).
+# ---------------------------------------------------------------------------
+
+
 import argparse
 import math
 import time
@@ -48,7 +54,7 @@ def simulate_octant_bcc_wavefront(
         arr = np.full((n, n, n), -1.0)
         arr[u_curr > 0.1] = 0.0
 
-        dt = 0.55
+        dt = 0.55  # DECLARED KNOB (bcc_config "huygens_dt"): phase speed dt/sqrt(2) = 0.389 coord/tick = 0.2245 hop/tick
         dt2 = dt * dt
         max_ticks = int(target_radius * 3.8)
         for tick in range(1, max_ticks + 1):

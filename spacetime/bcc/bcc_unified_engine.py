@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 """Master 3D BCC (8-Diagonal) Unified Spacetime Network Engine with CLI & Export."""
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".."))
+import bcc_config as cfg  # noqa: E402  (HOP switch, constants, DECLARED_KNOBS)
+
+
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# INSERTED, NOT EMERGENT: baryon bare/spin terms and 198 MeV link weight (tuned), glueball
+# 165+362.5L, lensing 1/r queue law, horizon escaped=0 (fixed return), Huygens 1/r load.
+# GENUINE lattice parts: Steiner BFS link counts, double-slit walk, vacuum Huygens wave.
+# DECLARED KNOB: Huygens dt = 0.55 (sets wave speed; see bcc_config.DECLARED_KNOBS).
+# ---------------------------------------------------------------------------
+
+
 import argparse
 from collections import deque
 import csv
@@ -115,6 +128,7 @@ class BCCUnifiedEngine:
         redraw_per_c = total_redraws / (3.0 * cycles)
         n_strange = sum(1 for f in flavors if f == "s")
 
+        # INSERTED/TUNED (declared knobs): bare term, 198 MeV link weight, spin factors.
         bare_t = 12.0 + 91.0 * n_strange
         route_t = avg_links * self.link_weight_mev
         spin_t = spin_factor * (6.5 - 1.4 * n_strange)
@@ -138,6 +152,7 @@ class BCCUnifiedEngine:
         """Pure-gluon closed cycle on 3D BCC (minimal non-planar rhombus = 4 links)."""
         if loop_links <= 0:
             return {"loop_links": 0, "glueball_mass_mev": 0.0}
+        # INSERTED formula (declared knob), not a lattice computation.
         mass_mev = 165.0 + 362.5 * loop_links
         return {"loop_links": loop_links, "glueball_mass_mev": round(mass_mev, 1)}
 
@@ -157,6 +172,7 @@ class BCCUnifiedEngine:
             total_queue_delay = 0.0
             for step in range(-span_steps // 2, span_steps // 2):
                 r = math.sqrt(step * step + b * b + 1.0)
+                # INSERTED 1/r utilisation and queue law (not emergent).
                 local_util = min(0.95, (base_load_frac * cluster_mass_gev * 0.24) / r)
                 step_delay = (local_util / (1.0 - local_util)) * 0.18
                 total_queue_delay += step_delay
@@ -206,7 +222,7 @@ class BCCUnifiedEngine:
             "saturated_core": len(core),
             "bcc_shell_nodes": len(shell),
             "shell_to_core": round(len(shell) / len(core), 2),
-            "escaped_packets": 0,
+            "escaped_packets": 0,  # INSERTED fixed value: escape is not simulated
         }
 
     def simulate_bcc_double_slit(
@@ -303,6 +319,7 @@ class BCCUnifiedEngine:
         bcc_mask = ((ix % 2) == (iy % 2)) & ((iy % 2) == (iz % 2))
 
         def propagate_shell(load_strength: float) -> np.ndarray:
+            # INSERTED 1/r congestion for the "mass" run (vacuum run: load 0, clean).
             local_util = np.minimum(0.65, load_strength / np.maximum(R, 2.0))
             c_eff = np.where(bcc_mask, 1.0 / (1.0 + local_util), 0.0)
 
@@ -311,7 +328,10 @@ class BCCUnifiedEngine:
             arr = np.full((n, n, n), -1.0)
             arr[u_curr > 0.1] = 0.0
 
-            dt = 0.55
+            # DECLARED KNOB: dt sets the wave speed. Phase speed of this leapfrog = dt/sqrt(2)
+            # coord/tick = 0.389 (0.2245 hop/tick). One hop per tick (sqrt(3) coord/tick) is NOT
+            # reachable: the scheme is stable only for dt <= sqrt(2), i.e. <= 1 coord/tick = 0.577 hop/tick.
+            dt = cfg.DECLARED_KNOBS["huygens_dt"][0]
             dt2 = dt * dt
             max_ticks = int(target_radius * 4.5)
             for tick in range(1, max_ticks + 1):
@@ -387,6 +407,19 @@ def export_csv_report(filepath: str, report: Dict[str, Any]) -> None:
         writer = csv.writer(f)
         writer.writerow(["module", "entity", "metric", "value"])
         for mod_key, mod_data in report.get("modules", {}).items():
+            if isinstance(mod_data, list):
+                # FIXED: list-valued modules (module_5_isotropy_sweep) were skipped, so
+                # scaling_sweep.csv held only its header.
+                for item in mod_data:
+                    label = f"R={item.get('radius', '')}"
+                    for mk, mv in item.items():
+                        if mk == "directions":
+                            for d in mv:
+                                for dk, dv in d.items():
+                                    if dk != "direction":
+                                        writer.writerow([mod_key, f"{label} {d['direction']}", dk, dv])
+                        else:
+                            writer.writerow([mod_key, label, mk, mv])
             if isinstance(mod_data, dict):
                 for k, v in mod_data.items():
                     if isinstance(v, list):
@@ -466,7 +499,7 @@ def main() -> None:
                 f"{res['SpinT']:>6.1f} {res['Redraw/c']:>9.2f} {res['Load%']:>5.1f}% {res['GridMass']:>9.1f}"
             )
         print("-" * 76)
-        print(f"Glueball(4-link)/N = {gb_ratio:.3f} (LQCD: ~1.70)")
+        print(f"Glueball(4-link)/N = {gb_ratio:.3f} (LQCD: ~1.70)  [glueball mass is an inserted formula]")
 
     if 2 in selected or 3 in selected:
         lensing_log: Dict[str, Any] = {}
@@ -544,6 +577,9 @@ def main() -> None:
                 )
             print("-" * 76)
             print(f"Mean 3D Spherical Isotropy Error at R={rad}: {iso['mean_anisotropy_err']:.2f}%")
+            dt_k = cfg.DECLARED_KNOBS["huygens_dt"][0]
+            print(f"Analytic vacuum phase speed dt/sqrt(2) = {dt_k/math.sqrt(2):.4f} coord/tick = "
+                  f"{dt_k/math.sqrt(6):.4f} hop/tick (dt = {dt_k} is a declared knob; 'Speed' column is mass run)")
 
         if len(sweep_summary) > 1:
             print("\n" + "=" * 76)

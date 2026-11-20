@@ -9,6 +9,12 @@ Demonstrates:
    with 100% accuracy ONLY after the packet crosses client space at v <= c.
 """
 
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# INSERTED: outcomes are random draws / one-time-pad bookkeeping in the server layer (by design);
+# no-signalling holds by construction.
+# ---------------------------------------------------------------------------
+
+
 from typing import Dict, Tuple
 import numpy as np
 

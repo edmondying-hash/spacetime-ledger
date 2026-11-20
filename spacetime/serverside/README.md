@@ -1,5 +1,7 @@
 # Client-Server Spacetime Layer (`serverside/`)
 
+> **Fixed copy notes.** The Bell/GHZ/eraser correlations are INSERTED by design: P(opposite) = cos²(Δ/2) and |amp|² weights live in a non-local server table (checklist "local cells" tension, OD4). `entangled_bell_server.py` uses angles 0/45 vs 22.5/67.5 and gives S ≈ 2.41 (correct for those angles; 2√2 needs 0/90 vs 45/135 as in the API sweep). `bcc_orbital_sim.py`: FIXED periapsis-advance measurement (−88.22°/orbit for the 0.84 v_circ ellipse; circular ~0), tilt now rotates rather than adds speed; field c_eff = 1/(1+k/r) is INSERTED. `octant_huygens_fast.py`: dt = 0.55 is a declared knob.
+
 This directory implements the **non-local backend state architecture**, **zero-metadata client encapsulation**, and **8-fold octant symmetry acceleration** complementing the 3D BCC spatial lattice (`bcc/`).
 
 ---

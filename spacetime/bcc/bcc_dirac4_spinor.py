@@ -3,11 +3,12 @@
 4-Component Dirac Spinor (Dirac4) Simulation on the 3D BCC (8-Diagonal) Lattice.
 
 Maps the Dirac Clifford algebra onto the 3D BCC 8-diagonal crystal network:
-  - Spatial Generators (alpha_x, alpha_y, alpha_z): Coupled simultaneously along all
-    8 body-diagonal links <sx, sy, sz> in {+-1}^3 via (sx*sigma_x + sy*sigma_y + sz*sigma_z)/sqrt(3).
+  - Spatial shift (FIXED, unitary): for each of the 8 links n = (sx,sy,sz),
+    A_n = Pi_z(sz) Pi_y(sy) Pi_x(sx) with Pi_a(s) = (I + s sigma_a)/2; shift = sum_n A_n T_n
+    = S_z S_y S_x (product of unitary spin-conditioned axis shifts). OD3: form open.
   - Temporal Rest-Mass Generator (gamma^0): In-place chiral mixing oscillating between
     left-handed (psi_L) and right-handed (psi_R) spinor components (Zitterbewegung).
-  - Spin-1/2 Double Cover: 360° rotation yields -psi; 720° restores +psi.
+  - Spin-1/2 Double Cover: 360 deg -> -psi; 720 deg -> +psi (closed form, inserted).
 """
 
 import cmath
@@ -74,93 +75,125 @@ class BCCDirac4SpinorSim:
             })
         return rows
 
+    @staticmethod
+    def _weyl_link_ops() -> List[Tuple[Tuple[int, int, int], np.ndarray]]:
+        """
+        FIXED (unitary) 8-link shift.  For each BCC link n = (sx, sy, sz):
+            A_n = Pi_z(sz) @ Pi_y(sy) @ Pi_x(sx),   Pi_a(s) = (I + s*sigma_a)/2.
+        The one-tick shift  S psi(r) = sum_n A_n psi(r - n)  equals the product
+        S_z S_y S_x of three spin-conditioned axis shifts, each unitary, so S is
+        exactly unitary, and every term moves amplitude along one of the 8 BCC
+        body diagonals (+-1,+-1,+-1).  (The previous projector-sum
+        sum_n (I + sigma.n/sqrt3)/8 T_n was not unitary: norm 0.028 after 6 ticks.)
+        Alternative unitary forms exist (other axis orderings; the paper's dirac4
+        construction) -- OD3, left open for Edmond.
+        """
+        sig = {
+            "x": np.array([[0, 1], [1, 0]], dtype=np.complex128),
+            "y": np.array([[0, -1j], [1j, 0]], dtype=np.complex128),
+            "z": np.array([[1, 0], [0, -1]], dtype=np.complex128),
+        }
+        eye2 = np.eye(2, dtype=np.complex128)
+        ops = []
+        for sx, sy, sz in BCC_DIAGONALS_8:
+            a = (0.5 * (eye2 + sz * sig["z"])) @ (0.5 * (eye2 + sy * sig["y"])) @ (0.5 * (eye2 + sx * sig["x"]))
+            ops.append(((sx, sy, sz), a))
+        return ops
+
+    def step_operator_symbol(self, k: Tuple[float, float, float], theta_m: float = 0.25) -> np.ndarray:
+        """4x4 one-tick Bloch symbol U(k) = Shift(k) @ Coin (same convention as the grid walk)."""
+        ops = self._weyl_link_ops()
+        w_r = sum(a * np.exp(-1j * np.dot(k, n)) for n, a in ops)
+        w_l = sum(a * np.exp(+1j * np.dot(k, n)) for n, a in ops)  # L moves along -n
+        shift = np.zeros((4, 4), dtype=np.complex128)
+        shift[0:2, 0:2] = w_l
+        shift[2:4, 2:4] = w_r
+        c_m, s_m = math.cos(theta_m), math.sin(theta_m)
+        coin = np.array([[c_m, 0, -1j * s_m, 0], [0, c_m, 0, -1j * s_m],
+                         [-1j * s_m, 0, c_m, 0], [0, -1j * s_m, 0, c_m]], dtype=np.complex128)
+        return shift @ coin
+
+    def dispersion_check(self, theta_m: float = 0.25, kmag: float = 0.1, ndirs: int = 200) -> Dict[str, Any]:
+        """Measured (not inserted) quasi-energy omega(k) from the walk's own symbol."""
+        def omega(kv):
+            ev = np.linalg.eigvals(self.step_operator_symbol(tuple(kv), theta_m))
+            return float(np.min(np.abs(np.angle(ev))))
+        unit_err = max(
+            float(np.max(np.abs(self.step_operator_symbol(tuple(kv), theta_m).conj().T
+                                @ self.step_operator_symbol(tuple(kv), theta_m) - np.eye(4))))
+            for kv in np.random.default_rng(0).uniform(-math.pi, math.pi, (20, 3))
+        )
+        golden = math.pi * (3.0 - math.sqrt(5.0))
+        oms = []
+        for i in range(ndirs):
+            z = 1.0 - 2.0 * (i + 0.5) / ndirs
+            rr = math.sqrt(1.0 - z * z)
+            d = np.array([rr * math.cos(golden * i), rr * math.sin(golden * i), z])
+            oms.append(omega(kmag * d))
+        oms = np.array(oms)
+        om0 = omega((0.0, 0.0, 0.0))
+        # small-k speed in coordinate units/tick: sqrt(omega(k)^2 - omega(0)^2)/|k|
+        v_eff = float(np.mean(np.sqrt(np.maximum(oms**2 - om0**2, 0.0)) / kmag))
+        return {
+            "symbol_unitarity_max_err": unit_err,
+            "omega_k0_rest_mass": round(om0, 6),
+            "kmag": kmag,
+            "omega_mean": round(float(oms.mean()), 6),
+            "omega_rel_anisotropy": float((oms.max() - oms.min()) / oms.mean()),
+            "small_k_speed_coord_per_tick": round(v_eff, 4),
+            "small_k_speed_hop_per_tick": round(v_eff / math.sqrt(3.0), 4),
+        }
+
     def propagate_bcc_wavepacket(
-        self, half_size: int = 10, ticks: int = 6, k_mom: float = 0.50
+        self, half_size: int = 12, ticks: int = 1000, k_mom: float = 0.50, theta_m: float = 0.25
     ) -> Dict[str, Any]:
         """
-        Evolve a 4-component Dirac spinor wavepacket across a true 3D BCC parity grid
-        using a unitary split-step Weyl/Dirac walk over all 8 body diagonals <sx, sy, sz>.
+        Evolve a 4-component spinor on a periodic BCC grid (n = 2*half_size, even, so
+        BCC parity is preserved under wrap).  Each tick: rest-mass coin (gamma^0 L<->R
+        mixing, unitary) then the unitary 8-link Weyl shift (R along +n, L along -n).
+        Norm is measured, not assumed.
         """
-        n = 2 * half_size + 1
-        center = half_size
-
-        # Pauli matrices & 3D BCC diagonal projectors P_+- = 0.5 * (I +- (sx*sigma_x + sy*sigma_y + sz*sigma_z)/sqrt(3))
-        sigma_x = np.array([[0.0, 1.0], [1.0, 0.0]], dtype=np.complex128)
-        sigma_y = np.array([[0.0, -1j], [1j, 0.0]], dtype=np.complex128)
-        sigma_z = np.array([[1.0, 0.0], [0.0, -1.0]], dtype=np.complex128)
-        eye2 = np.eye(2, dtype=np.complex128)
-
-        # Build 8 normalized directional spin projectors across the 8 BCC body diagonals
-        inv_sqrt3 = 1.0 / math.sqrt(3.0)
-        diag_projectors: List[Tuple[Tuple[int, int, int], np.ndarray, np.ndarray]] = []
-        for sx, sy, sz in BCC_DIAGONALS_8:
-            sigma_n = inv_sqrt3 * (sx * sigma_x + sy * sigma_y + sz * sigma_z)
-            # Right-handed moves along +n; Left-handed moves along -n (opposite helicity)
-            proj_r = (0.5 * (eye2 + sigma_n)) / 4.0
-            proj_l = (0.5 * (eye2 - sigma_n)) / 4.0
-            diag_projectors.append(((sx, sy, sz), proj_r, proj_l))
-
-        # Chiral rest-mass coin (gamma^0 mixing between L and R spinors)
-        theta_m = 0.25
+        n = 2 * half_size
+        ops = self._weyl_link_ops()
         c_m, s_m = math.cos(theta_m), math.sin(theta_m)
-
-        # Initialize localized right-handed spin-up packet at center (0,0,0) with momentum along (1,1,1)
         psi = np.zeros((4, n, n, n), dtype=np.complex128)
-        for d in (-2, 0, 2):
+        center = half_size if half_size % 2 == 0 else half_size - 1
+        for d in (-2, 0, 2):  # all-even sites along the (1,1,1) body diagonal
             amp = math.exp(-0.25 * (d * d)) * cmath.exp(1j * k_mom * d)
-            # Spinor aligned with (1,1,1) diagonal
             psi[2, center + d, center + d, center + d] = amp * 0.8881
             psi[3, center + d, center + d, center + d] = amp * (0.3251 + 0.3251j)
+        psi /= np.sqrt(np.sum(np.abs(psi) ** 2))
 
-        norm0 = float(np.sqrt(np.sum(np.abs(psi) ** 2)))
-        psi /= norm0
-
+        coords = np.arange(n, dtype=np.float64) - center
+        max_drift = 0.0
         for _ in range(ticks):
-            # Step 1: In-place rest-mass chiral mixing (gamma^0)
-            psi_l = psi[0:2]
-            psi_r = psi[2:4]
-            mix_l = c_m * psi_l - 1j * s_m * psi_r
-            mix_r = -1j * s_m * psi_l + c_m * psi_r
-
-            # Step 2: Unitary 8-diagonal 3D BCC spatial shift
+            psi_l = c_m * psi[0:2] - 1j * s_m * psi[2:4]
+            psi_r = -1j * s_m * psi[0:2] + c_m * psi[2:4]
             nxt = np.zeros_like(psi)
-            for (sx, sy, sz), proj_r, proj_l in diag_projectors:
-                # Apply 2x2 spin projector across spatial volume
-                shifted_r = np.einsum("ab,bxyz->axyz", proj_r, mix_r)
-                shifted_l = np.einsum("ab,bxyz->axyz", proj_l, mix_l)
-
-                src_x = slice(1, n - 1)
-                dst_x = slice(1 + sx, n - 1 + sx)
-                src_y = slice(1, n - 1)
-                dst_y = slice(1 + sy, n - 1 + sy)
-                src_z = slice(1, n - 1)
-                dst_z = slice(1 + sz, n - 1 + sz)
-
-                nxt[2:4, dst_x, dst_y, dst_z] += shifted_r[:, src_x, src_y, src_z]
-                nxt[0:2, dst_x, dst_y, dst_z] += shifted_l[:, src_x, src_y, src_z]
-
+            for (sx, sy, sz), a in ops:
+                nxt[2:4] += np.roll(np.einsum("ab,bxyz->axyz", a, psi_r), (sx, sy, sz), axis=(1, 2, 3))
+                nxt[0:2] += np.roll(np.einsum("ab,bxyz->axyz", a, psi_l), (-sx, -sy, -sz), axis=(1, 2, 3))
             psi = nxt
+            max_drift = max(max_drift, abs(float(np.sum(np.abs(psi) ** 2)) - 1.0))
 
-        prob_density = np.sum(np.abs(psi) ** 2, axis=0)
-        total_norm = float(np.sum(prob_density))
-
-        coords = np.arange(-half_size, half_size + 1, dtype=np.float64)
+        prob = np.sum(np.abs(psi) ** 2, axis=0)
+        total_norm = float(np.sum(prob))
+        odd_parity_weight = float(np.sum(prob[(np.indices((n, n, n)).sum(axis=0) % 2 == 1)]))
         X, Y, Z = np.meshgrid(coords, coords, coords, indexing="ij")
-        mean_x = float(np.sum(X * prob_density)) / max(1e-12, total_norm)
-        mean_y = float(np.sum(Y * prob_density)) / max(1e-12, total_norm)
-        mean_z = float(np.sum(Z * prob_density)) / max(1e-12, total_norm)
-        radial_shift = math.sqrt(mean_x ** 2 + mean_y ** 2 + mean_z ** 2)
+        mean = [float(np.sum(A * prob)) / total_norm for A in (X, Y, Z)]
 
+        # NOTE: inserted textbook relation, kept for display only (not measured):
         p_mev = self.mass_mev * k_mom
-        e_mev = math.sqrt((p_mev ** 2) + (self.mass_mev ** 2))
-
+        e_mev = math.sqrt(p_mev ** 2 + self.mass_mev ** 2)
         return {
             "ticks": ticks,
-            "total_norm": round(total_norm, 6),
-            "mean_vec": (round(mean_x, 4), round(mean_y, 4), round(mean_z, 4)),
-            "radial_shift_bcc": round(radial_shift, 4),
-            "momentum_mev": round(p_mev, 4),
-            "dirac_energy_mev": round(e_mev, 4),
+            "grid": n,
+            "total_norm": total_norm,
+            "max_norm_drift": max_drift,
+            "mixed_parity_weight": odd_parity_weight,
+            "mean_vec_last_tick": tuple(round(m, 4) for m in mean),
+            "momentum_mev_inserted": round(p_mev, 4),
+            "dirac_energy_mev_inserted": round(e_mev, 4),
         }
 
 
@@ -168,7 +201,7 @@ def run_dirac4_demo() -> None:
     sim = BCCDirac4SpinorSim(mass_mev=0.511, c_bcc=1.0)
 
     print("=" * 78)
-    print("PART 1: Spin-1/2 Double Cover on 3D BCC Grid (360° -> -psi, 720° -> +psi)")
+    print("PART 1: Spin-1/2 Double Cover (closed-form exp(-i theta/2); inserted textbook identity, not a lattice evolution)")
     print("=" * 78)
     print("Rotation (deg)   Re<psi|psi'>   Im<psi|psi'>   Dirac4 Spinor State")
     print("-" * 78)
@@ -179,7 +212,7 @@ def run_dirac4_demo() -> None:
         )
 
     print("\n" + "=" * 78)
-    print("PART 2: Rest-Mass Zitterbewegung (gamma^0 Chiral Oscillation L <-> R at p=0)")
+    print("PART 2: L<->R oscillation at p=0 (closed-form cos/sin of the coin; inserted, not evolved)")
     print("=" * 78)
     print("Tick   Time t   Left P(L)   Right P(R)   Total Norm |psi|^2")
     print("-" * 78)
@@ -190,14 +223,20 @@ def run_dirac4_demo() -> None:
         )
 
     print("\n" + "=" * 78)
-    print("PART 3: 3D BCC 8-Diagonal Chiral Wave-Packet Transport & Dirac Energy")
+    print("PART 3: Unitary 8-link BCC Dirac walk (FIXED: was non-unitary projector sum)")
     print("=" * 78)
-    wp = sim.propagate_bcc_wavepacket(half_size=10, ticks=6, k_mom=0.50)
+    wp = sim.propagate_bcc_wavepacket(half_size=12, ticks=1000, k_mom=0.50)
     print(
-        f"After {wp['ticks']} BCC ticks: Norm = {wp['total_norm']:.6f} | "
-        f"Centroid <r> = {wp['mean_vec']} (|r| = {wp['radial_shift_bcc']:.4f}) | "
-        f"p = {wp['momentum_mev']:.4f} MeV -> E = {wp['dirac_energy_mev']:.4f} MeV"
+        f"After {wp['ticks']} ticks on a periodic {wp['grid']}^3 BCC grid: Norm = {wp['total_norm']:.15f} | "
+        f"max |norm-1| = {wp['max_norm_drift']:.2e} | weight on odd sublattice (0 expected after an even tick count) = {wp['mixed_parity_weight']:.3e}"
     )
+    print(f"Centroid at last tick = {wp['mean_vec_last_tick']} (periodic grid; indicative only)")
+    print(f"[inserted, not measured] p = {wp['momentum_mev_inserted']} MeV -> E = sqrt(p^2+m^2) = {wp['dirac_energy_mev_inserted']} MeV")
+    print("\n" + "=" * 78)
+    print("PART 4: Measured quasi-energy omega(k) from the walk symbol (theta_m = 0.25)")
+    print("=" * 78)
+    for key, val in sim.dispersion_check().items():
+        print(f"  {key:<32} {val}")
 
 
 if __name__ == "__main__":

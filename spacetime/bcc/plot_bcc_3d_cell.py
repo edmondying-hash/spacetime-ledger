@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """4-Panel 3D Wireframe: BCC Unit Cell, Truncated Octahedron, Steiner Tree & Glueball."""
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".."))
+import bcc_config as cfg  # noqa: E402
+
+
 import argparse
 import itertools
 import math
@@ -101,7 +106,7 @@ def plot_bcc_3d(out_path: str = "bcc_3d_wireframe.png", interactive: bool = Fals
     ax1.legend(loc="upper left", fontsize=8)
 
     # -------------------------------------------------------------------------
-    # PANEL 2: BCC Node Territory = Truncated Octahedron (~0.770 Planck Vol)
+    # PANEL 2: BCC Node Territory = Truncated Octahedron (volume from bcc_config.HOP, OD1)
     # -------------------------------------------------------------------------
     ax2 = fig.add_subplot(2, 2, 2, projection="3d")
     faces = build_truncated_octahedron_faces()
@@ -119,7 +124,7 @@ def plot_bcc_3d(out_path: str = "bcc_3d_wireframe.png", interactive: bool = Fals
     for cx, cy, cz in corners:
         ax2.plot((0, cx * 0.75), (0, cy * 0.75), (0, cz * 0.75), color="#e63946", linewidth=2.0)
 
-    ax2.scatter((0,), (0,), (0,), s=160, color="#e63946", edgecolors="black", zorder=10, label="Node Core (~0.77 V_P)")
+    ax2.scatter((0,), (0,), (0,), s=160, color="#e63946", edgecolors="black", zorder=10, label=f"Node cell = {cfg.DERIVED['cell_volume_VP']:.3f} V_P (HOP={cfg.HOP})")
     ax2.set_title("2. BCC Node Voronoi Cell: Truncated Octahedron", fontsize=11.5, fontweight="bold")
     ax2.set_xlabel("X")
     ax2.set_ylabel("Y")

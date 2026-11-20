@@ -8,14 +8,27 @@ splitting, 3D BCC diagonal flux-tube string breaking (sqrt(3) step scaling),
 and bottom-quark (B, B*, Upsilon) predictions.
 """
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), ".."))
+import bcc_config as cfg  # noqa: E402  (HOP switch, constants, DECLARED_KNOBS)
+
+
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# Masses are HAND-SET: QUARK_BARE_TICKS, TICK_TO_MEV, route/hyperfine rules are tuned constants
+# (see bcc_config.DECLARED_KNOBS). BCCLinks is measured on the lattice but not used in ModelMeV.
+# String breaking: linear tube energy and 275 MeV threshold are inserted.
+# ---------------------------------------------------------------------------
+
+
 import itertools
 import math
 import random
 from typing import Any, Dict, List, Tuple
 
 TICK_TO_MEV = 5.0
-BCC_DIAG_SCALE = math.sqrt(3.0)  # Each 3D BCC body-diagonal hop spans sqrt(3) l_P
-BCC_TICKS_PER_HOP = round(9.0 * BCC_DIAG_SCALE, 3)  # ~15.588 ticks / BCC diagonal hop
+# FIXED: hop length now follows the HOP switch (OD1). 9 ticks per l_P is a declared knob.
+BCC_DIAG_SCALE = cfg.DERIVED["hop_length_lP"]      # sqrt(3) under "sqrt3_lP", 1 under "lP"
+BCC_TICKS_PER_HOP = round(cfg.DECLARED_KNOBS["TICKS_PER_LP"][0] * BCC_DIAG_SCALE, 3)  # 15.588 or 9.0
 
 QUARK_BARE_TICKS: Dict[str, float] = {
     "l": 15.50,
@@ -96,6 +109,8 @@ def evaluate_meson(
     mass_suppression = (QUARK_BARE_TICKS["l"] ** 2) / (b1 * b2)
     spin_t = 32.0 * spin_factor * mass_suppression
 
+    # DIAGNOSTIC ONLY: the measured BCC hop count is reported but does NOT enter ModelMeV.
+    # Masses are HAND-SET from the tuned constants above (not wired in: intent unclear, no fitting).
     avg_bcc_links = measure_bcc_qqbar_hops(q1, q2, cycles=1000, seed=42 + spin_j)
     model_mev = (bare_t + route_t + spin_t) * TICK_TO_MEV
     return {
@@ -113,7 +128,7 @@ def evaluate_meson(
 
 
 def simulate_string_breaking(
-    max_hops: int = 6,
+    max_hops: int = 8,
     ticks_per_hop: float = BCC_TICKS_PER_HOP,
     threshold_mev: float = 275.0,
 ) -> Dict[str, Any]:
@@ -179,7 +194,7 @@ class BCCMesonSim:
 
 def run_meson_demo() -> None:
     sim = BCCMesonSim()
-    print("=== PART 1: 3D BCC (8-Diagonal) Ground-State Meson Spectrum (q qbar) ===")
+    print("=== PART 1: Meson spectrum from HAND-SET constants (BCCLinks = diagnostic, unused in mass) ===")
     print("Meson    Quarks   J  BCCLinks   BareT   RouteT    SpinT   ModelMeV    PDGMeV     Diff")
     print("-" * 85)
     for m in sim.run_spectrum():
@@ -192,7 +207,8 @@ def run_meson_demo() -> None:
     print("\n=== PART 2: 3D BCC Diagonal Color Flux-Tube String Breaking (Threshold = 275.0 MeV) ===")
     print("BCC Hops     Tube Ticks   Stored MeV   State")
     print("-" * 68)
-    stretch = sim.simulate_flux_tube_stretch()
+    stretch = sim.simulate_flux_tube_stretch(max_hops=8)
+    print(f"(HOP = {cfg.HOP}: {BCC_TICKS_PER_HOP} ticks/hop; tube energy and 275 MeV threshold are inserted)")
     for row in stretch["steps"]:
         print(
             f"{row['hops']:>8} {row['tube_ticks']:>14.1f} "

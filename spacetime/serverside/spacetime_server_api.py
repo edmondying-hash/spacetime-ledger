@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """Serverside Module 3: Zero-Metadata Client & Private Server Binding Table API."""
 
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# INSERTED, NOT EMERGENT: the singlet correlation P(opposite) = cos^2(delta/2) is written into a
+# non-local server table (by design). The toy shows this bookkeeping reproduces QM statistics and
+# keeps marginals at 50/50; it does not derive them. Non-locality vs the 'local cells' checklist item: OD4.
+# ---------------------------------------------------------------------------
+
+
 import itertools
 import math
 from typing import Dict, List, Optional, Tuple
@@ -110,6 +117,7 @@ class SpacetimeKernelServer:
             return outcome
 
         delta = basis_rad - self._anchor_angle[eid]
+        # INSERTED quantum rule (cos^2 of half-angle) in a NON-LOCAL server table, by design.
         prob_opposite = math.cos(delta / 2.0) ** 2
         outcome = (
             -self._anchor_outcome[eid]

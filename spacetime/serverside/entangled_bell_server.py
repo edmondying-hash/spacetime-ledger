@@ -8,6 +8,13 @@ Demonstrates:
    correlations violate the classical Bell CHSH limit (S > 2.0, approaching 2*sqrt(2)).
 """
 
+# ---- Fixed-copy label (Nov 19, 2026) ---------------------------------------
+# INSERTED, NOT EMERGENT: the singlet correlation P(opposite) = cos^2(delta/2) is written into a
+# non-local server table (by design). The toy shows this bookkeeping reproduces QM statistics and
+# keeps marginals at 50/50; it does not derive them. Non-locality vs the 'local cells' checklist item: OD4.
+# ---------------------------------------------------------------------------
+
+
 import argparse
 from dataclasses import dataclass
 import math
@@ -50,6 +57,7 @@ class SpacetimeServerBus:
         # Second detector queries the already-updated server record:
         # P(same) = sin^2((theta_B - theta_A)/2), P(opposite) = cos^2((theta_B - theta_A)/2)
         delta_theta = detector_angle_rad - rec.first_angle_rad
+        # INSERTED quantum rule (cos^2 of half-angle) in a NON-LOCAL server table, by design.
         prob_opposite = math.cos(delta_theta / 2.0) ** 2
         if self.rng.random() < prob_opposite:
             return -rec.first_outcome
