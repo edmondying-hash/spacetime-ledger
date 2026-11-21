@@ -1,0 +1,77 @@
+L1.3 RUN DESIGN - DECISIONS AND APPROVAL RECORD
+================================================================
+
+Recorded: 2026-11-12, after Edmond Ying's message of 7:33 PM America/New_York
+(2026-11-13 00:33 UTC), by the drafting agent (spacetime-ledger).
+
+This record sits OUTSIDE the design folder and is NOT listed in that folder's
+SHA256SUMS. The design is unchanged by this file.
+
+----------------------------------------------------------------
+1. THE DESIGN
+----------------------------------------------------------------
+File:     L1_3_run_design_20261112/L1_3_RUN_DESIGN.md
+sha256:   9ccf48559c099289b24af638164ca64b95195872b1e4a0d8966ed44ca800d098
+Verified by the drafting agent at the time of recording: the file hashes to this
+value, which matches the approved prefix 9ccf4855.
+
+----------------------------------------------------------------
+2. EDMOND'S WORDS
+----------------------------------------------------------------
+"approve 9ccf4855, 1) let grok bot runs it, 2) please check with grok bot on it,
+I believe it was 2 separate angles, 3) ok  4) yes, photon and massive case for
+L1.4-5, 5) yes, all same pipeline"
+
+----------------------------------------------------------------
+3. APPROVAL (plan section 0.2, design section 9)
+----------------------------------------------------------------
+Given: Edmond Ying, 2026-11-12, 7:33 PM America/New_York, naming 9ccf4855.
+
+AUTHORISED: steps S0 to S3 of the design, under the section 6 caps (soft
+ceilings: 2 GiB, 1 pinned thread, up to 4 worker processes, 30 min total and
+10 min per step, 64 MiB output; hard rules: one attempt per step, stop on any
+failed pre-flight or mid-run check).
+
+NOT AUTHORISED: anything beyond S0 to S3; any edit to the paper, plan, repo
+main or an archived record (see D5 for the paper); editing the primary
+implementation after seeing a comparison; a second attempt of any step. A
+corrected re-run is a new run with its own id and its own approval.
+
+----------------------------------------------------------------
+4. DECISIONS D1 TO D5 (design section 8)
+----------------------------------------------------------------
+D1  Runner.        THE GROK BOT on bigbang. It implements from design section 5
+                   (from the section 6.2 paper text, no import of the frozen
+                   dirac4.py or any qca/ module for the primary result), then
+                   runs the labelled cross-check against the frozen U_cycle.
+D2  "Layer         TWO SEPARATE WILSON ANGLES (phi_2 for step 2, phi_4 for
+    weights".      step 4), as in design R2, with the hop weight nu_S fixed at
+                   1 at m = 0. Edmond believes this is the plan's meaning and
+                   asked the reviewing agent to check it with the Grok bot.
+                   CONDITION: S0 and S1 may proceed. BEFORE S2 the Grok bot
+                   confirms, from its own plan and notes, that "layer weights"
+                   means the two Wilson angles. If it knows of a different
+                   meaning, it STOPS before S2 and pings Edmond. A confirmation
+                   is recorded in result.json with its source.
+D3  Tolerance.     ACCEPTED: 1e-6 absolute on v0, frozen when the design was
+                   hashed.
+D4  Scope.         MASSLESS LIGHT SPEED ONLY. The photon (vector) field and the
+                   massive case are left to L1.4 and L1.5.
+D5  Paper.         YES, through the same pipeline as L1.2: results on a
+                   separate branch and PR, the reviewing agent's check against
+                   the design's verdict rules, a closure record, and then the
+                   paper edit. Scope of the edit if L1.3 passes: the closed
+                   form c0(phi) = (1/2) sqrt(1 + 3 sin^2 phi) and the statement
+                   that phi is a free parameter, in section 6.2 (low-energy
+                   limit). The exact wording is stated in the closure record
+                   for Edmond to see before the edit is made, as was done for
+                   L1.2. NO PAPER EDIT IS AUTHORISED BEFORE THE RUN, and none
+                   if L1.3 does not pass.
+
+----------------------------------------------------------------
+5. REQUIRED BEFORE THE FIRST COMPUTATION
+----------------------------------------------------------------
+P0 (design hash, paper sha256, any frozen module hash); copy the design
+unchanged into runs/<date>_<id>/ and hash it; write expected.json (the closed
+form and the paper's table values) BEFORE any computation; hash the primary
+implementation before any comparison.

@@ -1,0 +1,2 @@
+{"step": "S2", "D2_reading": "two separate Wilson angles phi2 (step 2, V+) and phi4 (step 4, V-), nu_S = 1 at m = 0", "mid_run_unitarity_ok": true, "status": "FAIL", "meta": {"python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]", "numpy": "2.5.4", "platform": "Linux-7.0.0-1024-nvidia-aarch64-with-glibc2.39", "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}, "start": "2026-11-12 19:43:19 EST"}, "inner_wall_s": 0.01306838309392333, "inner_cpu_s": 0.013053455999999998}
+status FAIL

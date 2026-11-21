@@ -1,0 +1,2 @@
+{"step": "S1", "mid_run_unitarity_ok": true, "status": "PASS", "meta": {"python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]", "numpy": "2.5.4", "platform": "Linux-7.0.0-1024-nvidia-aarch64-with-glibc2.39", "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}, "start": "2026-11-12 19:43:10 EST"}, "inner_wall_s": 0.00410699809435755, "inner_cpu_s": 0.004105919999999999}
+status PASS
