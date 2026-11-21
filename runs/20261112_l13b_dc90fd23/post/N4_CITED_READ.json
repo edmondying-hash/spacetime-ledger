@@ -1,0 +1,26 @@
+{
+ "written": "2026-11-12 20:23:20 EST",
+ "kind": "post-run read of a cited value (N4 is \"cited, not re-run\"); NOT a re-run of S3 and not an input to the verdict",
+ "reason": "S3 N4 code indexed regenerate[5] as a list; in this file regenerate is a dict keyed by strings, so S3 recorded read_error KeyError(5). Code defect in the record step, disclosed; S3 not repeated (one attempt).",
+ "source": "inputs/V5v2_census_results.json",
+ "sha256": "ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708",
+ "json_path": "/regenerate/\"5\"/rows/6",
+ "phi": 1.5707963267948966,
+ "phi_label": "$\\pi/2$",
+ "gap_cell": {
+  "rule": "pi/2 row: gap <= 1e-12",
+  "printed": "0 (doublers return)",
+  "regenerated": 1.3669139210508844e-17,
+  "within": true,
+  "exclusion_radius": 0.3
+ },
+ "light_speed_cell": {
+  "rule": "pi/2 row: 1.000 +- 0.0005",
+  "printed": "1.000",
+  "regenerated": 0.9999332984870288,
+  "within": true,
+  "exclusion_radius": 0.3
+ },
+ "closed_form_c0_pi2": 1.0,
+ "reading": "speed 1 needs phi = pi/2, where the census gap is 1.3669139210508844e-17 (doublers return): a trade-off, not a selection of 1.4"
+}

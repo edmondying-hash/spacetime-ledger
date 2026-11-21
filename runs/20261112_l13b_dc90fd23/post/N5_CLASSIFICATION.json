@@ -1,0 +1,166 @@
+{
+ "written": "2026-11-12 20:23:20 EST",
+ "n_hits": 26,
+ "n_flagged": 1,
+ "classification": [
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 518,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 519,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 534,
+   "flag_keyword": false,
+   "classification": "states phi = 1.4 \"by default\" (the default, not a derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 543,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 552,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 572,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 576,
+   "flag_keyword": true,
+   "classification": "flagged by keyword \"fixe(d|s)\": refers to the SI definition of c (\"fixed exactly since 1983\"; \"fixes the units\"), not to phi; no derivation"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 584,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+   "line": 598,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/plans/layered_plan_v3.3_r2.md",
+   "line": 120,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/plans/layered_plan_v3.3_r2.md",
+   "line": 392,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REASON_L1_1_one_BCC.md",
+   "line": 67,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REASON_L1_1_one_BCC.md",
+   "line": 79,
+   "flag_keyword": false,
+   "classification": "states phi = 1.4 is the paper default (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+   "line": 77,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+   "line": 89,
+   "flag_keyword": false,
+   "classification": "states phi = 1.4 is the paper default (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+   "line": 107,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 5,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 11,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 102,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 125,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 133,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 136,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 223,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 232,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 250,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  },
+  {
+   "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+   "line": 259,
+   "flag_keyword": false,
+   "classification": "default / usage at phi = 1.4 (no derivation)"
+  }
+ ],
+ "finding": "No hit derives phi = 1.4 from the rule. Hits are uses of phi = 1.4 as the default/setting (paper line 534 \"phi=1.4 by default\"; L1.1 reason notes \"The paper's default is phi = 1.4\"), values quoted at phi = 1.4, and one keyword flag (paper line 576) about the SI definition of c.",
+ "derivation_found": false,
+ "verbatim_hits": "out/S3/result_S3.json N5.hits"
+}

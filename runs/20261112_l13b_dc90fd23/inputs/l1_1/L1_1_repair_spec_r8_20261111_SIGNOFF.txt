@@ -1,0 +1,81 @@
+L1.1 REPAIR SPECIFICATION — SIGN-OFF RECORD FOR r8
+================================================================
+
+Recorded: 2026-11-12T05:02:21Z (UTC), by the verifying agent (spacetime-ledger).
+Approved by: Edmond Ying.
+Artifact status: r8 IS THE L1.1 GATE, as verified below.
+
+This record is deliberately OUTSIDE the artifact folder and is NOT listed in
+that folder's SHA256SUMS. The folder contents are unchanged by this file.
+
+----------------------------------------------------------------
+1. THE ARTIFACT
+----------------------------------------------------------------
+File:     REPAIR_SPEC_L1_1_r8.md
+Folder:   /home/eying/spacetime_files/L1_1_repair_spec_r8_20261111/
+sha256:   ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc
+Size:     20160 bytes, 291 lines
+Diff:     repair_spec_diff_r8_vs_r7.diff
+sha256:   5f030593271cf2a7e3410879782560fd96d9ea04e4cdf5b29689caa580668170
+Size:     6905 bytes, 74 lines, 4 hunks
+Base:     REPAIR_SPEC_L1_1_r7.md
+sha256:   aeca56e4a60bf57a929bb48b1651a23863651e97b41ebeb1b87a06663380ebbb
+Manifest: SHA256SUMS
+sha256:   6134fdc8cdff512049cd627e40d7e86518123dc835ce75762c211a2dc55554d7
+          2 entries, not self-listed; "sha256sum -c" reports OK for both.
+
+----------------------------------------------------------------
+2. WHAT WAS CHECKED
+----------------------------------------------------------------
+- r8 on bigbang and the local copy hash to ad02c201... and are byte-identical.
+- The diff applied to r7 reproduces r8 byte-for-byte, and changes only the
+  R7 -> R8 file pair.
+- The four hunks touch the header, section 6 route 3, section 7 and section 8
+  only (old line ranges 1-7, 211-220, 225-231, 254-258).
+- The section 3.4 acceptance block is byte-identical in r7 and r8 and hashes
+  16fb8cc06bae43c096c7729066f22f03f6fd9bbb17d2dff1f778ba57c934c7dc:
+  the six floors, the pi/2 row, the 2.663e-2 rejection and the post-screen
+  note are unchanged.
+- r7 is untouched: aeca56e4..., one copy on the box and one on bigbang.
+- Exactly one copy of r8 exists on bigbang.
+
+----------------------------------------------------------------
+3. WHAT r8 RECORDS (verified, not merely asserted)
+----------------------------------------------------------------
+- Route 1 (additive potential on u): struck, closed by the branch condition.
+- Route 2 (additive term in s_i = 1 - cos k_i): closed by the same argument.
+- Route 3 (chain + Wilson r = 0.05): IMPLEMENTED AND REPRODUCED. The term is
+  the Wilson mass in angle form, t = arcsin(m) + r * sum(1 - cos k), in
+  v32zip/dirac4.py (sha256 f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a2
+  8253b018ebbab8aff), S_step() line 51, term line 66. It is unitary for any t.
+  It reproduces the paper's 2.663e-2: results_low_r_followup.json gives
+  0.026625477907575197 at /results/0.05/by_Ns/32/interior41/omega_min
+  (= /decision/41_ns32_min_over_loci/omega). Gamma = 0, |lambda| - 1 <= 1e-14,
+  the twelve edge zeros are lifted. The value 0.0265727... in the same file is
+  /thresholds/sibling_thresh, a different quantity.
+- IT STILL FAILS THE GATE: 0.026625477907575197 against the section 3.4 floor
+  0.08212694658054251, a factor 3.08 below.
+- Composition route (finite-hop unit quaternion): OPEN AND UNPROVEN. It needs
+  1 - P^2 as a sum of three squares in J = (sin kx, sin ky, sin kz); thirteen
+  integer-hop squares are known, three are not, and no obstruction has been
+  found. Constraint-rank counts fail a transverse rank-3 point at degree 1
+  (93 vs 54), degree 2 (673 vs 291) and degree 3 (>= 885 vs 834); these are
+  generic-transversality counts, not a proof.
+- Consequence: L1.1 IS BLOCKED ON A FLOOR DECISION, not on a missing term.
+  The L1.1 census, L1.4, L1.5 and the L1 exit gate (L2.0 onward) stay frozen.
+
+----------------------------------------------------------------
+4. NOT AUTHORISED
+----------------------------------------------------------------
+Nothing is authorised to run under r8. No simulation, census, grid, sweep or
+production run is approved by this record. No paper, plan, Sheet or repo edit
+is approved by this record.
+
+----------------------------------------------------------------
+5. NOTE ON r8's STATUS LINE
+----------------------------------------------------------------
+Line 3 of r8 still reads "draft for Edmond's review. Not hashed, not approved,
+nothing run under it." That text is inside the bytes ad02c201... pins, so it is
+NOT edited; editing it would void the hash. It stands as the authoring-time
+state and is superseded by this record. A self-describing marker would require
+a new version and a new hash for a one-line change.
