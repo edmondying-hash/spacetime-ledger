@@ -1,0 +1,93 @@
+{
+ "written": "2026-11-12 America/New_York, before any computation of L1.3 (no code written or run yet)",
+ "design": {
+  "file": "design/L1_3_RUN_DESIGN.md",
+  "sha256": "9ccf48559c099289b24af638164ca64b95195872b1e4a0d8966ed44ca800d098"
+ },
+ "paper": {
+  "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+  "commit": "cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32",
+  "sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70"
+ },
+ "closed_form_equal_angles": {
+  "formula": "c0(phi) = 0.5*sqrt(1 + 3*sin(phi)**2)",
+  "source": "design section 1, step 4 (design lines 28-30)",
+  "derivative": "dc0/dphi = 3*sin(phi)*cos(phi) / (2*sqrt(1 + 3*sin(phi)**2))",
+  "derivative_source": "design line 44; quoted there as 0.127 at phi = 1.4"
+ },
+ "closed_form_layer_weights": {
+  "formula": "0.5*sqrt( (2 + sin(phi2)**2 + sin(phi4)**2)**2 + (sin(phi2)*cos(phi2) + sin(phi4)*cos(phi4))**2 )   [design line 47, literal]",
+  "note_on_normalisation": "The design (line 47) writes c0 = 1/2 sqrt((2 + sin^2 phi2 + sin^2 phi4)^2 + (sin phi2 cos phi2 + sin phi4 cos phi4)^2) and states that it reduces to c0(phi) at phi2 = phi4 (line 48). Taken literally, at phi2 = phi4 = phi that expression equals 1/2 * 2*sqrt((1+sin^2 phi)^2 + sin^2 phi cos^2 phi) = sqrt(1 + 3 sin^2 phi), i.e. twice c0(phi). The design's own stated reduction (line 48) and its step 3 (U ~ 1 - 2i(k.sigma)[...], i.e. the sum of the two Wilson layers' contributions, divided over 4 layers) fix the overall factor: the formula used for R2 is the design's bracket with an overall factor 1/4, c0(phi2,phi4) = (1/4) sqrt((2 + sin^2 phi2 + sin^2 phi4)^2 + (sin phi2 cos phi2 + sin phi4 cos phi4)^2), which equals c0(phi) at phi2 = phi4. This is recorded as deviation DEV-1 (a normalisation reading of the design's printed formula, fixed here before any computation, not after a comparison).",
+  "formula_used_for_R2": "c0(phi2, phi4) = 0.25*sqrt( (2 + sin(phi2)**2 + sin(phi4)**2)**2 + (sin(phi2)*cos(phi2) + sin(phi4)*cos(phi4))**2 )",
+  "source": "design section 1, 'Generalisation to layer weights' (design lines 46-48)",
+  "formula_literal_also_recorded": "R2 records |v0 - literal| as well as |v0 - formula_used_for_R2|; the R2 pass rule is applied to formula_used_for_R2 (DEV-1)."
+ },
+ "paper_table_dirac4_light_speed": {
+  "source": "paper main cc2cc5c8 (sha256 8cbb94ec...6aad70), Table tab:dirac4, lines 558-564, column 'Light speed / hop rate'",
+  "values": [
+   {
+    "phi": "0.5",
+    "printed": "0.650",
+    "line": 558
+   },
+   {
+    "phi": "0.8",
+    "printed": "0.797",
+    "line": 559
+   },
+   {
+    "phi": "1.0",
+    "printed": "0.884",
+    "line": 560
+   },
+   {
+    "phi": "1.2",
+    "printed": "0.949",
+    "line": 561
+   },
+   {
+    "phi": "1.4",
+    "printed": "0.989",
+    "line": 562
+   },
+   {
+    "phi": "1.5",
+    "printed": "0.998",
+    "line": 563
+   },
+   {
+    "phi": "pi/2",
+    "printed": "1.000",
+    "line": 564
+   }
+  ]
+ },
+ "paper_other_quoted": [
+  {
+   "text": "c_0(\\varphi=1.4)=0.98911, which is direction independent to 10^{-6} at this order",
+   "line": 543
+  },
+  {
+   "text": "nu = 0.989 (varphi = 1.4)",
+   "line": 381
+  }
+ ],
+ "design_quoted_closed_form_values": {
+  "source": "design section 1 table, lines 36-42 (calculator values printed in the design, quoted not recomputed)",
+  "values": {
+   "0.5": 0.649913,
+   "0.8": 0.797465,
+   "1.0": 0.883773,
+   "1.2": 0.949485,
+   "1.4": 0.989107,
+   "1.5": 0.998122,
+   "pi/2": 1.0
+  },
+  "phi_1.4_full": 0.98910736
+ },
+ "tolerance": {
+  "R1_R2_abs_on_v0": 1e-06,
+  "R1_direction_spread": 1e-06,
+  "source": "design section 4 R1/R2; decisions D3 accepted"
+ }
+}

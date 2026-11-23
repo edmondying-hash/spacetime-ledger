@@ -1,0 +1,122 @@
+{
+ "run": "20261112_l13_9ccf4855",
+ "written": "2026-11-12 19:44:10 EST",
+ "status": "STOPPED after S2: R2 failed; S3 not run (stop rule, PROTOCOL_NOTES DEV-4; design Sec. 6 \"stop and report on any failure mid-run\")",
+ "verdict_per_design_sec4": "FAIL / OPEN (R2 fails: the generalised closed form for phi2 != phi4 is not confirmed at 1e-6). R1 passes.",
+ "code_version": {
+  "design_sha256": "9ccf48559c099289b24af638164ca64b95195872b1e4a0d8966ed44ca800d098",
+  "primary_impl": "harness/l13_primary.py",
+  "primary_impl_sha256": "5e606a0631b0124992d65f22dd15ffb90e9ad388706c73a9b7739cb388870d8e",
+  "frozen_module": "dirac4.py f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff (hash verified in P0; not imported; cross-check not run)",
+  "paper": {
+   "commit": "cc2cc5c8c9b572c68bd1a1f074fdfacbfac4fe32",
+   "sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70"
+  }
+ },
+ "D2_answer": {
+  "answer": "two separate Wilson angles phi_2 (step 2, V+) and phi_4 (step 4, V-), nu_S = 1 at m = 0",
+  "sources": [
+   "phrase undefined in the plan; verbatim in layered_plan_v1_original.md:77 (5d7fd64f...), layered_plan_v2.md:108 (38ff7c2b...), layered_plan_v3.2.md:135 (5e5891bb...), layered_plan_v3.3.md r2:136 (89b3972a...)",
+   "paper main 8cbb94ec line 534: Wilson layers \"at a fixed angle phi\"",
+   "paper line 531: hop layers nu^2 + m^2 = 1, so nu_S = 1 at m = 0"
+  ]
+ },
+ "seed": "none random in R1/R2; P1/P2/P4/timing k from numpy.random.default_rng(20261112 + task index) (P1=1, P2=2, P4=4, timing=20)",
+ "boundary": "periodic symbol, one BCC orbit; no real-space run",
+ "units": "omega per layer; speeds in hop-rate units",
+ "load_rule": "none, Sec. 6.2 vacuum symbol",
+ "m": 0,
+ "caps": {
+  "memory": "2 GiB soft",
+  "threads": "1 pinned",
+  "processes": "1 used (<=4 allowed)",
+  "wall": "30 min total / 10 min per step",
+  "output": "64 MiB"
+ },
+ "resources": {
+  "S0": {
+   "cpu_s": 0.065039,
+   "wall_s": 0.2186119556427002,
+   "peak_tree_rss_MiB": 20.37890625,
+   "max_single_child_rss_MiB": 37.44921875,
+   "exit_code": 0
+  },
+  "S1": {
+   "cpu_s": 0.055355,
+   "wall_s": 0.21841955184936523,
+   "peak_tree_rss_MiB": 20.10546875,
+   "max_single_child_rss_MiB": 29.328125,
+   "exit_code": 0
+  },
+  "S2": {
+   "cpu_s": 0.067981,
+   "wall_s": 0.21851229667663574,
+   "peak_tree_rss_MiB": 20.36328125,
+   "max_single_child_rss_MiB": 29.78515625,
+   "exit_code": 4
+  }
+ },
+ "preflight": {
+  "P1": {
+   "max": 8.579468896432389e-16,
+   "tol": 1e-12,
+   "pass_": true
+  },
+  "P2": {
+   "max": 4.443761908153001e-16,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P3": {
+   "max": 2.220446049250313e-16,
+   "tol": 1e-13,
+   "pass_": true
+  },
+  "P4": {
+   "max": 1.790180836524724e-15,
+   "tol": 1e-13,
+   "pass_": true
+  }
+ },
+ "timing": {
+  "single_eigensolve_wall_s": 5.14080747961998e-05,
+  "single_eigensolve_cpu_s": 5.097600000000119e-05,
+  "batched_per_eigensolve_wall_s": 2.7609670069068672e-06,
+  "eigensolve_counts": {
+   "R1": 832,
+   "R2": 2548,
+   "N3_ext": 104
+  },
+  "N1_note": "N1 uses matrix products only (no eigensolves): 401 phi x 200 k layers + 401 x 200 U + 41x41 pairs x 200 U",
+  "restated_estimate": "~3484 eigensolves of 4x4 plus ~496600 unitarity checks; estimate seconds per step on one core, well inside 10 min/step and 2 GiB"
+ },
+ "R1_summary": {
+  "pass_": true,
+  "max_abs_diff": 4.340972026284362e-14,
+  "max_direction_spread": 4.807265696626928e-14,
+  "all_tabulated_round_to_paper": true
+ },
+ "R2_summary": {
+  "pass_": false,
+  "max_abs_diff": 0.0001598853869568817,
+  "worst_pair": {
+   "phi2": "0.5",
+   "phi4": "pi/2",
+   "max_abs_diff": 0.0001598853869568817
+  },
+  "pairs_passing": 7,
+  "pairs_passing_note": "the 7 diagonal pairs phi2 = phi4 pass; all 42 off-diagonal pairs fail",
+  "max_abs_diff_vs_literal_design_line47": 1.0000000000000164
+ },
+ "not_run": [
+  "S3: N1, N2, N3 (computed checks), N4 and N5 records, labelled cross-check vs frozen U_cycle, result.json"
+ ],
+ "full_values": "out/S0/result_S0.json, out/S1/result_S1.json, out/S2/result_S2.json (every per-direction v(kappa), v0, closed form, diff)",
+ "deviations": [
+  "DEV-1 factor-1/4 reading of design line 47 (fixed before computation; literal form also recorded, off by ~0.5-1.0)",
+  "DEV-2 bigbang, L1.2 venv read-only",
+  "DEV-3 S3 split (not reached)",
+  "DEV-4 stop on R1/R2 FAIL (invoked after S2)",
+  "shape-only smoke call before hashing (disclosed)"
+ ]
+}
