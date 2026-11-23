@@ -1,0 +1,100 @@
+L1.2 RUN DESIGN - DECISIONS RECORD
+================================================================
+
+Recorded: 2026-11-12, after Edmond Ying's message of 4:43 PM America/New_York
+(21:43 UTC), by the drafting agent (spacetime-ledger).
+
+This record sits OUTSIDE the design folder and is NOT listed in that folder's
+SHA256SUMS. The design is unchanged by this file.
+
+----------------------------------------------------------------
+1. THE DESIGN
+----------------------------------------------------------------
+File:     L1_2_run_design_20261112/L1_2_RUN_DESIGN.md
+sha256:   7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b
+Section 8 of that file lists decisions D1 to D4.
+
+----------------------------------------------------------------
+2. DECISIONS (Edmond's words: "D1 load free, d2 fail, d3 accept, d4 yes",
+   preceded at 4:32 PM by "3")
+----------------------------------------------------------------
+D1  Load rule.      LOAD-FREE. L1.2 runs the section 6.2 vacuum symbol with no
+                    load term, as L1.1 did, and result.json declares
+                    "load rule: none, section 6.2 vacuum symbol". Step X3
+                    (uniform-load invariance) is not run.
+D2  Species-        FAIL (SUPERSEDED by section 3). If the end-mode speed differs from the unchained
+    dependent c.    physical-mode speed by more than the design's 1e-6 relative
+                    tolerance (R6), the L1.2 gate verdict is FAIL, with the
+                    measured difference recorded. It is not recorded as
+                    "pass, difference noted". The run still only measures; it
+                    states the verdict this rule gives.
+D3  R5 thresholds.  ACCEPTED as written: end-copy weight >= 0.5 for "survives";
+                    "allowed" if the fitted slope over N_s = 24, 32, 48 is
+                    > -0.05 per copy; "excluded" if <= -0.1 per copy; between
+                    is "unresolved".
+D4  Pre-registration.  YES. PREREGISTRATION.md (sha256 73375244...7239) governs
+                    where it conflicts with the design. The executing agent
+                    writes DESIGN_vs_PREREG.md before any run.
+
+----------------------------------------------------------------
+3. REVISION OF D2 (Edmond, 4:51 PM America/New_York, 21:51 UTC)
+----------------------------------------------------------------
+Edmond's words: "Ok d2 pass when difference and record would serve better".
+This SUPERSEDES the D2 entry in section 2. The original D2 ("FAIL") is left in
+place above, unedited, as the earlier decision.
+
+D2 (revised)  PASS WHEN THE DIFFERENCE IS MEASURED AND RECORDED. The species-
+              dependent-c clause of L1.2 (design R6) passes when:
+              (a) the end-mode speed and the unchained physical-mode speed are
+                  both measured by the same code path, over the 13 directions,
+                  and reported to six significant figures with the difference
+                  and its relative size, and
+              (b) the end-mode speed reproduces the paper's 0.9855 within the
+                  plan's 5% rule.
+              A difference larger than 1e-6 relative is then stated in the
+              result as a measured species-dependent difference. It is a
+              recorded finding and does not by itself fail the gate. If (a) or
+              (b) does not hold, the clause does not pass.
+
+The design file is NOT changed by this revision. Its R6 text already says a
+difference above 1e-6 "is recorded as a measured species-dependent difference"
+and that the run "measures and reports" without deciding. Only the word FAIL in
+this record's earlier D2 is withdrawn. If the executing agent finds any
+conflict between design R6 and this revision, it stops and pings Edmond.
+
+Expected outcome, unchanged: the paper's own numbers are 0.98911 (unchained)
+and 0.9855 (chained end mode), a 0.365% difference. So the run is expected to
+pass this clause with a recorded species-dependent difference of about that
+size. The plan's L1 exit gate wording "L1.2 reproduced" is then met if the
+Table dw cells and the b <= 0.25 boundary also pass. This record does not edit
+the plan or the paper. Whether the paper's section 6.1 and 7.2 wording on the
+tick (tau = 0.9855 t_P with the chain) needs a sentence saying the unchained and
+chained speeds differ by 0.365% is a separate decision for after the data. That
+is a real consequence of recording the difference, so it is flagged here.
+
+----------------------------------------------------------------
+5. APPROVAL (plan section 0.2, design section 9)
+----------------------------------------------------------------
+Given: Edmond Ying, 2026-11-12, 4:56 PM America/New_York (21:56 UTC), in the
+words "Approve 7e09b7c4".
+
+Verified by the drafting agent at the time of recording: L1_2_RUN_DESIGN.md
+hashes to 7e09b7c42bf0b0b44db0057bc7a23c25add9503c441c163f47defabbe93f679b,
+which matches the approved prefix 7e09b7c4. The design was unchanged since it
+was hashed.
+
+AUTHORISED: steps S0 to S5 of the design, under the section 6 caps (soft
+ceilings: 96 GiB, 20 CPU threads, 8 h total and 2 h per step, 1 GiB output; hard
+rules: one attempt per step, stop on any failed pre-flight or mid-run check),
+with decisions D1 (load-free), D2 as REVISED in section 3, D3 and D4 above.
+
+NOT AUTHORISED: any step beyond S0 to S5; step X3; any edit to the paper, plan,
+repo or an archived record; regenerating domainwall.png; editing a frozen
+source to make a check pass; a second attempt of any step. A corrected re-run
+is a new run with its own id and its own approval. The executing agent pings
+Edmond if a ceiling must be raised, if design R6 and the D2 revision conflict,
+or if DESIGN_vs_PREREG.md finds a conflict it cannot resolve by D4.
+
+REQUIRED BEFORE THE FIRST COMPUTATION: P0 (every frozen hash matches), copy
+this design unchanged into runs/<date>_<id>/, write expected.json with the
+paper's values, and write DESIGN_vs_PREREG.md.

@@ -1,0 +1,11 @@
+P0 True
+P1 True
+P2 1.0370338861126152e-15
+P0_pass True
+P1_pass True
+P2_pass True
+P3_pass True
+P4_pass True
+G0b_pass True
+G1_pass True
+timing {'single_point_cpu_s': 0.0028865576000000003, 'single_point_wall_s': 0.002886760234832764, 'batched_per_point_cpu_s': 0.0009191733839999999, 'S3_grid_points': 8586756, 'S3_grid_cpu_s_est': 7892.717570102303, 'S3_grid_wall_s_est_20proc': 394.63587850511516, 'note': 'S3 estimate = 4 x 129^3 points x batched per-point CPU; plus Nelder-Mead refinement of local minima (~1500 single-point evaluations each, unknown count until the grid is done). Design guess was "order of an hour, multi-thread".'}
