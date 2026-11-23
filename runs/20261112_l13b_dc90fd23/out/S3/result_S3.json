@@ -1,0 +1,1044 @@
+{
+ "step": "S3",
+ "N1": {
+  "phi_grid": "pi*i/400, i=0..400 (each layer A, S, V; and U at phi2=phi4)",
+  "pair_grid": "pi*i/40, 41x41 (U(phi2,phi4))",
+  "n_k": 200,
+  "max_layer_resid": 9.575980937168031e-16,
+  "max_U_equal_resid": 3.009082808959195e-15,
+  "max_U_pair_resid": 2.5777750121678335e-15,
+  "max": 3.009082808959195e-15,
+  "tol": 1e-12,
+  "holds": true
+ },
+ "N2": {
+  "method": "central difference (v0(1.5) - v0(1.3))/0.2 on the R1prime v0, per direction",
+  "fd_per_direction": [
+   0.12662599887338755,
+   0.12662599887353798,
+   0.12662599887359516,
+   0.12662599887268922,
+   0.12662599887268922,
+   0.12662599887280301,
+   0.12662599887280301,
+   0.12662599887246884,
+   0.12662599887246884,
+   0.12662599887264758,
+   0.12662599887239945,
+   0.12662599887239945,
+   0.12662599887239945
+  ],
+  "fd_min": 0.12662599887239945,
+  "fd_max": 0.12662599887359516,
+  "closed_form_derivative_at_1p4": 0.12700396424668395,
+  "design_quoted": 0.127,
+  "closed_form_same_fd": 0.12662599887319215,
+  "max_abs_fd_minus_closed_form_fd": 7.926992395823618e-13,
+  "nonzero_threshold": 0.0001,
+  "holds": true
+ },
+ "N3": {
+  "extension": [
+   {
+    "phi_label": "0.0",
+    "phi": 0.0,
+    "v0_min": 0.4999999999999587,
+    "v0_max": 0.5000000000000224,
+    "closed_form": 0.5,
+    "max_abs_diff": 4.1300296516055823e-14,
+    "U_unitarity_resid": 1.0008395145522232e-15,
+    "per_direction": [
+     {
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.4999999999999894,
+       0.4999999999999895,
+       0.49999999999999933,
+       0.499999999999999,
+       0.4999999999999998
+      ],
+      "v0": 0.499999999999997,
+      "v0_degree3": 0.4999999999999953,
+      "poly_a0": 0.49999999999999706,
+      "b": -1.2822415087382039e-11,
+      "c": 5.9385366994272525e-09,
+      "poly_a3": -7.557611943672269e-07,
+      "poly_a4": 2.721037680889327e-05
+     },
+     {
+      "direction": [
+       0,
+       1,
+       0
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.4999999999999894,
+       0.4999999999999895,
+       0.49999999999999933,
+       0.499999999999999,
+       0.4999999999999998
+      ],
+      "v0": 0.499999999999997,
+      "v0_degree3": 0.4999999999999953,
+      "poly_a0": 0.49999999999999706,
+      "b": -1.2822415087382039e-11,
+      "c": 5.9385366994272525e-09,
+      "poly_a3": -7.557611943672269e-07,
+      "poly_a4": 2.721037680889327e-05
+     },
+     {
+      "direction": [
+       0,
+       0,
+       1
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.4999999999999999,
+       0.5,
+       0.5,
+       0.5,
+       0.5000000000000001
+      ],
+      "v0": 0.49999999999999956,
+      "v0_degree3": 0.4999999999999996,
+      "poly_a0": 0.49999999999999967,
+      "b": 3.37692836656818e-13,
+      "c": -9.830099697201887e-11,
+      "poly_a3": 1.0490946735669233e-08,
+      "poly_a4": -3.469446951953603e-07
+     },
+     {
+      "direction": [
+       1,
+       1,
+       0
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666215,
+       0.49999966666618223,
+       0.4999986666591945,
+       0.49999466654719676,
+       0.49997866475511726
+      ],
+      "v0": 0.49999999999999756,
+      "v0_degree3": 0.500000000001862,
+      "poly_a0": 0.49999999999999734,
+      "b": -2.099841523694606e-11,
+      "c": -0.08333332471106977,
+      "poly_a3": -1.0253868201200244e-06,
+      "poly_a4": -0.029132356798998442
+     },
+     {
+      "direction": [
+       1,
+       -1,
+       0
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666215,
+       0.49999966666618223,
+       0.4999986666591945,
+       0.49999466654719676,
+       0.49997866475511726
+      ],
+      "v0": 0.49999999999999756,
+      "v0_degree3": 0.500000000001862,
+      "poly_a0": 0.49999999999999734,
+      "b": -2.099841523694606e-11,
+      "c": -0.08333332471106977,
+      "poly_a3": -1.0253868201200244e-06,
+      "poly_a4": -0.029132356798998442
+     },
+     {
+      "direction": [
+       1,
+       0,
+       1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666318,
+       0.4999996666661961,
+       0.4999986666591986,
+       0.4999946665471966,
+       0.49997866475511715
+      ],
+      "v0": 0.49999999999999223,
+      "v0_degree3": 0.500000000001859,
+      "poly_a0": 0.4999999999999921,
+      "b": 2.3119721776016825e-12,
+      "c": -0.08333333350284074,
+      "poly_a3": 4.254125266450325e-09,
+      "poly_a4": -0.029167979206346603
+     },
+     {
+      "direction": [
+       1,
+       0,
+       -1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666318,
+       0.4999996666661961,
+       0.4999986666591986,
+       0.4999946665471966,
+       0.49997866475511715
+      ],
+      "v0": 0.49999999999999223,
+      "v0_degree3": 0.500000000001859,
+      "poly_a0": 0.4999999999999921,
+      "b": 2.3119721776016825e-12,
+      "c": -0.08333333350284074,
+      "poly_a3": 4.254125266450325e-09,
+      "poly_a4": -0.029167979206346603
+     },
+     {
+      "direction": [
+       0,
+       1,
+       1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666318,
+       0.4999996666661961,
+       0.4999986666591986,
+       0.4999946665471966,
+       0.49997866475511715
+      ],
+      "v0": 0.49999999999999223,
+      "v0_degree3": 0.500000000001859,
+      "poly_a0": 0.4999999999999921,
+      "b": 2.3119721776016825e-12,
+      "c": -0.08333333350284074,
+      "poly_a3": 4.254125266450325e-09,
+      "poly_a4": -0.029167979206346603
+     },
+     {
+      "direction": [
+       0,
+       1,
+       -1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.4999999166666318,
+       0.4999996666661961,
+       0.4999986666591986,
+       0.4999946665471966,
+       0.49997866475511715
+      ],
+      "v0": 0.49999999999999223,
+      "v0_degree3": 0.500000000001859,
+      "poly_a0": 0.4999999999999921,
+      "b": 2.3119721776016825e-12,
+      "c": -0.08333333350284074,
+      "poly_a3": 4.254125266450325e-09,
+      "poly_a4": -0.029167979206346603
+     },
+     {
+      "direction": [
+       1,
+       1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.4999998888888412,
+       0.4999995555551858,
+       0.49999822221653095,
+       0.49999288879786613,
+       0.49997155409927363
+      ],
+      "v0": 0.4999999999999587,
+      "v0_degree3": 0.5000000000013809,
+      "poly_a0": 0.49999999999995864,
+      "b": 1.8478934008309325e-11,
+      "c": -0.1111111138283769,
+      "poly_a3": 1.3551487604644388e-07,
+      "poly_a4": -0.022222834791154777
+     },
+     {
+      "direction": [
+       1,
+       1,
+       -1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.49999988888886215,
+       0.49999955555518594,
+       0.4999982222165266,
+       0.49999288879786613,
+       0.4999715540992748
+      ],
+      "v0": 0.5000000000000224,
+      "v0_degree3": 0.5000000000014414,
+      "poly_a0": 0.5000000000000225,
+      "b": -3.832648565834798e-11,
+      "c": -0.11111109842538179,
+      "poly_a3": -1.4333772798288378e-06,
+      "poly_a4": -0.022172034929190145
+     },
+     {
+      "direction": [
+       1,
+       -1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.49999988888886215,
+       0.49999955555518594,
+       0.4999982222165266,
+       0.49999288879786613,
+       0.4999715540992748
+      ],
+      "v0": 0.5000000000000224,
+      "v0_degree3": 0.5000000000014414,
+      "poly_a0": 0.5000000000000225,
+      "b": -3.832648565834798e-11,
+      "c": -0.11111109842538179,
+      "poly_a3": -1.4333772798288378e-06,
+      "poly_a4": -0.022172034929190145
+     },
+     {
+      "direction": [
+       -1,
+       1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.49999988888886215,
+       0.49999955555518594,
+       0.4999982222165266,
+       0.49999288879786613,
+       0.4999715540992748
+      ],
+      "v0": 0.5000000000000224,
+      "v0_degree3": 0.5000000000014414,
+      "poly_a0": 0.5000000000000225,
+      "b": -3.832648565834798e-11,
+      "c": -0.11111109842538179,
+      "poly_a3": -1.4333772798288378e-06,
+      "poly_a4": -0.022172034929190145
+     }
+    ]
+   },
+   {
+    "phi_label": "0.05",
+    "phi": 0.05,
+    "v0_min": 0.5018699413400768,
+    "v0_max": 0.5018699413401576,
+    "closed_form": 0.5018699413401249,
+    "max_abs_diff": 4.807265696626928e-14,
+    "U_unitarity_resid": 1.0062140573913755e-15,
+    "per_direction": [
+     {
+      "direction": [
+       1,
+       0,
+       0
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.5018699408746593,
+       0.5018699394783251,
+       0.5018699338929463,
+       0.5018699115514559,
+       0.5018698221861884
+      ],
+      "v0": 0.501869941340084,
+      "v0_degree3": 0.5018699413400847,
+      "poly_a0": 0.5018699413400841,
+      "b": 3.156403709427048e-11,
+      "c": -0.00046545709994627425,
+      "poly_a3": 8.210198391968434e-07,
+      "poly_a4": -1.1383090229560664e-05
+     },
+     {
+      "direction": [
+       0,
+       1,
+       0
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.5018699408746591,
+       0.5018699394783254,
+       0.5018699338929484,
+       0.5018699115514575,
+       0.5018698221861883
+      ],
+      "v0": 0.5018699413400844,
+      "v0_degree3": 0.5018699413400848,
+      "poly_a0": 0.5018699413400844,
+      "b": 3.033750498683026e-11,
+      "c": -0.0004654563073703913,
+      "poly_a3": 7.113192306167773e-07,
+      "poly_a4": -7.329895053236948e-06
+     },
+     {
+      "direction": [
+       0,
+       0,
+       1
+      ],
+      "dir_class": "100",
+      "v_kappa": [
+       0.5018699408746594,
+       0.5018699394783012,
+       0.5018699338929469,
+       0.5018699115514585,
+       0.5018698221861894
+      ],
+      "v0": 0.5018699413401576,
+      "v0_degree3": 0.5018699413401491,
+      "poly_a0": 0.5018699413401577,
+      "b": -7.4211800728262e-11,
+      "c": -0.00046542088701547217,
+      "poly_a3": -3.3362862739190043e-06,
+      "poly_a4": 0.0001317068147744188
+     },
+     {
+      "direction": [
+       1,
+       1,
+       0
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296567,
+       0.5018696048978916,
+       0.5018685955656043,
+       0.5018645581521617,
+       0.5018484071498918
+      ],
+      "v0": 0.5018699413401484,
+      "v0_degree3": 0.5018699413420188,
+      "poly_a0": 0.5018699413401485,
+      "b": -3.2869872003561325e-11,
+      "c": -0.08411042864782502,
+      "poly_a3": -1.1354178718207638e-06,
+      "poly_a4": -0.029225866654301758
+     },
+     {
+      "direction": [
+       1,
+       -1,
+       0
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296567,
+       0.5018696048978916,
+       0.5018685955656043,
+       0.5018645581521617,
+       0.5018484071498918
+      ],
+      "v0": 0.5018699413401484,
+      "v0_degree3": 0.5018699413420188,
+      "poly_a0": 0.5018699413401485,
+      "b": -3.2869872003561325e-11,
+      "c": -0.08411042864782502,
+      "poly_a3": -1.1354178718207638e-06,
+      "poly_a4": -0.029225866654301758
+     },
+     {
+      "direction": [
+       1,
+       0,
+       1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296219,
+       0.5018696048978777,
+       0.5018685955656036,
+       0.5018645581521641,
+       0.501848407149892
+      ],
+      "v0": 0.5018699413400768,
+      "v0_degree3": 0.5018699413419493,
+      "poly_a0": 0.5018699413400768,
+      "b": 1.3994757399473722e-11,
+      "c": -0.08411043951413312,
+      "poly_a3": -1.0680942997619968e-07,
+      "poly_a4": -0.02925804990599947
+     },
+     {
+      "direction": [
+       1,
+       0,
+       -1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296219,
+       0.5018696048978777,
+       0.5018685955656036,
+       0.5018645581521641,
+       0.501848407149892
+      ],
+      "v0": 0.5018699413400768,
+      "v0_degree3": 0.5018699413419493,
+      "poly_a0": 0.5018699413400768,
+      "b": 1.3994757399473722e-11,
+      "c": -0.08411043951413312,
+      "poly_a3": -1.0680942997619968e-07,
+      "poly_a4": -0.02925804990599947
+     },
+     {
+      "direction": [
+       0,
+       1,
+       1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296532,
+       0.5018696048978917,
+       0.5018685955656064,
+       0.5018645581521628,
+       0.5018484071498919
+      ],
+      "v0": 0.5018699413401386,
+      "v0_degree3": 0.5018699413420094,
+      "poly_a0": 0.5018699413401385,
+      "b": -2.452932123460331e-11,
+      "c": -0.0841104305964978,
+      "poly_a3": -9.567413506429962e-07,
+      "poly_a4": -0.029231302121235203
+     },
+     {
+      "direction": [
+       0,
+       1,
+       -1
+      ],
+      "dir_class": "110",
+      "v_kappa": [
+       0.5018698572296532,
+       0.5018696048978917,
+       0.5018685955656064,
+       0.5018645581521628,
+       0.5018484071498919
+      ],
+      "v0": 0.5018699413401386,
+      "v0_degree3": 0.5018699413420094,
+      "poly_a0": 0.5018699413401385,
+      "b": -2.452932123460331e-11,
+      "c": -0.0841104305964978,
+      "poly_a3": -9.567413506429962e-07,
+      "poly_a4": -0.029231302121235203
+     },
+     {
+      "direction": [
+       1,
+       1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.5018698293479871,
+       0.5018694933713429,
+       0.5018681494607711,
+       0.5018627737541101,
+       0.5018412698986504
+      ],
+      "v0": 0.5018699413401297,
+      "v0_degree3": 0.501869941341555,
+      "poly_a0": 0.5018699413401296,
+      "b": -2.8411798029661084e-11,
+      "c": -0.11199209030937884,
+      "poly_a3": -1.5362216162399401e-06,
+      "poly_a4": -0.022271927465556056
+     },
+     {
+      "direction": [
+       1,
+       1,
+       -1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.5018698293479936,
+       0.5018694933713566,
+       0.5018681494607711,
+       0.5018627737541146,
+       0.5018412698986523
+      ],
+      "v0": 0.5018699413401092,
+      "v0_degree3": 0.5018699413415386,
+      "poly_a0": 0.5018699413401089,
+      "b": 1.2205842978110746e-11,
+      "c": -0.11199210538027066,
+      "poly_a3": 2.7177324172532147e-07,
+      "poly_a4": -0.022335627611787232
+     },
+     {
+      "direction": [
+       1,
+       -1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.5018698293479936,
+       0.5018694933713566,
+       0.5018681494607711,
+       0.5018627737541146,
+       0.5018412698986523
+      ],
+      "v0": 0.5018699413401092,
+      "v0_degree3": 0.5018699413415386,
+      "poly_a0": 0.5018699413401089,
+      "b": 1.2205842978110746e-11,
+      "c": -0.11199210538027066,
+      "poly_a3": 2.7177324172532147e-07,
+      "poly_a4": -0.022335627611787232
+     },
+     {
+      "direction": [
+       -1,
+       1,
+       1
+      ],
+      "dir_class": "111",
+      "v_kappa": [
+       0.5018698293479936,
+       0.5018694933713566,
+       0.5018681494607711,
+       0.5018627737541146,
+       0.5018412698986523
+      ],
+      "v0": 0.5018699413401092,
+      "v0_degree3": 0.5018699413415386,
+      "poly_a0": 0.5018699413401089,
+      "b": 1.2205842978110746e-11,
+      "c": -0.11199210538027066,
+      "poly_a3": 2.7177324172532147e-07,
+      "poly_a4": -0.022335627611787232
+     }
+    ]
+   }
+  ],
+  "sequence": [
+   {
+    "phi": 0.0,
+    "label": "0.0",
+    "v0_min": 0.4999999999999587,
+    "v0_max": 0.5000000000000224
+   },
+   {
+    "phi": 0.05,
+    "label": "0.05",
+    "v0_min": 0.5018699413400768,
+    "v0_max": 0.5018699413401576
+   },
+   {
+    "phi": 0.1,
+    "label": "0.1",
+    "v0_min": 0.5074199772471041,
+    "v0_max": 0.5074199772472407
+   },
+   {
+    "phi": 0.2,
+    "label": "0.2",
+    "v0_min": 0.5287741741507983,
+    "v0_max": 0.5287741741508883
+   },
+   {
+    "phi": 0.3,
+    "label": "0.3",
+    "v0_min": 0.5616931051817347,
+    "v0_max": 0.5616931051818944
+   },
+   {
+    "phi": 0.4,
+    "label": "0.4",
+    "v0_min": 0.6031044552933298,
+    "v0_max": 0.6031044552935023
+   },
+   {
+    "phi": 0.5,
+    "label": "0.5",
+    "v0_min": 0.6499127905336449,
+    "v0_max": 0.6499127905338268
+   },
+   {
+    "phi": 0.6,
+    "label": "0.6",
+    "v0_min": 0.699368173475987,
+    "v0_max": 0.6993681734761589
+   },
+   {
+    "phi": 0.7,
+    "label": "0.7",
+    "v0_min": 0.749174426560563,
+    "v0_max": 0.7491744265606709
+   },
+   {
+    "phi": 0.8,
+    "label": "0.8",
+    "v0_min": 0.7974646204458139,
+    "v0_max": 0.7974646204459606
+   },
+   {
+    "phi": 0.9,
+    "label": "0.9",
+    "v0_min": 0.8427341131755911,
+    "v0_max": 0.8427341131756505
+   },
+   {
+    "phi": 1.0,
+    "label": "1.0",
+    "v0_min": 0.8837731969826972,
+    "v0_max": 0.8837731969828725
+   },
+   {
+    "phi": 1.1,
+    "label": "1.1",
+    "v0_min": 0.919612918009798,
+    "v0_max": 0.9196129180099392
+   },
+   {
+    "phi": 1.2,
+    "label": "1.2",
+    "v0_min": 0.949485462409935,
+    "v0_max": 0.949485462410062
+   },
+   {
+    "phi": 1.3,
+    "label": "1.3",
+    "v0_min": 0.9727966295754127,
+    "v0_max": 0.9727966295754884
+   },
+   {
+    "phi": 1.4,
+    "label": "1.4",
+    "v0_min": 0.9891073641170534,
+    "v0_max": 0.9891073641171932
+   },
+   {
+    "phi": 1.5,
+    "label": "1.5",
+    "v0_min": 0.9981218293499231,
+    "v0_max": 0.9981218293501591
+   },
+   {
+    "phi": 1.5707963267948966,
+    "label": "pi/2",
+    "v0_min": 0.9999999999998314,
+    "v0_max": 0.9999999999999997
+   }
+  ],
+  "min_gap": 0.0018699413400543596,
+  "strictly_monotone": true,
+  "span_endpoints": {
+   "phi0": [
+    0.4999999999999587,
+    0.5000000000000224
+   ],
+   "phi_pi2": [
+    0.9999999999998314,
+    0.9999999999999997
+   ]
+  },
+  "span_ok": true,
+  "holds": true,
+  "rule": "strict: v0_min at next phi exceeds v0_max at previous phi by > 1e-6 over all directions; endpoints within 1e-6 of 0.5 (phi=0) and 1 (phi=pi/2); with continuity this gives each target in [0.5,1] exactly one phi"
+ },
+ "N4": {
+  "source": "inputs/V5v2_census_results.json",
+  "sha256": "ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708",
+  "expected_sha256": "ca6793ea0f2a245c556aabcd65373313fc751902cfb799ea962256e22d212708",
+  "read_error": "KeyError(5)",
+  "closed_form_c0_pi2": 1.0,
+  "note": "cited, not re-run; speed 1 needs phi = pi/2, where the doublers return (gap ~0): a trade-off, not a selection of 1.4"
+ },
+ "N5": {
+  "rule": "lines containing '1.4' (not part of a longer number) and an angle word (varphi/phi/\u03c6/Wilson angle); flag_keyword marks lines with derive/determine/fixed by/fixes/select/forced/required by/unique/predict for manual reading",
+  "files": [
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "scope": "paper Sec. 6.2 (lines 419-626)"
+   },
+   {
+    "file": "inputs/plans/layered_plan_v3.3_r2.md",
+    "scope": "plan v3.3 r2"
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC.md",
+    "scope": "L1.1 reason note r1"
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+    "scope": "L1.1 reason note r2"
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "scope": "L1.1 repair spec r8"
+   },
+   {
+    "file": "inputs/l1_1/L1_1_repair_spec_r8_20261111_SIGNOFF.txt",
+    "scope": "L1.1 r8 sign-off"
+   }
+  ],
+  "n_hits": 26,
+  "n_flagged": 1,
+  "hits": [
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 518,
+    "text": "- **Doublers.** The 8 corner links are $h\\in\\{(\\pm1,\\pm1,\\pm1)\\}$ in integer units of $a/2$, and $k$ is measured in radians per $a/2$, so $\\sum_h \\exp(ik\\cdot h)=8\\prod_i\\cos k_i$ and every symbol below is $2\\pi$-periodic in each $k_i$. The cores occupy one BCC orbit of this integer grid, the orbit through the origin: the sites whose three coordinates are all even or all odd. The other three orbits of $\\mathbb{Z}^3$ are not part of the ledger. The reciprocal lattice of this orbit is the set of momenta $\\pi g$ with $g$ an integer triple of even sum, so $\\pi(1,1,0)$ and its permutations are reciprocal lattice vectors, and the cube $[-\\pi,\\pi]^3$ covers the primitive zone, of volume $2\\pi^3$, four times. In the cube there are 27 labels with each $k_i\\in\\{0,\\pm\\pi\\}$: $\\Gamma$; faces, with one component at $\\pm\\pi$ (6 labels); edges, with two components at $\\pm\\pi$ (12 labels); and corners, with three (8 labels); $1+6+12+8=27$. On the one-orbit lattice these 27 labels are only two points. The twelve edge labels $(\\pm\\pi,\\pm\\pi,0)$, $(\\pm\\pi,0,\\pm\\pi)$ and $(0,\\pm\\pi,\\pm\\pi)$ differ from $\\Gamma$ by reciprocal lattice vectors, so they are $\\Gamma$ itself: the symbol is invariant under $\\pi(1,1,0)$ and its permutations, and the cycle $U$ at the twelve edge labels equals $U(\\Gamma)$ to $7\\times10^{-16}$. The 6 faces and the 8 corners are likewise one point, which we call $H$. The raw hop sum vanishes identically on the six planes $k_i=\\pm\\pi$, but the zero set is not those planes: on $k_x=\\pi$ the hop symbol has $|\\mathbf{n}|^2=1-\\cos^2 k_y\\cos^2 k_z$, so $\\mathbf{n}=0$ only at isolated points, and the Wilson layer leaves a frequency zero only at those isolated points with $u=+1$. These are $\\Gamma$ and the twelve edge labels, that is, $\\Gamma$ alone. $H$ has $u=-1$ and is gapped, with gap $\\pi/2-\\varphi\\approx 0.171$ at $\\varphi=1.4$. A census of the 27 labels at $\\varphi=1.4$ confirms this: frequency zeros at $\\Gamma$ and the twelve edge labels, and none at the 6 faces or the 8 corners. An identity of the hop symbol, $u^2+|\\mathbf{n}|^2=1$ (both signs $\\varepsilon$), splits the would-be zeros into two families, which can be enumerated rather than sampled: family 1 is these 27 isolated $\\mathbf{n}=0$ labels, and family 2 is the surface $u=0$ (hence $|\\mathbf{n}|=1$), which includes lines on which $u$ vanishes identically. Without the Wilson layer, or without alternating the handedness, further zero modes remain.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 519,
+    "text": "- **Gap versus speed.** The smallest doubler gap and the low-energy light speed trade off against each other (Table \\ref{tab:dirac4}, Figure \\ref{fig:dirac4}). At $\\varphi\\approx 1.4$ the smallest doubler gap is about $0.08\\,E_P\\approx 10^{18}$ GeV, roughly $10^{14}$ times the reach of the LHC. On the one-orbit lattice this gap needs no repair, because the twelve edge labels with two components at $\\pm\\pi$ are $\\Gamma$ (see Doublers, above).",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 534,
+    "text": "*Step 2 and step 4, Wilson layers* at a fixed angle $\\varphi$ ($\\varphi=1.4$ by default):",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 543,
+    "text": "*Low-energy limit.* With $\\omega$ taken per layer ($e^{-4i\\omega}$ = eigenvalue of $U_k$), the lowest band is $\\omega^2\\simeq\\omega_0^2+c_0^2|k|^2$. This is the Dirac equation with $\\omega_0=\\tfrac12\\arcsin m$ and $c_0(\\varphi=1.4)=0.98911$, which is direction independent to $10^{-6}$ at this order. At the tabulated values $0.5\\le\\varphi\\le1.5$, a census finds no zero-frequency point other than $k=0$ (up to reciprocal lattice vectors): the twelve edge labels with two components at $\\pm\\pi$ are $\\Gamma$ itself on the one-orbit lattice (see Doublers, above). At $\\varphi=\\pi/2$ the doublers return.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 552,
+    "text": "\\caption{Four-component node with Wilson layer: smallest doubler gap and low-energy light speed versus the Wilson angle $\\varphi$ (gap per tick in units of $E_P \\approx 1.22\\times10^{19}$ GeV; speed in units of the hop rate $\\ell_P/t_P$). The tabulated gaps are the smallest frequency found outside a neighbourhood of radius 0.3 of every reciprocal lattice vector $\\pi g$ ($g$ an integer triple of even sum). On the one-orbit lattice each such neighbourhood is a neighbourhood of $\\Gamma$, so the twelve edge labels with two components at $\\pm\\pi$, which are $\\Gamma$, are excluded as $\\Gamma$ and not as doublers. At $\\varphi=1.4$ the tabulated $0.082$ is the smallest doubler gap of the rule.}",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 572,
+    "text": "\\caption{Four-component node. Left: lowest frequency per tick ($m = 0$, units of $E_P$) along a path through the doubler points for single-step and alternating rules without a Wilson layer, a non-alternating rule with one, and the alternating rule with the mirrored Wilson layer at $\\varphi = 0.8$ and $1.4$. The twelve edge labels with two components at $\\pm\\pi$ are zero-frequency labels of the cube, but on the one-orbit lattice they are $\\Gamma$ itself, not doublers. Right: smallest doubler gap (global search, as in Table \\ref{tab:dirac4}) and low-energy light speed versus the Wilson angle $\\varphi$.}",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 576,
+    "text": "**What $c$ means here.** The measured $c$ is the light speed realised by the rule, about 0.989 of the grid hop rate at $\\varphi \\approx 1.4$. The hop limit $a/\\tau$ is then a server-side bound about 1.1\\% above $c$ (1.5\\% with the chirality chain, Sec. 6.2), and the offset is absorbed into the tick: $\\tau \\approx 0.989\\,t_P$ (Sec. 6.1). This is consistent with the SI definition of $c$ (fixed exactly since 1983): that definition fixes the units, not the hidden hop rate.",
+    "flag_keyword": true
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 584,
+    "text": "**Chiral modes from internal component chains (Hypothesis).** As one potential candidate route to chirality, each node holds $N_s$ copies of the four-component content above, i.e. $4N_s$ internal property states per node. The index $s = 1,\\dots,N_s$ is an internal label, not a coordinate: there is no extra spatial dimension, and no hop ever changes $s$. In the fourth tick an on-site rotation of angle $b$ mixes $L_s$ with $R_{s+1}$ for $s = 1,\\dots,N_s-1$, leaving $R_1$ and $L_{N_s}$ unpaired. This is the domain-wall construction of lattice field theory (Kaplan, 1992; Shamir, 1993), and the ledger offers one physical interpretation of its fifth coordinate as a chain of internal components within each node. All physical hops remain the 8 corner hops, one per tick, so the rule stays exactly unitary. The following were measured in 3+1 dimensions at $\\varphi = 1.4$, $b = 0.2$ (Table \\ref{tab:dw}, Figure \\ref{fig:dw}).",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/space-ledger-v2_main_cc2cc5c8.md",
+    "file_sha256": "8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70",
+    "where": "paper Sec. 6.2 (lines 419-626)",
+    "line": 598,
+    "text": "\\caption{Internal component chain ($\\varphi = 1.4$, $b = 0.2$): residual end-mode mass for $m_0 = 0.05$ and node component count versus $N_s$, and end-mode chirality and localisation versus $|k|$ ($N_s = 16$, $m_0 = 0$). Units per tick, $E_P$.}",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/plans/layered_plan_v3.3_r2.md",
+    "file_sha256": "89b3972a0af418bfcb260b978842e79dc73945c61ec2bd85fe3a5e7d1785aa39",
+    "where": "plan v3.3 r2",
+    "line": 120,
+    "text": "**Current result, \u00a76.2 Wilson symbol.** Interior minima match Table `dirac4` (0.084 vs 0.082 at \u03c6=1.4; 0.201 vs 0.217 at \u03c6=0.5; coarse-grid error). But there are **12 exact massless zero modes** at the face centres `(\u00b1\u03c0,\u00b1\u03c0,0)` and permutations, independent of \u03c6, with the Wilson layer present (U = I to 7e\u221216). They gap only when `m>0` (\u03c9=0.050 at m=0.1). Random starts never hit them because they are measure-zero. See \u00a710.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/plans/layered_plan_v3.3_r2.md",
+    "file_sha256": "89b3972a0af418bfcb260b978842e79dc73945c61ec2bd85fe3a5e7d1785aa39",
+    "where": "plan v3.3 r2",
+    "line": 392,
+    "text": "**Candidate repair (tested, mixed).** Replace `u` in `X` by `u + g(k)` with `g(\u0393)=0` and `g` order one at the face centres, for example `g = (1/3)\u03a3(1\u2212cos k_i)`; keep the second factor `e^{+i\u03c6\u03c4x}` so the cancellation at \u0393 survives, and use a matrix exponential if `X\u00b2\u22601`. Result at \u03c6=1.4: the 12 zeros lift (\u03c9=0.637), \u0393 stays massless, and the smallest interior gap rises from 0.082 to 0.221. But `g` is O(k\u00b2) near \u0393, so it also changes the low-energy dispersion; the light speed and the `(E/E_P)\u00b2` coefficient must be re-measured before this patch can be accepted. This is a concrete, falsifiable next step, not a rewrite. (The chosen `g` must be written down with its reason before re-measuring; it is not tuned to the dispersion targets.)",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC.md",
+    "file_sha256": "82e58c43d17f7cafe1f5d6e43d8367e22aaa6fac88590bca5d1052ed018c117e",
+    "where": "L1.1 reason note r1",
+    "line": 67,
+    "text": "- **The 27 high-symmetry labels.** Mod 2\u03c0 they are 8 distinct momenta. On one orbit they fall into two classes, not four: \u0393, and the H class (the faces and the corner). The H class has gap \u03c0/2 \u2212 \u03c6, which is 0.17079632679489665 at \u03c6 = 1.4. \u0393 is the only zero among them.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC.md",
+    "file_sha256": "82e58c43d17f7cafe1f5d6e43d8367e22aaa6fac88590bca5d1052ed018c117e",
+    "where": "L1.1 reason note r1",
+    "line": 79,
+    "text": "At \u03c6 = \u03c0/2 the census value is 1.4e\u221217, in line with the paper's table entry \"0 (doublers return)\". That endpoint is not a pass, and it is not the canonical setting. The paper's default is \u03c6 = 1.4.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+    "file_sha256": "e9b187b803eed0e8cf1e3e9d1211b883208d1aea6b731ffe1c586061250c7dac",
+    "where": "L1.1 reason note r2",
+    "line": 77,
+    "text": "- **The 27 high-symmetry labels.** Mod 2\u03c0 they are 8 distinct momenta. On one orbit they fall into two classes, not four: \u0393, and the H class (the faces and the corner). The H class has gap \u03c0/2 \u2212 \u03c6, which is 0.17079632679489665 at \u03c6 = 1.4. \u0393 is the only zero among them.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+    "file_sha256": "e9b187b803eed0e8cf1e3e9d1211b883208d1aea6b731ffe1c586061250c7dac",
+    "where": "L1.1 reason note r2",
+    "line": 89,
+    "text": "At \u03c6 = \u03c0/2 the census value is 1.4e\u221217, in line with the paper's table entry \"0 (doublers return)\". That endpoint is not a pass, and it is not the canonical setting. The paper's default is \u03c6 = 1.4.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REASON_L1_1_one_BCC_r2.md",
+    "file_sha256": "e9b187b803eed0e8cf1e3e9d1211b883208d1aea6b731ffe1c586061250c7dac",
+    "where": "L1.1 reason note r2",
+    "line": 107,
+    "text": "**\u00a76.2 low-energy limit** is main **line 543**, not line 544. Main no longer says \"the only zero-frequency point is k=0\". It says: \"Besides $\\Gamma$, a census at $\\varphi=1.4$ finds three distinct momenta (twelve sign labels), the edges with two components at $\\pm\\pi$ (see Doublers, above).\" The edit set replaces this with: at the tabulated values 0.5 \u2264 \u03c6 \u2264 1.5, a census finds no zero-frequency point other than k = 0 (up to reciprocal lattice vectors), because the twelve edge labels are \u0393 itself on the one-orbit lattice, and at \u03c6 = \u03c0/2 the doublers return.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 5,
+    "text": "**r8 (2026-11-11):** r7 is kept unchanged as `REPAIR_SPEC_L1_1_r7.md` (sha256 `aeca56e4a60bf57a929bb48b1651a23863651e97b41ebeb1b87a06663380ebbb`). r8 replaces route 3 in \u00a76: the chain + Wilson `r = 0.05` term is not missing. It is implemented in the frozen chain source and reproduces the paper's `2.663e\u22122` (`0.0266255` at `N_s = 32`, 41\u00b3, exactly unitary, \u0393 = 0, the twelve edge zeros lifted). The gate still rejects it: at `\u03c6 = 1.4` the repaired minimum is `32%` of the \u00a73.4 floor, a factor `3.08` below it. \u00a77 now records that no candidate passes \u00a73, so L1.1 is blocked on a decision \u2014 find a repair that clears \u00a73.4, or re-decide the floor \u2014 not on a missing term. \u00a78 records the route 3 provenance. \u00a73.4 is unchanged. This version changes no paper, repo, Sheet or production file; no new simulation was run, the route 3 numbers are read from the existing 2026-11-09 run and its frozen source.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 11,
+    "text": "**r5 (2026-11-11):** r4 is kept unchanged as `REPAIR_SPEC_L1_1_r4.md` (sha256 `f10df42baa5b7712327150229ece5e3e55a5be42ebc2be4e9cf0fed2b9a48c4f`). r5 withdraws numbers that came from a cycle that applied `V(+1)` twice (`0.637463`, `0.0214`, `0.0400`, `0.0251`, and the claim that the plan's `0.221` does not reproduce); replaces \u00a74's table with special-point values from `dirac4s.periodS`, validated against the paper's corner `0.170796 = \u03c0/2 \u2212 1.4`; states that the interior gate runs through the census code, not a scratch script; and drops the withdrawn `0.0214` illustration from \u00a73.4. The per-\u03c6 floor and the \"no worse\" rule are unchanged. This version changes no paper, repo, Sheet or production file, and no simulation was run to make it.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 102,
+    "text": "A patch cannot be tuned at \u03c6 = 1.4 and pass elsewhere.",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 125,
+    "text": "four-layer cycle as written), unmodified. At \u03c6 = 1.4 it gives \u0393 = 0, the",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 133,
+    "text": "`|U\u2020U\u2212I|` at k = (0.7, 0.3, 0.11), \u03c6 = 1.4, m = 0, and the number of",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 136,
+    "text": "| candidate at \u03c6 = 1.4 | \u0393 | edge momenta | corner | \u2016U\u2020U\u2212I\u2016 at k=(0.7, 0.3, 0.11) | zeros of 27 |",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 223,
+    "text": "   At `\u03c6 = 1.4`, `r = 0.05` the 41\u00b3 zone-interior minimum is `0.0266255`",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 232,
+    "text": "   **It fails \u00a73.4.** At `\u03c6 = 1.4` the unrepaired floor is `0.08212694658054251` and the",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 250,
+    "text": "  `\u03c6 = 1.4` (\u00a76, route 3). L1.1 is blocked on a decision \u2014 a repair that clears \u00a73.4,",
+    "flag_keyword": false
+   },
+   {
+    "file": "inputs/l1_1/REPAIR_SPEC_L1_1_r8.md",
+    "file_sha256": "ad02c20147677e527fc81f5f3b6e27a0dd2f1b300cf8dcde4152cc8fdab63afc",
+    "where": "L1.1 repair spec r8",
+    "line": 259,
+    "text": "unmodified. The unrepaired baseline at \u03c6 = 1.4 reproduces the paper's",
+    "flag_keyword": false
+   }
+  ],
+  "classification": "done by the post-run record after reading each flagged hit verbatim (not computed here)"
+ },
+ "verdict_components": {
+  "R1prime": true,
+  "R2b": true,
+  "N1": true,
+  "N2": true,
+  "N3": true
+ },
+ "verdict_before_N5_classification": "PASS",
+ "status": "PASS",
+ "cross_check": {
+  "frozen": "frozen/dirac4.py",
+  "sha256_at_import": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+  "expected": "f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff",
+  "max_abs_U_diff_pairs_frozen_layers": 0.0,
+  "max_abs_U_diff_frozen_U_cycle_equal_angles": 0.0,
+  "max_abs_v0_diff_R2b_grid": 0.0,
+  "method": "49 R2b pairs x 13 directions x 5 kappa: frozen V_step(-1,k,phi4) S_step(-1,k) V_step(+1,k,phi2) S_step(+1,k) (frozen U_cycle takes one phi; same order as U_cycle); diagonal pairs and the 16 R1prime phi also through frozen U_cycle(k, phi) directly"
+ },
+ "meta": {
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "numpy": "2.5.4",
+  "platform": "Linux-7.0.0-1024-nvidia-aarch64-with-glibc2.39",
+  "threads": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "start": "2026-11-12 20:22:27 EST"
+ },
+ "inner_wall_s": 0.9282351000001654,
+ "inner_cpu_s": 0.928173504
+}

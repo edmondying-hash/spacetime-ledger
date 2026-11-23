@@ -1,0 +1,23 @@
+P0 2026-11-12 20:22:00 EST
+design/L1_3b_RUN_DESIGN.md: OK
+expected.json: OK
+PROTOCOL_NOTES.md: OK
+harness/l13b_measure.py: OK
+harness/l13_primary.py: OK
+harness/meter.py: OK
+run_step.sh: OK
+frozen/dirac4.py: OK
+inputs/V5v2_census_results.json: OK
+inputs/L1_3b_run_design_20261112_DECISIONS.txt: OK
+inputs/space-ledger-v2_main_cc2cc5c8.md: OK
+inputs/plans/layered_plan_v3.3_r2.md: OK
+inputs/l1_1/L1_1_repair_spec_r8_20261111_SIGNOFF.txt: OK
+inputs/l1_1/REASON_L1_1_one_BCC.md: OK
+inputs/l1_1/REASON_L1_1_one_BCC_r2.md: OK
+inputs/l1_1/REPAIR_SPEC_L1_1_r8.md: OK
+inputs/design_folder/design_dryrun_unscored_output.txt: OK
+inputs/design_folder/design_dryrun_unscored.py: OK
+inputs/design_folder/SHA256SUMS: OK
+inputs/l13_9ccf4855/SHA256SUMS: OK
+inputs/l13_9ccf4855/STOP_RECORD.json: OK
+expected design dc90fd231d9a92602187f61dc68bded2891b3ece5274290ba18b75f86d604a8d paper 8cbb94ec481b3332f074ea028505478dd2d576a8b5d60915f072b653ab6aad70 u_builder 5e606a0631b0124992d65f22dd15ffb90e9ad388706c73a9b7739cb388870d8e frozen f71c782ed7089680e4c8e2441d12a926de9b8c18b57a9a28253b018ebbab8aff

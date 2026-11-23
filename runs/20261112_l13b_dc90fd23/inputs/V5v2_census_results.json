@@ -1,0 +1,3959 @@
+{
+ "prereg": "PREREG_L0_V5v2.md",
+ "prereg_sha256": "94088b64f4952c90784ce94165e321a0b6f5079384aa6f0aa0303d487665f446",
+ "predecessor": {
+  "prereg": "PREREG_L0_V4_V5.md",
+  "sha256": "022680fa5199a55fdb623c4f0738c53bea16216261442015f54160c302cf0533"
+ },
+ "predecessor_markers": {
+  "/workspace/L0_V4V5_SHA256SUMS_RUNS_20261111": {
+   "expected": "e8a95de5e9e69cb836713979be22d3e8c7954b11360b957964593bca6d58169c",
+   "observed": "e8a95de5e9e69cb836713979be22d3e8c7954b11360b957964593bca6d58169c",
+   "match": true
+  },
+  "/workspace/L0_V4V5_runs_20261111/ATTEMPT_REGISTRY_v4": {
+   "expected": "e5931661ad8ad8e83da3705711f3c9fdacdace13d2f0aecff35f836b934cdf1e",
+   "observed": "e5931661ad8ad8e83da3705711f3c9fdacdace13d2f0aecff35f836b934cdf1e",
+   "match": true
+  },
+  "/workspace/L0_V4V5_runs_20261111/ATTEMPT_REGISTRY_v5r2": {
+   "expected": "1711e814aa9e8be1ad959e0d7fd8cf283e6857bbcc7f969a22d275c013394d5f",
+   "observed": "1711e814aa9e8be1ad959e0d7fd8cf283e6857bbcc7f969a22d275c013394d5f",
+   "match": true
+  },
+  "/workspace/L0_V4V5_runs_20261111/v4_official/results.json": {
+   "expected": "1aa2130cebf03232f1c04a9f7e67e7228344d3a45803a85d2d7c22b2aae43e0a",
+   "observed": "1aa2130cebf03232f1c04a9f7e67e7228344d3a45803a85d2d7c22b2aae43e0a",
+   "match": true
+  },
+  "/workspace/L0_V4V5_runs_20261111/v5r2_official/results.json": {
+   "expected": "f755182c0fedf92e904b7a3c54ee63834dccf46add931762f0528a4702c60771",
+   "observed": "f755182c0fedf92e904b7a3c54ee63834dccf46add931762f0528a4702c60771",
+   "match": true
+  }
+ },
+ "mode": "OFFICIAL V5",
+ "paper": "main@393f4493 (the pinned copy)",
+ "code_sha256": {
+  "/workspace/L0_V5v2_code_r2_20261111/build_hop_tensors.py": "389e9437bb7eacbad2571075773172a6bb648ac6923c461d5041b525feb3475c",
+  "/workspace/L0_V5v2_code_r2_20261111/common.py": "839a6726c444ccb6aa9c211326e7a404ecdb19df09bf97909c83ed3946a39af7",
+  "/workspace/L0_V5v2_code_r2_20261111/dirac4_symbol.py": "05f0f8e29bd77f7c809b25c2ee332474bdb2c9c74c7a9a100fa6369911cbb1b8",
+  "/workspace/L0_V5v2_code_r2_20261111/hop_tensors.npy": "252ca0b6ce3cba32303fdff208f1708efe721acda95f61fefb504677a7514f29",
+  "/workspace/L0_V5v2_code_r2_20261111/hop_tensors_index.json": "e7c5cabd9d18393ef7b2e618d900962ac43441ec7d59cc211799f9530e41446a",
+  "/workspace/L0_V5v2_code_r2_20261111/v4_engine.py": "7772fbbc62b6f32e6b520d16e8e4bb003b10db9a486fa7f98634b9847817b5b2",
+  "/workspace/L0_V5v2_code_r2_20261111/v5_census.py": "7c6f7ed5aaa6c8fbfe5c823170e1ef3e2c60b3771b9c1406d8bcda394f8f5850",
+  "/workspace/L0_V5v2_code_r2_20261111/v5_driver.py": "854c5462bfc2e3b259126e7d77e14f405e3e3667ad32b4852f2e88819968b560",
+  "/workspace/L0_V5v2_code_r2_20261111/v5_formula.py": "3eb088b3a2aa60f7c2cca654a3fb93c238fa762b11675947ea1ece0ba4883182",
+  "/workspace/L0_V5v2_code_r2_20261111/v5_tables.py": "215cbe4e8a7f37aacc6e80e227f45cfabe46f7c34be0d6b46e88e068e102b3fa",
+  "/workspace/L0_V5v2_code_r2_20261111/v5_wave.py": "268f957750115d803417a6294026139550177c60688e7b0fc95ab0b952e29c80"
+ },
+ "numpy": "2.5.4",
+ "scipy": "1.18.1",
+ "sympy": "1.14.0",
+ "python": "3.13.5",
+ "threads_at_start": 1,
+ "integrity": {
+  "max_abs_vec_vs_frozen_U_cycle_m0": 0.0,
+  "ok": true
+ },
+ "regenerate": {
+  "5": {
+   "table": 5,
+   "label": "tab:dirac4 (paper lines 549-567)",
+   "rows": [
+    {
+     "paper_line": 558,
+     "phi": 0.5,
+     "phi_label": "0.5",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.217",
+       "printed_value": 0.217,
+       "half_unit": 0.0005,
+       "regenerated": 0.217127955311918,
+       "abs_diff": 0.00012795531191800436,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "2.6\\times10^{18}",
+       "printed_value": 2.6e+18,
+       "half_unit": 5e+16,
+       "regenerated": 2.6489610548053996e+18,
+       "abs_diff": 4.896105480539955e+16,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.650",
+       "printed_value": 0.65,
+       "half_unit": 0.0005,
+       "regenerated": 0.6498560475880297,
+       "abs_diff": 0.00014395241197029396,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 282,
+      "nfev_total": 77359,
+      "gap": {
+       "value": 0.217127955311918,
+       "argmin_radians": [
+        3.1415926515188115,
+        1.5707963227276682,
+        1.5707963315318239
+       ],
+       "argmin_units_of_pi": [
+        0.9999999993407861,
+        0.499999998705361,
+        0.5000000015078108
+       ],
+       "argmin_unfolded_radians": [
+        3.1415926515188115,
+        1.570796322727668,
+        1.5707963315318239
+       ],
+       "dist_to_nearest_gamma_image": 2.2214414628537047,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 28,
+      "domain_restricted": {
+       "value": 0.19283955559493512,
+       "argmin_radians": [
+        -2.9943304979527716,
+        -0.24543692606170264,
+        3.0434178831651124
+       ],
+       "argmin_units_of_pi": [
+        -0.953125,
+        -0.07812500000000001,
+        0.9687500000000001
+       ],
+       "argmin_unfolded_radians": [
+        -2.9943304979527716,
+        -0.24543692606170264,
+        3.0434178831651124
+       ],
+       "dist_to_nearest_gamma_image": 0.3025949647720841,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 24,
+      "gap": {
+       "value": 0.21712795531191803,
+       "argmin_radians": [
+        -1.570796326476411,
+        -1.570796324720439,
+        -5.277822623384054e-10
+       ],
+       "argmin_units_of_pi": [
+        -0.4999999998986229,
+        -0.49999999933967965,
+        -1.6799831185476138e-10
+       ],
+       "argmin_unfolded_radians": [
+        -1.570796326476411,
+        -1.570796324720439,
+        -5.277822501720599e-10
+       ],
+       "dist_to_nearest_gamma_image": 2.221441467387117,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.6498560475880297,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.6499126824702282,
+        0.6499123582791695
+       ],
+       "extrapolated": 0.6499127905339144,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.21712795531191809,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 559,
+     "phi": 0.8,
+     "phi_label": "0.8",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.262",
+       "printed_value": 0.262,
+       "half_unit": 0.0005,
+       "regenerated": 0.26167630634482675,
+       "abs_diff": 0.00032369365517326276,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "3.2\\times10^{18}",
+       "printed_value": 3.2e+18,
+       "half_unit": 5e+16,
+       "regenerated": 3.1924509374068864e+18,
+       "abs_diff": 7549062593113600.0,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.797",
+       "printed_value": 0.797,
+       "half_unit": 0.0005,
+       "regenerated": 0.7973960203284961,
+       "abs_diff": 0.0003960203284960606,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 292,
+      "nfev_total": 91292,
+      "gap": {
+       "value": 0.26167630634482675,
+       "argmin_radians": [
+        -9.863414973665385e-09,
+        1.5707963312845186,
+        -1.570796333195247
+       ],
+       "argmin_units_of_pi": [
+        -3.1396224976509257e-09,
+        0.5000000014290911,
+        -0.5000000020372948
+       ],
+       "argmin_unfolded_radians": [
+        -9.863415167823674e-09,
+        1.5707963312845186,
+        4.712388973984339
+       ],
+       "dist_to_nearest_gamma_image": 2.2214414613788094,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 40,
+      "domain_restricted": {
+       "value": 0.23657689637352228,
+       "argmin_radians": [
+        -0.1472621556370215,
+        -0.24543692606170264,
+        0.09817477042468115
+       ],
+       "argmin_units_of_pi": [
+        -0.04687499999999998,
+        -0.07812500000000001,
+        0.031250000000000035
+       ],
+       "argmin_unfolded_radians": [
+        -0.1472621556370215,
+        -0.24543692606170264,
+        0.09817477042468115
+       ],
+       "dist_to_nearest_gamma_image": 0.3025949647720842,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 36,
+      "gap": {
+       "value": 0.26167630634482675,
+       "argmin_radians": [
+        -1.570796326985481,
+        -4.1496539537888566e-10,
+        1.5707963263033236
+       ],
+       "argmin_units_of_pi": [
+        -0.5000000000606649,
+        -1.320875877732648e-10,
+        0.49999999984352744
+       ],
+       "argmin_unfolded_radians": [
+        -1.570796326985481,
+        -4.1496543582537736e-10,
+        1.570796326303323
+       ],
+       "dist_to_nearest_gamma_image": 2.2214414688663515,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.7973960203284961,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.7974644898155329,
+        0.7974640979235696
+       ],
+       "extrapolated": 0.7974646204461872,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.2616763063448268,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 560,
+     "phi": 1.0,
+     "phi_label": "1.0",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.232",
+       "printed_value": 0.232,
+       "half_unit": 0.0005,
+       "regenerated": 0.23202826004369173,
+       "abs_diff": 2.8260043691719083e-05,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "2.8\\times10^{18}",
+       "printed_value": 2.8e+18,
+       "half_unit": 5e+16,
+       "regenerated": 2.830744772533039e+18,
+       "abs_diff": 3.0744772533039104e+16,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.884",
+       "printed_value": 0.884,
+       "half_unit": 0.0005,
+       "regenerated": 0.8837027408003202,
+       "abs_diff": 0.0002972591996798224,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 297,
+      "nfev_total": 81988,
+      "gap": {
+       "value": 0.23202826004369173,
+       "argmin_radians": [
+        -1.8072751772250926,
+        -0.10767653491159423,
+        -1.8072751709448163
+       ],
+       "argmin_units_of_pi": [
+        -0.5752735559653094,
+        -0.034274505572374526,
+        -0.5752735539662354
+       ],
+       "argmin_unfolded_radians": [
+        -1.8072751772250926,
+        -0.10767653491159439,
+        -1.8072751709448163
+       ],
+       "dist_to_nearest_gamma_image": 1.8900794979034239,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 136,
+      "domain_restricted": {
+       "value": 0.23225504883153428,
+       "argmin_radians": [
+        -0.09817477042468115,
+        -1.8162332528565992,
+        -1.8162332528565992
+       ],
+       "argmin_units_of_pi": [
+        -0.031250000000000035,
+        -0.578125,
+        -0.578125
+       ],
+       "argmin_unfolded_radians": [
+        -0.09817477042468115,
+        -1.8162332528565992,
+        -1.8162332528565992
+       ],
+       "dist_to_nearest_gamma_image": 1.8769105913099966,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 132,
+      "gap": {
+       "value": 0.23202826004369181,
+       "argmin_radians": [
+        -3.0339161207424796,
+        -1.8072751636145727,
+        -1.3343174752744829
+       ],
+       "argmin_units_of_pi": [
+        -0.9657254950847064,
+        -0.5752735516329464,
+        -0.4247264436876636
+       ],
+       "argmin_unfolded_radians": [
+        -3.0339161207424796,
+        -1.8072751636145727,
+        -1.3343174752744829
+       ],
+       "dist_to_nearest_gamma_image": 1.8900795021910217,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.8837027408003202,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.8837730628303627,
+        0.883772660371949
+       ],
+       "extrapolated": 0.8837731969831673,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.23598888383169278,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 561,
+     "phi": 1.2,
+     "phi_label": "1.2",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.167",
+       "printed_value": 0.167,
+       "half_unit": 0.0005,
+       "regenerated": 0.1668769618006517,
+       "abs_diff": 0.00012303819934830762,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "2.0\\times10^{18}",
+       "printed_value": 2e+18,
+       "half_unit": 5e+16,
+       "regenerated": 2.0358989339679508e+18,
+       "abs_diff": 3.589893396795085e+16,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.949",
+       "printed_value": 0.949,
+       "half_unit": 0.0005,
+       "regenerated": 0.9494162189746934,
+       "abs_diff": 0.0004162189746934608,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 299,
+      "nfev_total": 88382,
+      "gap": {
+       "value": 0.1668769618006517,
+       "argmin_radians": [
+        -0.07483084234693083,
+        -1.8262922526276786,
+        -1.8262922429910422
+       ],
+       "argmin_units_of_pi": [
+        -0.023819396910488736,
+        -0.5813268790722551,
+        -0.5813268760048185
+       ],
+       "argmin_unfolded_radians": [
+        -0.07483084234693073,
+        -1.8262922526276786,
+        -1.8262922429910422
+       ],
+       "dist_to_nearest_gamma_image": 1.8616202539343767,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 150,
+      "domain_restricted": {
+       "value": 0.16766407914068918,
+       "argmin_radians": [
+        -1.325359400733194,
+        3.0434178831651124,
+        -1.8653206380689396
+       ],
+       "argmin_units_of_pi": [
+        -0.421875,
+        0.9687500000000001,
+        -0.59375
+       ],
+       "argmin_unfolded_radians": [
+        -1.325359400733194,
+        3.0434178831651124,
+        -1.8653206380689396
+       ],
+       "dist_to_nearest_gamma_image": 1.84257593717639,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 146,
+      "gap": {
+       "value": 0.16687696180065176,
+       "argmin_radians": [
+        -1.3153004061138887,
+        -0.07483084076903479,
+        -1.3153004092834175
+       ],
+       "argmin_units_of_pi": [
+        -0.4186731225676056,
+        -0.02381939640822883,
+        -0.41867312357649794
+       ],
+       "argmin_unfolded_radians": [
+        -1.3153004061138887,
+        -0.07483084076903486,
+        -1.3153004092834175
+       ],
+       "dist_to_nearest_gamma_image": 1.8616202565815314,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.9494162189746934,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.9494853305780135,
+        0.9494849350807147
+       ],
+       "extrapolated": 0.9494854624104465,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.17225291795341474,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 562,
+     "phi": 1.4,
+     "phi_label": "1.4",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.082",
+       "printed_value": 0.082,
+       "half_unit": 0.0005,
+       "regenerated": 0.08212694658054251,
+       "abs_diff": 0.00012694658054250574,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "1.0\\times10^{18}",
+       "printed_value": 1e+18,
+       "half_unit": 5e+16,
+       "regenerated": 1.0019487482826186e+18,
+       "abs_diff": 1948748282618624.0,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.989",
+       "printed_value": 0.989,
+       "half_unit": 0.0005,
+       "regenerated": 0.9890399929849244,
+       "abs_diff": 3.9992984924408503e-05,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 299,
+      "nfev_total": 110324,
+      "gap": {
+       "value": 0.08212694658054251,
+       "argmin_radians": [
+        -1.368842302146861,
+        1.3688422903876818,
+        0.02589187343256194
+       ],
+       "argmin_units_of_pi": [
+        -0.4357160373999253,
+        0.43571603365686234,
+        0.008241639285403906
+       ],
+       "argmin_unfolded_radians": [
+        -1.368842302146861,
+        1.3688422903876816,
+        0.02589187343256204
+       ],
+       "dist_to_nearest_gamma_image": 1.9360084847981323,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 1000,
+      "domain_restricted": {
+       "value": 0.08379991093737471,
+       "argmin_radians": [
+        -2.0125827937059615,
+        -1.6198837120072371,
+        0.04908738521234035
+       ],
+       "argmin_units_of_pi": [
+        -0.6406250000000001,
+        -0.515625,
+        0.015624999999999946
+       ],
+       "argmin_unfolded_radians": [
+        -2.0125827937059615,
+        -1.6198837120072371,
+        0.04908738521234035
+       ],
+       "dist_to_nearest_gamma_image": 1.8954342346792716,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 996,
+      "gap": {
+       "value": 0.08212694658054244,
+       "argmin_radians": [
+        -1.368842301743711,
+        -0.02589187395671022,
+        -1.3688422854826727
+       ],
+       "argmin_units_of_pi": [
+        -0.43571603727159874,
+        -0.008241639452245484,
+        -0.4357160320955495
+       ],
+       "argmin_unfolded_radians": [
+        -1.368842301743711,
+        -0.025891873956710332,
+        -1.3688422854826727
+       ],
+       "dist_to_nearest_gamma_image": 1.9360084810520428,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.9890399929849244,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.9891072358569979,
+        0.9891068510751589
+       ],
+       "extrapolated": 0.9891073641176109,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.08414364206323545,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 563,
+     "phi": 1.5,
+     "phi_label": "1.5",
+     "cells": {
+      "gap": {
+       "rule": "half-unit-last-place",
+       "printed": "0.035",
+       "printed_value": 0.035,
+       "half_unit": 0.0005,
+       "regenerated": 0.034884422707531004,
+       "abs_diff": 0.00011557729246899906,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "rule": "half-unit-last-place",
+       "printed": "4.3\\times10^{17}",
+       "printed_value": 4.3e+17,
+       "half_unit": 5000000000000000.0,
+       "regenerated": 4.255899570318783e+17,
+       "abs_diff": 4410042968121728.0,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "half-unit-last-place",
+       "printed": "0.998",
+       "printed_value": 0.998,
+       "half_unit": 0.0005,
+       "regenerated": 0.9980550073710073,
+       "abs_diff": 5.500737100727626e-05,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 299,
+      "nfev_total": 148913,
+      "gap": {
+       "value": 0.034884422707531004,
+       "argmin_radians": [
+        1.4330310552293408,
+        -1.4330310630585492,
+        -0.007079962831658015
+       ],
+       "argmin_units_of_pi": [
+        0.45614795208788894,
+        -0.45614795458000335,
+        -0.0022536221631305315
+       ],
+       "argmin_unfolded_radians": [
+        1.433031055229341,
+        -1.4330310630585492,
+        -0.007079962831657858
+       ],
+       "dist_to_nearest_gamma_image": 2.026624326020028,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 808,
+      "domain_restricted": {
+       "value": 0.03530934263896258,
+       "argmin_radians": [
+        -1.5707963267948966,
+        -3.141592653589793,
+        1.5707963267948966
+       ],
+       "argmin_units_of_pi": [
+        -0.5,
+        -1.0,
+        0.5
+       ],
+       "argmin_unfolded_radians": [
+        -1.5707963267948966,
+        -3.141592653589793,
+        1.5707963267948966
+       ],
+       "dist_to_nearest_gamma_image": 2.221441469079183,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 804,
+      "gap": {
+       "value": 0.03488442270753101,
+       "argmin_radians": [
+        -0.007079963218035168,
+        -1.433031042767366,
+        -1.4330310844467815
+       ],
+       "argmin_units_of_pi": [
+        -0.002253622286118199,
+        -0.45614794812111914,
+        -0.45614796138808916
+       ],
+       "argmin_unfolded_radians": [
+        -0.007079963218035303,
+        -1.433031042767366,
+        -1.4330310844467815
+       ],
+       "dist_to_nearest_gamma_image": 2.0266243323331565,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.9980550073710073,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.9981217021366633,
+        0.9981213204950249
+       ],
+       "extrapolated": 0.9981218293505427,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 0.03530934263896261,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    },
+    {
+     "paper_line": 564,
+     "phi": 1.5707963267948966,
+     "phi_label": "$\\pi/2$",
+     "cells": {
+      "gap": {
+       "rule": "pi/2 row: gap <= 1e-12",
+       "printed": "0 (doublers return)",
+       "regenerated": 1.3669139210508844e-17,
+       "within": true,
+       "exclusion_radius": 0.3
+      },
+      "GeV": {
+       "printed": "--",
+       "note": "no number printed",
+       "within": null,
+       "exclusion_radius": 0.3
+      },
+      "light_speed": {
+       "rule": "pi/2 row: 1.000 +- 0.0005",
+       "printed": "1.000",
+       "regenerated": 0.9999332984870288,
+       "within": true,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_a": {
+      "procedure": "(a) code starts default_rng(0).uniform(-pi,pi,(300,3)), Nelder-Mead, post-hoc exclusion",
+      "n_starts": 300,
+      "n_kept": 299,
+      "nfev_total": 83888,
+      "gap": {
+       "value": 1.3669139210508844e-17,
+       "argmin_radians": [
+        -3.141592653158717,
+        -0.00016106521774128524,
+        1.5707963267948966
+       ],
+       "argmin_units_of_pi": [
+        -0.9999999998627842,
+        -5.126865112739597e-05,
+        0.5
+       ],
+       "argmin_unfolded_radians": [
+        -3.141592653158717,
+        -0.0001610652177413663,
+        1.5707963267948966
+       ],
+       "dist_to_nearest_gamma_image": 1.5707963350524932,
+       "exclusion_radius": 0.3
+      }
+     },
+     "search_b": {
+      "procedure": "(b) local minima of periodic 129^3 grid (128 unique/axis), Nelder-Mead refined, post-hoc exclusion",
+      "n_grid_local_minima": 1379,
+      "domain_restricted": {
+       "value": 0.0,
+       "argmin_radians": [
+        -3.141592653589793,
+        -2.6016314162540475,
+        -1.5707963267948966
+       ],
+       "argmin_units_of_pi": [
+        -1.0,
+        -0.828125,
+        -0.5
+       ],
+       "argmin_unfolded_radians": [
+        -3.141592653589793,
+        -2.6016314162540475,
+        -1.5707963267948966
+       ],
+       "dist_to_nearest_gamma_image": 1.661011510525285,
+       "exclusion_radius": 0.3,
+       "label": "domain-restricted grid minimum outside balls of radius 0.3 (printed, never compared; not a physical gap)"
+      },
+      "n_kept": 1375,
+      "gap": {
+       "value": 0.0,
+       "argmin_radians": [
+        3.1415926535897265,
+        -3.112598628106582,
+        -1.5707963267948966
+       ],
+       "argmin_units_of_pi": [
+        0.9999999999999788,
+        -0.9907709150484292,
+        -0.5
+       ],
+       "argmin_unfolded_radians": [
+        -3.1415926535898597,
+        -3.112598628106582,
+        -1.5707963267948966
+       ],
+       "dist_to_nearest_gamma_image": 1.5710638923309455,
+       "exclusion_radius": 0.3
+      }
+     },
+     "c_eff": {
+      "c_eff": 0.9999332984870288,
+      "probe_k": [
+       0.02,
+       0.01,
+       0.005
+      ],
+      "richardson": {
+       "h": [
+        0.001,
+        0.002
+       ],
+       "c_h": [
+        0.9999998730157327,
+        0.9999994920614602
+       ],
+       "extrapolated": 1.00000000000049,
+       "label": "diagnostic only"
+      }
+     },
+     "named_probe": {
+      "point_units_of_pi": [
+       0,
+       0.5,
+       0.5
+      ],
+      "value": 1.387778780781446e-17,
+      "label": "named probe, reported separately, never substituted for the argmin"
+     }
+    }
+   ],
+   "compared": "search (a): the code's procedure (O3 ruling)",
+   "exclusion_radius": 0.3,
+   "class": "REPRODUCED"
+  },
+  "2": {
+   "table": 2,
+   "cells": [
+    {
+     "paper_line": 183,
+     "cell": "Born kappa",
+     "printed": "3\\times10^{-16}",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['kappa']['Born |a|^2']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": 3e-16,
+     "half_unit": 5e-17,
+     "regenerated": 2.7755575615628914e-16,
+     "abs_diff": 2.244424384371086e-17,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['kappa']['Born |a|^2']['kappa_centre']",
+      "value": 2.7755575615628914e-16,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 183,
+     "cell": "Born P1 3det",
+     "printed": "0.360",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['Born |a|^2']['P1_3det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.36,
+     "half_unit": 0.0005,
+     "regenerated": 0.36,
+     "abs_diff": 0.0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['Born |a|^2']['P1_3det']",
+      "value": 0.36,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 183,
+     "cell": "Born P1 2det",
+     "printed": "0.360",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['Born |a|^2']['P1_2det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.36,
+     "half_unit": 0.0005,
+     "regenerated": 0.36,
+     "abs_diff": 0.0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['Born |a|^2']['P1_2det']",
+      "value": 0.36,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 183,
+     "cell": "Born Bob Z",
+     "printed": "0.750",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['Born']['Alice_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.75,
+     "half_unit": 0.0005,
+     "regenerated": 0.7500000000000001,
+     "abs_diff": 1.1102230246251565e-16,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['Born']['Alice_Z']",
+      "value": 0.7500000000000001,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 183,
+     "cell": "Born Bob X",
+     "printed": "0.750",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['Born']['Alice_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.75,
+     "half_unit": 0.0005,
+     "regenerated": 0.7500000000000001,
+     "abs_diff": 1.1102230246251565e-16,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['Born']['Alice_X']",
+      "value": 0.7500000000000001,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 184,
+     "cell": "|a|^1 kappa",
+     "printed": "-4.0\\times10^{-2}",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['kappa']['|a|^1']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": -0.04,
+     "half_unit": 0.0005,
+     "regenerated": -0.04021835737636011,
+     "abs_diff": 0.0002183573763601121,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['kappa']['|a|^1']['kappa_centre']",
+      "value": -0.04021835737636011,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 184,
+     "cell": "|a|^1 P1 3det",
+     "printed": "0.349",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 184,
+     "cell": "|a|^1 P1 2det",
+     "printed": "0.429",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 184,
+     "cell": "|a|^1 Bob Z",
+     "printed": "0.634",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['|a|^1']['Alice_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.634,
+     "half_unit": 0.0005,
+     "regenerated": 0.6339745962155614,
+     "abs_diff": 2.5403784438604582e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['|a|^1']['Alice_Z']",
+      "value": 0.6339745962155614,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 184,
+     "cell": "|a|^1 Bob X",
+     "printed": "0.634",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['|a|^1']['Alice_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.634,
+     "half_unit": 0.0005,
+     "regenerated": 0.6339745962155614,
+     "abs_diff": 2.5403784438604582e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['|a|^1']['Alice_X']",
+      "value": 0.6339745962155614,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 185,
+     "cell": "|a|^1.5 kappa",
+     "printed": "-1.1\\times10^{-2}",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['kappa']['|a|^1.5']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": -0.011000000000000001,
+     "half_unit": 0.0005,
+     "regenerated": -0.010693723010796031,
+     "abs_diff": 0.0003062769892039699,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['kappa']['|a|^1.5']['kappa_centre']",
+      "value": -0.010693723010796031,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 185,
+     "cell": "|a|^1.5 P1 3det",
+     "printed": "0.355",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 185,
+     "cell": "|a|^1.5 P1 2det",
+     "printed": "0.394",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 185,
+     "cell": "|a|^1.5 Bob Z",
+     "printed": "0.695",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 185,
+     "cell": "|a|^1.5 Bob X",
+     "printed": "0.695",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 186,
+     "cell": "|a|^3 kappa",
+     "printed": "-5.5\\times10^{-3}",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['kappa']['|a|^3']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": -0.0055,
+     "half_unit": 5e-05,
+     "regenerated": -0.005482765543430781,
+     "abs_diff": 1.7234456569218716e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['kappa']['|a|^3']['kappa_centre']",
+      "value": -0.005482765543430781,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 186,
+     "cell": "|a|^3 P1 3det",
+     "printed": "0.367",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 186,
+     "cell": "|a|^3 P1 2det",
+     "printed": "0.297",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 186,
+     "cell": "|a|^3 Bob Z",
+     "printed": "0.839",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['|a|^3']['Alice_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.839,
+     "half_unit": 0.0005,
+     "regenerated": 0.8386095222035911,
+     "abs_diff": 0.00039047779640888347,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['|a|^3']['Alice_Z']",
+      "value": 0.8386095222035911,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 186,
+     "cell": "|a|^3 Bob X",
+     "printed": "0.839",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['|a|^3']['Alice_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.839,
+     "half_unit": 0.0005,
+     "regenerated": 0.8386095222035912,
+     "abs_diff": 0.00039047779640877245,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['|a|^3']['Alice_X']",
+      "value": 0.8386095222035912,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 187,
+     "cell": "softmax e^{5|a|} kappa",
+     "printed": "+0.52",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['kappa']['softmax b|a| (b=5)']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.52,
+     "half_unit": 0.005,
+     "regenerated": 0.5236047429464411,
+     "abs_diff": 0.0036047429464410863,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['kappa']['softmax b|a| (b=5)']['kappa_centre']",
+      "value": 0.5236047429464411,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 187,
+     "cell": "softmax P1 3det",
+     "printed": "0.361",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 187,
+     "cell": "softmax P1 2det",
+     "printed": "0.269",
+     "cls": "UNINFORMATIVE",
+     "reason": "no generating code writes this cell (pre-reg lists table 2 as regenerable; DECISIONS D19)",
+     "within": null
+    },
+    {
+     "paper_line": 187,
+     "cell": "softmax Bob Z",
+     "printed": "0.854",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['softmax b|a| b=5']['Alice_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.854,
+     "half_unit": 0.0005,
+     "regenerated": 0.853749540271922,
+     "abs_diff": 0.00025045972807802297,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['softmax b|a| b=5']['Alice_Z']",
+      "value": 0.853749540271922,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 187,
+     "cell": "softmax Bob X",
+     "printed": "0.785",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results.json['signalling']['softmax b|a| b=5']['Alice_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.785,
+     "half_unit": 0.0005,
+     "regenerated": 0.7848395419612502,
+     "abs_diff": 0.00016045803874986664,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results.json['signalling']['softmax b|a| b=5']['Alice_X']",
+      "value": 0.7848395419612502,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 188,
+     "cell": "e^{|a|}-1 kappa",
+     "printed": "+0.16",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E1 exp(|a|)-1']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.16,
+     "half_unit": 0.005,
+     "regenerated": 0.16310087794322595,
+     "abs_diff": 0.0031008779432259437,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E1 exp(|a|)-1']['kappa_centre']",
+      "value": 0.16310087794322595,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 188,
+     "cell": "e^{|a|}-1 P1 3det",
+     "printed": "0.352",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E1 exp(|a|)-1']['P1_3det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.352,
+     "half_unit": 0.0005,
+     "regenerated": 0.35213429007853414,
+     "abs_diff": 0.00013429007853416053,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E1 exp(|a|)-1']['P1_3det']",
+      "value": 0.35213429007853414,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 188,
+     "cell": "e^{|a|}-1 P1 2det",
+     "printed": "0.401",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E1 exp(|a|)-1']['P1_2det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.401,
+     "half_unit": 0.0005,
+     "regenerated": 0.40149190258236156,
+     "abs_diff": 0.0004919025823615364,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E1 exp(|a|)-1']['P1_2det']",
+      "value": 0.40149190258236156,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 188,
+     "cell": "e^{|a|}-1 Bob Z",
+     "printed": "0.680",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E1 exp(|a|)-1']['bob_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.68,
+     "half_unit": 0.0005,
+     "regenerated": 0.6798278480864226,
+     "abs_diff": 0.0001721519135774452,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E1 exp(|a|)-1']['bob_Z']",
+      "value": 0.6798278480864226,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 188,
+     "cell": "e^{|a|}-1 Bob X",
+     "printed": "0.666",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E1 exp(|a|)-1']['bob_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.666,
+     "half_unit": 0.0005,
+     "regenerated": 0.6657642860636054,
+     "abs_diff": 0.00023571393639465477,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E1 exp(|a|)-1']['bob_X']",
+      "value": 0.6657642860636054,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 189,
+     "cell": "e^{|a|^2}-1 kappa",
+     "printed": "+0.65",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.65,
+     "half_unit": 0.005,
+     "regenerated": 0.6453230313301866,
+     "abs_diff": 0.004676968669813375,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['kappa_centre']",
+      "value": 0.6453230313301866,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 189,
+     "cell": "e^{|a|^2}-1 P1 3det",
+     "printed": "0.362",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['P1_3det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.362,
+     "half_unit": 0.0005,
+     "regenerated": 0.36151510919149565,
+     "abs_diff": 0.00048489080850433464,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['P1_3det']",
+      "value": 0.36151510919149565,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 189,
+     "cell": "e^{|a|^2}-1 P1 2det",
+     "printed": "0.326",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['P1_2det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.326,
+     "half_unit": 0.0005,
+     "regenerated": 0.32585806904893455,
+     "abs_diff": 0.00014193095106546094,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['P1_2det']",
+      "value": 0.32585806904893455,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 189,
+     "cell": "e^{|a|^2}-1 Bob Z",
+     "printed": "0.797",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['bob_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.797,
+     "half_unit": 0.0005,
+     "regenerated": 0.7972731900957297,
+     "abs_diff": 0.00027319009572968067,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['bob_Z']",
+      "value": 0.7972731900957297,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 189,
+     "cell": "e^{|a|^2}-1 Bob X",
+     "printed": "0.774",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['bob_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.774,
+     "half_unit": 0.0005,
+     "regenerated": 0.7736109038298817,
+     "abs_diff": 0.000389096170118286,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E2 exp(|a|^2)-1']['bob_X']",
+      "value": 0.7736109038298817,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 190,
+     "cell": "2^{|a|}-1 kappa",
+     "printed": "+0.10",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E3 2^|a|-1']['kappa_centre']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.1,
+     "half_unit": 0.005,
+     "regenerated": 0.0986353918251322,
+     "abs_diff": 0.001364608174867804,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E3 2^|a|-1']['kappa_centre']",
+      "value": 0.0986353918251322,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 190,
+     "cell": "2^{|a|}-1 P1 3det",
+     "printed": "0.351",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E3 2^|a|-1']['P1_3det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.351,
+     "half_unit": 0.0005,
+     "regenerated": 0.35111675591851216,
+     "abs_diff": 0.00011675591851217915,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E3 2^|a|-1']['P1_3det']",
+      "value": 0.35111675591851216,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 190,
+     "cell": "2^{|a|}-1 P1 2det",
+     "printed": "0.410",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E3 2^|a|-1']['P1_2det']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.41,
+     "half_unit": 0.0005,
+     "regenerated": 0.41033522152069085,
+     "abs_diff": 0.00033522152069087596,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E3 2^|a|-1']['P1_2det']",
+      "value": 0.41033522152069085,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 190,
+     "cell": "2^{|a|}-1 Bob Z",
+     "printed": "0.665",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E3 2^|a|-1']['bob_Z']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.665,
+     "half_unit": 0.0005,
+     "regenerated": 0.6651055832346704,
+     "abs_diff": 0.0001055832346703589,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E3 2^|a|-1']['bob_Z']",
+      "value": 0.6651055832346704,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 190,
+     "cell": "2^{|a|}-1 Bob X",
+     "printed": "0.656",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/results_exp.json['rules']['E3 2^|a|-1']['bob_X']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.656,
+     "half_unit": 0.0005,
+     "regenerated": 0.6556572682728277,
+     "abs_diff": 0.0003427317271723629,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/readout/results_exp.json['rules']['E3 2^|a|-1']['bob_X']",
+      "value": 0.6556572682728277,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [
+    "|a|^1 P1 3det",
+    "|a|^1 P1 2det",
+    "|a|^1.5 P1 3det",
+    "|a|^1.5 P1 2det",
+    "|a|^1.5 Bob Z",
+    "|a|^1.5 Bob X",
+    "|a|^3 P1 3det",
+    "|a|^3 P1 2det",
+    "softmax P1 3det",
+    "softmax P1 2det"
+   ],
+   "failing_cells": [],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "readout",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout",
+    "runs": [
+     {
+      "script": "sim.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 3.5734915733337402,
+      "cpu_s": 2.868398,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/sim.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/sim.py.stderr"
+     },
+     {
+      "script": "ext.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 1.4189138412475586,
+      "cpu_s": 1.3905560000000001,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/ext.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/ext.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  },
+  "4": {
+   "table": 4,
+   "cells": [
+    {
+     "paper_line": 479,
+     "cell": "Checkerboard pairwise mix 1-tick norm",
+     "printed": "1.000000",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['checkerboard']['norms'][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.0,
+     "half_unit": 5e-07,
+     "regenerated": 0.9999999999999999,
+     "abs_diff": 1.1102230246251565e-16,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['checkerboard']['norms'][1]",
+      "value": 0.9999999999999999,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 479,
+     "cell": "Checkerboard pairwise mix 40-tick norm",
+     "printed": "1.000000",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['checkerboard']['norms'][40]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.0,
+     "half_unit": 5e-07,
+     "regenerated": 0.9999999999999968,
+     "abs_diff": 3.219646771412954e-15,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['checkerboard']['norms'][40]",
+      "value": 0.9999999999999968,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 479,
+     "cell": "Checkerboard pairwise mix rightmost reach",
+     "printed": "11",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['checkerboard']['reach'][0]",
+     "rule": "exact integer",
+     "printed_value": 11,
+     "regenerated": 11,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['checkerboard']['reach'][0]",
+      "value": 11,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 480,
+     "cell": "Naive in-place copy 1-tick norm",
+     "printed": "0",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive copy-overwrite']['norms'][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.0,
+     "half_unit": 0.5,
+     "regenerated": 0.0,
+     "abs_diff": 0.0,
+     "within": true,
+     "cls": "within",
+     "note": "printed '0 (wiped)'",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive copy-overwrite']['norms'][1]",
+      "value": 0.0,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 480,
+     "cell": "Naive in-place copy 40-tick norm",
+     "printed": "0",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive copy-overwrite']['norms'][40]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.0,
+     "half_unit": 0.5,
+     "regenerated": 0.0,
+     "abs_diff": 0.0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive copy-overwrite']['norms'][40]",
+      "value": 0.0,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 480,
+     "cell": "Naive in-place copy rightmost reach",
+     "printed": "--",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive copy-overwrite']['reach'][0]",
+     "rule": "'--' <=> regenerated value < 0 (never reached)",
+     "regenerated": -1,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive copy-overwrite']['reach'][0]",
+      "value": -1,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 481,
+     "cell": "Naive averaging 1-tick norm",
+     "printed": "0.74",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive averaging']['norms'][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.74,
+     "half_unit": 0.005,
+     "regenerated": 0.7399999999999999,
+     "abs_diff": 1.1102230246251565e-16,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive averaging']['norms'][1]",
+      "value": 0.7399999999999999,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 481,
+     "cell": "Naive averaging 40-tick norm",
+     "printed": "0.17",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive averaging']['norms'][40]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.17,
+     "half_unit": 0.005,
+     "regenerated": 0.1722164286499569,
+     "abs_diff": 0.0022164286499568864,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive averaging']['norms'][40]",
+      "value": 0.1722164286499569,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 481,
+     "cell": "Naive averaging rightmost reach",
+     "printed": "12",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['naive averaging']['reach'][0]",
+     "rule": "exact integer",
+     "printed_value": 12,
+     "regenerated": 12,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['naive averaging']['reach'][0]",
+      "value": 12,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 482,
+     "cell": "Sequential in-place mixes 1-tick norm",
+     "printed": "1.000000",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['sequential in-place mixes']['norms'][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.0,
+     "half_unit": 5e-07,
+     "regenerated": 0.9999999999999997,
+     "abs_diff": 3.3306690738754696e-16,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['sequential in-place mixes']['norms'][1]",
+      "value": 0.9999999999999997,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 482,
+     "cell": "Sequential in-place mixes 40-tick norm",
+     "printed": "1.000000",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['sequential in-place mixes']['norms'][40]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.0,
+     "half_unit": 5e-07,
+     "regenerated": 0.9999999999999922,
+     "abs_diff": 7.771561172376096e-15,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['sequential in-place mixes']['norms'][40]",
+      "value": 0.9999999999999922,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 482,
+     "cell": "Sequential in-place mixes rightmost reach",
+     "printed": "37",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/race.json['sequential in-place mixes']['reach'][0]",
+     "rule": "exact integer",
+     "printed_value": 37,
+     "regenerated": 37,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/race.json['sequential in-place mixes']['reach'][0]",
+      "value": 37,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [],
+   "failing_cells": [],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "qca",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca",
+    "runs": [
+     {
+      "script": "qca.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 4.927688360214233,
+      "cpu_s": 4.8771770000000005,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/qca.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/qca.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  },
+  "6": {
+   "table": 6,
+   "cells": [
+    {
+     "paper_line": 604,
+     "cell": "N_s=2 residual mass",
+     "printed": "2.9\\times10^{-3}",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][0][-1])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.0029,
+     "half_unit": 5e-05,
+     "regenerated": 0.002941523445458205,
+     "abs_diff": 4.1523445458205386e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][0][-1])",
+      "value": 0.002941523445458205,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 604,
+     "cell": "N_s=2 components",
+     "printed": "(blank)",
+     "cls": "UNINFORMATIVE",
+     "reason": "components column not written by dw_final.py (pre-reg 3.2)",
+     "within": null
+    },
+    {
+     "paper_line": 605,
+     "cell": "N_s=4 residual mass",
+     "printed": "1.8\\times10^{-4}",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][1][-1])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.00018,
+     "half_unit": 5e-06,
+     "regenerated": 0.00018140262250877754,
+     "abs_diff": 1.4026225087775286e-06,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][1][-1])",
+      "value": 0.00018140262250877754,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 605,
+     "cell": "N_s=4 components",
+     "printed": "(blank)",
+     "cls": "UNINFORMATIVE",
+     "reason": "components column not written by dw_final.py (pre-reg 3.2)",
+     "within": null
+    },
+    {
+     "paper_line": 606,
+     "cell": "N_s=8 residual mass",
+     "printed": "7.0\\times10^{-7}",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][3][-1])",
+     "rule": "half-unit-last-place",
+     "printed_value": 7e-07,
+     "half_unit": 5e-09,
+     "regenerated": 6.997410781457867e-07,
+     "abs_diff": 2.589218542132262e-10,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][3][-1])",
+      "value": 6.997410781457867e-07,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 606,
+     "cell": "N_s=8 components",
+     "printed": "(blank)",
+     "cls": "UNINFORMATIVE",
+     "reason": "components column not written by dw_final.py (pre-reg 3.2)",
+     "within": null
+    },
+    {
+     "paper_line": 607,
+     "cell": "N_s=12 residual mass",
+     "printed": "2.7\\times10^{-9}",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][5][-1])",
+     "rule": "half-unit-last-place",
+     "printed_value": 2.7e-09,
+     "half_unit": 5e-11,
+     "regenerated": 2.6993251800444573e-09,
+     "abs_diff": 6.748199555428934e-13,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][5][-1])",
+      "value": 2.6993251800444573e-09,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 607,
+     "cell": "N_s=12 components",
+     "printed": "(blank)",
+     "cls": "UNINFORMATIVE",
+     "reason": "components column not written by dw_final.py (pre-reg 3.2)",
+     "within": null
+    },
+    {
+     "paper_line": 608,
+     "cell": "N_s=24 residual mass",
+     "printed": "\\sim10^{-16}",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+     "rule": "order-of-magnitude: round(log10|x|) == printed exponent",
+     "printed_exponent": -16,
+     "regenerated": 1.211415271493058e-17,
+     "log10": -16.916706955781383,
+     "within": false,
+     "cls": "OUTSIDE",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+      "value": 2.42861286636753e-17,
+      "within": false
+     }
+    },
+    {
+     "paper_line": 608,
+     "cell": "N_s=24 components",
+     "printed": "(blank)",
+     "cls": "UNINFORMATIVE",
+     "reason": "components column not written by dw_final.py (pre-reg 3.2)",
+     "within": null
+    },
+    {
+     "paper_line": 604,
+     "cell": "|k|=0.01 gamma5",
+     "printed": "1.0000",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.01']['walls'][0]['gamma5'])",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.0,
+     "half_unit": 5e-05,
+     "regenerated": 0.9999943828333688,
+     "abs_diff": 5.617166631166626e-06,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.01']['walls'][0]['gamma5'])",
+      "value": 0.9999943828333688,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 604,
+     "cell": "|k|=0.01 loc length",
+     "printed": "0.12",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.01']['walls'][0]['loc_len_slices']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.12,
+     "half_unit": 0.005,
+     "regenerated": 0.1221845656307412,
+     "abs_diff": 0.0021845656307412087,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.01']['walls'][0]['loc_len_slices']",
+      "value": 0.1221845656307412,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 605,
+     "cell": "|k|=0.05 gamma5",
+     "printed": "0.9999",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.05']['walls'][0]['gamma5'])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9999,
+     "half_unit": 5e-05,
+     "regenerated": 0.9998553650655062,
+     "abs_diff": 4.463493449380351e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.05']['walls'][0]['gamma5'])",
+      "value": 0.9998553650655062,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 605,
+     "cell": "|k|=0.05 loc length",
+     "printed": "0.20",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.05']['walls'][0]['loc_len_slices']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.2,
+     "half_unit": 0.005,
+     "regenerated": 0.20250446123192256,
+     "abs_diff": 0.00250446123192255,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.05']['walls'][0]['loc_len_slices']",
+      "value": 0.20250446123192256,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 606,
+     "cell": "|k|=0.1 gamma5",
+     "printed": "0.9993",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.1']['walls'][0]['gamma5'])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9993,
+     "half_unit": 5e-05,
+     "regenerated": 0.9992741437972841,
+     "abs_diff": 2.5856202715890397e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.1']['walls'][0]['gamma5'])",
+      "value": 0.9992741437972841,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 606,
+     "cell": "|k|=0.1 loc length",
+     "printed": "0.29",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.1']['walls'][0]['loc_len_slices']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.29,
+     "half_unit": 0.005,
+     "regenerated": 0.28882416503340086,
+     "abs_diff": 0.0011758349665991208,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.1']['walls'][0]['loc_len_slices']",
+      "value": 0.28882416503340086,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 607,
+     "cell": "|k|=0.15 gamma5",
+     "printed": "0.9953",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.15']['walls'][0]['gamma5'])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9953,
+     "half_unit": 5e-05,
+     "regenerated": 0.9953066607856961,
+     "abs_diff": 6.660785696110949e-06,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.15']['walls'][0]['gamma5'])",
+      "value": 0.9953066607856961,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 607,
+     "cell": "|k|=0.15 loc length",
+     "printed": "0.40",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.15']['walls'][0]['loc_len_slices']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.4,
+     "half_unit": 0.005,
+     "regenerated": 0.4038058144451704,
+     "abs_diff": 0.0038058144451703635,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.15']['walls'][0]['loc_len_slices']",
+      "value": 0.4038058144451704,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 608,
+     "cell": "|k|=0.2 gamma5",
+     "printed": "0.954",
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.2']['walls'][0]['gamma5'])",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.954,
+     "half_unit": 0.0005,
+     "regenerated": 0.953555398709093,
+     "abs_diff": 0.0004446012909069541,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.2']['walls'][0]['gamma5'])",
+      "value": 0.953555398709093,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 608,
+     "cell": "|k|=0.2 loc length",
+     "printed": "0.64",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['profiles_m0_0_Ns16']['0.2']['walls'][0]['loc_len_slices']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.64,
+     "half_unit": 0.005,
+     "regenerated": 0.6432401922675487,
+     "abs_diff": 0.0032401922675486805,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/qca/dw_final.json['profiles_m0_0_Ns16']['0.2']['walls'][0]['loc_len_slices']",
+      "value": 0.6432401922675487,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [
+    "N_s=24 residual mass"
+   ],
+   "uninformative_cells": [
+    "N_s=2 components",
+    "N_s=4 components",
+    "N_s=8 components",
+    "N_s=12 components",
+    "N_s=24 components"
+   ],
+   "failing_cells": [
+    {
+     "table": 6,
+     "paper_line": 608,
+     "cell": "N_s=24 residual mass",
+     "printed": "\\sim10^{-16}",
+     "rule": "order-of-magnitude: round(log10|x|) == printed exponent",
+     "regenerated": 1.211415271493058e-17,
+     "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+     "printed_exponent": -16,
+     "log10": -16.916706955781383,
+     "round_log10": -17,
+     "stored": {
+      "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+      "value": 2.42861286636753e-17,
+      "within": false
+     }
+    }
+   ],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "dw",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw",
+    "runs": [
+     {
+      "script": "dw_final.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 0.7167837619781494,
+      "cpu_s": 0.6629529999999999,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "NOT REPRODUCED"
+  },
+  "7": {
+   "table": 7,
+   "cells": [
+    {
+     "paper_line": 645,
+     "cell": "ka=0.25 [100] v_g/c (sim column, D20)",
+     "printed": "0.9940",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[100]'][0][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.994,
+     "half_unit": 5e-05,
+     "regenerated": 0.994043,
+     "abs_diff": 4.300000000001525e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 645,
+     "cell": "ka=0.25 [110] v_g/c (sim column, D20)",
+     "printed": "0.9980",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[110]'][0][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.998,
+     "half_unit": 5e-05,
+     "regenerated": 0.998013,
+     "abs_diff": 1.3000000000040757e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 645,
+     "cell": "ka=0.25 [111] v_g/c (sim column, D20)",
+     "printed": "0.9993",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[111]'][0][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9993,
+     "half_unit": 5e-05,
+     "regenerated": 0.999337,
+     "abs_diff": 3.700000000006476e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 646,
+     "cell": "ka=1.0 [100] v_g/c (sim column, D20)",
+     "printed": "0.9038",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[100]'][2][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9038,
+     "half_unit": 5e-05,
+     "regenerated": 0.903849,
+     "abs_diff": 4.899999999996574e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 646,
+     "cell": "ka=1.0 [110] v_g/c (sim column, D20)",
+     "printed": "0.9676",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[110]'][2][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9676,
+     "half_unit": 5e-05,
+     "regenerated": 0.967563,
+     "abs_diff": 3.700000000006476e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 646,
+     "cell": "ka=1.0 [111] v_g/c (sim column, D20)",
+     "printed": "0.9891",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[111]'][2][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9891,
+     "half_unit": 5e-05,
+     "regenerated": 0.989144,
+     "abs_diff": 4.4000000000044004e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 647,
+     "cell": "ka=2.0 [100] v_g/c (sim column, D20)",
+     "printed": "0.5955",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[100]'][4][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.5955,
+     "half_unit": 5e-05,
+     "regenerated": 0.595506,
+     "abs_diff": 5.999999999950489e-06,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 647,
+     "cell": "ka=2.0 [110] v_g/c (sim column, D20)",
+     "printed": "0.8559",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[110]'][4][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.8559,
+     "half_unit": 5e-05,
+     "regenerated": 0.855852,
+     "abs_diff": 4.8000000000048004e-05,
+     "within": true,
+     "cls": "within"
+    },
+    {
+     "paper_line": 647,
+     "cell": "ka=2.0 [111] v_g/c (sim column, D20)",
+     "printed": "0.9508",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout['packets']['[111]'][4][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9508,
+     "half_unit": 5e-05,
+     "regenerated": 0.950825,
+     "abs_diff": 2.5000000000052758e-05,
+     "within": true,
+     "cls": "within"
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [],
+   "failing_cells": [],
+   "stored_counterpart": "stored counterpart unavailable: KeyError: 'no stored output for test1_aniso.py'",
+   "generator": {
+    "name": "test1",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1",
+    "runs": [
+     {
+      "script": "test1_aniso.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 4.927613258361816,
+      "cpu_s": 4.877148999999999,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  },
+  "9": {
+   "table": 9,
+   "cells": [
+    {
+     "paper_line": 682,
+     "cell": "a=0.05 width ratio range (v 0 to 0.95)",
+     "printed": "0.9999\u20131.0012",
+     "source_key": [
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[0]['width_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[1]['width_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[2]['width_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[3]['width_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[4]['width_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[5]['width_ratio']"
+     ],
+     "rule": "range: every row value inside [lo-1/2u, hi+1/2u]",
+     "regenerated": [
+      0.9999121652570907,
+      0.9999052579222616,
+      0.9998794152071245,
+      0.99985138801053,
+      0.9999684634970599,
+      1.001242152328602
+     ],
+     "regenerated_min": 0.99985138801053,
+     "regenerated_max": 1.001242152328602,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": [
+       "/workspace/replot-sim/kink.json[0]['width_ratio']",
+       "/workspace/replot-sim/kink.json[1]['width_ratio']",
+       "/workspace/replot-sim/kink.json[2]['width_ratio']",
+       "/workspace/replot-sim/kink.json[3]['width_ratio']",
+       "/workspace/replot-sim/kink.json[4]['width_ratio']",
+       "/workspace/replot-sim/kink.json[5]['width_ratio']"
+      ],
+      "value": [
+       0.9999121652570907,
+       0.9999052579222616,
+       0.9998794152071245,
+       0.99985138801053,
+       0.9999684634970599,
+       1.001242152328602
+      ],
+      "within": true
+     }
+    },
+    {
+     "paper_line": 682,
+     "cell": "a=0.05 energy ratio range (v 0 to 0.95)",
+     "printed": "0.9996\u20131.0000",
+     "source_key": [
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[0]['E_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[1]['E_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[2]['E_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[3]['E_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[4]['E_ratio']",
+      "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[5]['E_ratio']"
+     ],
+     "rule": "range: every row value inside [lo-1/2u, hi+1/2u]",
+     "regenerated": [
+      0.9999652818281318,
+      0.9999618486029167,
+      0.9999457564155521,
+      0.9999035806276049,
+      0.99981736359267,
+      0.9996443001605831
+     ],
+     "regenerated_min": 0.9996443001605831,
+     "regenerated_max": 0.9999652818281318,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": [
+       "/workspace/replot-sim/kink.json[0]['E_ratio']",
+       "/workspace/replot-sim/kink.json[1]['E_ratio']",
+       "/workspace/replot-sim/kink.json[2]['E_ratio']",
+       "/workspace/replot-sim/kink.json[3]['E_ratio']",
+       "/workspace/replot-sim/kink.json[4]['E_ratio']",
+       "/workspace/replot-sim/kink.json[5]['E_ratio']"
+      ],
+      "value": [
+       0.9999652818281318,
+       0.9999618486029167,
+       0.9999457564155521,
+       0.9999035806276049,
+       0.99981736359267,
+       0.9996443001605831
+      ],
+      "within": true
+     }
+    },
+    {
+     "paper_line": 682,
+     "cell": "a=0.05 v_meas launched at 0.95",
+     "printed": "0.9489",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[5]['v_meas']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.9489,
+     "half_unit": 5e-05,
+     "regenerated": 0.9489425847899615,
+     "abs_diff": 4.2584789961552794e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[5]['v_meas']",
+      "value": 0.9489425847899615,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 683,
+     "cell": "a=0.5 v=0.6 width ratio",
+     "printed": "0.988",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[8]['width_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.988,
+     "half_unit": 0.0005,
+     "regenerated": 0.9882916185496133,
+     "abs_diff": 0.0002916185496133483,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[8]['width_ratio']",
+      "value": 0.9882916185496133,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 683,
+     "cell": "a=0.5 v=0.6 energy ratio",
+     "printed": "0.995",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[8]['E_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.995,
+     "half_unit": 0.0005,
+     "regenerated": 0.9946747344420508,
+     "abs_diff": 0.00032526555794920586,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[8]['E_ratio']",
+      "value": 0.9946747344420508,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 683,
+     "cell": "a=0.5 v=0.6 v_meas",
+     "printed": "0.588",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[8]['v_meas']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.588,
+     "half_unit": 0.0005,
+     "regenerated": 0.5883206897017143,
+     "abs_diff": 0.0003206897017142829,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[8]['v_meas']",
+      "value": 0.5883206897017143,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 684,
+     "cell": "a=0.5 v=0.95 width ratio",
+     "printed": "1.72",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[11]['width_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.72,
+     "half_unit": 0.005,
+     "regenerated": 1.7241797075681249,
+     "abs_diff": 0.004179707568124913,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[11]['width_ratio']",
+      "value": 1.7241797075681249,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 684,
+     "cell": "a=0.5 v=0.95 energy ratio",
+     "printed": "0.988",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[11]['E_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.988,
+     "half_unit": 0.0005,
+     "regenerated": 0.9882656093892437,
+     "abs_diff": 0.0002656093892436928,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[11]['E_ratio']",
+      "value": 0.9882656093892437,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 684,
+     "cell": "a=0.5 v=0.95 v_meas",
+     "printed": "0.80",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[11]['v_meas']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.8,
+     "half_unit": 0.005,
+     "regenerated": 0.7968071751682446,
+     "abs_diff": 0.0031928248317554253,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[11]['v_meas']",
+      "value": 0.7968071751682446,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 685,
+     "cell": "a=1.0 v=0.95 width ratio",
+     "printed": "2.45",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[17]['width_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 2.45,
+     "half_unit": 0.005,
+     "regenerated": 2.446970409178358,
+     "abs_diff": 0.003029590821642003,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[17]['width_ratio']",
+      "value": 2.446970409178358,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 685,
+     "cell": "a=1.0 v=0.95 energy ratio",
+     "printed": "1.16",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[17]['E_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.16,
+     "half_unit": 0.005,
+     "regenerated": 1.1585542439017957,
+     "abs_diff": 0.0014457560982041873,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[17]['E_ratio']",
+      "value": 1.1585542439017957,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 685,
+     "cell": "a=1.0 v=0.95 v_meas",
+     "printed": "0.51",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[17]['v_meas']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.51,
+     "half_unit": 0.005,
+     "regenerated": 0.5105924642685622,
+     "abs_diff": 0.0005924642685621873,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[17]['v_meas']",
+      "value": 0.5105924642685622,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 686,
+     "cell": "a=1.5 v=0.95 width ratio",
+     "printed": "2.8",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[23]['width_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 2.8,
+     "half_unit": 0.05,
+     "regenerated": 2.8101958074151088,
+     "abs_diff": 0.010195807415108948,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[23]['width_ratio']",
+      "value": 2.8101958074151088,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 686,
+     "cell": "a=1.5 v=0.95 energy ratio",
+     "printed": "0.57",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[23]['E_ratio']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.57,
+     "half_unit": 0.005,
+     "regenerated": 0.5656081442750509,
+     "abs_diff": 0.004391855724949045,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[23]['E_ratio']",
+      "value": 0.5656081442750509,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 686,
+     "cell": "a=1.5 v=0.95 v_meas",
+     "printed": "0.08",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout[23]['v_meas']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.08,
+     "half_unit": 0.005,
+     "regenerated": 0.07576062839043188,
+     "abs_diff": 0.004239371609568124,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/replot-sim/kink.json[23]['v_meas']",
+      "value": 0.07576062839043188,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [],
+   "failing_cells": [],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "test2",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2",
+    "runs": [
+     {
+      "script": "test2_kink.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 2.521350383758545,
+      "cpu_s": 2.5120160000000027,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  },
+  "10": {
+   "table": 10,
+   "cells": [
+    {
+     "paper_line": 928,
+     "cell": "row 0 N cells",
+     "printed": "1,003",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][0][0]",
+     "rule": "exact integer",
+     "printed_value": 1003,
+     "regenerated": 1003,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][0][0]",
+      "value": 1003,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 928,
+     "cell": "N=1,003 deflection",
+     "printed": "1.751257",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][0][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.751257,
+     "half_unit": 5e-07,
+     "regenerated": 1.7512574799613494,
+     "abs_diff": 4.799613493311483e-07,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][0][1]",
+      "value": 1.7512574799613494,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 928,
+     "cell": "N=1,003 without factor 2",
+     "printed": "0.875629",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][0][2]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.875629,
+     "half_unit": 5e-07,
+     "regenerated": 0.8756287399806747,
+     "abs_diff": 2.600193252932925e-07,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][0][2]",
+      "value": 0.8756287399806747,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 929,
+     "cell": "row 1 N cells",
+     "printed": "9,978",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][1][0]",
+     "rule": "exact integer",
+     "printed_value": 9978,
+     "regenerated": 9978,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][1][0]",
+      "value": 9978,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 929,
+     "cell": "N=9,978 deflection",
+     "printed": "1.751243",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][1][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.751243,
+     "half_unit": 5e-07,
+     "regenerated": 1.751243392531728,
+     "abs_diff": 3.9253172778863643e-07,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][1][1]",
+      "value": 1.751243392531728,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 929,
+     "cell": "N=9,978 without factor 2",
+     "printed": "0.875622",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][1][2]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.875622,
+     "half_unit": 5e-07,
+     "regenerated": 0.875621696265864,
+     "abs_diff": 3.0373413606454847e-07,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][1][2]",
+      "value": 0.875621696265864,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 930,
+     "cell": "row 2 N cells",
+     "printed": "100,026",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][2][0]",
+     "rule": "exact integer",
+     "printed_value": 100026,
+     "regenerated": 100026,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][2][0]",
+      "value": 100026,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 930,
+     "cell": "N=100,026 deflection",
+     "printed": "1.7512433",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][2][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.7512433,
+     "half_unit": 5e-08,
+     "regenerated": 1.751243283803814,
+     "abs_diff": 1.6196185947947583e-08,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][2][1]",
+      "value": 1.751243283803814,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 930,
+     "cell": "N=100,026 without factor 2",
+     "printed": "0.8756216",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][2][2]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.8756216,
+     "half_unit": 5e-08,
+     "regenerated": 0.875621641901907,
+     "abs_diff": 4.190190705521957e-08,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][2][2]",
+      "value": 0.875621641901907,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 931,
+     "cell": "row 3 N cells",
+     "printed": "999,954",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][3][0]",
+     "rule": "exact integer",
+     "printed_value": 999954,
+     "regenerated": 999954,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][3][0]",
+      "value": 999954,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 931,
+     "cell": "N=999,954 deflection",
+     "printed": "1.7512433",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][3][1]",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.7512433,
+     "half_unit": 5e-08,
+     "regenerated": 1.7512432811117198,
+     "abs_diff": 1.888828027318823e-08,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][3][1]",
+      "value": 1.7512432811117198,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 931,
+     "cell": "N=999,954 without factor 2",
+     "printed": "0.8756216",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['conv'][3][2]",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.8756216,
+     "half_unit": 5e-08,
+     "regenerated": 0.8756216405558599,
+     "abs_diff": 4.0555859892599244e-08,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['conv'][3][2]",
+      "value": 0.8756216405558599,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 932,
+     "cell": "GR 4GM/(bc^2)",
+     "printed": "1.7512433",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['GR_limb_arcsec']",
+     "rule": "half-unit-last-place",
+     "printed_value": 1.7512433,
+     "half_unit": 5e-08,
+     "regenerated": 1.7512432813682444,
+     "abs_diff": 1.863175569383202e-08,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['GR_limb_arcsec']",
+      "value": 1.7512432813682444,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 932,
+     "cell": "GR/2 2GM/(bc^2)",
+     "printed": "0.8756",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/results.json['GR_limb_arcsec'] / 2",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.8756,
+     "half_unit": 5e-05,
+     "regenerated": 0.8756216406841222,
+     "abs_diff": 2.1640684122137266e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/sun-bend/results.json['GR_limb_arcsec'] / 2",
+      "value": 0.8756216406841222,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [],
+   "failing_cells": [],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "sunbend",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend",
+    "runs": [
+     {
+      "script": "sim.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 33.793728828430176,
+      "cpu_s": 33.703649,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/sim.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/sim.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  },
+  "11": {
+   "table": 11,
+   "cells": [
+    {
+     "paper_line": 988,
+     "cell": "Newtonian only factor",
+     "printed": "0",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][0]['factor']",
+     "rule": "exact fraction (|x-p| <= 1e-12)",
+     "printed_value": "0",
+     "regenerated": 0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][0]['factor']",
+      "value": 0,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 988,
+     "cell": "Newtonian only sim",
+     "printed": "+0.0001",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][0]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.0001,
+     "half_unit": 5e-05,
+     "regenerated": 0.00010012979615479421,
+     "abs_diff": 1.297961547942029e-07,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][0]['sim']",
+      "value": 0.00010012979615479421,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 988,
+     "cell": "Newtonian only analytic",
+     "printed": "0",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][0]['analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.0,
+     "half_unit": 0.5,
+     "regenerated": 0.0,
+     "abs_diff": 0.0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][0]['analytic']",
+      "value": 0.0,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 989,
+     "cell": "GR-like factor",
+     "printed": "1",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][1]['factor']",
+     "rule": "exact fraction (|x-p| <= 1e-12)",
+     "printed_value": "1",
+     "regenerated": 1.0,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][1]['factor']",
+      "value": 1.0,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 989,
+     "cell": "GR-like sim",
+     "printed": "+42.984",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][1]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": 42.984,
+     "half_unit": 0.0005,
+     "regenerated": 42.98365587231442,
+     "abs_diff": 0.00034412768557956497,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][1]['sim']",
+      "value": 42.98365587231442,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 989,
+     "cell": "GR-like analytic",
+     "printed": "42.982",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][1]['analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 42.982,
+     "half_unit": 0.0005,
+     "regenerated": 42.981985478841615,
+     "abs_diff": 1.4521158384184218e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][1]['analytic']",
+      "value": 42.981985478841615,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 990,
+     "cell": "Time only factor",
+     "printed": "1/3",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][2]['factor']",
+     "rule": "exact fraction (|x-p| <= 1e-12)",
+     "printed_value": "1/3",
+     "regenerated": 0.3333333333333333,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][2]['factor']",
+      "value": 0.3333333333333333,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 990,
+     "cell": "Time only sim",
+     "printed": "+14.329",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][2]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": 14.329,
+     "half_unit": 0.0005,
+     "regenerated": 14.328545546403399,
+     "abs_diff": 0.00045445359660156726,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][2]['sim']",
+      "value": 14.328545546403399,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 990,
+     "cell": "Time only analytic",
+     "printed": "14.327",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][2]['analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 14.327,
+     "half_unit": 0.0005,
+     "regenerated": 14.327328492947204,
+     "abs_diff": 0.00032849294720449507,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][2]['analytic']",
+      "value": 14.327328492947204,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 991,
+     "cell": "Nordstr\u00f6m-like factor",
+     "printed": "-1/6",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][3]['factor']",
+     "rule": "exact fraction (|x-p| <= 1e-12)",
+     "printed_value": "-1/6",
+     "regenerated": -0.16666666666666666,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][3]['factor']",
+      "value": -0.16666666666666666,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 991,
+     "cell": "Nordstr\u00f6m-like sim",
+     "printed": "-7.164",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][3]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": -7.164,
+     "half_unit": 0.0005,
+     "regenerated": -7.163511324743752,
+     "abs_diff": 0.0004886752562480723,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][3]['sim']",
+      "value": -7.163511324743752,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 991,
+     "cell": "Nordstr\u00f6m-like analytic",
+     "printed": "-7.164",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][3]['analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": -7.164,
+     "half_unit": 0.0005,
+     "regenerated": -7.163664246473602,
+     "abs_diff": 0.00033575352639747535,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][3]['analytic']",
+      "value": -7.163664246473602,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 992,
+     "cell": "No self-loading factor",
+     "printed": "4/3",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][4]['factor']",
+     "rule": "exact fraction (|x-p| <= 1e-12)",
+     "printed_value": "4/3",
+     "regenerated": 1.3333333333333333,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][4]['factor']",
+      "value": 1.3333333333333333,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 992,
+     "cell": "No self-loading sim",
+     "printed": "+57.310",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][4]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": 57.31,
+     "half_unit": 0.0005,
+     "regenerated": 57.30979521162177,
+     "abs_diff": 0.00020478837823389995,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][4]['sim']",
+      "value": 57.30979521162177,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 992,
+     "cell": "No self-loading analytic",
+     "printed": "57.309",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][4]['analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 57.309,
+     "half_unit": 0.0005,
+     "regenerated": 57.30931397178882,
+     "abs_diff": 0.00031397178882031085,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][4]['analytic']",
+      "value": 57.30931397178882,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 993,
+     "cell": "GR-like + J2 sim",
+     "printed": "+43.012",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['results'][5]['sim']",
+     "rule": "half-unit-last-place",
+     "printed_value": 43.012,
+     "half_unit": 0.0005,
+     "regenerated": 43.01159661198539,
+     "abs_diff": 0.0004033880146110391,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['results'][5]['sim']",
+      "value": 43.01159661198539,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 993,
+     "cell": "GR-like + J2 analytic GR part",
+     "printed": "42.982",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['GR_analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 42.982,
+     "half_unit": 0.0005,
+     "regenerated": 42.981985478841615,
+     "abs_diff": 1.4521158384184218e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['GR_analytic']",
+      "value": 42.981985478841615,
+      "within": true
+     }
+    },
+    {
+     "paper_line": 993,
+     "cell": "GR-like + J2 analytic J2 part",
+     "printed": "0.028",
+     "source_key": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/results.json['J2_analytic']",
+     "rule": "half-unit-last-place",
+     "printed_value": 0.028,
+     "half_unit": 0.0005,
+     "regenerated": 0.027941941820138216,
+     "abs_diff": 5.805817986178491e-05,
+     "within": true,
+     "cls": "within",
+     "stored": {
+      "source_key": "/workspace/mercury/results.json['J2_analytic']",
+      "value": 0.027941941820138216,
+      "within": true
+     }
+    }
+   ],
+   "outside_tolerance": [],
+   "uninformative_cells": [],
+   "failing_cells": [],
+   "stored_counterpart": "attached",
+   "generator": {
+    "name": "mercury",
+    "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury",
+    "runs": [
+     {
+      "script": "sim.py",
+      "rc": 0,
+      "timed_out": false,
+      "timeout_s": 300,
+      "wall_s": 1352.8425724506378,
+      "cpu_s": 30.897796,
+      "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/sim.py.stdout",
+      "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/sim.py.stderr"
+     }
+    ],
+    "ok": true,
+    "timed_out": false
+   },
+   "class": "REPRODUCED"
+  }
+ },
+ "generators": {
+  "readout": {
+   "name": "readout",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout",
+   "runs": [
+    {
+     "script": "sim.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 3.5734915733337402,
+     "cpu_s": 2.868398,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/sim.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/sim.py.stderr"
+    },
+    {
+     "script": "ext.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 1.4189138412475586,
+     "cpu_s": 1.3905560000000001,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/ext.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/readout/ext.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "qca": {
+   "name": "qca",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca",
+   "runs": [
+    {
+     "script": "qca.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 4.927688360214233,
+     "cpu_s": 4.8771770000000005,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/qca.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/qca/qca.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "dw": {
+   "name": "dw",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw",
+   "runs": [
+    {
+     "script": "dw_final.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 0.7167837619781494,
+     "cpu_s": 0.6629529999999999,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "test1": {
+   "name": "test1",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1",
+   "runs": [
+    {
+     "script": "test1_aniso.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 4.927613258361816,
+     "cpu_s": 4.877148999999999,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test1/test1_aniso.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "test2": {
+   "name": "test2",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2",
+   "runs": [
+    {
+     "script": "test2_kink.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 2.521350383758545,
+     "cpu_s": 2.5120160000000027,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/test2/test2_kink.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "sunbend": {
+   "name": "sunbend",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend",
+   "runs": [
+    {
+     "script": "sim.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 33.793728828430176,
+     "cpu_s": 33.703649,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/sim.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/sunbend/sim.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  },
+  "mercury": {
+   "name": "mercury",
+   "sandbox": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury",
+   "runs": [
+    {
+     "script": "sim.py",
+     "rc": 0,
+     "timed_out": false,
+     "timeout_s": 300,
+     "wall_s": 1352.8425724506378,
+     "cpu_s": 30.897796,
+     "stdout": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/sim.py.stdout",
+     "stderr": "/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/mercury/sim.py.stderr"
+    }
+   ],
+   "ok": true,
+   "timed_out": false
+  }
+ },
+ "formula_check": {
+  "label": "formula, not simulation",
+  "constants": {
+   "source": "CODATA 2018",
+   "c": 299792458.0,
+   "hbar": 1.054571817e-34,
+   "G": 6.6743e-11,
+   "h": 6.62607015e-34,
+   "eV": 1.602176634e-19,
+   "m_P": 2.176434e-08,
+   "l_P": 1.616255e-35,
+   "E_P_GeV": 1.22e+19
+  },
+  "tables": [
+   {
+    "table": 3,
+    "lines": "397-402",
+    "formula": "(E/E_P)^2/18",
+    "cells": [
+     {
+      "rule": "half-unit-last-place",
+      "printed": "2.0\\times10^{-28}",
+      "printed_value": 2e-28,
+      "half_unit": 5e-30,
+      "regenerated": 2.0325278431672175e-28,
+      "abs_diff": 3.25278431672176e-30,
+      "within": true,
+      "paper_line": 399,
+      "cell": "Visible light (500 nm): E/E_P from stated energy",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "2.2\\times10^{-57}",
+      "printed_value": 2.2e-57,
+      "half_unit": 5e-59,
+      "regenerated": 2.222222222222222e-57,
+      "abs_diff": 2.222222222222204e-59,
+      "within": true,
+      "paper_line": 399,
+      "cell": "Visible light (500 nm): (E/E_P)^2/18 from printed E/E_P",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "8.2\\times10^{-17}",
+      "printed_value": 8.2e-17,
+      "half_unit": 5e-19,
+      "regenerated": 8.19672131147541e-17,
+      "abs_diff": 3.278688524589914e-20,
+      "within": true,
+      "paper_line": 400,
+      "cell": "1 TeV gamma ray: E/E_P from stated energy",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "3.7\\times10^{-34}",
+      "printed_value": 3.7e-34,
+      "half_unit": 5e-36,
+      "regenerated": 3.735555555555556e-34,
+      "abs_diff": 3.555555555555602e-36,
+      "within": true,
+      "paper_line": 400,
+      "cell": "1 TeV gamma ray: (E/E_P)^2/18 from printed E/E_P",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "8.2\\times10^{-15}",
+      "printed_value": 8.199999999999999e-15,
+      "half_unit": 5e-17,
+      "regenerated": 8.196721311475409e-15,
+      "abs_diff": 3.278688524590062e-18,
+      "within": true,
+      "paper_line": 401,
+      "cell": "100 TeV gamma ray: E/E_P from stated energy",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "3.7\\times10^{-30}",
+      "printed_value": 3.7e-30,
+      "half_unit": 5e-32,
+      "regenerated": 3.735555555555555e-30,
+      "abs_diff": 3.5555555555554687e-32,
+      "within": true,
+      "paper_line": 401,
+      "cell": "100 TeV gamma ray: (E/E_P)^2/18 from printed E/E_P",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "2.6\\times10^{-8}",
+      "printed_value": 2.6e-08,
+      "half_unit": 5e-10,
+      "regenerated": 2.622950819672131e-08,
+      "abs_diff": 2.2950819672130897e-10,
+      "within": true,
+      "paper_line": 402,
+      "cell": "Oh-My-God cosmic ray (3.2e20 eV): E/E_P from stated energy",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "3.8\\times10^{-17}",
+      "printed_value": 3.8e-17,
+      "half_unit": 5e-19,
+      "regenerated": 3.755555555555556e-17,
+      "abs_diff": 4.444444444444441e-19,
+      "within": true,
+      "paper_line": 402,
+      "cell": "Oh-My-God cosmic ray (3.2e20 eV): (E/E_P)^2/18 from printed E/E_P",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     }
+    ],
+    "input_not_stated": [],
+    "label": "formula, not simulation",
+    "class": "MATCH"
+   },
+   {
+    "table": 8,
+    "lines": "653-658",
+    "formula": "(1/8)(E/E_P)^2 sum_i n_i^4",
+    "cells": [
+     {
+      "rule": "half-unit-last-place",
+      "printed": "8.4\\times10^{-40}",
+      "printed_value": 8.399999999999999e-40,
+      "half_unit": 5e-42,
+      "regenerated": 8.398280032249396e-40,
+      "abs_diff": 1.7199677506031757e-43,
+      "within": true,
+      "paper_line": 655,
+      "cell": "1 GeV [100]",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "2.8\\times10^{-40}",
+      "printed_value": 2.7999999999999996e-40,
+      "half_unit": 5e-42,
+      "regenerated": 2.799426677416465e-40,
+      "abs_diff": 5.733225835345278e-44,
+      "within": true,
+      "paper_line": 655,
+      "cell": "1 GeV [111]",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "7.6\\times10^{-37}",
+      "printed_value": 7.6e-37,
+      "half_unit": 5e-39,
+      "regenerated": 7.558452029024455e-37,
+      "abs_diff": 4.1547970975546196e-39,
+      "within": true,
+      "paper_line": 656,
+      "cell": "30 GeV [100]",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "8.1\\times10^{-37}",
+      "printed_value": 8.100000000000001e-37,
+      "half_unit": 5e-39,
+      "regenerated": 8.07074711099167e-37,
+      "abs_diff": 2.9252889008330353e-39,
+      "within": true,
+      "paper_line": 657,
+      "cell": "31 GeV [100]",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "8.4\\times10^{-34}",
+      "printed_value": 8.4e-34,
+      "half_unit": 5e-36,
+      "regenerated": 8.398280032249396e-34,
+      "abs_diff": 1.7199677506046185e-37,
+      "within": true,
+      "paper_line": 658,
+      "cell": "1 TeV [100]",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     }
+    ],
+    "input_not_stated": [],
+    "label": "formula, not simulation",
+    "class": "MATCH"
+   },
+   {
+    "table": 12,
+    "lines": "1059-1063",
+    "formula": "rho_P = c^5/(hbar G^2); ratios",
+    "cells": [
+     {
+      "rule": "half-unit-last-place",
+      "printed": "\u22481.6\\times10^{-35}",
+      "printed_value": 1.6000000000000002e-35,
+      "half_unit": 5e-37,
+      "regenerated": 1.616255e-35,
+      "abs_diff": 1.6254999999999894e-37,
+      "within": true,
+      "paper_line": 1062,
+      "cell": "l_P \u2248 1.6e-35 m (CODATA 2018 l_P)",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "\u22485.2\\times10^{96}",
+      "printed_value": 5.200000000000001e+96,
+      "half_unit": 5e+94,
+      "regenerated": 5.154848506403409e+96,
+      "abs_diff": 4.515149359659216e+94,
+      "within": true,
+      "paper_line": 1062,
+      "cell": "rho_P = c^5/(hbar G^2) \u2248 5.2e96 kg m^-3",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "order-of-magnitude: round(log10|x|) == printed exponent",
+      "printed": "\\sim 10^{20}",
+      "printed_exponent": 20,
+      "regenerated": 6.18714249917247e+19,
+      "log10": 19.79149011858855,
+      "within": true,
+      "paper_line": 1063,
+      "cell": "length ratio (1e-15 m)/l_P",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "order-of-magnitude: round(log10|x|) == printed exponent",
+      "printed": "\\sim 10^{79}",
+      "printed_exponent": 79,
+      "regenerated": 2.2412384810449603e+79,
+      "log10": 79.3504880704982,
+      "within": true,
+      "paper_line": 1063,
+      "cell": "density ratio rho_P/(2.3e17 kg m^-3)",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     }
+    ],
+    "inputs_stated": {
+     "client_length_m": 1e-15,
+     "client_density": 2.3e+17
+    },
+    "input_not_stated": [],
+    "label": "formula, not simulation",
+    "class": "MATCH"
+   },
+   {
+    "table": 13,
+    "lines": "1220-1224",
+    "formula": "GM/(rc^2) = (M/m_P)(l_P/r)",
+    "cells": [
+     {
+      "rule": "half-unit-last-place",
+      "printed": "\u22483\\times10^{-27}",
+      "printed_value": 3e-27,
+      "half_unit": 5e-28,
+      "regenerated": 2.9102524116501105e-27,
+      "abs_diff": 8.974758834988963e-29,
+      "within": true,
+      "paper_line": 1222,
+      "cell": "Baseball 145 g at 3.7 cm",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "rule": "half-unit-last-place",
+      "printed": "\u22483.2\\times10^{-24}",
+      "printed_value": 3.1999999999999998e-24,
+      "half_unit": 5e-26,
+      "regenerated": 3.2147884529348882e-24,
+      "abs_diff": 1.4788452934888477e-26,
+      "within": true,
+      "paper_line": 1223,
+      "cell": "Tungsten block 1 tonne at 0.231 m",
+      "cls": "MATCH",
+      "label": "formula, not simulation"
+     },
+     {
+      "paper_line": 1224,
+      "cell": "Great Pyramid at 'apex' (distance not stated)",
+      "printed": "\\approx 4\\times10^{-20}",
+      "cls": "INPUT NOT STATED",
+      "label": "formula, not simulation"
+     }
+    ],
+    "input_not_stated": [
+     "Great Pyramid at 'apex' (distance not stated)"
+    ],
+    "label": "formula, not simulation",
+    "class": "MATCH"
+   }
+  ],
+  "failed": []
+ },
+ "wave_rule": {
+  "item": "\u00a76.15(i) (paper line 1036)",
+  "rule": "wave rule on 8-link BCC grid (not dirac4)",
+  "label": "analytic derivation (sympy)",
+  "coefficients": {
+   "[100]": {
+    "derived": "1/24",
+    "expected": "1/24",
+    "linear_term": "0",
+    "c2": "4*kappa/3",
+    "match": true
+   },
+   "[110]": {
+    "derived": "1/12",
+    "expected": "1/12",
+    "linear_term": "0",
+    "c2": "4*kappa/3",
+    "match": true
+   },
+   "[111]": {
+    "derived": "7/72",
+    "expected": "7/72",
+    "linear_term": "0",
+    "c2": "4*kappa/3",
+    "match": true
+   }
+  },
+  "difference": {
+   "derived": "1/18",
+   "expected": "1/18",
+   "match": true
+  },
+  "sim_claim": "'sim matches analytic to <= 1.5e-5': UNVERIFIED (no stored output)",
+  "class": "MATCH"
+ },
+ "failing_cells": [
+  {
+   "table": 6,
+   "paper_line": 608,
+   "cell": "N_s=24 residual mass",
+   "printed": "\\sim10^{-16}",
+   "rule": "order-of-magnitude: round(log10|x|) == printed exponent",
+   "regenerated": 1.211415271493058e-17,
+   "source_key": "abs(/workspace/L0_V4V5_runs_20261111/v5v2_official/sandbox/dw/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+   "printed_exponent": -16,
+   "log10": -16.916706955781383,
+   "round_log10": -17,
+   "stored": {
+    "source_key": "abs(/workspace/qca/dw_final.json['residual_mass_k0']['0.05']['rows'][11][-1])",
+    "value": 2.42861286636753e-17,
+    "within": false
+   }
+  }
+ ],
+ "verdict": "V5 FAIL (tables not reproduced: 6)",
+ "verdict_labels": [
+  "V5 FAIL (tables not reproduced: 6)"
+ ],
+ "formula_causes": [],
+ "not_reproduced": [
+  6
+ ],
+ "uninformative_tables": [],
+ "uninformative_cells": {
+  "2": [
+   "|a|^1 P1 3det",
+   "|a|^1 P1 2det",
+   "|a|^1.5 P1 3det",
+   "|a|^1.5 P1 2det",
+   "|a|^1.5 Bob Z",
+   "|a|^1.5 Bob X",
+   "|a|^3 P1 3det",
+   "|a|^3 P1 2det",
+   "softmax P1 3det",
+   "softmax P1 2det"
+  ],
+  "6": [
+   "N_s=2 components",
+   "N_s=4 components",
+   "N_s=8 components",
+   "N_s=12 components",
+   "N_s=24 components"
+  ]
+ },
+ "all_tables_regenerated": {
+  "count_reproduced": 7,
+  "of": 8,
+  "tables": [
+   2,
+   4,
+   5,
+   7,
+   9,
+   10,
+   11
+  ],
+  "claim_allowed": false,
+  "note": "formula checks (3, 8, 12, 13) and item W never counted"
+ },
+ "engine_cpu_s": 330.790489274,
+ "engine_wall_s": 1736.113537311554
+}
